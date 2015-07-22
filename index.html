@@ -18,14 +18,12 @@
 
 <body ng-app="charactersSheetGenerator" ng-controller="appController as app">
 <div ng-include="'templates/export.html'"></div>
-    <div ng-include="'templates/header.html'"></div>
     <div ng-include="'templates/stats.html'"></div>
-<div ng-include="'templates/inventory.html'"></div>
 
 <!-- app scripts -->
     <script type="text/javascript" src="scripts/app/app.js"></script>
-    <script type="text/javascript" src="scripts/app/appController.js"></script>
-    <script type="text/javascript" src="scripts/app/stats/statsCalculator.js"></script>
-    <script type="text/javascript" src="scripts/app/stats/statsController.js"></script>
+<script type="text/javascript" src="scripts/app/controllers/appController.js"></script>
+<script type="text/javascript" src="scripts/app/models/statsModel.js"></script>
+<script type="text/javascript" src="scripts/app/controllers/statsController.js"></script>
 </body>
 </html>

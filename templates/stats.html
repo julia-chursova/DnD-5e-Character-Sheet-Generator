@@ -1,74 +1,15 @@
-<div class="stats" ng-controller="statsController as stats">
+<div class="stats" ng-controller="statsController as controller">
     THIS IS STATS
     <div class="statsBlock">
         <label>
             Strength
-            <input type="text" ng-model="stats.strength"/>
+            <input type="text" ng-model="controller.stats.strength"/>
         </label>
         <label>
             STR temp bonus
-            <input type="text" ng-model="stats.strBonus"/>
+            <input type="text" ng-model="controller.stats.strBonus"/>
         </label>
-        <span>{{ stats.printableStrModifier() }}</span>
+        <span>{{ controller.printableStrModifier() }}</span>
     </div>
 
-    <div>
-        <label>
-            Dexterity
-            <input type="text" ng-model="stats.dexterity"/>
-        </label>
-        <label>
-            DEX temp bonus
-            <input type="text" ng-model="stats.dexBonus"/>
-        </label>
-        <span>{{ stats.printableDexModifier() }}</span>
-    </div>
-
-    <div class="statsBlock">
-        <label>
-            Constitution
-            <input type="text" ng-model="stats.constitution"/>
-        </label>
-        <label>
-            CON temp bonus
-            <input type="text" ng-model="stats.conBonus"/>
-        </label>
-        <span>{{ stats.printableConModifier() }}</span>
-    </div>
-
-    <div class="statsBlock">
-        <label>
-            Intelligence
-            <input type="text" ng-model="stats.intelligence"/>
-        </label>
-        <label>
-            INT temp bonus
-            <input type="text" ng-model="stats.intBonus"/>
-        </label>
-        <span>{{ stats.printableIntModifier() }}</span>
-    </div>
-
-    <div class="statsBlock">
-        <label>
-            Wisdom
-            <input type="text" ng-model="stats.wisdom"/>
-        </label>
-        <label>
-            WIS temp bonus
-            <input type="text" ng-model="stats.wisBonus"/>
-        </label>
-        <span>{{ stats.printableWisModifier() }}</span>
-    </div>
-
-    <div class="statsBlock">
-        <label>
-            Charisma
-            <input type="text" ng-model="stats.charisma"/>
-        </label>
-        <label>
-            CHA temp bonus
-            <input type="text" ng-model="stats.chaBonus"/>
-            <span>{{ stats.printableChaModifier() }}</span>
-        </label>
-    </div>
 </div>
