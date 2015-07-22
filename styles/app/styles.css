@@ -1,0 +1,13 @@
+@media screen {
+    .controls {
+        position: fixed;
+        right: 10px;
+        top: 10px;
+    }
+}
+
+@media print {
+    .controls {
+        display: none;
+    }
+}
