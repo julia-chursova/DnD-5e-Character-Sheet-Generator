@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>D&D 5e Character Sheet Generator</title>
+    <title>D&D 5e Characters Sheet Generator</title>
 
     <link rel="stylesheet" href="styles/libs/bootstrap.min.css" />
-    <link rel="stylesheet" href="styles/libs/bootstrap-theme.min.css" />
+    <script type="text/javascript" src="scripts/libs/angular.min.js"></script>
 
     <link rel="stylesheet" href="styles/app/styles.css" />
 
-    <script type="text/javascript" src="scripts/libs/angular.min.js"></script>
+    <script type="text/javascript">
+        var appName = 'charactersSheetGenerator';
+    </script>
 </head>
-<body>
+
+<body ng-app="charactersSheetGenerator" ng-controller="appController">
     <div class="controls">
         <button>Print</button>
         <button>Download</button>
     </div>
 
-    <div class="header">
+    <div ng-include="'templates/header.html'"></div>
+    <div ng-include="'templates/stats.html'"></div>
 
-    </div>
+
+    <script type="text/javascript" src="scripts/app/app.js"></script>
+    <script type="text/javascript" src="scripts/app/appController.js"></script>
+    <script type="text/javascript" src="scripts/app/stats/statsCalculator.js"></script>
+    <script type="text/javascript" src="scripts/app/stats/statsController.js"></script>
 </body>
 </html>
