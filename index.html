@@ -3,26 +3,26 @@
 <head>
     <title>D&D 5e Characters Sheet Generator</title>
 
+    <!-- library files -->
     <link rel="stylesheet" href="styles/libs/bootstrap.min.css" />
     <script type="text/javascript" src="scripts/libs/angular.min.js"></script>
 
+    <!-- app styles -->
     <link rel="stylesheet" href="styles/app/styles.css" />
 
+    <!-- ad-hoc script -->
     <script type="text/javascript">
         var appName = 'charactersSheetGenerator';
     </script>
 </head>
 
-<body ng-app="charactersSheetGenerator" ng-controller="appController">
-    <div class="controls">
-        <button>Print</button>
-        <button>Download</button>
-    </div>
-
+<body ng-app="charactersSheetGenerator" ng-controller="appController as app">
+<div ng-include="'templates/export.html'"></div>
     <div ng-include="'templates/header.html'"></div>
     <div ng-include="'templates/stats.html'"></div>
+<div ng-include="'templates/inventory.html'"></div>
 
-
+<!-- app scripts -->
     <script type="text/javascript" src="scripts/app/app.js"></script>
     <script type="text/javascript" src="scripts/app/appController.js"></script>
     <script type="text/javascript" src="scripts/app/stats/statsCalculator.js"></script>
