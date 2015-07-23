@@ -13,6 +13,8 @@
 .app .container {
     width: 100%;
     min-height: 50px;
+
+    display: flex;
 }
 
 .app .container .container-box {
@@ -20,6 +22,8 @@
     min-height: 50px;
     box-sizing: border-box;
     padding: 5px;
+
+    align-items: stretch;
 }
 
 .app [ng-drop].drag-enter {
