@@ -1,0 +1,4 @@
+<div ng-if="inEditMode">
+    <input type="text" ng-value="model" ng-click="stopEvent($event)"/>
+</div>
+<div ng-if="!inEditMode" ng-bind="model" ng-click="enableEditMode($event)"></div>

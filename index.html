@@ -24,7 +24,8 @@
     </script>
 </head>
 
-<body ng-app="charactersSheetGenerator" ng-controller="appController as app" class="app" ng-class="{'edit-mode': app.isEditMode}">
+<body ng-app="charactersSheetGenerator" ng-controller="appController as app"
+      class="app" ng-class="{'edit-mode': app.isEditMode}" ng-click="app.globalClick($event)">
 
     <div ng-include="'templates/menu.html'"></div>
 
@@ -53,6 +54,7 @@
 
     <!-- directives -->
     <script type="text/javascript" src="scripts/app/directives/containerDirective.js"></script>
+    <script type="text/javascript" src="scripts/app/directives/cloakField.js"></script>
 
     <!-- controllers -->
     <script type="text/javascript" src="scripts/app/controllers/appController.js"></script>
