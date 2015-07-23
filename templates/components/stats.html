@@ -7,9 +7,69 @@
             <input type="text" ng-model="controller.stats.strength"/>
         </label>
         <label>
-            STR temp bonus
+            STR bonus
             <input type="text" ng-model="controller.stats.strBonus"/>
         </label>
         <span>{{ controller.printableStrModifier() }}</span>
+    </div>
+
+    <div class="statsBlock">
+        <label>
+            Dexterity
+            <input type="text" ng-model="controller.stats.dexterity"/>
+        </label>
+        <label>
+            DEX bonus
+            <input type="text" ng-model="controller.stats.dexBonus"/>
+        </label>
+        <span>{{ controller.printableDexModifier() }}</span>
+    </div>
+
+    <div class="statsBlock">
+        <label>
+            Constitution
+            <input type="text" ng-model="controller.stats.constitution"/>
+        </label>
+        <label>
+            CON bonus
+            <input type="text" ng-model="controller.stats.conBonus"/>
+        </label>
+        <span>{{ controller.printableConModifier() }}</span>
+    </div>
+
+    <div class="statsBlock">
+        <label>
+            Intelligence
+            <input type="text" ng-model="controller.stats.intelligence"/>
+        </label>
+        <label>
+            INT bonus
+            <input type="text" ng-model="controller.stats.intBonus"/>
+        </label>
+        <span>{{ controller.printableIntModifier() }}</span>
+    </div>
+
+    <div class="statsBlock">
+        <label>
+            Wisdom
+            <input type="text" ng-model="controller.stats.wisdom"/>
+        </label>
+        <label>
+            WIS bonus
+            <input type="text" ng-model="controller.stats.wisBonus"/>
+        </label>
+        <span>{{ controller.printableWisModifier() }}</span>
+    </div>
+
+    <div class="statsBlock">
+        <label>
+            Charisma
+            <input type="text" ng-model="controller.stats.charisma"/>
+        </label>
+        <label>
+            CHA bonus
+            <input type="text" ng-model="controller.stats.chaBonus"/>
+        </label>
+        <span>{{ controller.printableChaModifier() }}</span>
     </div>
 </div>
