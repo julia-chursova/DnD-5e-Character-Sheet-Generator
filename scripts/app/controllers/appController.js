@@ -23,6 +23,14 @@
                 {
                     name: 'Inventory',
                     template: 'templates/components/inventory.html'
+                },
+                {
+                    name: 'Character',
+                    template: 'templates/components/character.html'
+                },
+                {
+                    name: 'Languages',
+                    template: 'templates/components/languages.html'
                 }
             ];
 
