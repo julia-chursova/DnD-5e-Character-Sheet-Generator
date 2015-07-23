@@ -1,13 +1,11 @@
 <div class="menu">
     <div>
         <button ng-click="app.print()">Print</button>
+        <button ng-click="app.editLayout()" ng-if="!app.isEditMode">Edit Layout</button>
+        <button ng-click="app.finishEdit()" ng-if="app.isEditMode">Finish edit</button>
     </div>
     <div>
         <div>Layout</div>
-        <div>100%</div>
-        <div>66% + 33%</div>
-    </div>
-    <div>
-        Controls
+        <div ng-drag="true" ng-drag-data="'templates/containers/33p66p.html'">33% 66%</div>
     </div>
 </div>

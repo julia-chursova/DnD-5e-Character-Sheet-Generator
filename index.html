@@ -4,13 +4,18 @@
     <title>D&D 5e Characters Sheet Generator</title>
 
     <!-- library files -->
-    <link rel="stylesheet" href="styles/libs/bootstrap.min.css" />
     <script type="text/javascript" src="scripts/libs/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/libs/ngDraggable-modified.js"></script>
 
     <!-- app styles -->
     <link rel="stylesheet" href="styles/app/app.css" />
     <link rel="stylesheet" href="styles/app/menu.css" />
+
+    <!-- components' styles -->
     <link rel="stylesheet" href="styles/app/components.css"/>
+
+    <!-- directives' styles -->
+    <link rel="stylesheet" href="styles/app/directives/container.css"/>
 
     <!-- ad-hoc script -->
     <script type="text/javascript">
@@ -20,10 +25,10 @@
 
 <body ng-app="charactersSheetGenerator" ng-controller="appController as app" class="app">
 
+    <div ng-include="'templates/menu.html'"></div>
+
     <div class="a4-sheet">
-        <div ng-include="'templates/menu.html'"></div>
-        <div ng-include="'templates/player.html'"></div>
-        <div ng-include="'templates/stats.html'"></div>
+        <container data-layouts="[ '100%' ]" data-components="[ [] ]" data-removable="false"></container>
     </div>
     <div class="page-break"></div>
     <div class="a4-sheet">
@@ -31,9 +36,15 @@
 
     <!-- app scripts -->
     <script type="text/javascript" src="scripts/app/app.js"></script>
+
+    <!-- models -->
     <script type="text/javascript" src="scripts/app/models/statsModel.js"></script>
     <script type="text/javascript" src="scripts/app/models/playerModel.js"></script>
 
+    <!-- directives -->
+    <script type="text/javascript" src="scripts/app/directives/containerDirective.js"></script>
+
+    <!-- controllers -->
     <script type="text/javascript" src="scripts/app/controllers/appController.js"></script>
     <script type="text/javascript" src="scripts/app/controllers/statsController.js"></script>
     <script type="text/javascript" src="scripts/app/controllers/playerController.js"></script>

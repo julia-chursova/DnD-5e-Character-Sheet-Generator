@@ -1,0 +1,6 @@
+<div class="container">
+    <div class="container-box" ng-repeat="layout in data track by $index" ng-style="{ 'width': layout.width }"
+         ng-drop="true" ng-drop-success="dragCompleted(layout, $data, $event)" ng-suppress-lowers="true">
+        <div ng-repeat="component in layout.components track by $index" ng-include="component"></div>
+    </div>
+</div>
