@@ -8,7 +8,7 @@
     <script type="text/javascript" src="scripts/libs/angular.min.js"></script>
 
     <!-- app styles -->
-    <link rel="stylesheet" href="styles/app/styles.css" />
+    <link rel="stylesheet" href="styles/app/app.css" />
 
     <!-- ad-hoc script -->
     <script type="text/javascript">
@@ -17,6 +17,11 @@
 </head>
 
 <body ng-app="charactersSheetGenerator" ng-controller="appController as app">
+
+    <div class="a4sheet">
+
+    </div>
+
     <div ng-include="'templates/menu.html'"></div>
     <div ng-include="'templates/player.html'"></div>
     <div ng-include="'templates/stats.html'"></div>
