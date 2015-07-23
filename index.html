@@ -23,7 +23,7 @@
     </script>
 </head>
 
-<body ng-app="charactersSheetGenerator" ng-controller="appController as app" class="app">
+<body ng-app="charactersSheetGenerator" ng-controller="appController as app" class="app" ng-class="{'edit-mode': app.isEditMode}">
 
     <div ng-include="'templates/menu.html'"></div>
 

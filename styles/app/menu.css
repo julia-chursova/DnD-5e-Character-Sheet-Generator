@@ -15,7 +15,49 @@
 }
 
 .menu {
-    background-color: darkseagreen;
+    background-color: white;
 
     min-width: 200px;
+
+    border: 1px #dddddd solid;
+    border-radius: 4px;
+
+    padding: 15px 5px;
+}
+
+.menu .logo {
+    text-align: center;
+}
+
+.menu .logo img {
+    width: 100px;
+    height: 50px;
+}
+
+.menu .section {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px #dddddd solid;
+}
+
+.menu .section .header {
+    font-size: 10pt;
+    color: #666666;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+}
+
+.menu .layout-block {
+    margin: 4px 0;
+}
+
+.menu .layout-block .layout-icon {
+    height: 20px;
+    line-height: 20px;
+
+    border: 1px solid black;
+    text-align: center;
+
+    font-size: 8pt;
+    display: inline-block;
 }

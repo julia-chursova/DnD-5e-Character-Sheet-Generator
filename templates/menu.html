@@ -1,11 +1,32 @@
 <div class="menu">
-    <div>
+    <div class="logo">
+        <img src="/images/short_logo.png"/>
+    </div>
+    <div class="section">
         <button ng-click="app.print()">Print</button>
         <button ng-click="app.editLayout()" ng-if="!app.isEditMode">Edit Layout</button>
         <button ng-click="app.finishEdit()" ng-if="app.isEditMode">Finish edit</button>
     </div>
-    <div>
-        <div>Layout</div>
-        <div ng-drag="true" ng-drag-data="'templates/containers/33p66p.html'">33% 66%</div>
+    <div ng-if="app.isEditMode" class="section">
+        <div class="header">Layouts</div>
+
+        <div class="layout-block" ng-drag="true" ng-drag-data="'templates/containers/33p66p.html'">
+            <div class="layout-icon" style="width:33px">X</div>
+            <div class="layout-icon" style="width:66px">2*X</div>
+        </div>
+
+        <div class="layout-block" ng-drag="true" ng-drag-data="'templates/containers/66p33p.html'">
+            <div class="layout-icon" style="width:66px">2*X</div>
+            <div class="layout-icon" style="width:33px">X</div>
+        </div>
+
+        <div class="layout-block" ng-drag="true" ng-drag-data="'templates/containers/50p50p.html'">
+            <div class="layout-icon" style="width:50px">X</div>
+            <div class="layout-icon" style="width:50px">X</div>
+        </div>
+    </div>
+
+    <div ng-if="app.isEditMode" class="section">
+        <div class="header">Controls</div>
     </div>
 </div>

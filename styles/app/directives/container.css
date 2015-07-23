@@ -1,16 +1,19 @@
-.container {
+.app .container {
     width: 100%;
     min-height: 50px;
 }
 
-.container .container-box {
+.app .container .container-box {
     display: inline-block;
     min-height: 50px;
-    border: 1px solid black;
     box-sizing: border-box;
     padding: 5px;
 }
 
-[ng-drop].drag-enter {
-    background-color: red;
+.app.edit-mode .container .container-box {
+    border: 1px solid black;
+}
+
+.app [ng-drop].drag-enter {
+    background-color: powderblue;
 }
