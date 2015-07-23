@@ -7,6 +7,16 @@
             var self = this;
 
             self.isEditMode = false;
+            self.availableControls = [
+                {
+                    name: 'Player',
+                    template: 'templates/components/player.html'
+                },
+                {
+                    name: 'Stats',
+                    template: 'templates/components/stats.html'
+                }
+            ];
 
             self.editLayout = function () {
                 self.isEditMode = true;
