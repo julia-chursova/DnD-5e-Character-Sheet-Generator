@@ -19,6 +19,10 @@
                 {
                     name: 'Stats',
                     template: 'templates/components/stats.html'
+                },
+                {
+                    name: 'Inventory',
+                    template: 'templates/components/inventory.html'
                 }
             ];
 

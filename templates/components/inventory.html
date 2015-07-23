@@ -1,0 +1,19 @@
+<div class="inventory component" ng-controller="inventoryController as inventory">
+    <div class="header">Inventory</div>
+    <table>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Value</td>
+                <td>Weight</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in inventory.model.items">
+                <td ng-bind="item.name"></td>
+                <td ng-bind="item.value"></td>
+                <td ng-bind="item.weight"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
