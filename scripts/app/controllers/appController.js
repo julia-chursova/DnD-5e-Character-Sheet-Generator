@@ -9,6 +9,10 @@
             self.isEditMode = false;
             self.availableControls = [
                 {
+                    name: 'Logo',
+                    template: 'templates/components/logo.html'
+                },
+                {
                     name: 'Player',
                     template: 'templates/components/player.html'
                 },

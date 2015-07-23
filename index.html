@@ -13,6 +13,7 @@
 
     <!-- components' styles -->
     <link rel="stylesheet" href="styles/app/components.css"/>
+    <link rel="stylesheet" href="styles/app/components/logo.css"/>
 
     <!-- directives' styles -->
     <link rel="stylesheet" href="styles/app/directives/container.css"/>
@@ -29,6 +30,8 @@
 
     <div class="a4-sheet">
         <container data-layouts="[ '100%' ]" data-components="[ [] ]" data-removable="false"></container>
+        <div ng-include="'templates/components/logo.html'"></div>
+        <div ng-include="'templates/components/player.html'"></div>
     </div>
     <div class="page-break"></div>
     <div class="a4-sheet">
