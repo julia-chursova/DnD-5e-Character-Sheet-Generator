@@ -4,24 +4,24 @@
     angular.module(appName)
         .factory('statsModel', function () {
             function getModifier(statValue) {
-                return Math.floor((statValue - 10) / 2);
+                return Math.floor(((statValue || 0) - 10) / 2);
             }
 
             var self = this;
 
-            self.strength = 0;
-            self.dexterity = 0;
-            self.constitution = 0;
-            self.intelligence = 0;
-            self.wisdom = 0;
-            self.charisma = 0;
+            self.strength = '';
+            self.dexterity = '';
+            self.constitution = '';
+            self.intelligence = '';
+            self.wisdom = '';
+            self.charisma = '';
 
-            self.strBonus = 0;
-            self.dexBonus = 0;
-            self.conBonus = 0;
-            self.intBonus = 0;
-            self.wisBonus = 0;
-            self.chaBonus = 0;
+            self.strBonus = '';
+            self.dexBonus = '';
+            self.conBonus = '';
+            self.intBonus = '';
+            self.wisBonus = '';
+            self.chaBonus = '';
 
             self.strModifier = function () {
                 return getModifier(self.strength) + (parseInt(self.strBonus) || 0);

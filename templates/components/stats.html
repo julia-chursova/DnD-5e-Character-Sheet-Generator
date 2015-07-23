@@ -4,11 +4,11 @@
     <div class="statsBlock">
         <label>
             Strength
-            <input type="text" ng-model="controller.stats.strength"/>
+            <input type="number" min="1" max="20" ng-model="controller.stats.strength" />
         </label>
         <label>
             STR bonus
-            <input type="text" ng-model="controller.stats.strBonus"/>
+            <input type="number" ng-model="controller.stats.strBonus"/>
         </label>
         <span>{{ controller.printableStrModifier() }}</span>
     </div>
@@ -16,11 +16,11 @@
     <div class="statsBlock">
         <label>
             Dexterity
-            <input type="text" ng-model="controller.stats.dexterity"/>
+            <input type="number" min="1" max="20" ng-model="controller.stats.dexterity"/>
         </label>
         <label>
             DEX bonus
-            <input type="text" ng-model="controller.stats.dexBonus"/>
+            <input type="number" ng-model="controller.stats.dexBonus"/>
         </label>
         <span>{{ controller.printableDexModifier() }}</span>
     </div>
@@ -28,11 +28,11 @@
     <div class="statsBlock">
         <label>
             Constitution
-            <input type="text" ng-model="controller.stats.constitution"/>
+            <input type="number" min="1" max="20" ng-model="controller.stats.constitution"/>
         </label>
         <label>
             CON bonus
-            <input type="text" ng-model="controller.stats.conBonus"/>
+            <input type="number" ng-model="controller.stats.conBonus"/>
         </label>
         <span>{{ controller.printableConModifier() }}</span>
     </div>
@@ -40,11 +40,11 @@
     <div class="statsBlock">
         <label>
             Intelligence
-            <input type="text" ng-model="controller.stats.intelligence"/>
+            <input type="number" min="1" max="20" ng-model="controller.stats.intelligence"/>
         </label>
         <label>
             INT bonus
-            <input type="text" ng-model="controller.stats.intBonus"/>
+            <input type="number" ng-model="controller.stats.intBonus"/>
         </label>
         <span>{{ controller.printableIntModifier() }}</span>
     </div>
@@ -52,11 +52,11 @@
     <div class="statsBlock">
         <label>
             Wisdom
-            <input type="text" ng-model="controller.stats.wisdom"/>
+            <input type="number" min="1" max="20" ng-model="controller.stats.wisdom"/>
         </label>
         <label>
             WIS bonus
-            <input type="text" ng-model="controller.stats.wisBonus"/>
+            <input type="number" ng-model="controller.stats.wisBonus"/>
         </label>
         <span>{{ controller.printableWisModifier() }}</span>
     </div>
@@ -64,11 +64,11 @@
     <div class="statsBlock">
         <label>
             Charisma
-            <input type="text" ng-model="controller.stats.charisma"/>
+            <input type="number" min="1" max="20" ng-model="controller.stats.charisma"/>
         </label>
         <label>
             CHA bonus
-            <input type="text" ng-model="controller.stats.chaBonus"/>
+            <input type="number" ng-model="controller.stats.chaBonus"/>
         </label>
         <span>{{ controller.printableChaModifier() }}</span>
     </div>
