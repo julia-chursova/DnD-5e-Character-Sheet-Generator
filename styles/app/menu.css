@@ -1,3 +1,5 @@
+/*    Styles for menu    */
+
 @media screen {
     .menu {
         position: fixed;
@@ -10,4 +12,10 @@
     .menu {
         display: none;
     }
+}
+
+.menu {
+    background-color: red;
+
+    min-width: 200px;
 }

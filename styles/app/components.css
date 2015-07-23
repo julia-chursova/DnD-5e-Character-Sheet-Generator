@@ -1,0 +1,11 @@
+/*    Common styles for all components    */
+
+.component {
+    width: 100%;
+}
+
+.component .header {
+    background-color: gray;
+    text-transform: uppercase;
+    color: white;
+}
