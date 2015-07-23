@@ -9,6 +9,7 @@
 
     <!-- app styles -->
     <link rel="stylesheet" href="styles/app/app.css" />
+    <link rel="stylesheet" href="styles/app/menu.css" />
 
     <!-- ad-hoc script -->
     <script type="text/javascript">
@@ -16,15 +17,19 @@
     </script>
 </head>
 
-<body ng-app="charactersSheetGenerator" ng-controller="appController as app">
+<body ng-app="charactersSheetGenerator" ng-controller="appController as app" class="app">
 
-    <div class="a4sheet">
-
+    <div class="a4-sheet">
+        <div ng-include="'templates/menu.html'"></div>
+        <div ng-include="'templates/player.html'"></div>
+        <div ng-include="'templates/stats.html'"></div>
     </div>
-
-    <div ng-include="'templates/menu.html'"></div>
-    <div ng-include="'templates/player.html'"></div>
-    <div ng-include="'templates/stats.html'"></div>
+    <div class="page-break"></div>
+    <div class="a4-sheet">
+        <div ng-include="'templates/menu.html'"></div>
+        <div ng-include="'templates/player.html'"></div>
+        <div ng-include="'templates/stats.html'"></div>
+    </div>
 
     <!-- app scripts -->
     <script type="text/javascript" src="scripts/app/app.js"></script>
