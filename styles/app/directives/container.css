@@ -24,6 +24,7 @@
     padding: 5px;
 
     align-items: stretch;
+    overflow: hidden;
 }
 
 .app [ng-drop].drag-enter {
