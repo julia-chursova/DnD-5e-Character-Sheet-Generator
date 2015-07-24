@@ -6,15 +6,15 @@
             '$rootScope',
             function ($rootScope) {
                 return {
-                    restrict: 'E',
+                    restrict: 'AE',
                     templateUrl: 'templates/directives/cloakField.html',
                     scope: {
                         model: '='
                     },
                     link: function (scope, element, attr) {
-                        scope.inEditMode = false;
-
                         var event;
+
+                        scope.inEditMode = false;
 
                         scope.enableEditMode = function (evt) {
                             scope.inEditMode = true;
@@ -22,7 +22,12 @@
                             event = evt;
                         };
 
-                        scope.stopEvent = function(evt){
+                        scope.disableEditMode = function (evt) {
+                            if (evt.keyCode == 13)
+                                scope.inEditMode = false;
+                        };
+
+                        scope.stopEvent = function (evt) {
                             event = evt;
                         };
 
@@ -34,5 +39,7 @@
                         });
                     }
                 }
-            }]);
+            }
+        ])
+    ;
 })();

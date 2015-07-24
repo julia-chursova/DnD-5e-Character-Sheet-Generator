@@ -1,0 +1,8 @@
+.cloakFieldContainer {
+    display: flex;
+}
+
+.cloakFieldContainer .cloakField {
+    align-items: stretch;
+    width: 100%;
+}
