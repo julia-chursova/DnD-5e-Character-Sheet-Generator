@@ -7,7 +7,7 @@
 
             self.name = '';
             self.campaign = '';
-            self.XP = 0;
+            self.XP = '';
 
             return self;
         });
