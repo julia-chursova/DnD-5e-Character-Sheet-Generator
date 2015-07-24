@@ -1,0 +1,25 @@
+<div class="shield component" ng-controller="armorController as controller">
+    <div class="header">Shield</div>
+
+    <div>
+        <div class="label">Name</div>
+        <div cloak-field data-model="controller.shield.name">
+            <input type="text" ng-model="controller.shield.name"/>
+        </div>
+    </div>
+
+    <div>
+        <div class="label">AC</div>
+        <div cloak-field data-model="controller.shield.armorClass">
+            <input type="number" ng-model="controller.shield.armorClass" placeholder="2"/>
+        </div>
+    </div>
+
+    <div>
+        <div class="label">Weight</div>
+        <div cloak-field data-model="controller.shield.weight">
+            <input type="number" min="0" ng-model="controller.shield.weight" placeholder="6"/>
+        </div>
+    </div>
+
+</div>
