@@ -7,6 +7,7 @@
             function ($rootScope) {
                 return {
                     restrict: 'AE',
+                    transclude: true,
                     templateUrl: 'templates/directives/cloakField.html',
                     scope: {
                         model: '='
@@ -14,7 +15,6 @@
                     link: function (scope, element, attr) {
                         var event;
 
-                        scope.type = attr.type;
                         scope.inEditMode = false;
 
                         scope.enableEditMode = function (evt) {
