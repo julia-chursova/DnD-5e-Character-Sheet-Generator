@@ -1,4 +1,11 @@
-<div class="languages component" ng-controller="languagesController as languages">
+<div class="languages component" ng-controller="languagesController as controller">
     <div class="header">Languages</div>
-    <div ng-repeat="language in languages.model" ng-bind="language"></div>
+    <div ng-repeat="language in controller.languages" ng-bind="language"></div>
+
+    <div>
+        <select class="ac-select stateList" ac-model="controller.pendingLanguage" ac-options="availableLanguage for availableLanguage in controller.availableLanguages"
+                ac-settings="{ comboMode: true, loadOnOpen: true, minWidth: '300px' }">
+        </select>
+        <button ng-click="controller.addPendingLanguage()">+</button>
+    </div>
 </div>

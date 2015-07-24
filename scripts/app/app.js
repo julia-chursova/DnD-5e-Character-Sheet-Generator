@@ -2,6 +2,7 @@
     'use strict';
 
     angular.module(appName, [
-        'ngDraggable'
+        'ngDraggable',
+        'acute.select'
     ]);
 })();
