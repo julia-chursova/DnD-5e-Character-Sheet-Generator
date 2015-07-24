@@ -4,7 +4,11 @@
     angular.module(appName)
         .controller('characterController', [
             'characterModel',
-            function (characterModel) {
+            'raceProvider',
+            function (characterModel, raceProvider) {
                 var self = this;
+
+                self.model = characterModel;
+                self.availableRaces = raceProvider;
             }]);
 })();

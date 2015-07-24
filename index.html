@@ -35,9 +35,9 @@
         <container data-layouts="[ '100%' ]" data-components="[ [] ]" data-removable="false"></container>
         <div ng-include="'templates/components/logo.html'"></div>
         <div ng-include="'templates/components/player.html'"></div>
+        <div ng-include="'templates/components/character.html'"></div>
         <div ng-include="'templates/components/stats.html'"></div>
         <div ng-include="'templates/components/inventory.html'"></div>
-        <div ng-include="'templates/components/character.html'"></div>
         <div ng-include="'templates/components/languages.html'"></div>
     </div>
     <div class="page-break"></div>
@@ -46,6 +46,9 @@
 
     <!-- app scripts -->
     <script type="text/javascript" src="scripts/app/app.js"></script>
+
+    <!-- dictionary data -->
+    <script type="text/javascript" src="scripts/app/dictionaries/raceProvider.js"></script>
 
     <!-- models -->
     <script type="text/javascript" src="scripts/app/models/statsModel.js"></script>

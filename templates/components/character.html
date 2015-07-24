@@ -1,3 +1,80 @@
 <div class="character component" ng-controller="characterController as character">
     <div class="header">Character</div>
+
+    <div class="itemContainer">
+        <div class="label">Race</div>
+        <select ng-model="character.model.race">
+            <option ng-repeat="race in character.availableRaces" ng-value="race">{{race.name}}</option>
+        </select>
+    </div>
+
+    <div class="itemContainer">
+        <div class="label">Name</div>
+        <div cloak-field class="cloakFieldContainer name" data-model="character.model.name">
+            <input type="text" ng-model="character.model.name"/>
+        </div>
+    </div>
+
+    <div class="itemContainer">
+        <table>
+            <tr>
+                <td></td>
+                <td>Lawful</td>
+                <td>Neutral</td>
+                <td>Chaotic</td>
+            </tr>
+            <tr>
+                <td>Good</td>
+                <td><input type="radio" name="alignment" value="1" ng-model="character.model.alignment"/></td>
+                <td><input type="radio" name="alignment" value="2" ng-model="character.model.alignment"/></td>
+                <td><input type="radio" name="alignment" value="3" ng-model="character.model.alignment"/></td>
+            </tr>
+            <tr>
+                <td>Neutral</td>
+                <td><input type="radio" name="alignment" value="4" ng-model="character.model.alignment"/></td>
+                <td><input type="radio" name="alignment" value="5" ng-model="character.model.alignment"/></td>
+                <td><input type="radio" name="alignment" value="6" ng-model="character.model.alignment"/></td>
+            </tr>
+            <tr>
+                <td>Evil</td>
+                <td><input type="radio" name="alignment" value="7" ng-model="character.model.alignment"/></td>
+                <td><input type="radio" name="alignment" value="8" ng-model="character.model.alignment"/></td>
+                <td><input type="radio" name="alignment" value="9" ng-model="character.model.alignment"/></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="itemContainer">
+        <div class="label">Gender</div>
+        <div>
+            <label> Male
+                <input type="radio" name="race" value="true" ng-model="character.model.isMale"/>
+            </label>
+            <label> Female
+                <input type="radio" name="race" value="false" ng-model="character.model.isMale"/>
+            </label>
+        </div>
+    </div>
+
+    <div class="itemContainer">
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="2">Classes</td>
+                    <td>Skill ranks</td>
+                    <td>Hit Die</td>
+                    <td>Level</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="class in character.model.classes">
+                    <td>{{$index + 1}}</td>
+                    <td>{{class.name + (class.archetype ? '(' + class.archetype + ')' : '')}}</td>
+                    <td>{{class.hitDie}}</td>
+                    <td>{{class.skillRanks}}</td>
+                    <td>{{class.level}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
