@@ -2,9 +2,3 @@
     height: 18px;
     border-bottom: 1px solid #aaaaaa;
 }
-
-.rotate270 {
-    -moz-transform: rotate(270deg);
-    -webkit-transform: rotate(270deg);
-    -o-transform: rotate(270deg);
-}
