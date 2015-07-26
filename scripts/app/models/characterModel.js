@@ -18,6 +18,7 @@
                     level: 5
                 }
             ];
+            self.proficiencyBonus = 0;
 
             return self;
         });
