@@ -41,11 +41,7 @@
 
                 // Methods
                 self.removeClass = function (characterClass) {
-                    var index = self.classes.indexOf(characterClass);
-
-                    if (index != -1) {
-                        self.classes.splice(index, 1);
-                    }
+                    self.classes.remove(characterClass);
                 };
 
                 return self;

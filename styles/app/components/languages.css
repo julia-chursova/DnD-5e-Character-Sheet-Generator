@@ -1,0 +1,23 @@
+.languages.component .languages-list {
+
+}
+
+.languages.component .add-language {
+    margin-top: 10px;
+}
+
+.languages.component .add-language .button-container {
+    vertical-align: top;
+}
+
+.languages.component .language-item {
+    border-bottom: 1px solid #aaaaaa;
+}
+
+.languages.component .language-item .remove-language {
+    visibility: hidden;
+}
+
+.languages.component .language-item:hover .remove-language {
+    visibility: visible;
+}

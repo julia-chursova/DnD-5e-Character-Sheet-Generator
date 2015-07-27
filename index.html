@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="styles/app/components/logo.css"/>
     <link rel="stylesheet" href="styles/app/components/player.css"/>
     <link rel="stylesheet" href="styles/app/components/character.css"/>
+    <link rel="stylesheet" href="styles/app/components/languages.css"/>
 
     <!-- directives' styles -->
     <link rel="stylesheet" href="styles/app/directives/container.css"/>
@@ -41,11 +42,11 @@
         <container data-layouts="[ '100%' ]" data-components="[ [] ]" data-removable="false"></container>
         <div ng-include="'templates/components/logo.html'"></div>
         <div ng-include="'templates/components/player.html'"></div>
+
+        <div ng-include="'templates/components/languages.html'"></div>
         <div ng-include="'templates/components/character.html'"></div>
         <div ng-include="'templates/components/stats.html'"></div>
         <div ng-include="'templates/components/inventory.html'"></div>
-        <div ng-include="'templates/components/languages.html'"></div>
-
         <div ng-include="'templates/components/armor.html'"></div>
         <div ng-include="'templates/components/shield.html'"></div>
         <div ng-include="'templates/components/armorClass.html'"></div>
@@ -66,6 +67,7 @@
 
     <!-- app scripts -->
     <script type="text/javascript" src="scripts/app/app.js"></script>
+    <script type="text/javascript" src="scripts/app/common.js"></script>
 
     <!-- dictionary data -->
     <script type="text/javascript" src="scripts/app/dictionaries/raceProvider.js"></script>

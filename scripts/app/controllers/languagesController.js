@@ -18,6 +18,10 @@
                         self.languages.push(self.pendingLanguage);
 
                     self.pendingLanguage = null;
-                }
+                };
+
+                self.removeLanguage = function (language) {
+                    self.languages.remove(language);
+                };
             }]);
 })();
