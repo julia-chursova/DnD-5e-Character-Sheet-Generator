@@ -20,6 +20,10 @@
     .page-break {
         display: none;
     }
+
+    .non-printable {
+        display: none;
+    }
 }
 
 @font-face {
