@@ -1,66 +1,122 @@
 <div class="character component" ng-controller="characterController as character">
     <div class="header">Character</div>
 
-    <div class="itemContainer">
-        <div class="label">Race</div>
-        <div cloak-field data-model="character.model.race.name" style="height: 100px;">
-            <select ng-model="character.model.race">
-                <option ng-repeat="race in character.availableRaces" ng-value="race">{{race.name}}</option>
-            </select>
+    <div>
+        <div class="inline-block">
+            <table cellpadding="0" cellspacing="0" class="alignment">
+                <tr>
+                    <td></td>
+                    <td class="label alignment-hor-label top-label" colspan="3">Good</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td rowspan="3">
+                        <div class="rotate270 label left-label">Lawful</div>
+                    </td>
+                    <td>
+                        <input type="radio" name="alignment" class="custom" value="1" id="lawful-good"
+                               ng-model="character.model.alignment"/>
+                        <label for="lawful-good"><span></span></label>
+                    </td>
+                    <td>
+                        <input type="radio" name="alignment" class="custom" value="2" id="neutral-good"
+                               ng-model="character.model.alignment"/>
+                        <label for="neutral-good"><span></span></label>
+                    </td>
+                    <td>
+                        <input type="radio" name="alignment" class="custom" value="3" id="chaotic-good"
+                               ng-model="character.model.alignment"/>
+                        <label for="chaotic-good"><span></span></label>
+                    </td>
+                    <td rowspan="3">
+                        <div class="rotate270 label right-label">Chaotic</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="alignment" class="custom" value="4" id="lawful-neutral"
+                               ng-model="character.model.alignment"/>
+                        <label for="lawful-neutral"><span></span></label>
+                    </td>
+                    <td>
+                        <input type="radio" name="alignment" class="custom" value="5" id="true-neutral"
+                               ng-model="character.model.alignment"/>
+                        <label for="true-neutral"><span></span></label>
+                    </td>
+                    <td>
+                        <input type="radio" name="alignment" class="custom" value="6" id="chaotic-neutral"
+                               ng-model="character.model.alignment"/>
+                        <label for="chaotic-neutral"><span></span></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="alignment" class="custom" value="7" id="lawful-evil"
+                               ng-model="character.model.alignment"/>
+                        <label for="lawful-evil"><span></span></label>
+                    </td>
+                    <td>
+                        <input type="radio" name="alignment" class="custom" value="8" id="neutral-evil"
+                               ng-model="character.model.alignment"/>
+                        <label for="neutral-evil"><span></span></label>
+                    </td>
+                    <td>
+                        <input type="radio" name="alignment" class="custom" value="9" id="chaotic-evil"
+                               ng-model="character.model.alignment"/>
+                        <label for="chaotic-evil"><span></span></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="label alignment-hor-label bottom-label" colspan="3">Evil</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div class="inline-block">
+            <div>
+                <div class="inline-block">
+                    <div class="label">Name</div>
+                    <div cloak-field class="cloakFieldContainer name" data-model="character.model.name">
+                        <input type="text" ng-model="character.model.name"/>
+                    </div>
+                </div>
+                <div class="inline-block">
+                    <div class="rotate270 inline-block label">Male</div>
+                    <div class="inline-block">
+                        <input type="radio" name="race" value="true" class="custom" id="sex-male" ng-model="character.model.isMale"/>
+                        <label for="sex-male"><span></span></label>
+                    </div>
+
+                    <div class="rotate270 inline-block label">Female</div>
+                    <div class="inline-block">
+                        <input type="radio" name="race" value="false" class="custom" id="sex-female" ng-model="character.model.isMale"/>
+                        <label for="sex-female"><span></span></label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="inline-block flex">
+                    <div class="label">Race</div>
+                    <div cloak-field data-model="character.model.race.name" class="race-data">
+                        <select ng-model="character.model.race">
+                            <option ng-repeat="race in character.availableRaces" ng-value="race">{{race.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="inline-block flex">
+                    <div class="label">Size</div>
+                    <div cloak-field data-model="character.model.race.name" class="race-data">
+                        <select ng-model="character.model.race">
+                            <option ng-repeat="race in character.availableRaces" ng-value="race">{{race.name}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="itemContainer">
-        <div class="label">Name</div>
-        <div cloak-field class="cloakFieldContainer name" data-model="character.model.name">
-            <input type="text" ng-model="character.model.name"/>
-        </div>
-    </div>
-
-    <div class="itemContainer">
-        <table>
-            <tr>
-                <td></td>
-                <td colspan="3">Good</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td class="rotate270" rowspan="3">Lawful</td>
-                <td><input type="radio" name="alignment" value="1" ng-model="character.model.alignment"/></td>
-                <td><input type="radio" name="alignment" value="2" ng-model="character.model.alignment"/></td>
-                <td><input type="radio" name="alignment" value="3" ng-model="character.model.alignment"/></td>
-                <td class="rotate270" rowspan="3">Chaotic</td>
-            </tr>
-            <tr>
-                <td><input type="radio" name="alignment" value="4" ng-model="character.model.alignment"/></td>
-                <td><input type="radio" name="alignment" value="5" ng-model="character.model.alignment"/></td>
-                <td><input type="radio" name="alignment" value="6" ng-model="character.model.alignment"/></td>
-            </tr>
-            <tr>
-                <td><input type="radio" name="alignment" value="7" ng-model="character.model.alignment"/></td>
-                <td><input type="radio" name="alignment" value="8" ng-model="character.model.alignment"/></td>
-                <td><input type="radio" name="alignment" value="9" ng-model="character.model.alignment"/></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td colspan="3">Evil</td>
-                <td></td>
-            </tr>
-        </table>
-    </div>
-
-    <div class="itemContainer">
-        <div>
-            <label> Male
-                <input type="radio" name="race" value="true" ng-model="character.model.isMale"/>
-            </label>
-            <label> Female
-                <input type="radio" name="race" value="false" ng-model="character.model.isMale"/>
-            </label>
-        </div>
-    </div>
-
-    <div class="itemContainer">
+    <div>
         <table>
             <thead>
             <tr>

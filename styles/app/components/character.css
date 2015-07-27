@@ -2,3 +2,21 @@
     height: 18px;
     border-bottom: 1px solid #aaaaaa;
 }
+
+.character.component .alignment-hor-label {
+    text-align: center;
+}
+
+.character.component .left-label {
+    transform-origin: 60% 20%;
+}
+
+.character.component .right-label {
+    transform-origin: 30% 110%;
+}
+
+.character.component .race-data {
+    min-height: 20px;
+    align-items: stretch;
+    width: 100%;
+}
