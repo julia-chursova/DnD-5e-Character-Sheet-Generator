@@ -4,7 +4,8 @@
     angular.module(appName)
         .factory('characterModel', [
             'statsModel',
-            function (statsModel) {
+            'traitsModel',
+            function (statsModel, traitsModel) {
                 var self = this;
 
                 // Fields
@@ -24,6 +25,7 @@
                 ];
 
                 self.proficiencyBonus = 0;
+                self.initiativeBonus = 0;
 
                 // Calculated properties
                 self.effectiveLevel = function () {
@@ -36,7 +38,12 @@
                 };
 
                 self.initiative = function () {
-                    return statsModel.dexModifier();
+                    var result = statsModel.dexModifier() + self.initiativeBonus;
+
+                    if (traitsModel.haveAlertFeat())
+                        result += 5;
+
+                    return result;
                 };
 
                 // Methods

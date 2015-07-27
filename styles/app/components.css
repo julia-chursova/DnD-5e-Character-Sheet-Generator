@@ -19,3 +19,8 @@
     font-size: 8pt;
     color: #333333;
 }
+
+.component .major-label {
+    font-size: 9pt;
+    color: #222222;
+}

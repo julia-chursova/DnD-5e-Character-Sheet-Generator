@@ -32,6 +32,10 @@
                     {
                         name: 'Languages',
                         template: 'templates/components/languages.html'
+                    },
+                    {
+                        name: 'Initiative',
+                        template: 'templates/components/initiative.html'
                     }
                 ];
 

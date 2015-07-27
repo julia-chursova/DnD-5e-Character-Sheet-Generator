@@ -3,9 +3,19 @@
 
     angular.module(appName)
         .factory('traitsModel', function () {
-            return [{
-                name: 'example',
-                description: 'wtf'
-            }];
+            var traits = [
+                {
+                    name: 'example',
+                    description: 'wtf'
+                }];
+
+            var haveAlertFeat = function () {
+                return false;
+            };
+
+            return {
+                traits: traits,
+                haveAlertFeat: haveAlertFeat
+            }
         });
 })();

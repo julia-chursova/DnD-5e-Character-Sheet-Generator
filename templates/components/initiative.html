@@ -1,5 +1,28 @@
 <div class="initiative component" ng-controller="characterController as controller">
     <div class="header">Initiative</div>
 
-    <div ng-bind="controller.model.initiative()"></div>
+    <table class="data">
+        <tr>
+            <td class="cell total" ng-bind="controller.model.initiative()"></td>
+            <td>=</td>
+            <td class="cell misc" ng-bind="controller.stats.dexModifier()"></td>
+            <td>+</td>
+            <td class="cell misc feat" ng-bind="controller.traitInitiativeBonus()"></td>
+            <td>+</td>
+            <td class="cell misc bonus">
+                <div cloak-field data-model="controller.initiativeBonus()">
+                    <input type="number" ng-model="controller.model.initiativeBonus"/>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="major-label">Total</td>
+            <td></td>
+            <td class="label">DEX</td>
+            <td></td>
+            <td class="label feat">Alert (feat)</td>
+            <td></td>
+            <td class="label">Bonus</td>
+        </tr>
+    </table>
 </div>
