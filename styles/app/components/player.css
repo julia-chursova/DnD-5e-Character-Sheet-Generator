@@ -1,23 +1,23 @@
-.app .player.component .label {
+.player.component .label {
     font-size: 8pt;
     color: #333333;
 }
 
-.app .player.component .itemContainer {
+.player.component .itemContainer {
     margin-top: 4px;
 }
 
-.app .player.component .cloakFieldContainer {
+.player.component .cloakFieldContainer {
     height: 18px;
     border-bottom: 1px solid #aaaaaa;
 }
 
-.app .player.component .cloakField.input {
+.player.component .cloakField.input {
     height: 100%;
     max-width: 100%;
 }
 
-.app .player.component .cloakField input {
+.player.component .cloakField input {
     height: 100%;
     max-width: 100%;
 }
