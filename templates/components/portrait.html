@@ -1,3 +1,13 @@
 <div class="portrait component">
     <div class="header">Portrait</div>
+
+    <div>
+        <canvas width="{{width}}mm" height="{{height}}mm" style="width: {{width}}px; height: {{height}}px"></canvas>
+    </div>
+
+    <div class="non-printable">
+        <button ng-click="initUpload()">Upload</button>
+        <input type="file" accept="image/*" onchange="angular.element(this).scope().upload(event)" style="display: none"/>
+        <button ng-click="clear()">Clear</button>
+    </div>
 </div>

@@ -40,10 +40,7 @@
     <div ng-include="'templates/menu.html'"></div>
 
     <div class="a4-sheet">
-        <container data-layouts="[ '100%' ]" data-components="[ [] ]" data-removable="false"></container>
-        <div ng-include="'templates/components/logo.html'"></div>
-        <div ng-include="'templates/components/player.html'"></div>
-        <div ng-include="'templates/components/initiative.html'"></div>
+        <div portrait-component></div>
 
         <div ng-include="'templates/components/languages.html'"></div>
         <div ng-include="'templates/components/character.html'"></div>
@@ -59,11 +56,17 @@
         <div ng-include="'templates/components/speed.html'"></div>
         <div ng-include="'templates/components/potions.html'"></div>
         <div ng-include="'templates/components/scrolls.html'"></div>
-        <div ng-include="'templates/components/portrait.html'"></div>
         <div ng-include="'templates/components/spells.html'"></div>
     </div>
+
     <div class="page-break"></div>
+
     <div class="a4-sheet">
+        <container data-layouts="[ '100%' ]" data-components="[ [] ]" data-removable="false"></container>
+
+        <div ng-include="'templates/components/logo.html'"></div>
+        <div ng-include="'templates/components/player.html'"></div>
+        <div ng-include="'templates/components/initiative.html'"></div>
     </div>
 
     <!-- app scripts -->
@@ -84,9 +87,9 @@
     <script type="text/javascript" src="scripts/app/models/weaponModel.js"></script>
     <script type="text/javascript" src="scripts/app/models/traitsModel.js"></script>
 
-    <!-- directives -->
+    <!-- common directives -->
     <script type="text/javascript" src="scripts/app/directives/containerDirective.js"></script>
-    <script type="text/javascript" src="scripts/app/directives/cloakField.js"></script>
+    <script type="text/javascript" src="scripts/app/directives/cloakFieldDirective.js"></script>
 
     <!-- controllers -->
     <script type="text/javascript" src="scripts/app/controllers/appController.js"></script>
@@ -98,5 +101,8 @@
     <script type="text/javascript" src="scripts/app/controllers/armorController.js"></script>
     <script type="text/javascript" src="scripts/app/controllers/weaponController.js"></script>
     <script type="text/javascript" src="scripts/app/controllers/traitsController.js"></script>
+
+    <!-- components directives -->
+    <script type="text/javascript" src="scripts/app/componentDirectives/portraitDirective.js"></script>
 </body>
 </html>

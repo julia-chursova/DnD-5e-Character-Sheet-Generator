@@ -18,24 +18,12 @@
                         template: 'templates/components/player.html'
                     },
                     {
-                        name: 'Stats',
-                        template: 'templates/components/stats.html'
-                    },
-                    {
-                        name: 'Inventory',
-                        template: 'templates/components/inventory.html'
-                    },
-                    {
-                        name: 'Character',
-                        template: 'templates/components/character.html'
-                    },
-                    {
-                        name: 'Languages',
-                        template: 'templates/components/languages.html'
-                    },
-                    {
                         name: 'Initiative',
                         template: 'templates/components/initiative.html'
+                    },
+                    {
+                        name: 'Portrait',
+                        template: 'templates/directiveDefinition/portraitComponent.html'
                     }
                 ];
 
