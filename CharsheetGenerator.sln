@@ -76,8 +76,115 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "models", "models", "{8D5D96
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{9C1C800E-EB65-41CF-8369-ED3BC27C33FB}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\libs\acute.select.modified.js = scripts\libs\acute.select.modified.js
+		scripts\libs\angular.min.js = scripts\libs\angular.min.js
+		scripts\libs\ngDraggable.modified.js = scripts\libs\ngDraggable.modified.js
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B8AD5025-473B-473F-BEFB-2CDAF3930A55}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\tests\SpecRunner.html = scripts\tests\SpecRunner.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "spec", "spec", "{04332D82-9E23-42F8-80C4-4512E97A6117}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\tests\spec\statsCalculatorSpecs.js = scripts\tests\spec\statsCalculatorSpecs.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{A4D43C80-8B83-458A-8C4E-626D6F924CD0}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\tests\lib\angular-mocks.js = scripts\tests\lib\angular-mocks.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "jasmine-2.3.4", "jasmine-2.3.4", "{CE390E61-137F-4658-852A-1366E77680B4}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\tests\lib\jasmine-2.3.4\boot.js = scripts\tests\lib\jasmine-2.3.4\boot.js
+		scripts\tests\lib\jasmine-2.3.4\console.js = scripts\tests\lib\jasmine-2.3.4\console.js
+		scripts\tests\lib\jasmine-2.3.4\jasmine-html.js = scripts\tests\lib\jasmine-2.3.4\jasmine-html.js
+		scripts\tests\lib\jasmine-2.3.4\jasmine.css = scripts\tests\lib\jasmine-2.3.4\jasmine.css
+		scripts\tests\lib\jasmine-2.3.4\jasmine.js = scripts\tests\lib\jasmine-2.3.4\jasmine.js
+		scripts\tests\lib\jasmine-2.3.4\jasmine_favicon.png = scripts\tests\lib\jasmine-2.3.4\jasmine_favicon.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{2C0F9F84-801F-43CD-A570-3050D2A3EEC9}"
+	ProjectSection(SolutionItems) = preProject
+		templates\menu.html = templates\menu.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{8AAEFE33-156F-455A-9949-0A16FC9F476D}"
+	ProjectSection(SolutionItems) = preProject
+		styles\app\app.css = styles\app\app.css
+		styles\app\common.css = styles\app\common.css
+		styles\app\components.css = styles\app\components.css
+		styles\app\menu.css = styles\app\menu.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{BF7E5925-B8CA-4A70-A6DD-0C17C0CE6DD2}"
+	ProjectSection(SolutionItems) = preProject
+		styles\app\components\character.css = styles\app\components\character.css
+		styles\app\components\initiative.css = styles\app\components\initiative.css
+		styles\app\components\languages.css = styles\app\components\languages.css
+		styles\app\components\logo.css = styles\app\components\logo.css
+		styles\app\components\player.css = styles\app\components\player.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "directives", "directives", "{C742F4BF-1F5C-4D4F-82B1-FC097FB478A7}"
+	ProjectSection(SolutionItems) = preProject
+		styles\app\directives\cloakField.css = styles\app\directives\cloakField.css
+		styles\app\directives\container.css = styles\app\directives\container.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{20FA828B-3232-4E3C-958E-B060B7F3D005}"
+	ProjectSection(SolutionItems) = preProject
+		styles\libs\acute.select.modified.css = styles\libs\acute.select.modified.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{BFED86A2-5FE4-4098-B9BB-478BF4731EA4}"
+	ProjectSection(SolutionItems) = preProject
+		templates\components\armor.html = templates\components\armor.html
+		templates\components\armorClass.html = templates\components\armorClass.html
+		templates\components\character.html = templates\components\character.html
+		templates\components\initiative.html = templates\components\initiative.html
+		templates\components\inventory.html = templates\components\inventory.html
+		templates\components\languages.html = templates\components\languages.html
+		templates\components\logo.html = templates\components\logo.html
+		templates\components\player.html = templates\components\player.html
+		templates\components\portrait.html = templates\components\portrait.html
+		templates\components\potions.html = templates\components\potions.html
+		templates\components\proficiency.html = templates\components\proficiency.html
+		templates\components\scrolls.html = templates\components\scrolls.html
+		templates\components\shield.html = templates\components\shield.html
+		templates\components\skills.html = templates\components\skills.html
+		templates\components\speed.html = templates\components\speed.html
+		templates\components\spells.html = templates\components\spells.html
+		templates\components\stats.html = templates\components\stats.html
+		templates\components\traits.html = templates\components\traits.html
+		templates\components\weapon.html = templates\components\weapon.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "containers", "containers", "{167EA520-1F6D-42A4-BE8C-1F8D8CE4AF8B}"
+	ProjectSection(SolutionItems) = preProject
+		templates\containers\33p66p.html = templates\containers\33p66p.html
+		templates\containers\50p50p.html = templates\containers\50p50p.html
+		templates\containers\66p33p.html = templates\containers\66p33p.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "directiveDefinition", "directiveDefinition", "{C5D972BA-4F21-49B2-AABA-FF52A1A5F79D}"
+	ProjectSection(SolutionItems) = preProject
+		templates\directiveDefinition\portraitComponent.html = templates\directiveDefinition\portraitComponent.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "directives", "directives", "{E0EE3FEC-AB98-4B75-A098-C94F5CE5CA04}"
+	ProjectSection(SolutionItems) = preProject
+		templates\directives\cloakField.html = templates\directives\cloakField.html
+		templates\directives\container.html = templates\directives\container.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{93245FE6-499F-4325-AA4D-327D37319B58}"
+	ProjectSection(SolutionItems) = preProject
+		templates\libs\acute.select.htm = templates\libs\acute.select.htm
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
@@ -96,5 +203,18 @@ Global
 		{8D5D962B-3996-4D4C-ADFB-DBE290D2AD8B} = {1C095B3E-0A5D-4BA4-8EE2-ACB2AEB55405}
 		{9C1C800E-EB65-41CF-8369-ED3BC27C33FB} = {5E9098ED-50DB-4DBB-A984-1E1D56829717}
 		{B8AD5025-473B-473F-BEFB-2CDAF3930A55} = {5E9098ED-50DB-4DBB-A984-1E1D56829717}
+		{04332D82-9E23-42F8-80C4-4512E97A6117} = {B8AD5025-473B-473F-BEFB-2CDAF3930A55}
+		{A4D43C80-8B83-458A-8C4E-626D6F924CD0} = {B8AD5025-473B-473F-BEFB-2CDAF3930A55}
+		{CE390E61-137F-4658-852A-1366E77680B4} = {A4D43C80-8B83-458A-8C4E-626D6F924CD0}
+		{2C0F9F84-801F-43CD-A570-3050D2A3EEC9} = {3FE36B56-1468-491D-873C-EF8E030524D0}
+		{8AAEFE33-156F-455A-9949-0A16FC9F476D} = {790B475E-B2BE-4743-9187-FD110D12A73C}
+		{BF7E5925-B8CA-4A70-A6DD-0C17C0CE6DD2} = {8AAEFE33-156F-455A-9949-0A16FC9F476D}
+		{C742F4BF-1F5C-4D4F-82B1-FC097FB478A7} = {8AAEFE33-156F-455A-9949-0A16FC9F476D}
+		{20FA828B-3232-4E3C-958E-B060B7F3D005} = {790B475E-B2BE-4743-9187-FD110D12A73C}
+		{BFED86A2-5FE4-4098-B9BB-478BF4731EA4} = {2C0F9F84-801F-43CD-A570-3050D2A3EEC9}
+		{167EA520-1F6D-42A4-BE8C-1F8D8CE4AF8B} = {2C0F9F84-801F-43CD-A570-3050D2A3EEC9}
+		{C5D972BA-4F21-49B2-AABA-FF52A1A5F79D} = {2C0F9F84-801F-43CD-A570-3050D2A3EEC9}
+		{E0EE3FEC-AB98-4B75-A098-C94F5CE5CA04} = {2C0F9F84-801F-43CD-A570-3050D2A3EEC9}
+		{93245FE6-499F-4325-AA4D-327D37319B58} = {2C0F9F84-801F-43CD-A570-3050D2A3EEC9}
 	EndGlobalSection
 EndGlobal
