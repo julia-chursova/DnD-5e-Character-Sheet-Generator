@@ -1,31 +1,3 @@
-.initiative.component .data {
-    margin-top: 4px;
-}
-
-.initiative.component .cell {
-    padding: 2px 6px;
-    width: 22px;
-    text-align: center;
-}
-
-.initiative.component .total {
-    border: 1px solid #777777;
-}
-
-.initiative.component .misc {
-    border-bottom: 1px solid #777777;
-}
-
-.initiative.component .label,
-.initiative.component .major-label {
-    text-align: center;
-}
-
-.initiative.component .cell input {
+.initiative.component .cell.feat {
     width: 30px;
-}
-
-.initiative.component .cell.bonus div {
-    width: 100%;
-    height: 20px;
 }

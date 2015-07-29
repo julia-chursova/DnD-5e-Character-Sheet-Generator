@@ -24,3 +24,35 @@
     font-size: 9pt;
     color: #222222;
 }
+
+.component .fillable-formula {
+    margin-top: 4px;
+}
+
+.component .fillable-formula .label,
+.component .fillable-formula .major-label {
+    text-align: center;
+}
+
+.component .fillable-formula .cell {
+    padding: 2px 6px;
+    width: 22px;
+    text-align: center;
+}
+
+.component .fillable-formula .cell.total {
+    border: 1px solid #777777;
+}
+
+.component .fillable-formula .cell.summand {
+    border-bottom: 1px solid #777777;
+}
+
+.component .fillable-formula .cell.min-input input {
+    width: 30px;
+}
+
+.component .fillable-formula .cell div {
+    width: 100%;
+    min-height: 20px;
+}
