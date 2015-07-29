@@ -1,0 +1,100 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3FE36B56-1468-491D-873C-EF8E030524D0}"
+	ProjectSection(SolutionItems) = preProject
+		favicon.ico = favicon.ico
+		index.html = index.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "fonts", "fonts", "{E4804418-3C14-4426-A096-AE6E9EF38D74}"
+	ProjectSection(SolutionItems) = preProject
+		fonts\dalelands_uncial.otf = fonts\dalelands_uncial.otf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{8DFB6839-B1DA-49E8-B002-8327FBA0258F}"
+	ProjectSection(SolutionItems) = preProject
+		images\dropdown.gif = images\dropdown.gif
+		images\short_logo.png = images\short_logo.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "styles", "styles", "{790B475E-B2BE-4743-9187-FD110D12A73C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{5E9098ED-50DB-4DBB-A984-1E1D56829717}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{1C095B3E-0A5D-4BA4-8EE2-ACB2AEB55405}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\app\app.js = scripts\app\app.js
+		scripts\app\common.js = scripts\app\common.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "componentDirectives", "componentDirectives", "{988FB4AC-070B-4BA1-A3E9-104D355D97FF}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\app\componentDirectives\portraitDirective.js = scripts\app\componentDirectives\portraitDirective.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "controllers", "controllers", "{CC409A54-2C16-4445-BBF6-448D89304808}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\app\controllers\appController.js = scripts\app\controllers\appController.js
+		scripts\app\controllers\armorController.js = scripts\app\controllers\armorController.js
+		scripts\app\controllers\characterController.js = scripts\app\controllers\characterController.js
+		scripts\app\controllers\inventoryController.js = scripts\app\controllers\inventoryController.js
+		scripts\app\controllers\languagesController.js = scripts\app\controllers\languagesController.js
+		scripts\app\controllers\playerController.js = scripts\app\controllers\playerController.js
+		scripts\app\controllers\skillsController.js = scripts\app\controllers\skillsController.js
+		scripts\app\controllers\statsController.js = scripts\app\controllers\statsController.js
+		scripts\app\controllers\traitsController.js = scripts\app\controllers\traitsController.js
+		scripts\app\controllers\weaponController.js = scripts\app\controllers\weaponController.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dictionaries", "dictionaries", "{AFFD884D-D56F-4070-9DF4-250FEFFD04D3}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\app\dictionaries\classProvider.js = scripts\app\dictionaries\classProvider.js
+		scripts\app\dictionaries\languagesProvider.js = scripts\app\dictionaries\languagesProvider.js
+		scripts\app\dictionaries\raceProvider.js = scripts\app\dictionaries\raceProvider.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "directives", "directives", "{302E8C5D-0E5E-4E57-97A5-7FBE59A35A9B}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\app\directives\cloakFieldDirective.js = scripts\app\directives\cloakFieldDirective.js
+		scripts\app\directives\containerDirective.js = scripts\app\directives\containerDirective.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "models", "models", "{8D5D962B-3996-4D4C-ADFB-DBE290D2AD8B}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\app\models\armorModel.js = scripts\app\models\armorModel.js
+		scripts\app\models\characterModel.js = scripts\app\models\characterModel.js
+		scripts\app\models\inventoryModel.js = scripts\app\models\inventoryModel.js
+		scripts\app\models\languagesModel.js = scripts\app\models\languagesModel.js
+		scripts\app\models\playerModel.js = scripts\app\models\playerModel.js
+		scripts\app\models\skillsModel.js = scripts\app\models\skillsModel.js
+		scripts\app\models\statsModel.js = scripts\app\models\statsModel.js
+		scripts\app\models\traitsModel.js = scripts\app\models\traitsModel.js
+		scripts\app\models\weaponModel.js = scripts\app\models\weaponModel.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{9C1C800E-EB65-41CF-8369-ED3BC27C33FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B8AD5025-473B-473F-BEFB-2CDAF3930A55}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E4804418-3C14-4426-A096-AE6E9EF38D74} = {3FE36B56-1468-491D-873C-EF8E030524D0}
+		{8DFB6839-B1DA-49E8-B002-8327FBA0258F} = {3FE36B56-1468-491D-873C-EF8E030524D0}
+		{790B475E-B2BE-4743-9187-FD110D12A73C} = {3FE36B56-1468-491D-873C-EF8E030524D0}
+		{5E9098ED-50DB-4DBB-A984-1E1D56829717} = {3FE36B56-1468-491D-873C-EF8E030524D0}
+		{1C095B3E-0A5D-4BA4-8EE2-ACB2AEB55405} = {5E9098ED-50DB-4DBB-A984-1E1D56829717}
+		{988FB4AC-070B-4BA1-A3E9-104D355D97FF} = {1C095B3E-0A5D-4BA4-8EE2-ACB2AEB55405}
+		{CC409A54-2C16-4445-BBF6-448D89304808} = {1C095B3E-0A5D-4BA4-8EE2-ACB2AEB55405}
+		{AFFD884D-D56F-4070-9DF4-250FEFFD04D3} = {1C095B3E-0A5D-4BA4-8EE2-ACB2AEB55405}
+		{302E8C5D-0E5E-4E57-97A5-7FBE59A35A9B} = {1C095B3E-0A5D-4BA4-8EE2-ACB2AEB55405}
+		{8D5D962B-3996-4D4C-ADFB-DBE290D2AD8B} = {1C095B3E-0A5D-4BA4-8EE2-ACB2AEB55405}
+		{9C1C800E-EB65-41CF-8369-ED3BC27C33FB} = {5E9098ED-50DB-4DBB-A984-1E1D56829717}
+		{B8AD5025-473B-473F-BEFB-2CDAF3930A55} = {5E9098ED-50DB-4DBB-A984-1E1D56829717}
+	EndGlobalSection
+EndGlobal
