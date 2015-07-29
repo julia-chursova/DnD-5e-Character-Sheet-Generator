@@ -31,4 +31,34 @@
             </tr>
         </table>
     </div>
+	<div class="statsBlock">
+        <table class="fillable-formula">
+            <tr>
+                <td class="cell total" ng-bind="controller.printableDexModifier()"></td>
+                <td>=</td>
+                <td class="cell summand min-input">
+                    <div cloak-field data-model="controller.stats.dexterity">
+                        <input type="number" min="1" max="20" ng-model="controller.stats.dexterity"/>
+                    </div>
+                </td>
+                <td>+</td>
+                <td class="cell summand" ng-bind="controller.racialDexBonus()"></td>
+                <td>+</td>
+                <td class="cell summand min-input">
+                    <div cloak-field data-model="controller.stats.dexBonus">
+                        <input type="number" ng-model="controller.stats.dexBonus"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="major-label">DEX</td>
+                <td></td>
+                <td class="label">Dexterity</td>
+                <td></td>
+                <td class="label">Racial Bonus</td>
+                <td></td>
+                <td class="label">Misc Bonus</td>
+            </tr>
+        </table>
+    </div>
 </div>
