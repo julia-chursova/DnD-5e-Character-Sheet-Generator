@@ -4,7 +4,7 @@
     <div class="statsBlock">
         <table class="fillable-formula">
             <tr>
-                <td class="cell total" ng-bind="controller.stats.strModifier()"></td>
+                <td class="cell total" ng-bind="controller.printableStrModifier()"></td>
                 <td>=</td>
                 <td class="cell summand min-input">
                     <div cloak-field data-model="controller.stats.strength">
@@ -12,7 +12,7 @@
                     </div>
                 </td>
                 <td>+</td>
-                <td class="cell summand" ng-bind="controller.stats.racialStrBonus()"></td>
+                <td class="cell summand" ng-bind="controller.racialStrBonus()"></td>
                 <td>+</td>
                 <td class="cell summand min-input">
                     <div cloak-field data-model="controller.stats.strBonus">
@@ -21,7 +21,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="major-label">Total</td>
+                <td class="major-label">STR</td>
                 <td></td>
                 <td class="label">Strength</td>
                 <td></td>
