@@ -61,4 +61,124 @@
             </tr>
         </table>
     </div>
+		<div class="statsBlock">
+        <table class="fillable-formula">
+            <tr>
+                <td class="cell total" ng-bind="controller.printableConModifier()"></td>
+                <td>=</td>
+                <td class="cell summand min-input">
+                    <div cloak-field data-model="controller.stats.constitution">
+                        <input type="number" min="1" max="20" ng-model="controller.stats.constitution"/>
+                    </div>
+                </td>
+                <td>+</td>
+                <td class="cell summand" ng-bind="controller.racialConBonus()"></td>
+                <td>+</td>
+                <td class="cell summand min-input">
+                    <div cloak-field data-model="controller.stats.conBonus">
+                        <input type="number" ng-model="controller.stats.conBonus"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="major-label">CON</td>
+                <td></td>
+                <td class="label">Constitution</td>
+                <td></td>
+                <td class="label">Racial Bonus</td>
+                <td></td>
+                <td class="label">Misc Bonus</td>
+            </tr>
+        </table>
+    </div>
+		<div class="statsBlock">
+        <table class="fillable-formula">
+            <tr>
+                <td class="cell total" ng-bind="controller.printableIntModifier()"></td>
+                <td>=</td>
+                <td class="cell summand min-input">
+                    <div cloak-field data-model="controller.stats.intelligence">
+                        <input type="number" min="1" max="20" ng-model="controller.stats.intelligence"/>
+                    </div>
+                </td>
+                <td>+</td>
+                <td class="cell summand" ng-bind="controller.racialIntBonus()"></td>
+                <td>+</td>
+                <td class="cell summand min-input">
+                    <div cloak-field data-model="controller.stats.intBonus">
+                        <input type="number" ng-model="controller.stats.intBonus"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="major-label">INT</td>
+                <td></td>
+                <td class="label">Intelligence</td>
+                <td></td>
+                <td class="label">Racial Bonus</td>
+                <td></td>
+                <td class="label">Misc Bonus</td>
+            </tr>
+        </table>
+    </div>	
+		<div class="statsBlock">
+        <table class="fillable-formula">
+            <tr>
+                <td class="cell total" ng-bind="controller.printableWisModifier()"></td>
+                <td>=</td>
+                <td class="cell summand min-input">
+                    <div cloak-field data-model="controller.stats.wisdom">
+                        <input type="number" min="1" max="20" ng-model="controller.stats.wisdom"/>
+                    </div>
+                </td>
+                <td>+</td>
+                <td class="cell summand" ng-bind="controller.racialWisBonus()"></td>
+                <td>+</td>
+                <td class="cell summand min-input">
+                    <div cloak-field data-model="controller.stats.wisBonus">
+                        <input type="number" ng-model="controller.stats.wisBonus"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="major-label">WIS</td>
+                <td></td>
+                <td class="label">Wisdom</td>
+                <td></td>
+                <td class="label">Racial Bonus</td>
+                <td></td>
+                <td class="label">Misc Bonus</td>
+            </tr>
+        </table>
+    </div>
+		<div class="statsBlock">
+        <table class="fillable-formula">
+            <tr>
+                <td class="cell total" ng-bind="controller.printableChaModifier()"></td>
+                <td>=</td>
+                <td class="cell summand min-input">
+                    <div cloak-field data-model="controller.stats.charisma">
+                        <input type="number" min="1" max="20" ng-model="controller.stats.charisma"/>
+                    </div>
+                </td>
+                <td>+</td>
+                <td class="cell summand" ng-bind="controller.racialChaBonus()"></td>
+                <td>+</td>
+                <td class="cell summand min-input">
+                    <div cloak-field data-model="controller.stats.chaBonus">
+                        <input type="number" ng-model="controller.stats.chaBonus"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="major-label">CHA</td>
+                <td></td>
+                <td class="label">Charisma</td>
+                <td></td>
+                <td class="label">Racial Bonus</td>
+                <td></td>
+                <td class="label">Misc Bonus</td>
+            </tr>
+        </table>
+    </div>		
 </div>
