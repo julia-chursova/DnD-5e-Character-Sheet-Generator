@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{97FDD0D2-A718-450E-89E8-CADE1BE0BAA8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CharsheetGenerator</RootNamespace>
+    <AssemblyName>CharsheetGenerator</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="favicon.ico" />
+    <Content Include="images\dropdown.gif" />
+    <Content Include="images\short_logo.png" />
+    <Content Include="index.html" />
+    <Content Include="scripts\app\app.js" />
+    <Content Include="scripts\app\common.js" />
+    <Content Include="scripts\app\componentDirectives\portraitDirective.js" />
+    <Content Include="scripts\app\controllers\appController.js" />
+    <Content Include="scripts\app\controllers\armorController.js" />
+    <Content Include="scripts\app\controllers\characterController.js" />
+    <Content Include="scripts\app\controllers\inventoryController.js" />
+    <Content Include="scripts\app\controllers\languagesController.js" />
+    <Content Include="scripts\app\controllers\playerController.js" />
+    <Content Include="scripts\app\controllers\skillsController.js" />
+    <Content Include="scripts\app\controllers\statsController.js" />
+    <Content Include="scripts\app\controllers\traitsController.js" />
+    <Content Include="scripts\app\controllers\weaponController.js" />
+    <Content Include="scripts\app\dictionaries\classProvider.js" />
+    <Content Include="scripts\app\dictionaries\languagesProvider.js" />
+    <Content Include="scripts\app\dictionaries\raceProvider.js" />
+    <Content Include="scripts\app\directives\cloakFieldDirective.js" />
+    <Content Include="scripts\app\directives\containerDirective.js" />
+    <Content Include="scripts\app\models\armorModel.js" />
+    <Content Include="scripts\app\models\characterModel.js" />
+    <Content Include="scripts\app\models\inventoryModel.js" />
+    <Content Include="scripts\app\models\languagesModel.js" />
+    <Content Include="scripts\app\models\playerModel.js" />
+    <Content Include="scripts\app\models\skillsModel.js" />
+    <Content Include="scripts\app\models\statsModel.js" />
+    <Content Include="scripts\app\models\traitsModel.js" />
+    <Content Include="scripts\app\models\weaponModel.js" />
+    <Content Include="scripts\libs\acute.select.modified.js" />
+    <Content Include="scripts\libs\angular.min.js" />
+    <Content Include="scripts\libs\ngDraggable.modified.js" />
+    <Content Include="scripts\tests\lib\angular-mocks.js" />
+    <Content Include="scripts\tests\lib\jasmine-2.3.4\boot.js" />
+    <Content Include="scripts\tests\lib\jasmine-2.3.4\console.js" />
+    <Content Include="scripts\tests\lib\jasmine-2.3.4\jasmine-html.js" />
+    <Content Include="scripts\tests\lib\jasmine-2.3.4\jasmine.css" />
+    <Content Include="scripts\tests\lib\jasmine-2.3.4\jasmine.js" />
+    <Content Include="scripts\tests\lib\jasmine-2.3.4\jasmine_favicon.png" />
+    <Content Include="scripts\tests\SpecRunner.html" />
+    <Content Include="scripts\tests\spec\statsCalculatorSpecs.js" />
+    <Content Include="styles\app\app.css" />
+    <Content Include="styles\app\common.css" />
+    <Content Include="styles\app\components.css" />
+    <Content Include="styles\app\components\character.css" />
+    <Content Include="styles\app\components\initiative.css" />
+    <Content Include="styles\app\components\languages.css" />
+    <Content Include="styles\app\components\logo.css" />
+    <Content Include="styles\app\components\player.css" />
+    <Content Include="styles\app\directives\cloakField.css" />
+    <Content Include="styles\app\directives\container.css" />
+    <Content Include="styles\app\menu.css" />
+    <Content Include="styles\libs\acute.select.modified.css" />
+    <Content Include="templates\components\armor.html" />
+    <Content Include="templates\components\armorClass.html" />
+    <Content Include="templates\components\character.html" />
+    <Content Include="templates\components\initiative.html" />
+    <Content Include="templates\components\inventory.html" />
+    <Content Include="templates\components\languages.html" />
+    <Content Include="templates\components\logo.html" />
+    <Content Include="templates\components\player.html" />
+    <Content Include="templates\components\portrait.html" />
+    <Content Include="templates\components\potions.html" />
+    <Content Include="templates\components\proficiency.html" />
+    <Content Include="templates\components\scrolls.html" />
+    <Content Include="templates\components\shield.html" />
+    <Content Include="templates\components\skills.html" />
+    <Content Include="templates\components\speed.html" />
+    <Content Include="templates\components\spells.html" />
+    <Content Include="templates\components\stats.html" />
+    <Content Include="templates\components\traits.html" />
+    <Content Include="templates\components\weapon.html" />
+    <Content Include="templates\containers\33p66p.html" />
+    <Content Include="templates\containers\50p50p.html" />
+    <Content Include="templates\containers\66p33p.html" />
+    <Content Include="templates\directiveDefinition\portraitComponent.html" />
+    <Content Include="templates\directives\cloakField.html" />
+    <Content Include="templates\directives\container.html" />
+    <Content Include="templates\libs\acute.select.htm" />
+    <Content Include="templates\menu.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\dalelands_uncial.otf" />
+    <Content Include="LICENSE" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>14992</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:14421/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
