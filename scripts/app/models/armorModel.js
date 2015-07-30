@@ -40,6 +40,13 @@
                     return self.armor ? self.armor.weight || 0 : 0;
                 };
 
+	            self.dexBonus = function() {
+					return self.armor &&(self.armor.armorClass || 0) > 0 &&
+					(self.armor.maxDexBonus === 0 || self.armor.maxDexBonus)
+                        ? Math.min(self.armor.maxDexBonus, statsModel.dexModifier())
+                        : statsModel.dexModifier();
+	            };
+
                 self.armorClass = function () {
                     var result = self.baseAC;
 
@@ -52,9 +59,7 @@
                     if (self.miscBonus)
                         result += (self.miscBonus || 0);
 
-                    result += self.armor && (self.armor.armorClass || 0) > 0 && self.armor.maxDexBonus !== ''
-                        ? Math.min(self.armor.maxDexBonus, statsModel.dexModifier())
-                        : statsModel.dexModifier();
+	                result += self.dexBonus();
 
                     return result;
                 };
