@@ -16,7 +16,7 @@
                 self.armor = {
                     name: '',
                     type: '',
-                    armorClass: 10,
+                    armorClass: 4,
                     weight: 5,
                     stealsDisadvantage: false,
                     maxDexBonus: 2
@@ -45,7 +45,7 @@
                     if (self.shield)
                         result += (self.shield.armorClass || 0);
 
-                    result += self.armor && (self.armor.armorClass || 0) > 0
+                    result += self.armor && (self.armor.armorClass || 0) > 0 && self.armor.maxDexBonus !== ''
                         ? Math.min(self.armor.maxDexBonus, statsModel.dexModifier())
                         : statsModel.dexModifier();
 
