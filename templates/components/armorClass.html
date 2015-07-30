@@ -1,5 +1,38 @@
 <div class="component armor-class" ng-controller="armorController as controller">
     <div class="header">Armor class</div>
 
-    <div ng-bind="controller.armorClass()"></div>
+    <div class="armor-class">
+        <table class="fillable-formula">
+            <tr>
+                <td class="cell total" ng-bind="controller.armorClass()"></td>
+                <td>=</td>
+                <td class="cell summand min-input" ng-bind="controller.model.baseAC"></td>
+                <td>+</td>
+                <td class="cell summand" ng-bind="controller.armor.armorClass"></td>
+                <td>+</td>
+                <td class="cell summand" ng-bind="controller.shield.armorClass"></td>
+                <td>+</td>
+                <td class="cell summand" ng-bind="controller.racialStrBonus()"></td>
+                <td>+</td>
+                <td class="cell summand min-input">
+                    <div cloak-field data-model="controller.model.miscBonus">
+                        <input type="number" ng-model="controller.model.miscBonus" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="major-label">AC</td>
+                <td></td>
+                <td class="label">Base AC</td>
+                <td></td>
+                <td class="label">Armor</td>
+                <td></td>
+                <td class="label">Shield</td>
+                <td></td>
+                <td class="label">DEX</td>
+                <td></td>
+                <td class="label">Misc</td>
+            </tr>
+        </table>
+    </div>
 </div>

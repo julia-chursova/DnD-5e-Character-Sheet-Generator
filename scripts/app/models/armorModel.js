@@ -7,6 +7,8 @@
             function (statsModel) {
                 var self = this;
 
+                self.baseAC = 10;
+
                 self.armorTypes = [
                     'Light',
                     'Medium',
@@ -28,6 +30,8 @@
                     weight: 6
                 };
 
+                self.miscBonus = '';
+
                 self.shieldWeight = function () {
                     return self.shield ? self.shield.weight || 0 : 0;
                 };
@@ -37,13 +41,16 @@
                 };
 
                 self.armorClass = function () {
-                    var result = 0;
+                    var result = self.baseAC;
 
                     if (self.armor)
                         result += (self.armor.armorClass || 0);
 
                     if (self.shield)
                         result += (self.shield.armorClass || 0);
+
+                    if (self.miscBonus)
+                        result += (self.miscBonus || 0);
 
                     result += self.armor && (self.armor.armorClass || 0) > 0 && self.armor.maxDexBonus !== ''
                         ? Math.min(self.armor.maxDexBonus, statsModel.dexModifier())

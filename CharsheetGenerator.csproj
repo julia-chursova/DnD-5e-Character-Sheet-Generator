@@ -92,6 +92,8 @@
     <Content Include="styles\app\components\languages.css" />
     <Content Include="styles\app\components\logo.css" />
     <Content Include="styles\app\components\player.css" />
+    <Content Include="styles\app\components\armorClass.css" />
+    <Content Include="styles\app\components\stats.css" />
     <Content Include="styles\app\directives\cloakField.css" />
     <Content Include="styles\app\directives\container.css" />
     <Content Include="styles\app\menu.css" />

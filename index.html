@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="styles/app/components/initiative.css"/>
     <link rel="stylesheet" href="styles/app/components/stats.css" />
     <link rel="stylesheet" href="styles/app/components/armor.css" />
+    <link rel="stylesheet" href="styles/app/components/armorClass.css" />
 
     <!-- directives' styles -->
     <link rel="stylesheet" href="styles/app/directives/container.css"/>
@@ -42,14 +43,16 @@
     <div ng-include="'templates/menu.html'"></div>
 
     <div class="a4-sheet">
+        <div ng-include="'templates/components/armor.html'"></div>
+        <div ng-include="'templates/components/shield.html'"></div>
+        <div ng-include="'templates/components/armorClass.html'"></div>
+
+
         <div portrait-component></div>
 
         <div ng-include="'templates/components/languages.html'"></div>
         <div ng-include="'templates/components/character.html'"></div>
         <div ng-include="'templates/components/inventory.html'"></div>
-        <div ng-include="'templates/components/armor.html'"></div>
-        <div ng-include="'templates/components/shield.html'"></div>
-        <div ng-include="'templates/components/armorClass.html'"></div>
         <div ng-include="'templates/components/weapon.html'"></div>
         <div ng-include="'templates/components/proficiency.html'"></div>
         <div ng-include="'templates/components/traits.html'"></div>
