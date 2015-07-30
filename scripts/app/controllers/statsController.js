@@ -18,27 +18,27 @@
                 self.stats = statsModel;
 
                 self.racialStrBonus = function () {
-                    return getPrintableBonus(stats.racialStrBonus());
+                	return getPrintableBonus(statsModel.racialStrBonus());
                 };
 
                 self.racialDexBonus = function () {
-                    return getPrintableBonus(stats.racialDexBonus());
+                	return getPrintableBonus(statsModel.racialDexBonus());
                 };
 
                 self.racialConBonus = function () {
-                    return getPrintableBonus(stats.racialConBonus());
+                	return getPrintableBonus(statsModel.racialConBonus());
                 };
 
                 self.racialIntBonus = function () {
-                    return getPrintableBonus(stats.racialIntBonus());
+                	return getPrintableBonus(statsModel.racialIntBonus());
                 };
 
                 self.racialWisBonus = function () {
-                    return getPrintableBonus(stats.racialWisBonus());
+                	return getPrintableBonus(statsModel.racialWisBonus());
                 };
 
                 self.racialChaBonus = function () {
-                    return getPrintableBonus(stats.racialChaBonus());
+                	return getPrintableBonus(statsModel.racialChaBonus());
                 };
 
 
