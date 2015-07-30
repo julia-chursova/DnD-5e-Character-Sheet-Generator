@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -85,6 +86,7 @@
     <Content Include="styles\app\app.css" />
     <Content Include="styles\app\common.css" />
     <Content Include="styles\app\components.css" />
+    <Content Include="styles\app\components\armor.css" />
     <Content Include="styles\app\components\character.css" />
     <Content Include="styles\app\components\initiative.css" />
     <Content Include="styles\app\components\languages.css" />

@@ -1,6 +1,7 @@
 .character.component .cloakFieldContainer {
     height: 18px;
     border-bottom: 1px solid #aaaaaa;
+    min-width: 110px;
 }
 
 .character.component .alignment-hor-label {

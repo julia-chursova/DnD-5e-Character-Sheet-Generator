@@ -1,44 +1,44 @@
 <div class="armor component" ng-controller="armorController as controller">
     <div class="header">Armor</div>
 
-    <div>
+    <div class="textInput">
         <div class="label">Name</div>
-        <div cloak-field data-model="controller.armor.name">
+        <div cloak-field class="armorName" data-model="controller.armor.name">
             <input type="text" ng-model="controller.armor.name"/>
         </div>
     </div>
 
-    <div>
+    <div class="TextInput">
         <div class="label">Type</div>
-        <div cloak-field data-model="controller.armor.type">
+        <div cloak-field class="armorType" data-model="controller.armor.type">
             <input type="text" ng-model="controller.armor.type"/>
         </div>
     </div>
 
     <div>
         <div class="label">AC</div>
-        <div cloak-field data-model="controller.armor.armorClass">
+        <div cloak-field class="armorClass" data-model="controller.armor.armorClass">
             <input type="number" min="1" ng-model="controller.armor.armorClass"/>
         </div>
     </div>
 
     <div>
         <div class="label">Weight</div>
-        <div cloak-field data-model="controller.armor.weight">
+        <div cloak-field class="armorWeight" data-model="controller.armor.weight">
             <input type="number" min="0" ng-model="controller.armor.weight"/>
         </div>
     </div>
 
     <div>
         <div class="label">Stealth Disadvantage</div>
-        <div cloak-field data-model="controller.armor.stealthDisadvantage ? 'y' : 'n'">
+        <div cloak-field class="stealthDisadvantage" data-model="controller.armor.stealthDisadvantage ? 'yes' : 'no'">
             <input type="checkbox" ng-model="controller.armor.stealthDisadvantage"/>
         </div>
     </div>
 
     <div>
         <div class="label">Max DEX bonus</div>
-        <div cloak-field data-model="controller.armor.maxDexBonus">
+        <div cloak-field class="maxDexBonus" data-model="controller.armor.maxDexBonus">
             <input type="number" min="0" ng-model="controller.armor.maxDexBonus"/>
         </div>
     </div>
