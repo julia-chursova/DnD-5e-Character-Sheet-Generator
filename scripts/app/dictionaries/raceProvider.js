@@ -5,14 +5,27 @@
         .factory('raceProvider', function () {
             return [
                 {
-                    name: 'Human'
+                    name: 'Dwarf'
                 },
                 {
                     name: 'Elf'
                 },
                 {
-                    name: '-- Half-elf'
+                    name: 'Gnome'
+                },
+                {
+                    name: 'Half-Elf'
+                },
+                {
+                    name: 'Half-Orc'
+                },
+                {
+                    name: 'Halfling'
+                },
+                {
+                    name: 'Human'
                 }
+
             ];
         });
 })();
