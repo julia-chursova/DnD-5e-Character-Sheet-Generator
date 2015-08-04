@@ -1,4 +1,4 @@
-<div class="armor component" ng-controller="armorController as controller">
+﻿<div class="armor component" ng-controller="armorController as controller">
     <div class="header">Armor</div>
 
     <div class="textInput">
@@ -36,9 +36,9 @@
     </div>
     <div>
         <div class="label">Stealth Disadvantage</div>
-        <div cloak-field class="stealthDisadvantage" data-model="controller.armor.stealthDisadvantage ? 'yes' : 'no'">
-            <input type="checkbox" ng-model="controller.armor.stealthDisadvantage" />
-        </div>
+		<div cloak-field class="stealthDisadvantage" data-model="controller.armor.stealthDisadvantage ? '✓' : '-'">
+			<input type="checkbox" ng-model="controller.armor.stealthDisadvantage" />
+		</div>
     </div>
 
 
