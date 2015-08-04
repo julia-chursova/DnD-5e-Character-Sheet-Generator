@@ -1,10 +1,13 @@
 (function () {
-    'use strict';
+	'use strict';
 
-    angular.module('skillsController', [
-        'skillsModel',
-        function (skillsModel) {
-            var self = this;
-        }
-    ]);
+	angular.module(appName)
+		.controller('skillsController', [
+			'skillsModel',
+			function(skillsModel) {
+				var self = this;
+
+				self.model = skillsModel;
+			}
+		]);
 })();

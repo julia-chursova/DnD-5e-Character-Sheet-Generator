@@ -1,4 +1,37 @@
-<div class="skills component">
-    <div class="header">Skills</div>
+<div class="skills component" ng-controller="skillsController as controller">
+	<div class="header">Skills</div>
 
+	<table>
+		<thead>
+		<tr>
+			<td>Name</td>
+			<td>Have Proficiency</td>
+			<td>Value</td>
+			<td>Stats</td>
+			<td>Proficiency Bonus</td>
+			<td>Misc Bonus</td>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="item in controller.model">
+			<td ng-bind="item.name"></td>
+			<td>
+				<div cloak-field data-model="item.haveProficiency">
+					<input type="checkbox" ng-model="item.haveProficiency"/>
+				</div>
+			</td>
+			<td ng-bind="item.value()"></td>
+			<td>
+				<div ng-bind="item.statsBonus()"></div>
+				<div ng-bind="item.modName"></div>
+			</td>
+			<td ng-bind="item.proficiencyBonus()"></td>
+			<td>
+				<div cloak-field data-model="item.miscBonus">
+					<input type="number" ng-model="item.miscBonus" />
+				</div>
+			</td>
+		</tr>
+		</tbody>
+	</table>
 </div>
