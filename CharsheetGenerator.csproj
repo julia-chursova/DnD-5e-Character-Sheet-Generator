@@ -96,6 +96,7 @@
     <Content Include="styles\app\components\stats.css" />
     <Content Include="styles\app\components\shield.css" />
     <Content Include="styles\app\components\portrait.css" />
+    <Content Include="styles\app\components\skills.css" />
     <Content Include="styles\app\directives\cloakField.css" />
     <Content Include="styles\app\directives\container.css" />
     <Content Include="styles\app\menu.css" />
