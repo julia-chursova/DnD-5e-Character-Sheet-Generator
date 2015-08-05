@@ -24,6 +24,11 @@
     .non-printable {
         display: none;
     }
+
+	.a4-sheet {
+		border: none !important;
+		height: 301mm !important;
+	}
 }
 
 @font-face {
