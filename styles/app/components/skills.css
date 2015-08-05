@@ -25,6 +25,10 @@
     text-align: left;
 }
 
+.skills.component .skills-value {
+    border: 1px solid gray;
+}
+
 .skills.component .right {
     float: right;
     padding: 0px;
