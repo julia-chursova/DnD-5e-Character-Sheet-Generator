@@ -8,6 +8,7 @@
     border-bottom: 1px solid #aaaaaa;
     height: 100%;
     max-width: 100%;
+    margin-top: 3px;
 }
 
 .armor.component .numberInput {
@@ -17,8 +18,13 @@
     max-width: 15px;
     text-align: center;
 }
+
 .armor.component .inline-block {
     border-bottom: 1px solid #777777;
-    margin: 2px;
+    margin-top: 3px;
     width: 44px;
+}
+
+.armor.component .armor-checkbox {
+    margin-top: 3px;
 }

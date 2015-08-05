@@ -16,4 +16,8 @@
     height: 100%;
     max-width: 30px;
     text-align: center;
+    margin-top: 3px;
+}
+.shield.component .shield-name {
+    margin-top: 3px;
 }
