@@ -1,21 +1,21 @@
 <div class="shield component" ng-controller="armorController as controller">
     <div class="header">Shield</div>
 
-    <div class="shield-name">
+    <div class="shield-stat">
         <div class="label">Name</div>
         <div cloak-field class="textInput" data-model="controller.shield.name">
             <input type="text" ng-model="controller.shield.name"/>
         </div>
     </div>
 
-    <div class="inline-block">
+    <div class="inline-block shield-stat">
         <div class="label">AC Bonus</div>
         <div cloak-field class="numberInput" data-model="controller.shield.armorClass">
             <input type="number" ng-model="controller.shield.armorClass" placeholder="2"/>
         </div>
     </div>
 
-    <div class="inline-block">
+    <div class="inline-block shield-stat">
         <div class="label">Weight</div>
         <div cloak-field class="numberInput" data-model="controller.shield.weight">
             <input type="number" min="0" ng-model="controller.shield.weight" placeholder="6"/>

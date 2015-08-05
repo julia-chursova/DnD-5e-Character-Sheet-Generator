@@ -19,12 +19,9 @@
     text-align: center;
 }
 
-.armor.component .inline-block {
+.armor.component .armor-stat {
+    margin-top: 3px;
     border-bottom: 1px solid #777777;
     margin-top: 3px;
-    width: 44px;
-}
-
-.armor.component .armor-checkbox {
-    margin-top: 3px;
+    width: 60px;
 }

@@ -14,31 +14,33 @@
             <input type="text" ng-model="controller.armor.type" />
         </div>
     </div>
-
-    <div class="inline-block">
-        <div class="label">AC Bonus</div>
-        <div cloak-field class="numberInput" data-model="controller.armor.armorClass">
-            <input type="number" min="1" ng-model="controller.armor.armorClass" />
+    <div>
+        <div class="inline-block armor-stat">
+            <div class="label">AC Bonus</div>
+            <div cloak-field class="numberInput" data-model="controller.armor.armorClass">
+                <input type="number" min="1" ng-model="controller.armor.armorClass" />
+            </div>
+        </div>
+        <div class="inline-block armor-stat">
+            <div class="label">Weight</div>
+            <div cloak-field class="numberInput" data-model="controller.armor.weight">
+                <input type="number" min="0" ng-model="controller.armor.weight" />
+            </div>
         </div>
     </div>
-
-    <div class="inline-block">
-        <div class="label">Weight</div>
-        <div cloak-field class="numberInput" data-model="controller.armor.weight">
-            <input type="number" min="0" ng-model="controller.armor.weight" />
+    <div>
+        <div class="inline-block armor-stat">
+            <div class="label">DEX lim</div>
+            <div cloak-field class="numberInput" data-model="controller.armor.maxDexBonus">
+                <input type="number" min="0" ng-model="controller.armor.maxDexBonus" />
+            </div>
         </div>
-    </div>
-    <div class="inline-block">
-        <div class="label">DEX lim</div>
-        <div cloak-field class="numberInput" data-model="controller.armor.maxDexBonus">
-            <input type="number" min="0" ng-model="controller.armor.maxDexBonus" />
+        <div class="inline-block armor-stat">
+            <div class="label">Stealth dAdv</div>
+            <div cloak-field data-model="controller.armor.stealthDisadvantage ? '✓' : '-'">
+                <input type="checkbox" ng-model="controller.armor.stealthDisadvantage" />
+            </div>
         </div>
-    </div>
-    <div class="armor-checkbox">
-        <div class="label">Stealth dAdv</div>
-		<div cloak-field data-model="controller.armor.stealthDisadvantage ? '✓' : '-'">
-			<input type="checkbox" ng-model="controller.armor.stealthDisadvantage" />
-		</div>
     </div>
 
 
