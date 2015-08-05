@@ -12,11 +12,12 @@
 
 .shield.component .numberInput {
     height: 18px;
-    border-bottom: 1px solid #777777;
     height: 100%;
+    border-bottom: 1px solid #777777;
     max-width: 30px;
     text-align: center;
 }
+
 .shield.component .shield-stat {
     margin-top: 3px;
 }
