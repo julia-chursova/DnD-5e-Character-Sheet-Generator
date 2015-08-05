@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href="styles/app/components/armorClass.css" />
 	<link rel="stylesheet" href="styles/app/components/shield.css" />
 	<link rel="stylesheet" href="styles/app/components/portrait.css" />
-    <link rel="stylesheet" href="styles/app/components/skills.css" />
+	<link rel="stylesheet" href="styles/app/components/skills.css" />
 
 	<!-- directives' styles -->
 	<link rel="stylesheet" href="styles/app/directives/container.css" />
@@ -64,6 +64,8 @@
 		<div ng-include="'templates/components/potions.html'"></div>
 		<div ng-include="'templates/components/scrolls.html'"></div>
 		<div ng-include="'templates/components/spells.html'"></div>
+
+		<container data-layouts="[ '100%' ]" data-components="[ [] ]" data-removable="false"></container>
 	</div>
 
 	<div class="page-break"></div>
@@ -73,14 +75,27 @@
 	<div class="page-break"></div>
 
 	<div class="a4-sheet">
-		<container data-layouts="[ '100%' ]" data-components="[ [] ]" data-removable="false"></container>
-
-		<div ng-include="'templates/components/logo.html'"></div>
-		<div ng-include="'templates/components/player.html'"></div>
-		<div ng-include="'templates/components/initiative.html'"></div>
-		<div ng-include="'templates/components/stats.html'"></div>
-		<div ng-include="'templates/components/armorClass.html'"></div>
+		<div class="container">
+			<div class="container-box" style="width: 33%">
+				<div ng-include="'templates/components/logo.html'"></div>
+				<div ng-include="'templates/components/player.html'"></div>
+				<div ng-include="'templates/components/stats.html'"></div>
+			</div>
+			<div class="container-box" style="width: 67%">
+				<div ng-include="'templates/components/character.html'"></div>
+				<div class="container">
+					<div class="container-box" style="width: 33%">
+						<div ng-include="'templates/components/initiative.html'"></div>
+					</div>
+					<div class="container-box" style="width: 67%">
+						<div ng-include="'templates/components/armorClass.html'"></div>
+					</div>
+				</div>
+				<div ng-include="'templates/components/skills.html'"></div>
+			</div>
+		</div>
 	</div>
+
 
 	<!-- app scripts -->
 	<script type="text/javascript" src="scripts/app/app.js"></script>
