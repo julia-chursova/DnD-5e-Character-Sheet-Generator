@@ -15,10 +15,10 @@
                     var data = [];
 
                     for (var layoutInd = 0; layoutInd < scope.layouts.length; layoutInd++) {
-                        data.push({
-                            width: scope.layouts[layoutInd],
-                            components: scope.components[layoutInd]
-                        })
+                    	data.push({
+                    		width: scope.layouts[layoutInd],
+                    		components: scope.components[layoutInd]
+                    	});
                     }
 
                     scope.data = data;
