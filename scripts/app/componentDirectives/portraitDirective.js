@@ -7,10 +7,11 @@
                 restrict: 'AE',
                 templateUrl: 'templates/components/portrait.html',
                 link: function (scope, element, attrs) {
-                    var canvas = element.find("canvas")[0];
+                	var canvas = element.find("canvas")[0];
+                	var canvasContainer = canvas.parentElement;
 
-                    scope.width = 280;
-                    scope.height = 390;
+                	canvas.width = canvas.style.width = canvasContainer.clientWidth;
+                	canvas.height = canvas.style.height = canvasContainer.clientHeight;
 
                     scope.initUpload = function(){
                         element.find("input")[0].click();
@@ -27,7 +28,22 @@
                             image.src = e.target.result;
 
                             image.onload = function () {
-                                canvas.getContext("2d").drawImage(image, 0, 0, scope.width, scope.height);
+                            	var widthRatio = canvas.width / image.width;
+                            	var heightRatio = canvas.height / image.height;
+
+	                            var actualWidth, actualHeight;
+								if (widthRatio < heightRatio) {
+									actualWidth = image.width * widthRatio;
+									actualHeight = image.height * widthRatio;
+								} else {
+									actualWidth = image.width * heightRatio;
+									actualHeight = image.height * heightRatio;
+								}
+
+								var startX = (canvas.width - actualWidth) / 2;
+	                            var startY = (canvas.height - actualHeight) / 2;
+
+                                canvas.getContext("2d").drawImage(image, startX, startY, actualWidth, actualHeight);
                             };
                         };
 
