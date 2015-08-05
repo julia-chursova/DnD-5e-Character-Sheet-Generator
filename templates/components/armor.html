@@ -15,28 +15,28 @@
         </div>
     </div>
 
-    <div>
-        <div class="label">AC Bonus</div>
-        <div cloak-field class="armorClass" data-model="controller.armor.armorClass">
+    <span class="inline-block">
+        <span class="label">AC Bonus</span>
+        <span cloak-field class="numberInput" data-model="controller.armor.armorClass">
             <input type="number" min="1" ng-model="controller.armor.armorClass" />
-        </div>
-    </div>
+        </span>
+    </span>
 
-    <div>
-        <div class="label">Weight</div>
-        <div cloak-field class="armorWeight" data-model="controller.armor.weight">
+    <span class="inline-block">
+        <span class="label">Weight</span>
+        <span cloak-field class="numberInput" data-model="controller.armor.weight">
             <input type="number" min="0" ng-model="controller.armor.weight" />
-        </div>
-    </div>
-    <div>
-        <div class="label">Max DEX bonus</div>
-        <div cloak-field class="maxDexBonus" data-model="controller.armor.maxDexBonus">
+        </span>
+    </span>
+    <span class="inline-block">
+        <span class="label">DEX lim</span>
+        <span cloak-field class="numberInput" data-model="controller.armor.maxDexBonus">
             <input type="number" min="0" ng-model="controller.armor.maxDexBonus" />
-        </div>
-    </div>
+        </span>
+    </span>
     <div>
-        <div class="label">Stealth Disadvantage</div>
-		<div cloak-field class="stealthDisadvantage" data-model="controller.armor.stealthDisadvantage ? '✓' : '-'">
+        <div class="label">Stealth dAdv</div>
+		<div cloak-field data-model="controller.armor.stealthDisadvantage ? '✓' : '-'">
 			<input type="checkbox" ng-model="controller.armor.stealthDisadvantage" />
 		</div>
     </div>

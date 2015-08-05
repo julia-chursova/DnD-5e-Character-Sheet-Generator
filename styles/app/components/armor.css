@@ -1,6 +1,7 @@
 ﻿.armor.component .label {
     font-size: 8pt;
     color: #333333;
+    text-align: center;
 }
 
 .armor.component .textInput {
@@ -10,10 +11,15 @@
     max-width: 100%;
 }
 
-.armor.component .armorClass, .armorWeight, .maxDexBonus {
+.armor.component .numberInput {
     height: 18px;
-    border: 1px solid #777777;
+    border-bottom: 1px solid #777777;
     height: 100%;
-    max-width: 30px;
+    max-width: 15px;
     text-align: center;
+}
+.armor.component .inline-block {
+    border-bottom: 1px solid #777777;
+    margin: 2px;
+    width: 44px;
 }
