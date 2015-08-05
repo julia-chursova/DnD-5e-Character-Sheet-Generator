@@ -68,13 +68,13 @@
 							miscBonus: 0,
 							statsBonus: group.addFunc,
 							proficiencyBonus: function() {
-								return this.haveProficiency ? characterModel.proficiencyBonus : '';
+								return this.haveProficiency ? characterModel.proficiencyBonus() : '';
 							},
 							value: function() {
 								var skillScore = this.miscBonus + group.addFunc();
 
 								if (this.haveProficiency)
-									skillScore += characterModel.proficiencyBonus;
+									skillScore += characterModel.proficiencyBonus();
 
 								return skillScore;
 							}

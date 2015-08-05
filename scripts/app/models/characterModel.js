@@ -24,7 +24,10 @@
                     }
                 ];
 
-                self.proficiencyBonus = 0;
+                self.proficiencyBonus = function() {
+	                return 1 + Math.ceil(self.effectiveLevel() / 4);
+                };
+
                 self.initiativeBonus = 0;
 
                 // Calculated properties
