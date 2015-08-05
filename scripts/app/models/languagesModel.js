@@ -1,8 +1,8 @@
 (function () {
     'use strict';
 
-    angular.module(appName)
-        .factory('languagesModel', function () {
-            return [];
-        })
+	angular.module(appName)
+		.factory('languagesModel', function() {
+			return [];
+		});
 })();
