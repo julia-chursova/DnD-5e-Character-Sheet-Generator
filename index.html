@@ -1,152 +1,150 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>D&D 5e Characters Sheet Generator</title>
+    <title>D&D 5e Characters Sheet Generator</title>
 
-	<!-- library files -->
-	<script type="text/javascript" src="scripts/libs/angular.min.js"></script>
-	<script type="text/javascript" src="scripts/libs/ngDraggable.modified.js"></script>
-	<script type="text/javascript" src="scripts/libs/acute.select.modified.js"></script>
+    <!-- library files -->
+    <script type="text/javascript" src="scripts/libs/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/libs/ngDraggable.modified.js"></script>
+    <script type="text/javascript" src="scripts/libs/acute.select.modified.js"></script>
 
-	<!-- libs styles -->
-	<link rel="stylesheet" href="styles/libs/acute.select.modified.css" />
+    <!-- libs styles -->
+    <link rel="stylesheet" href="styles/libs/acute.select.modified.css" />
 
-	<!-- app styles -->
-	<link rel="stylesheet" href="styles/app/app.css" />
-	<link rel="stylesheet" href="styles/app/menu.css" />
-	<link rel="stylesheet" href="styles/app/common.css" />
+    <!-- app styles -->
+    <link rel="stylesheet" href="styles/app/app.css" />
+    <link rel="stylesheet" href="styles/app/menu.css" />
+    <link rel="stylesheet" href="styles/app/common.css" />
 
-	<!-- components' styles -->
-	<link rel="stylesheet" href="styles/app/components.css" />
-	<link rel="stylesheet" href="styles/app/components/logo.css" />
-	<link rel="stylesheet" href="styles/app/components/player.css" />
-	<link rel="stylesheet" href="styles/app/components/character.css" />
-	<link rel="stylesheet" href="styles/app/components/languages.css" />
-	<link rel="stylesheet" href="styles/app/components/initiative.css" />
-	<link rel="stylesheet" href="styles/app/components/stats.css" />
-	<link rel="stylesheet" href="styles/app/components/armor.css" />
-	<link rel="stylesheet" href="styles/app/components/armorClass.css" />
-	<link rel="stylesheet" href="styles/app/components/shield.css" />
-	<link rel="stylesheet" href="styles/app/components/portrait.css" />
-	<link rel="stylesheet" href="styles/app/components/skills.css" />
+    <!-- components' styles -->
+    <link rel="stylesheet" href="styles/app/components.css" />
+    <link rel="stylesheet" href="styles/app/components/logo.css" />
+    <link rel="stylesheet" href="styles/app/components/player.css" />
+    <link rel="stylesheet" href="styles/app/components/character.css" />
+    <link rel="stylesheet" href="styles/app/components/languages.css" />
+    <link rel="stylesheet" href="styles/app/components/initiative.css" />
+    <link rel="stylesheet" href="styles/app/components/stats.css" />
+    <link rel="stylesheet" href="styles/app/components/armor.css" />
+    <link rel="stylesheet" href="styles/app/components/armorClass.css" />
+    <link rel="stylesheet" href="styles/app/components/shield.css" />
+    <link rel="stylesheet" href="styles/app/components/portrait.css" />
+    <link rel="stylesheet" href="styles/app/components/skills.css" />
 
-	<!-- directives' styles -->
-	<link rel="stylesheet" href="styles/app/directives/container.css" />
-	<link rel="stylesheet" href="styles/app/directives/cloakField.css" />
+    <!-- directives' styles -->
+    <link rel="stylesheet" href="styles/app/directives/container.css" />
+    <link rel="stylesheet" href="styles/app/directives/cloakField.css" />
 
-	<!-- ad-hoc script -->
-	<script type="text/javascript">
-		var appName = 'charactersSheetGenerator';
-	</script>
+    <!-- ad-hoc script -->
+    <script type="text/javascript">
+        var appName = 'charactersSheetGenerator';
+    </script>
 </head>
 
 <body ng-app="charactersSheetGenerator" ng-controller="appController as app"
-	  class="app" ng-class="{'edit-mode': app.isEditMode}" ng-click="app.globalClick($event)">
+      class="app" ng-class="{'edit-mode': app.isEditMode}" ng-click="app.globalClick($event)">
 
-	<div ng-include="'templates/menu.html'"></div>
+    <div ng-include="'templates/menu.html'"></div>
 
-	<div class="a4-sheet">
-		<div ng-include="'templates/components/armor.html'"></div>
-		<div ng-include="'templates/components/shield.html'"></div>
+    <div class="a4-sheet">
 
-		<div ng-include="'templates/components/languages.html'"></div>
-		<div ng-include="'templates/components/character.html'"></div>
-		<div ng-include="'templates/components/inventory.html'"></div>
-		<div ng-include="'templates/components/weapon.html'"></div>
-		<div ng-include="'templates/components/proficiency.html'"></div>
-		<div ng-include="'templates/components/traits.html'"></div>
+        <div ng-include="'templates/components/languages.html'"></div>
+        <div ng-include="'templates/components/character.html'"></div>
+        <div ng-include="'templates/components/inventory.html'"></div>
+        <div ng-include="'templates/components/weapon.html'"></div>
+        <div ng-include="'templates/components/proficiency.html'"></div>
+        <div ng-include="'templates/components/traits.html'"></div>
 
-		<div ng-include="'templates/components/speed.html'"></div>
-		<div ng-include="'templates/components/potions.html'"></div>
-		<div ng-include="'templates/components/scrolls.html'"></div>
-		<div ng-include="'templates/components/spells.html'"></div>
+        <div ng-include="'templates/components/speed.html'"></div>
+        <div ng-include="'templates/components/potions.html'"></div>
+        <div ng-include="'templates/components/scrolls.html'"></div>
+        <div ng-include="'templates/components/spells.html'"></div>
 
-		<container data-layouts="[ '100%' ]" data-components="[ [] ]" data-removable="false"></container>
-	</div>
+        <container data-layouts="[ '100%' ]" data-components="[ [] ]" data-removable="false"></container>
+    </div>
 
-	<div class="page-break"></div>
+    <div class="page-break"></div>
 
-	<div class="a4-sheet"></div>
+    <div class="a4-sheet"></div>
 
-	<div class="page-break"></div>
+    <div class="page-break"></div>
 
-	<div class="a4-sheet">
-		<div class="container">
-			<div class="container-box" style="width: 33%">
-				<div ng-include="'templates/components/logo.html'"></div>
-				<div ng-include="'templates/components/player.html'"></div>
-				<div ng-include="'templates/components/stats.html'"></div>
-			</div>
-			<div class="container-box" style="width: 67%">
-				<div ng-include="'templates/components/character.html'"></div>
-				<div class="container">
-					<div class="container-box" style="width: 33%">
-						<div ng-include="'templates/components/initiative.html'"></div>
-					</div>
-					<div class="container-box" style="width: 67%">
-						<div ng-include="'templates/components/armorClass.html'"></div>
-					</div>
-				</div>
-				<div ng-include="'templates/components/skills.html'"></div>
-			</div>
-		</div>
-	</div>
+    <div class="a4-sheet">
+        <div class="container">
+            <div class="container-box" style="width: 33%">
+                <div ng-include="'templates/components/logo.html'"></div>
+                <div ng-include="'templates/components/player.html'"></div>
+                <div ng-include="'templates/components/stats.html'"></div>
+            </div>
+            <div class="container-box" style="width: 67%">
+                <div ng-include="'templates/components/character.html'"></div>
+                <div class="container">
+                    <div class="container-box" style="width: 33%">
+                        <div ng-include="'templates/components/initiative.html'"></div>
+                    </div>
+                    <div class="container-box" style="width: 67%">
+                        <div ng-include="'templates/components/armorClass.html'"></div>
+                    </div>
+                </div>
+                <div ng-include="'templates/components/skills.html'"></div>
+            </div>
+        </div>
+    </div>
 
-	<div class="page-break"></div>
+    <div class="page-break"></div>
 
-	<div class="a4-sheet">
-		<div class="container">
-			<div class="container-box" style="width: 33%">
-				<div ng-include="'templates/components/inventory.html'"></div>
-			</div>
-			<div class="container-box" style="width: 33%">
-				<div ng-include="'templates/components/armor.html'"></div>
-				<div ng-include="'templates/components/shield.html'"></div>
-				<div portrait-component></div>
-			</div>
-			<div class="container-box" style="width: 33%">
-				
-			</div>
-		</div>
-	</div>
+    <div class="a4-sheet">
+        <div class="container">
+            <div class="container-box" style="width: 33%">
+                <div ng-include="'templates/components/inventory.html'"></div>
+            </div>
+            <div class="container-box" style="width: 33%">
+                <div ng-include="'templates/components/armor.html'"></div>
+                <div ng-include="'templates/components/shield.html'"></div>
+                <div portrait-component></div>
+            </div>
+            <div class="container-box" style="width: 33%">
+
+            </div>
+        </div>
+    </div>
 
 
-	<!-- app scripts -->
-	<script type="text/javascript" src="scripts/app/app.js"></script>
-	<script type="text/javascript" src="scripts/app/common.js"></script>
+    <!-- app scripts -->
+    <script type="text/javascript" src="scripts/app/app.js"></script>
+    <script type="text/javascript" src="scripts/app/common.js"></script>
 
-	<!-- dictionary data -->
-	<script type="text/javascript" src="scripts/app/dictionaries/raceProvider.js"></script>
-	<script type="text/javascript" src="scripts/app/dictionaries/languagesProvider.js"></script>
+    <!-- dictionary data -->
+    <script type="text/javascript" src="scripts/app/dictionaries/raceProvider.js"></script>
+    <script type="text/javascript" src="scripts/app/dictionaries/languagesProvider.js"></script>
 
-	<!-- models -->
-	<script type="text/javascript" src="scripts/app/models/statsModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/playerModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/inventoryModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/characterModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/languagesModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/armorModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/weaponModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/traitsModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/skillsModel.js"></script>
+    <!-- models -->
+    <script type="text/javascript" src="scripts/app/models/statsModel.js"></script>
+    <script type="text/javascript" src="scripts/app/models/playerModel.js"></script>
+    <script type="text/javascript" src="scripts/app/models/inventoryModel.js"></script>
+    <script type="text/javascript" src="scripts/app/models/characterModel.js"></script>
+    <script type="text/javascript" src="scripts/app/models/languagesModel.js"></script>
+    <script type="text/javascript" src="scripts/app/models/armorModel.js"></script>
+    <script type="text/javascript" src="scripts/app/models/weaponModel.js"></script>
+    <script type="text/javascript" src="scripts/app/models/traitsModel.js"></script>
+    <script type="text/javascript" src="scripts/app/models/skillsModel.js"></script>
 
-	<!-- common directives -->
-	<script type="text/javascript" src="scripts/app/directives/containerDirective.js"></script>
-	<script type="text/javascript" src="scripts/app/directives/cloakFieldDirective.js"></script>
+    <!-- common directives -->
+    <script type="text/javascript" src="scripts/app/directives/containerDirective.js"></script>
+    <script type="text/javascript" src="scripts/app/directives/cloakFieldDirective.js"></script>
 
-	<!-- controllers -->
-	<script type="text/javascript" src="scripts/app/controllers/appController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/statsController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/playerController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/inventoryController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/characterController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/languagesController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/armorController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/weaponController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/traitsController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/skillsController.js"></script>
+    <!-- controllers -->
+    <script type="text/javascript" src="scripts/app/controllers/appController.js"></script>
+    <script type="text/javascript" src="scripts/app/controllers/statsController.js"></script>
+    <script type="text/javascript" src="scripts/app/controllers/playerController.js"></script>
+    <script type="text/javascript" src="scripts/app/controllers/inventoryController.js"></script>
+    <script type="text/javascript" src="scripts/app/controllers/characterController.js"></script>
+    <script type="text/javascript" src="scripts/app/controllers/languagesController.js"></script>
+    <script type="text/javascript" src="scripts/app/controllers/armorController.js"></script>
+    <script type="text/javascript" src="scripts/app/controllers/weaponController.js"></script>
+    <script type="text/javascript" src="scripts/app/controllers/traitsController.js"></script>
+    <script type="text/javascript" src="scripts/app/controllers/skillsController.js"></script>
 
-	<!-- components directives -->
-	<script type="text/javascript" src="scripts/app/componentDirectives/portraitDirective.js"></script>
+    <!-- components directives -->
+    <script type="text/javascript" src="scripts/app/componentDirectives/portraitDirective.js"></script>
 </body>
 </html>
