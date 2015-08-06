@@ -24,3 +24,8 @@
     margin-top: 3px;
     width: 60px;
 }
+
+.armor.component input[type=number] {
+    max-width: 33px;
+    max-height: 18px;
+}

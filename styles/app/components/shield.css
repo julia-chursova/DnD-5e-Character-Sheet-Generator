@@ -21,3 +21,8 @@
 .shield.component .shield-stat {
     margin-top: 3px;
 }
+
+.shield.component input[type=number] {
+    max-width: 33px;
+    max-height: 18px;
+}
