@@ -1,21 +1,33 @@
 <div class="inventory component" ng-controller="inventoryController as inventory">
     <div class="header">Inventory</div>
-    <table>
-        <thead>
-            <tr>
-                <td>Name</td>
-                <td>Weight(x1)</td>
-                <td>Value</td>
+	<table>
+		<thead>
+		<tr>
+			<td>Name</td>
+			<td>Weight (x1)</td>
+			<td>Quantity</td>
 
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="item in inventory.model.items">
-                <td ng-bind="item.name"></td>
-                <td ng-bind="item.weight"></td>
-                <td ng-bind="item.value"></td>
-            </tr>
-        </tbody>
-    </table>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="item in inventory.model.items">
+			<td>
+				<div cloak-field data-model="item.name">
+					<input type="text" ng-model="item.name"/>
+				</div>
+			</td>
+			<td>
+				<div cloak-field data-model="item.weight">
+					<input type="number" min="0" step="0.1" ng-model="item.weight"/>
+				</div>
+			</td>
+			<td>
+				<div cloak-field data-model="item.quantity">
+					<input type="number" min="0" ng-model="item.quantity"/>
+				</div>
+			</td>
+		</tr>
+		</tbody>
+	</table>
     <div>{{ 'Total Weight: ' + inventory.model.inventoryWeight() }}</div>
 </div>
