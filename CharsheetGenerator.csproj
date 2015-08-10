@@ -89,6 +89,7 @@
     <Content Include="styles\app\components\armor.css" />
     <Content Include="styles\app\components\character.css" />
     <Content Include="styles\app\components\initiative.css" />
+    <Content Include="styles\app\components\inventory.css" />
     <Content Include="styles\app\components\languages.css" />
     <Content Include="styles\app\components\logo.css" />
     <Content Include="styles\app\components\player.css" />

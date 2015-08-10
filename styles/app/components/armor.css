@@ -10,6 +10,7 @@
 .armor.component .input {
     border-bottom: 1px solid #aaaaaa;
     height: 21px;
+    width: 35px;
 }
 
     .armor.component .input input[type=number] {
