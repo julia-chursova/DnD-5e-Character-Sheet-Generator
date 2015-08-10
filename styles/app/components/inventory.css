@@ -1,3 +1,26 @@
 ﻿.inventory.component tbody td {
     border-bottom: 1px dotted black;
 }
+
+.inventory.component tr {
+    height: 18px;
+    max-width: 143px;
+}
+
+.inventory.component .item-name {
+    width: 140px;
+}
+
+.inventory.component input[type=text] {
+    max-width: 130px;
+}
+
+.inventory.component input[type=number] {
+    width: 50px;
+}
+
+.inventory.component .flex-table {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+}
