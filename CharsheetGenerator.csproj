@@ -112,7 +112,6 @@
     <Content Include="templates\components\player.html" />
     <Content Include="templates\components\portrait.html" />
     <Content Include="templates\components\potions.html" />
-    <Content Include="templates\components\proficiency.html" />
     <Content Include="templates\components\scrolls.html" />
     <Content Include="templates\components\shield.html" />
     <Content Include="templates\components\skills.html" />
