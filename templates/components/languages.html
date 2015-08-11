@@ -1,23 +1,22 @@
 <div class="languages component" ng-controller="languagesController as controller">
-    <div class="header">Languages</div>
+	<div class="header">Languages</div>
 
-    <div class="languages-list">
-        <div ng-repeat="language in controller.languages" class="language-item">
-            <span ng-bind="language"></span>
-            <button class="remove-language" ng-click="controller.removeLanguage(language)">-</button>
-        </div>
-    </div>
+	<div class="languages-list">
+		<div ng-repeat="language in controller.languages" class="language-item">
+			<span ng-bind="language"></span>
+			<button class="remove-language" ng-click="controller.removeLanguage(language)">-</button>
+		</div>
+	</div>
 
-    <div class="add-language non-printable">
-        <div class="inline-block" class="non-printable">
-            <select class="ac-select stateList" ac-model="controller.pendingLanguage"
-                    ac-options="availableLanguage for availableLanguage in controller.availableLanguages"
-                    ac-settings="{ comboMode: true, loadOnOpen: true }">
-            </select>
-        </div>
+	<div class="add-language non-printable">
+		<div class="inline-block non-printable">
+			<select ac-select class="stateList" ac-model="controller.pendingLanguage"
+			        ac-options="availableLanguage for availableLanguage in controller.availableLanguages"
+			        ac-settings="{ comboMode: true, loadOnOpen: true }"></select>
+		</div>
 
-        <div class="inline-block button-container">
-            <button ng-click="controller.addPendingLanguage()">+</button>
-        </div>
-    </div>
+		<div class="inline-block button-container">
+			<button ng-click="controller.addPendingLanguage()">+</button>
+		</div>
+	</div>
 </div>
