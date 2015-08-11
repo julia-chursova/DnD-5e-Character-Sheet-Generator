@@ -7,17 +7,22 @@
         vertical-align: top;
     }
 
-.armor.component .input {
+.armor.component .numberInput {
     border-bottom: 1px solid #aaaaaa;
     height: 21px;
     width: 35px;
 }
 
+.armor.component .input {
+    height: 21px;
+}
+
     .armor.component .input input[type=number] {
-        width: 33px;
+        width: 35px;
     }
 
 .armor.component .textInput {
+    border-bottom: 1px solid #aaaaaa;
     text-align: left;
     width: 100%;
 }
