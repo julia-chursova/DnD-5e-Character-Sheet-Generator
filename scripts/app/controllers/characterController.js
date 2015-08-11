@@ -7,21 +7,19 @@
             'statsModel',
             'traitsModel',
             'raceProvider',
-            function (characterModel, statsModel, traitsModel, raceProvider) {
+			'classProvider',
+            function (characterModel, statsModel, traitsModel, raceProvider, classProvider) {
                 var self = this;
 
                 self.model = characterModel;
                 self.stats = statsModel;
                 self.availableRaces = raceProvider;
+	            self.availableClasses = classProvider;
 
                 self.effectiveLevel = function () {
                     var level = self.model.effectiveLevel();
 
                     return level > 0 ? level : '-';
-                };
-
-                self.removeClass = function (characterClass) {
-                    self.model.removeClass(characterClass);
                 };
 
                 self.initiativeBonus = function () {

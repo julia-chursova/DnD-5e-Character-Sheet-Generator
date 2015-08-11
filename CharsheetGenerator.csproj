@@ -67,6 +67,7 @@
     <Content Include="scripts\app\models\inventoryModel.js" />
     <Content Include="scripts\app\models\languagesModel.js" />
     <Content Include="scripts\app\models\playerModel.js" />
+    <Content Include="scripts\app\models\raceModel.js" />
     <Content Include="scripts\app\models\skillsModel.js" />
     <Content Include="scripts\app\models\statsModel.js" />
     <Content Include="scripts\app\models\traitsModel.js" />

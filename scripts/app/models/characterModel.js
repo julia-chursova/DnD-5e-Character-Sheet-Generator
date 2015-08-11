@@ -5,24 +5,28 @@
         .factory('characterModel', [
             'statsModel',
             'traitsModel',
-            function (statsModel, traitsModel) {
-                var self = this;
+			'raceModel',
+            function (statsModel, traitsModel, raceModel) {
+            	var self = this;
+
+            	var maxClasses = 5;
 
                 // Fields
-                self.race = null;
+                self.raceModel = raceModel;
                 self.name = '';
                 self.alignment = 5;
                 self.isMale = true;
 
-                self.classes = [
-                    {
-                        name: 'Rogue',
-                        archetype: 'Assassin',
-                        skillRanks: 2,
-                        hitDie: 8,
-                        level: 5
-                    }
-                ];
+                self.classes = [];
+
+				for (var i = 0; i < maxClasses; i++) {
+					self.classes.push({
+						name: '',
+						archetype: '',
+						hitDie: '',
+						level: ''
+					});
+				}
 
                 self.proficiencyBonus = function() {
 	                return 1 + Math.ceil(self.effectiveLevel() / 4);

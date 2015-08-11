@@ -5,10 +5,12 @@
         .factory('raceProvider', function () {
             return [
                 {
-                    name: 'Dwarf'
+                	name: 'Dwarf',
+                	conBonus: 2,
+					size: 'Medium'
                 },
                 {
-                    name: 'Elf'
+                	name: 'Elf'
                 },
                 {
                     name: 'Gnome'

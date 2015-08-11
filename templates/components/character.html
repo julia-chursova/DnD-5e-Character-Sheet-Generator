@@ -99,61 +99,48 @@
                 <div class="inline-block flex">
                     <div class="label">Race</div>
                     <div cloak-field data-model="character.model.race.name" class="race-data">
-                        <select ng-model="character.model.race">
-                            <option ng-repeat="race in character.availableRaces" ng-value="race">{{race.name}}</option>
+	                    <select ng-model="character.model.raceModel.race"
+								ng-options="race as race.name for race in character.availableRaces">
                         </select>
                     </div>
                 </div>
                 <div class="inline-block flex">
                     <div class="label">Size</div>
-                    <div cloak-field data-model="character.model.race.name" class="race-data">
-                        <select ng-model="character.model.race">
-                            <option ng-repeat="race in character.availableRaces" ng-value="race">{{race.name}}</option>
-                        </select>
-                    </div>
-                </div>
+	                <div ng-bind="character.model.race.size"></div>
+				</div>
             </div>
         </div>
     </div>
 
-    <div>
-        <table>
-            <thead>
-            <tr>
-                <td colspan="2">Classes</td>
-                <td>Skill ranks</td>
-                <td>Hit Die</td>
-                <td>Level</td>
-                <td></td>
-            </tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat="class in character.model.classes">
-                <td>{{$index + 1}}</td>
-                <td>{{class.name + (class.archetype ? '(' + class.archetype + ')' : '')}}</td>
-                <td>d{{class.skillRanks}}</td>
-                <td>d{{class.hitDie}}</td>
-                <td>
-                    <cloak-field data-model="class.level">
-                        <input type="number" min="1" max="20" ng-model="class.level"/>
-                    </cloak-field>
-                </td>
-                <td>
-                    <button ng-click="character.removeClass(class)" class="non-printable">-</button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-        <div>
-            <button class="non-printable">+</button>
-            <!--<select class="ac-select stateList" ac-model="controller.pendingLanguage" ac-options="availableLanguage for availableLanguage in controller.availableLanguages"-->
-            <!--ac-settings="{ comboMode: true, loadOnOpen: true }">-->
-            <!--</select>-->
-            <!--<select class="ac-select stateList" ac-model="controller.pendingLanguage" ac-options="availableLanguage for availableLanguage in controller.availableLanguages"-->
-            <!--ac-settings="{ comboMode: true, loadOnOpen: true }">-->
-            <!--</select>-->
-        </div>
-        <div>Effective level:</div>
-        <div ng-bind="character.effectiveLevel()"></div>
-    </div>
+	<div>
+		<table>
+			<thead>
+			<tr>
+				<td colspan="2">Classes</td>
+				<td>Hit Die</td>
+				<td>Level</td>
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="class in character.model.classes track by $index">
+				
+				<td>{{$index + 1}}</td>
+				<td>
+					<div cloak-field data-model="class.name + (class.archetype ? '(' + class.archetype + ')' : '')">
+						<select ng-model="character.model.classes[$index]"
+								ng-options="availableClass as availableClass.name for availableClass in character.availableClasses.classList"></select>
+					</div>
+				</td>
+				<td>d{{class.hitDie}}</td>
+				<td>
+					<div cloak-field data-model="class.level">
+						<input type="number" min="1" max="20" ng-model="class.level"/>
+					</div>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+		<div>Effective level:</div>
+		<div ng-bind="character.effectiveLevel()"></div>
+	</div>
 </div>
