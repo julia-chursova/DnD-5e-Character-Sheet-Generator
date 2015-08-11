@@ -12,7 +12,7 @@
 }
 
 .inventory.component input[type=text] {
-    max-width: 130px;
+    width: 100%;
 }
 
 .inventory.component input[type=number] {
