@@ -27,6 +27,6 @@
     width: 100%;
 }
 
-.armor.component .numberInput, .checkbox-input {
+.armor.component .numberInput, .armor.component .checkbox-input {
     text-align: center;
 }

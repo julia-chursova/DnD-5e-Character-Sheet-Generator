@@ -7,11 +7,7 @@
     max-width: 143px;
 }
 
-.inventory.component .item-name {
-    width: 140px;
-}
-
-.inventory.component .item-width, .item-quantity {
+.inventory.component .item-weight, .inventory.component .item-quantity {
     width: 55px;
 }
 
