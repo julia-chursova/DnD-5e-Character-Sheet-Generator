@@ -4,14 +4,16 @@
     angular.module(appName)
         .controller('characterController', [
             'characterModel',
+			'raceModel',
             'statsModel',
             'traitsModel',
             'raceProvider',
 			'classProvider',
-            function (characterModel, statsModel, traitsModel, raceProvider, classProvider) {
+            function (characterModel, raceModel, statsModel, traitsModel, raceProvider, classProvider) {
                 var self = this;
 
                 self.model = characterModel;
+	            self.raceModel = raceModel;
                 self.stats = statsModel;
                 self.availableRaces = raceProvider;
 	            self.availableClasses = classProvider;
