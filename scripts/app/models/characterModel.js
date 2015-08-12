@@ -37,8 +37,8 @@
                 self.effectiveLevel = function () {
                     var result = 0;
 
-                    for (var i = 0; i < self.classes.length; i++)
-                        result += self.classes[i].level;
+	                for (var i = 0; i < self.classes.length; i++)
+		                result += (self.classes[i].level || 0);
 
                     return result;
                 };
