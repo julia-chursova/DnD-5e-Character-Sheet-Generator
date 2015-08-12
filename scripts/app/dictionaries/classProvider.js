@@ -2,15 +2,35 @@
 	'use strict';
 	angular.module(appName)
         .factory('classProvider', function () {
-        	var classes = [
+        	return [
 				{
 					name: ''
 				},
                 {
-                	name: 'Barbarian'
+                	name: 'Barbarian',
+					hitDie: 12,
+                	specializationName: 'Path',
+                	specializations: [
+		                {
+		                	name: 'Berserker'
+		                },
+		                {
+		                	name: 'Totem Warrior'
+		                }
+                	]
                 },
                 {
-                	name: 'Bard'
+                	name: 'Bard',
+					hitDie: 8,
+                	specializationName: 'College',
+                	specializations: [
+		                {
+		                	name: 'Lore'
+		                },
+		                {
+		                	name: 'Valor'
+		                }
+                	]
                 },
                 {
                 	name: 'Cleric'
@@ -46,14 +66,5 @@
                 	name: 'Wizard'
                 }
         	];
-
-        	var archetypes = function (classItem) {
-        		return [];
-        	};
-
-        	return {
-        		classList: classes,
-        		archetypes: archetypes
-        	}
         });
 })();

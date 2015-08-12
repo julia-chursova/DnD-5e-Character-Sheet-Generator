@@ -21,9 +21,8 @@
 
 				for (var i = 0; i < maxClasses; i++) {
 					self.classes.push({
-						name: '',
-						archetype: '',
-						hitDie: '',
+						"class": null,
+						specialization: null,
 						level: ''
 					});
 				}
