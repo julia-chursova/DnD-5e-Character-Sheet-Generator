@@ -21,3 +21,28 @@
     align-items: stretch;
     width: 100%;
 }
+
+.character.component .effective-level, .character.component .proficiency-bonus {
+    font-size: 14px;
+}
+
+.character.component .common-table tbody td {
+    border-bottom: 1px dotted black;
+}
+
+.character.component tr {
+    height: 18px;
+    max-width: 143px;
+}
+
+.character.component .char-hd, .character.component .class-lvl {
+    width: 55px;
+}
+
+.character.component select {
+    width: 100%;
+}
+
+.inventory.component input[type=number] {
+    width: 50px;
+}
