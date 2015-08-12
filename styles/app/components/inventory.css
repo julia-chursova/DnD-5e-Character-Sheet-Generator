@@ -18,3 +18,7 @@
 .inventory.component input[type=number] {
     width: 50px;
 }
+
+.inventory.component .total-weight {
+    font-size: 14px;
+}
