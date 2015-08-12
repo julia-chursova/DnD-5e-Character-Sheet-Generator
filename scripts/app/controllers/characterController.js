@@ -24,6 +24,12 @@
                     return level > 0 ? level : '-';
                 };
 
+				self.proficiencyBonus = function() {
+					var proficiencyBonus = self.model.proficiencyBonus();
+
+					return proficiencyBonus > 0 && self.model.effectiveLevel() > 0 ? proficiencyBonus : '-';
+				}
+
                 self.initiativeBonus = function () {
                     return self.model.initiativeBonus == 0 ? '' : self.model.initiativeBonus;
                 };

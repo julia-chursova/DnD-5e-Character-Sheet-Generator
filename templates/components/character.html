@@ -123,12 +123,12 @@
 			</thead>
 			<tbody>
 			<tr ng-repeat="class in character.model.classes track by $index">
-				
+
 				<td>{{$index + 1}}</td>
 				<td>
 					<div cloak-field data-model="class.name + (class.archetype ? '(' + class.archetype + ')' : '')">
 						<select ng-model="character.model.classes[$index]"
-								ng-options="availableClass as availableClass.name for availableClass in character.availableClasses.classList"></select>
+						        ng-options="availableClass as availableClass.name for availableClass in character.availableClasses.classList"></select>
 					</div>
 				</td>
 				<td>d{{class.hitDie}}</td>
@@ -140,7 +140,15 @@
 			</tr>
 			</tbody>
 		</table>
-		<div>Effective level:</div>
-		<div ng-bind="character.effectiveLevel()"></div>
+		<div>
+			<div class="inline-block">
+				<div>Effective level:</div>
+				<div ng-bind="character.effectiveLevel()"></div>
+			</div>
+			<div class="inline-block">
+				<div>Proficiency Bonus:</div>
+				<div ng-bind="character.proficiencyBonus()"></div>
+			</div>
+		</div>
 	</div>
 </div>
