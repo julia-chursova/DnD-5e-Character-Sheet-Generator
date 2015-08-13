@@ -140,8 +140,8 @@
                     </td>
                     <td class="char-spec">
                         <div ng-if="class.class && class.level >= 3">
-                            <div ng-bind="(class.class.specializationName || 'Specialization')"></div>
-                            <div cloak-field data-model="class.class.specialization.name">
+                            <div class="inline-block" ng-bind="(class.class.specializationName || 'Specialization')"></div>
+                            <div class="inline-block" cloak-field data-model="class.class.specialization.name">
                                 <select ng-model="class.class.specialization"
                                         ng-options="spec as spec.name for spec in class.specializations"></select>
                             </div>

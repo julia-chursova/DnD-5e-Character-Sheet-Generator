@@ -32,17 +32,20 @@
 
 .character.component tr {
     height: 18px;
-    max-width: 143px;
 }
 
-.character.component .char-hd, .character.component .class-lvl {
-    width: 55px;
+.character.component .char-class {
+    width: 140px;
+}
+
+.character.component .char-hd, .character.component .char-lvl {
+    width: 40px;
 }
 
 .character.component select {
     width: 100%;
 }
 
-.inventory.component input[type=number] {
-    width: 50px;
+.character.component input[type=number] {
+    width: 100%;
 }
