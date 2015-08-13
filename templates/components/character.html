@@ -132,7 +132,7 @@
                                     ng-options="availableClass as availableClass.name for availableClass in character.availableClasses"></select>
                         </div>
                     </td>
-                    <td class="char-hd">1d{{ class.class.hitDie ? class.class.hitDie : '' }}</td>
+                    <td class="char-hd">{{class.class.hitDie ? '1d' + class.class.hitDie : ''}}</td>
                     <td class="char-lvl">
                         <div cloak-field data-model="class.level">
                             <input type="number" min="1" max="20" ng-model="class.level" />
