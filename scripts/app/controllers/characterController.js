@@ -9,14 +9,16 @@
             'featsModel',
             'raceProvider',
 			'classProvider',
-            function (characterModel, raceModel, statsModel, featsModel, raceProvider, classProvider) {
+			'backgroundProvider',
+            function (characterModel, raceModel, statsModel, featsModel, raceProvider, classProvider, backgroundProvider) {
                 var self = this;
 
                 self.model = characterModel;
 	            self.raceModel = raceModel;
                 self.stats = statsModel;
                 self.availableRaces = raceProvider;
-	            self.availableClasses = classProvider;
+                self.availableClasses = classProvider;
+                self.availableBackgrounds = backgroundProvider;
 
                 self.effectiveLevel = function () {
                     var level = self.model.effectiveLevel();

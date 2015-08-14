@@ -16,6 +16,7 @@
                 self.name = '';
                 self.alignment = 5;
                 self.isMale = true;
+	            self.background = null;
 
                 self.classes = [];
 

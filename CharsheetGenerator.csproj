@@ -58,6 +58,7 @@
     <Content Include="scripts\app\controllers\skillsController.js" />
     <Content Include="scripts\app\controllers\statsController.js" />
     <Content Include="scripts\app\controllers\weaponController.js" />
+    <Content Include="scripts\app\dictionaries\backgroundProvider.js" />
     <Content Include="scripts\app\dictionaries\classProvider.js" />
     <Content Include="scripts\app\dictionaries\languagesProvider.js" />
     <Content Include="scripts\app\dictionaries\raceProvider.js" />

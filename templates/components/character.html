@@ -81,19 +81,27 @@
                         <input type="text" ng-model="character.model.name" />
                     </div>
                 </div>
-                <div class="inline-block">
-                    <div class="inline-block label">M</div>
-                    <div class="inline-block">
-                        <input type="radio" name="race" value="true" class="custom" id="sex-male" ng-model="character.model.isMale" />
-                        <label for="sex-male"><span></span></label>
-                    </div>
+	            <div class="inline-block">
+		            <div class="inline-block label">M</div>
+		            <div class="inline-block">
+			            <input type="radio" name="race" value="true" class="custom" id="sex-male" ng-model="character.model.isMale"/>
+			            <label for="sex-male"><span></span></label>
+		            </div>
 
-                    <div class="inline-block label">F</div>
-                    <div class="inline-block">
-                        <input type="radio" name="race" value="false" class="custom" id="sex-female" ng-model="character.model.isMale" />
-                        <label for="sex-female"><span></span></label>
-                    </div>
-                </div>
+		            <div class="inline-block label">F</div>
+		            <div class="inline-block">
+			            <input type="radio" name="race" value="false" class="custom" id="sex-female" ng-model="character.model.isMale"/>
+			            <label for="sex-female"><span></span></label>
+		            </div>
+	            </div>
+	            <div class="inline-block">
+		            <div class="label">Background</div>
+		            <div cloak-field data-model="character.model.background">
+						<select ac-select ac-model="character.model.background"
+								ac-options="background for background in character.availableBackgrounds"
+								ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter Background', noItemsText: 'Press <enter> to add a custom background' }"></select>
+		            </div>
+	            </div>
             </div>
             <div>
                 <div class="inline-block flex">
