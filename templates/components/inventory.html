@@ -1,35 +1,36 @@
 <div class="inventory component" ng-controller="inventoryController as inventory">
-    <div class="header">Inventory</div>
-    <div class="flex-table">
-	<table class="common-table fixed-table">
-		<thead>
-		<tr>
-			<td class="item-name">Name</td>
-			<td class="item-weight">Weight(x1)</td>
-			<td class="item-quantity">Qty</td>
+	<div class="header">Inventory</div>
 
-		</tr>
-		</thead>
-		<tbody>
-		<tr ng-repeat="item in inventory.model.items">
-			<td class="item-name">
-				<div cloak-field data-model="item.name">
-					<input type="text" ng-model="item.name"/>
-				</div>
-			</td>
-			<td class="item-weight">
-				<div cloak-field data-model="item.weight">
-					<input type="number" min="0" step="0.1" ng-model="item.weight"/>
-				</div>
-			</td>
-			<td class="item-quantity">
-				<div cloak-field data-model="item.quantity">
-					<input type="number" min="0" ng-model="item.quantity"/>
-				</div>
-			</td>
-		</tr>
-		</tbody>
-	</table>
-    </div>
-    <div class="total-weight">{{ 'Total Weight: ' + inventory.model.inventoryWeight() }}</div>
+	<div class="flex-table">
+		<table class="common-table fixed-table">
+			<thead>
+				<tr>
+					<td class="item-name">Name</td>
+					<td class="item-weight">Weight(x1)</td>
+					<td class="item-quantity">Qty</td>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in inventory.model.items">
+					<td class="item-name">
+						<div cloak-field data-model="item.name">
+							<input type="text" ng-model="item.name" />
+						</div>
+					</td>
+					<td class="item-weight">
+						<div cloak-field data-model="item.weight">
+							<input type="number" min="0" step="0.1" ng-model="item.weight" />
+						</div>
+					</td>
+					<td class="item-quantity">
+						<div cloak-field data-model="item.quantity">
+							<input type="number" min="0" ng-model="item.quantity" />
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="total-weight">{{ 'Total Weight: ' + inventory.model.inventoryWeight() }}</div>
 </div>
