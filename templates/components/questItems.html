@@ -1,18 +1,18 @@
-<div class="potions component" ng-controller="inventoryController as inventory">
-	<div class="header">Potions</div>
+<div class="scrolls component" ng-controller="inventoryController as inventory">
+	<div class="header">Quest Items</div>
 
 	<div class="flex-table">
 		<table class="common-table fixed-table">
 			<thead>
 				<tr>
 					<td class="item-name">Name</td>
-					<td class="item-weight">Weight(x1)</td>
+					<td class="item-weight">Weight (x1)</td>
 					<td class="item-quantity">Qty</td>
 
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="item in inventory.model.potions">
+				<tr ng-repeat="item in inventory.model.questItems">
 					<td class="item-name">
 						<div cloak-field data-model="item.name">
 							<input type="text" ng-model="item.name" />

@@ -53,6 +53,7 @@
     <Content Include="scripts\app\controllers\featsController.js" />
     <Content Include="scripts\app\controllers\inventoryController.js" />
     <Content Include="scripts\app\controllers\languagesController.js" />
+    <Content Include="scripts\app\controllers\moneyController.js" />
     <Content Include="scripts\app\controllers\playerController.js" />
     <Content Include="scripts\app\controllers\skillsController.js" />
     <Content Include="scripts\app\controllers\statsController.js" />
@@ -67,6 +68,7 @@
     <Content Include="scripts\app\models\featsModel.js" />
     <Content Include="scripts\app\models\inventoryModel.js" />
     <Content Include="scripts\app\models\languagesModel.js" />
+    <Content Include="scripts\app\models\moneyModel.js" />
     <Content Include="scripts\app\models\playerModel.js" />
     <Content Include="scripts\app\models\raceModel.js" />
     <Content Include="scripts\app\models\skillsModel.js" />
@@ -93,6 +95,7 @@
     <Content Include="styles\app\components\inventory.css" />
     <Content Include="styles\app\components\languages.css" />
     <Content Include="styles\app\components\logo.css" />
+    <Content Include="styles\app\components\money.css" />
     <Content Include="styles\app\components\player.css" />
     <Content Include="styles\app\components\armorClass.css" />
     <Content Include="styles\app\components\stats.css" />
@@ -111,10 +114,11 @@
     <Content Include="templates\components\inventory.html" />
     <Content Include="templates\components\languages.html" />
     <Content Include="templates\components\logo.html" />
+    <Content Include="templates\components\money.html" />
     <Content Include="templates\components\player.html" />
     <Content Include="templates\components\portrait.html" />
-    <Content Include="templates\components\potions.html" />
-    <Content Include="templates\components\scrolls.html" />
+    <Content Include="templates\components\potionsAndScrolls.html" />
+    <Content Include="templates\components\questItems.html" />
     <Content Include="templates\components\shield.html" />
     <Content Include="templates\components\skills.html" />
     <Content Include="templates\components\speed.html" />

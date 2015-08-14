@@ -7,25 +7,25 @@
             function (armorModel) {
             	var self = this;
 
-            	var maxCommonItems = 20;
-            	var maxPotions = 10;
-	            var maxScrolls = 10;
+            	var maxCommonItems = 15;
+            	var maxPotionsAndScrolls = 10;
+	            var maxQuestItems = 10;
 
 	            self.items = [];
-	            self.potions = [];
-	            self.scrolls = [];
+	            self.potionsAndScrolls = [];
+	            self.questItems = [];
 
 	            var i;
 	            for (i = 0; i < maxCommonItems; i++) {
 		            self.items.push({});
 	            };
 
-				for (i = 0; i < maxPotions; i++) {
-					self.potions.push({});
+				for (i = 0; i < maxPotionsAndScrolls; i++) {
+					self.potionsAndScrolls.push({});
 				}
 
-				for (i = 0; i < maxScrolls; i++) {
-					self.scrolls.push({});
+				for (i = 0; i < maxQuestItems; i++) {
+					self.questItems.push({});
 				}
 
                 self.inventoryWeight = function () {
@@ -36,12 +36,12 @@
                         result += (self.items[i].weight || 0) * (self.items[i].quantity || 0);
                     }
 
-					for (i = 0; i < self.potions.length; i++) {
-						result += (self.potions[i].weight || 0) * (self.potions[i].quantity || 0);
+					for (i = 0; i < self.potionsAndScrolls.length; i++) {
+						result += (self.potionsAndScrolls[i].weight || 0) * (self.potionsAndScrolls[i].quantity || 0);
 					}
 
-					for (i = 0; i < self.scrolls.length; i++) {
-						result += (self.scrolls[i].weight || 0) * (self.scrolls[i].quantity || 0);
+					for (i = 0; i < self.questItems.length; i++) {
+						result += (self.questItems[i].weight || 0) * (self.questItems[i].quantity || 0);
 					}
 
                     return result;

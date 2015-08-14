@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>D&D 5e Characters Sheet Generator</title>
+    <title>D&amp;D 5e Characters Sheet Generator</title>
 
     <!-- library files -->
     <script type="text/javascript" src="scripts/libs/angular.min.js"></script>
@@ -29,7 +29,8 @@
     <link rel="stylesheet" href="styles/app/components/shield.css" />
     <link rel="stylesheet" href="styles/app/components/portrait.css" />
     <link rel="stylesheet" href="styles/app/components/skills.css" />
-    <link rel="stylesheet" href="styles/app/components/inventory.css" />
+	<link rel="stylesheet" href="styles/app/components/inventory.css"/>
+	<link rel="stylesheet" href="styles/app/components/money.css"/>
 
     <!-- directives' styles -->
     <link rel="stylesheet" href="styles/app/directives/container.css" />
@@ -82,8 +83,9 @@
 		<div class="container">
 			<div class="container-box" style="width: 33%">
 				<div ng-include="'templates/components/inventory.html'"></div>
-				<div ng-include="'templates/components/potions.html'"></div>
-				<div ng-include="'templates/components/scrolls.html'"></div>
+				<div ng-include="'templates/components/potionsAndScrolls.html'"></div>
+				<div ng-include="'templates/components/questItems.html'"></div>
+				<div ng-include="'templates/components/money.html'"></div>
 			</div>
 			<div class="container-box" style="width: 33%">
 				<div portrait-component></div>
@@ -128,6 +130,7 @@
 	<script type="text/javascript" src="scripts/app/models/skillsModel.js"></script>
 	<script type="text/javascript" src="scripts/app/models/raceModel.js"></script>
 	<script type="text/javascript" src="scripts/app/models/featsModel.js"></script>
+	<script type="text/javascript" src="scripts/app/models/moneyModel.js"></script>
 
     <!-- common directives -->
     <script type="text/javascript" src="scripts/app/directives/containerDirective.js"></script>
@@ -144,6 +147,7 @@
     <script type="text/javascript" src="scripts/app/controllers/weaponController.js"></script>
 	<script type="text/javascript" src="scripts/app/controllers/skillsController.js"></script>
 	<script type="text/javascript" src="scripts/app/controllers/featsController.js"></script>
+	<script type="text/javascript" src="scripts/app/controllers/moneyController.js"></script>
 
     <!-- components directives -->
     <script type="text/javascript" src="scripts/app/componentDirectives/portraitDirective.js"></script>
