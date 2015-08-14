@@ -126,7 +126,6 @@
 
                     <!--<td>{{$index + 1}}</td>-->
                     <td class="char-class">
-                        <div cloak-
                         <div cloak-field data-model="(class.class ? class.class.name : '') + (class.archetype ? '(' + class.archetype + ')' : '')">
                             <select ng-model="class.class"
                                     ng-options="availableClass as availableClass.name for availableClass in character.availableClasses"></select>
@@ -140,10 +139,10 @@
                     </td>
                     <td class="char-spec">
                         <div ng-if="class.class && class.level >= 3">
-                            <div class="inline-block" ng-bind="(class.class.specializationName || 'Specialization')"></div>
+                            <div class="inline-block" ng-bind="(class.class.specializationName + ': ' || 'Specialization: ')"></div>
                             <div class="inline-block" cloak-field data-model="class.class.specialization.name">
                                 <select ng-model="class.class.specialization"
-                                        ng-options="spec as spec.name for spec in class.specializations"></select>
+                                        ng-options="spec as spec.name for spec in class.class.specializations"></select>
                             </div>
                         </div>
                     </td>
