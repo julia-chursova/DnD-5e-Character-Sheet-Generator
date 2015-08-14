@@ -50,12 +50,12 @@
     <Content Include="scripts\app\controllers\appController.js" />
     <Content Include="scripts\app\controllers\armorController.js" />
     <Content Include="scripts\app\controllers\characterController.js" />
+    <Content Include="scripts\app\controllers\featsController.js" />
     <Content Include="scripts\app\controllers\inventoryController.js" />
     <Content Include="scripts\app\controllers\languagesController.js" />
     <Content Include="scripts\app\controllers\playerController.js" />
     <Content Include="scripts\app\controllers\skillsController.js" />
     <Content Include="scripts\app\controllers\statsController.js" />
-    <Content Include="scripts\app\controllers\traitsController.js" />
     <Content Include="scripts\app\controllers\weaponController.js" />
     <Content Include="scripts\app\dictionaries\classProvider.js" />
     <Content Include="scripts\app\dictionaries\languagesProvider.js" />
@@ -64,13 +64,13 @@
     <Content Include="scripts\app\directives\containerDirective.js" />
     <Content Include="scripts\app\models\armorModel.js" />
     <Content Include="scripts\app\models\characterModel.js" />
+    <Content Include="scripts\app\models\featsModel.js" />
     <Content Include="scripts\app\models\inventoryModel.js" />
     <Content Include="scripts\app\models\languagesModel.js" />
     <Content Include="scripts\app\models\playerModel.js" />
     <Content Include="scripts\app\models\raceModel.js" />
     <Content Include="scripts\app\models\skillsModel.js" />
     <Content Include="scripts\app\models\statsModel.js" />
-    <Content Include="scripts\app\models\traitsModel.js" />
     <Content Include="scripts\app\models\weaponModel.js" />
     <Content Include="scripts\libs\acute.select.modified.js" />
     <Content Include="scripts\libs\angular.min.js" />
@@ -106,6 +106,7 @@
     <Content Include="templates\components\armor.html" />
     <Content Include="templates\components\armorClass.html" />
     <Content Include="templates\components\character.html" />
+    <Content Include="templates\components\feats.html" />
     <Content Include="templates\components\initiative.html" />
     <Content Include="templates\components\inventory.html" />
     <Content Include="templates\components\languages.html" />
@@ -119,7 +120,6 @@
     <Content Include="templates\components\speed.html" />
     <Content Include="templates\components\spells.html" />
     <Content Include="templates\components\stats.html" />
-    <Content Include="templates\components\traits.html" />
     <Content Include="templates\components\weapon.html" />
     <Content Include="templates\containers\33p66p.html" />
     <Content Include="templates\containers\50p50p.html" />

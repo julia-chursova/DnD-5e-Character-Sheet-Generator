@@ -4,9 +4,9 @@
     angular.module(appName)
         .factory('characterModel', [
             'statsModel',
-            'traitsModel',
+            'featsModel',
 			'raceModel',
-            function (statsModel, traitsModel, raceModel) {
+            function (statsModel, featsModel, raceModel) {
             	var self = this;
 
             	var maxClasses = 5;
@@ -46,7 +46,7 @@
                 self.initiative = function () {
                     var result = statsModel.dexModifier() + self.initiativeBonus;
 
-                    if (traitsModel.haveAlertFeat())
+                    if (featsModel.haveAlertFeat())
                         result += 5;
 
                     return result;

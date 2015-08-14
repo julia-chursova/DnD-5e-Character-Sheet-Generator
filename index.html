@@ -47,25 +47,12 @@
     <div ng-include="'templates/menu.html'"></div>
 
     <div class="a4-sheet">
-
-        <div ng-include="'templates/components/character.html'"></div>
-        <div ng-include="'templates/components/weapon.html'"></div>
-        <div ng-include="'templates/components/traits.html'"></div>
-
-        <div ng-include="'templates/components/speed.html'"></div>
-        <div ng-include="'templates/components/spells.html'"></div>
-
-        <container data-layouts="[ '100%' ]" data-components="[ [] ]" data-removable="false"></container>
-    </div>
-
-    <div class="page-break"></div>
-
-    <div class="a4-sheet">
         <div class="container">
             <div class="container-box" style="width: 33%">
                 <div ng-include="'templates/components/logo.html'"></div>
                 <div ng-include="'templates/components/player.html'"></div>
-                <div ng-include="'templates/components/stats.html'"></div>
+	            <div ng-include="'templates/components/stats.html'"></div>
+	            <div ng-include="'templates/components/feats.html'"></div>
             </div>
             <div class="container-box" style="width: 67%">
                 <div ng-include="'templates/components/character.html'"></div>
@@ -91,25 +78,37 @@
 
     <div class="page-break"></div>
 
-    <div class="a4-sheet">
-        <div class="container">
-            <div class="container-box" style="width: 33%">
-	            <div ng-include="'templates/components/inventory.html'"></div>
+	<div class="a4-sheet">
+		<div class="container">
+			<div class="container-box" style="width: 33%">
+				<div ng-include="'templates/components/inventory.html'"></div>
 				<div ng-include="'templates/components/potions.html'"></div>
 				<div ng-include="'templates/components/scrolls.html'"></div>
-            </div>
-            <div class="container-box" style="width: 33%">
-                <div portrait-component></div>
-            </div>
-            <div class="container-box" style="width: 33%">
+			</div>
+			<div class="container-box" style="width: 33%">
+				<div portrait-component></div>
+			</div>
+			<div class="container-box" style="width: 33%">
 				<div ng-include="'templates/components/armor.html'"></div>
 				<div ng-include="'templates/components/shield.html'"></div>
-            </div>
-        </div>
-    </div>
+			</div>
+		</div>
+	</div>
+
+	<div class="page-break"></div>
+
+	<div class="a4-sheet">
+
+		<div ng-include="'templates/components/weapon.html'"></div>
+
+		<div ng-include="'templates/components/speed.html'"></div>
+		<div ng-include="'templates/components/spells.html'"></div>
+
+		<container data-layouts="[ '100%' ]" data-components="[ [] ]" data-removable="false"></container>
+	</div>
 
 
-    <!-- app scripts -->
+<!-- app scripts -->
     <script type="text/javascript" src="scripts/app/app.js"></script>
     <script type="text/javascript" src="scripts/app/common.js"></script>
 
@@ -126,9 +125,9 @@
     <script type="text/javascript" src="scripts/app/models/languagesModel.js"></script>
     <script type="text/javascript" src="scripts/app/models/armorModel.js"></script>
     <script type="text/javascript" src="scripts/app/models/weaponModel.js"></script>
-    <script type="text/javascript" src="scripts/app/models/traitsModel.js"></script>
 	<script type="text/javascript" src="scripts/app/models/skillsModel.js"></script>
 	<script type="text/javascript" src="scripts/app/models/raceModel.js"></script>
+	<script type="text/javascript" src="scripts/app/models/featsModel.js"></script>
 
     <!-- common directives -->
     <script type="text/javascript" src="scripts/app/directives/containerDirective.js"></script>
@@ -143,8 +142,8 @@
     <script type="text/javascript" src="scripts/app/controllers/languagesController.js"></script>
     <script type="text/javascript" src="scripts/app/controllers/armorController.js"></script>
     <script type="text/javascript" src="scripts/app/controllers/weaponController.js"></script>
-    <script type="text/javascript" src="scripts/app/controllers/traitsController.js"></script>
-    <script type="text/javascript" src="scripts/app/controllers/skillsController.js"></script>
+	<script type="text/javascript" src="scripts/app/controllers/skillsController.js"></script>
+	<script type="text/javascript" src="scripts/app/controllers/featsController.js"></script>
 
     <!-- components directives -->
     <script type="text/javascript" src="scripts/app/componentDirectives/portraitDirective.js"></script>

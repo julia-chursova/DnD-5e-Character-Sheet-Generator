@@ -6,10 +6,10 @@
             'characterModel',
 			'raceModel',
             'statsModel',
-            'traitsModel',
+            'featsModel',
             'raceProvider',
 			'classProvider',
-            function (characterModel, raceModel, statsModel, traitsModel, raceProvider, classProvider) {
+            function (characterModel, raceModel, statsModel, featsModel, raceProvider, classProvider) {
                 var self = this;
 
                 self.model = characterModel;
@@ -35,7 +35,7 @@
                 };
 
                 self.traitInitiativeBonus = function () {
-                    return traitsModel.haveAlertFeat() ? '5' : '';
+                    return featsModel.haveAlertFeat() ? '5' : '';
                 }
             }]);
 })();

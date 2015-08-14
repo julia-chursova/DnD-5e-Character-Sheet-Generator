@@ -1,0 +1,11 @@
+﻿<div class="feats component" ng-controller="featsController as controller">
+	<div class="header">Feats</div>
+
+	<div>
+		<div ng-repeat="feat in controller.model.feats track by $index">
+			<div ng-bind="feat.name"></div>
+			<div ng-bind="feat.prereq"></div>
+			<div ng-bind="feat.description"></div>
+		</div>
+	</div>
+</div>
