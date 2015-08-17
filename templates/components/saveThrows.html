@@ -1,0 +1,57 @@
+﻿<div class="component saveThrows" ng-controller="saveThrowController as controller">
+	<div class="header">Save Throws</div>
+
+	<div>
+		<div>STR save: {{controller.saveThrows.strSave()}}</div>
+		<div cloak-field data-model="controller.saveThrows.isStrProficient ? '✓' : '-'">
+			<input type="checkbox" ng-model="controller.saveThrows.isStrProficient"/>
+		</div>
+		<div>STR: {{controller.stats.strModifier()}}</div>
+		<div>Proficiency bonus:{{controller.saveThrows.isStrProficient ? controller.character.proficiencyBonus() : ''}}</div>
+	</div>
+
+	<div>
+		<div>DEX save: {{controller.saveThrows.dexSave()}}</div>
+		<div cloak-field data-model="controller.saveThrows.isDexProficient ? '✓' : '-'">
+			<input type="checkbox" ng-model="controller.saveThrows.isDexProficient"/>
+		</div>
+		<div>DEX: {{controller.stats.dexModifier()}}</div>
+		<div>Proficiency bonus:{{controller.saveThrows.isDexProficient ? controller.character.proficiencyBonus() : ''}}</div>
+	</div>
+
+	<div>
+		<div>CON save: {{controller.saveThrows.conSave()}}</div>
+		<div cloak-field data-model="controller.saveThrows.isConProficient ? '✓' : '-'">
+			<input type="checkbox" ng-model="controller.saveThrows.isConProficient"/>
+		</div>
+		<div>CON: {{controller.stats.conModifier()}}</div>
+		<div>Proficiency bonus:{{controller.saveThrows.isConProficient ? controller.character.proficiencyBonus() : ''}}</div>
+	</div>
+
+	<div>
+		<div>INT save: {{controller.saveThrows.intSave()}}</div>
+		<div cloak-field data-model="controller.saveThrows.isIntProficient ? '✓' : '-'">
+			<input type="checkbox" ng-model="controller.saveThrows.isIntProficient"/>
+		</div>
+		<div>INT: {{controller.stats.intModifier()}}</div>
+		<div>Proficiency bonus:{{controller.saveThrows.isIntProficient ? controller.character.proficiencyBonus() : ''}}</div>
+	</div>
+
+	<div>
+		<div>WIS save: {{controller.saveThrows.wisSave()}}</div>
+		<div cloak-field data-model="controller.saveThrows.isWisProficient ? '✓' : '-'">
+			<input type="checkbox" ng-model="controller.saveThrows.isWisProficient"/>
+		</div>
+		<div>WIS: {{controller.stats.wisModifier()}}</div>
+		<div>Proficiency bonus:{{controller.saveThrows.isWisProficient ? controller.character.proficiencyBonus() : ''}}</div>
+	</div>
+
+	<div>
+		<div>CHA save: {{controller.saveThrows.chaSave()}}</div>
+		<div cloak-field data-model="controller.saveThrows.isChaProficient ? '✓' : '-'">
+			<input type="checkbox" ng-model="controller.saveThrows.isChaProficient" />
+		</div>
+		<div>CHA: {{controller.stats.chaModifier()}}</div>
+		<div>Proficiency bonus:{{controller.saveThrows.isChaProficient ? controller.character.proficiencyBonus() : ''}}</div>
+	</div>
+</div>
