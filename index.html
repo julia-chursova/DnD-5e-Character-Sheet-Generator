@@ -70,9 +70,12 @@
                     <div class="container-box" style="width: 70%">
                         <div ng-include="'templates/components/skills.html'"></div>
                     </div>
-                    <div class="container-box" style="width: 30%">
-                        <div ng-include="'templates/components/languages.html'"></div>
-                    </div>
+	                <div class="container-box" style="width: 30%">
+		                <div ng-include="'templates/components/deathSaves.html'"></div>
+		                <div ng-include="'templates/components/hitPoints.html'"></div>
+						<div ng-include="'templates/components/speed.html'"></div>
+		                <div ng-include="'templates/components/languages.html'"></div>
+	                </div>
                 </div>
             </div>
         </div>
@@ -88,25 +91,19 @@
 				<div ng-include="'templates/components/questItems.html'"></div>
 				<div ng-include="'templates/components/money.html'"></div>
 			</div>
-			<div class="container-box" style="width: 33%">
-				<div portrait-component></div>
-			</div>
-			<div class="container-box" style="width: 33%">
-				<div ng-include="'templates/components/armor.html'"></div>
-				<div ng-include="'templates/components/shield.html'"></div>
+			<div class="container-box" style="width: 67%">
+				<div class="container-box" style="width: 100%">
+					<div class="container-box" style="width: 49%">
+						<div portrait-component></div>
+					</div>
+					<div class="container-box" style="width: 49%">
+						<div ng-include="'templates/components/armor.html'"></div>
+						<div ng-include="'templates/components/shield.html'"></div>
+					</div>
+				</div>
+				<div ng-include="'templates/components/weapon.html'"></div>
 			</div>
 		</div>
-	</div>
-
-	<div class="page-break"></div>
-
-	<div class="a4-sheet">
-
-		<div ng-include="'templates/components/weapon.html'"></div>
-
-		<div ng-include="'templates/components/speed.html'"></div>
-
-		<container data-layouts="[ '100%' ]" data-components="[ [] ]" data-removable="false"></container>
 	</div>
 
 
@@ -133,6 +130,7 @@
 	<script type="text/javascript" src="scripts/app/models/featsModel.js"></script>
 	<script type="text/javascript" src="scripts/app/models/moneyModel.js"></script>
 	<script type="text/javascript" src="scripts/app/models/saveThrowModel.js"></script>
+	<script type="text/javascript" src="scripts/app/models/hitPointsModel.js"></script>
 
 	<!-- common directives -->
     <script type="text/javascript" src="scripts/app/directives/containerDirective.js"></script>
@@ -151,6 +149,7 @@
 	<script type="text/javascript" src="scripts/app/controllers/featsController.js"></script>
 	<script type="text/javascript" src="scripts/app/controllers/moneyController.js"></script>
 	<script type="text/javascript" src="scripts/app/controllers/saveThrowController.js"></script>
+	<script type="text/javascript" src="scripts/app/controllers/hitPointsController.js"></script>
 
     <!-- components directives -->
     <script type="text/javascript" src="scripts/app/componentDirectives/portraitDirective.js"></script>

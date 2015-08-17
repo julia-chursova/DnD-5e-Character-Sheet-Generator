@@ -51,6 +51,7 @@
     <Content Include="scripts\app\controllers\armorController.js" />
     <Content Include="scripts\app\controllers\characterController.js" />
     <Content Include="scripts\app\controllers\featsController.js" />
+    <Content Include="scripts\app\controllers\hitPointsController.js" />
     <Content Include="scripts\app\controllers\inventoryController.js" />
     <Content Include="scripts\app\controllers\languagesController.js" />
     <Content Include="scripts\app\controllers\moneyController.js" />
@@ -68,6 +69,7 @@
     <Content Include="scripts\app\models\armorModel.js" />
     <Content Include="scripts\app\models\characterModel.js" />
     <Content Include="scripts\app\models\featsModel.js" />
+    <Content Include="scripts\app\models\hitPointsModel.js" />
     <Content Include="scripts\app\models\inventoryModel.js" />
     <Content Include="scripts\app\models\languagesModel.js" />
     <Content Include="scripts\app\models\moneyModel.js" />
@@ -112,7 +114,9 @@
     <Content Include="templates\components\armor.html" />
     <Content Include="templates\components\armorClass.html" />
     <Content Include="templates\components\character.html" />
+    <Content Include="templates\components\deathSaves.html" />
     <Content Include="templates\components\feats.html" />
+    <Content Include="templates\components\hitPoints.html" />
     <Content Include="templates\components\initiative.html" />
     <Content Include="templates\components\inventory.html" />
     <Content Include="templates\components\languages.html" />

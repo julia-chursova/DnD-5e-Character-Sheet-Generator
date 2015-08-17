@@ -22,6 +22,7 @@
     min-height: 50px;
     box-sizing: border-box;
     padding: 5px;
+	vertical-align: top;
 
     align-items: stretch;
 }
