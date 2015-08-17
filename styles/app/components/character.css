@@ -1,8 +1,12 @@
 .character.component .cloakFieldContainer {
     height: 18px;
     border-bottom: 1px solid #aaaaaa;
-    min-width: 110px;
+    width: 110px;
 }
+
+    .character.component .cloakFieldContainer input[type=text] {
+        width: 100%;
+    }
 
 .character.component .alignment-hor-label {
     text-align: center;
@@ -19,7 +23,7 @@
 .character.component .race-data {
     min-height: 20px;
     align-items: stretch;
-    width: 100%;
+    width: 110px;
 }
 
 .character.component .effective-level, .character.component .proficiency-bonus {

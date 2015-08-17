@@ -81,39 +81,39 @@
                         <input type="text" ng-model="character.model.name" />
                     </div>
                 </div>
-	            <div class="inline-block">
-		            <div class="inline-block label">M</div>
-		            <div class="inline-block">
-			            <input type="radio" name="race" value="true" class="custom" id="sex-male" ng-model="character.model.isMale"/>
-			            <label for="sex-male"><span></span></label>
-		            </div>
+                <div class="inline-block">
+                    <div class="inline-block label">M</div>
+                    <div class="inline-block">
+                        <input type="radio" name="race" value="true" class="custom" id="sex-male" ng-model="character.model.isMale" />
+                        <label for="sex-male"><span></span></label>
+                    </div>
 
-		            <div class="inline-block label">F</div>
-		            <div class="inline-block">
-			            <input type="radio" name="race" value="false" class="custom" id="sex-female" ng-model="character.model.isMale"/>
-			            <label for="sex-female"><span></span></label>
-		            </div>
-	            </div>
-	            <div class="inline-block">
-		            <div class="label">Background</div>
-		            <div cloak-field data-model="character.model.background">
-						<select ac-select ac-model="character.model.background"
-								ac-options="background for background in character.availableBackgrounds"
-								ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter Background', noItemsText: 'Press <enter> to add a custom background' }"></select>
-		            </div>
-	            </div>
+                    <div class="inline-block label">F</div>
+                    <div class="inline-block">
+                        <input type="radio" name="race" value="false" class="custom" id="sex-female" ng-model="character.model.isMale" />
+                        <label for="sex-female"><span></span></label>
+                    </div>
+                </div>
+                <div class="inline-block">
+                    <div class="label">Background</div>
+                    <div cloak-field class="cloakFieldContainer background" data-model="character.model.background">
+                        <select ac-select ac-model="character.model.background"
+                                ac-options="background for background in character.availableBackgrounds"
+                                ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter Background', noItemsText: 'Press <enter> to add a custom background' }"></select>
+                    </div>
+                </div>
             </div>
             <div>
                 <div class="inline-block flex">
                     <div class="label">Race</div>
-                    <div cloak-field data-model="character.raceModel.race.name" class="race-data">
+                    <div cloak-field class="cloakFieldContainer race-data" data-model="character.raceModel.race.name">
                         <select ng-model="character.raceModel.race"
                                 ng-options="race as race.name for race in character.availableRaces"></select>
                     </div>
                 </div>
                 <div class="inline-block flex">
                     <div class="label">Size</div>
-                    <div ng-bind="character.raceModel.race.size"></div>
+                    <div class="cloakFieldContainer size" ng-bind="character.raceModel.race.size"></div>
                 </div>
             </div>
         </div>
