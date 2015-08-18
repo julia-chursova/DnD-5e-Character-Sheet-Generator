@@ -56,10 +56,12 @@
     <Content Include="scripts\app\controllers\languagesController.js" />
     <Content Include="scripts\app\controllers\moneyController.js" />
     <Content Include="scripts\app\controllers\playerController.js" />
+    <Content Include="scripts\app\controllers\proficienciesController.js" />
     <Content Include="scripts\app\controllers\saveThrowController.js" />
     <Content Include="scripts\app\controllers\skillsController.js" />
     <Content Include="scripts\app\controllers\statsController.js" />
     <Content Include="scripts\app\controllers\weaponController.js" />
+    <Content Include="scripts\app\dictionaries\abilityProvider.js" />
     <Content Include="scripts\app\dictionaries\backgroundProvider.js" />
     <Content Include="scripts\app\dictionaries\classProvider.js" />
     <Content Include="scripts\app\dictionaries\languagesProvider.js" />
@@ -74,6 +76,7 @@
     <Content Include="scripts\app\models\languagesModel.js" />
     <Content Include="scripts\app\models\moneyModel.js" />
     <Content Include="scripts\app\models\playerModel.js" />
+    <Content Include="scripts\app\models\proficienciesModel.js" />
     <Content Include="scripts\app\models\raceModel.js" />
     <Content Include="scripts\app\models\saveThrowModel.js" />
     <Content Include="scripts\app\models\skillsModel.js" />
@@ -125,6 +128,7 @@
     <Content Include="templates\components\player.html" />
     <Content Include="templates\components\portrait.html" />
     <Content Include="templates\components\potionsAndScrolls.html" />
+    <Content Include="templates\components\proficiencies.html" />
     <Content Include="templates\components\questItems.html" />
     <Content Include="templates\components\saveThrows.html" />
     <Content Include="templates\components\shield.html" />

@@ -43,6 +43,8 @@
                 	name: 'Dwarf',
                 	size: 'Medium',
                 	conBonus: 2,
+                	speed: 25,
+                	abilities: ['Darkvision', 'Dwarven Resilience'],
                 	subtypes: [
 		                {
 		                	name: 'Mountain',
