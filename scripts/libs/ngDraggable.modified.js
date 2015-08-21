@@ -397,9 +397,11 @@ angular.module("ngDraggable", [])
 
                 scope.hitTest = function (x, y, checkOverlap) {
                     var bounds = element[0].getBoundingClientRect();// ngDraggable.getPrivOffset(element);
-                    x -= $document[0].body.scrollLeft + $document[0].documentElement.scrollLeft;
-                    y -= $document[0].body.scrollTop + $document[0].documentElement.scrollTop;
-                    var result = x >= bounds.left
+	                if (checkOverlap) {
+		                x -= $document[0].body.scrollLeft + $document[0].documentElement.scrollLeft;
+		                y -= $document[0].body.scrollTop + $document[0].documentElement.scrollTop;
+	                }
+	                var result = x >= bounds.left
                         && x <= bounds.right
                         && y <= bounds.bottom
                         && y >= bounds.top;
