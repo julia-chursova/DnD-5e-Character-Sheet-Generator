@@ -1,7 +1,7 @@
 <div class="speed component" ng-controller="speedController as controller">
 	<div class="header">Speed</div>
 
-	<div cloak-field data-model="controller.model.baseSpeed">
-		<input type="number" min="1" step="1" ng-model="controller.model.baseSpeed"/>
+	<div cloak-field data-model="controller.model.speed()">
+		<input type="number" min="1" step="1" ng-model="controller.model.userDefinedSpeed" />
 	</div>
 </div>
