@@ -1,8 +1,21 @@
-﻿<div class="component hit-points" controller="hitPointsController as controller">
+﻿<div class="component hit-points" ng-controller="hitPointsController as controller">
 	<div class="header">HP</div>
 
+	Base HP:
+	<div cloak-field data-model="controller.model.baseHitPoints">
+		<input type="number" min="1" step="1" ng-model="controller.model.baseHitPoints" />
+	</div>
+
+	HP Bonus:
+	<div cloak-field data-model="controller.model.hitPointsBonus">
+		<input type="number" ng-model="controller.model.hitPointsBonus" />
+	</div>
+
 	Max HP:
-	<div cloak-field data-model="controller.model.maxHitPoints">
-		<input type="number" ng-model="controller.model.maxHitPoints" />
+	<div ng-bind="controller.maxHitPoints()"></div>
+
+	Current HP:
+	<div>
+
 	</div>
 </div>

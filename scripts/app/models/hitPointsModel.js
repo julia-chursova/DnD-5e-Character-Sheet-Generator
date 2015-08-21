@@ -1,12 +1,17 @@
-﻿(function() {
+﻿(function () {
 	'use strict';
 
 	angular.module(appName)
 		.factory('hitPointsModel', [
-			function() {
+			function () {
 				var self = this;
 
-				self.maxHitPoints = 0;
+				self.baseHitPoints = '';
+				self.hitPointsBonus = '';
+
+				self.maxHitPoints = function () {
+					return (self.hitPointsBonus || 0) + (self.baseHitPoints || 0);
+				}
 
 				return self;
 			}
