@@ -106,6 +106,7 @@
     <Content Include="styles\app\components\inventory.css" />
     <Content Include="styles\app\components\languages.css" />
     <Content Include="styles\app\components\logo.css" />
+    <Content Include="styles\app\components\money-short.css" />
     <Content Include="styles\app\components\money.css" />
     <Content Include="styles\app\components\player.css" />
     <Content Include="styles\app\components\armorClass.css" />
