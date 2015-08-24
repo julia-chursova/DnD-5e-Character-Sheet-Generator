@@ -129,6 +129,7 @@
     <Content Include="templates\components\inventory.html" />
     <Content Include="templates\components\languages.html" />
     <Content Include="templates\components\logo.html" />
+    <Content Include="templates\components\money-short.html" />
     <Content Include="templates\components\money.html" />
     <Content Include="templates\components\player.html" />
     <Content Include="templates\components\portrait.html" />
