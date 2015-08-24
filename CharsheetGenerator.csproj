@@ -106,7 +106,6 @@
     <Content Include="styles\app\components\inventory.css" />
     <Content Include="styles\app\components\languages.css" />
     <Content Include="styles\app\components\logo.css" />
-    <Content Include="styles\app\components\money-short.css" />
     <Content Include="styles\app\components\money.css" />
     <Content Include="styles\app\components\player.css" />
     <Content Include="styles\app\components\armorClass.css" />
@@ -130,7 +129,6 @@
     <Content Include="templates\components\inventory.html" />
     <Content Include="templates\components\languages.html" />
     <Content Include="templates\components\logo.html" />
-    <Content Include="templates\components\money-short.html" />
     <Content Include="templates\components\money.html" />
     <Content Include="templates\components\player.html" />
     <Content Include="templates\components\portrait.html" />
