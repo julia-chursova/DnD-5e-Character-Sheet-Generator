@@ -38,7 +38,9 @@
 				template: '<div style="display: none" ng-transclude></div>',
 				require: '^layout',
 				transclude: true,
-				scope: {},
+				scope: {
+					width: '=width'
+				},
 				link: function (scope, element, attrs, layout) {
 					layout.addItem(scope);
 				},
