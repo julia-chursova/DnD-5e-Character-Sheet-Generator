@@ -68,7 +68,7 @@
     <Content Include="scripts\app\dictionaries\languagesProvider.js" />
     <Content Include="scripts\app\dictionaries\raceProvider.js" />
     <Content Include="scripts\app\directives\cloakFieldDirective.js" />
-    <Content Include="scripts\app\directives\containerDirective.js" />
+    <Content Include="scripts\app\directives\layoutDirective.js" />
     <Content Include="scripts\app\models\armorModel.js" />
     <Content Include="scripts\app\models\characterModel.js" />
     <Content Include="scripts\app\models\featsModel.js" />
@@ -116,7 +116,7 @@
     <Content Include="styles\app\components\portrait.css" />
     <Content Include="styles\app\components\skills.css" />
     <Content Include="styles\app\directives\cloakField.css" />
-    <Content Include="styles\app\directives\container.css" />
+    <Content Include="styles\app\directives\layout.css" />
     <Content Include="styles\app\menu.css" />
     <Content Include="styles\libs\acute.select.modified.css" />
     <Content Include="templates\components\armor.html" />
@@ -146,7 +146,7 @@
     <Content Include="templates\containers\66p33p.html" />
     <Content Include="templates\directiveDefinition\portraitComponent.html" />
     <Content Include="templates\directives\cloakField.html" />
-    <Content Include="templates\directives\container.html" />
+    <Content Include="templates\directives\layout.html" />
     <Content Include="templates\libs\acute.select.htm" />
     <Content Include="templates\menu.html" />
   </ItemGroup>

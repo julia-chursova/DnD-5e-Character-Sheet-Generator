@@ -27,6 +27,11 @@
     align-items: stretch;
 }
 
+.container .container-box:hover .drag-zone {
+	width: 100%;
+	height: 20px;
+}
+
 [ng-drop].drag-enter {
     background-color: powderblue;
 }

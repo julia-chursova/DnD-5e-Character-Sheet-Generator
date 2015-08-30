@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="styles/app/components/potionsAndScrolls.css" />
 
     <!-- directives' styles -->
-    <link rel="stylesheet" href="styles/app/directives/container.css" />
+    <link rel="stylesheet" href="styles/app/directives/layout.css" />
     <link rel="stylesheet" href="styles/app/directives/cloakField.css" />
 
     <!-- ad-hoc script -->
@@ -46,45 +46,54 @@
 </head>
 
 <body ng-app="charactersSheetGenerator" ng-controller="appController as app"
-      class="app" ng-class="{'edit-mode': app.isEditMode}" ng-click="app.globalClick($event)">
+	  class="app" ng-class="{'edit-mode': app.isEditMode}" ng-click="app.globalClick($event)">
 
-    <div ng-include="'templates/menu.html'"></div>
+	<div ng-include="'templates/menu.html'"></div>
 
-    <div class="a4-sheet">
-        <div class="container">
-            <div class="container-box" style="width: 33%">
-                <div ng-include="'templates/components/logo.html'"></div>
-                <div ng-include="'templates/components/player.html'"></div>
-	            <div ng-include="'templates/components/stats.html'"></div>
-	            <div ng-include="'templates/components/saveThrows.html'"></div>
-	            <div ng-include="'templates/components/feats.html'"></div>
-            </div>
-            <div class="container-box" style="width: 67%">
-                <div ng-include="'templates/components/character.html'"></div>
-                <div class="container">
-                    <div class="container-box" style="width: 33%">
-                        <div ng-include="'templates/components/initiative.html'"></div>
-                    </div>
-                    <div class="container-box" style="width: 67%">
-                        <div ng-include="'templates/components/armorClass.html'"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="container-box" style="width: 70%">
-                        <div ng-include="'templates/components/skills.html'"></div>
-                    </div>
-	                <div class="container-box" style="width: 30%">
-		                <div ng-include="'templates/components/deathSaves.html'"></div>
-		                <div ng-include="'templates/components/hitPoints.html'"></div>
-						<div ng-include="'templates/components/speed.html'"></div>
-		                <div ng-include="'templates/components/languages.html'"></div>
-	                </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="a4-sheet">
+		<layout removable="true">
+			<layout-column style="width: 33%">
+				<component template="'templates/components/stats.html'"/>
+			</layout-column>
+			<layout-column style="width: 67%"></layout-column>
+		</layout>
+	</div>
 
-    <div class="page-break"></div>
+	<div class="page-break"></div>
+
+	<div class="a4-sheet">
+		<div class="container-box" style="width: 33%">
+			<div ng-include="'templates/components/logo.html'"></div>
+			<div ng-include="'templates/components/player.html'"></div>
+			<div ng-include="'templates/components/stats.html'"></div>
+			<div ng-include="'templates/components/saveThrows.html'"></div>
+			<div ng-include="'templates/components/feats.html'"></div>
+		</div>
+		<div class="container-box" style="width: 67%">
+			<div ng-include="'templates/components/character.html'"></div>
+			<div class="container">
+				<div class="container-box" style="width: 33%">
+					<div ng-include="'templates/components/initiative.html'"></div>
+				</div>
+				<div class="container-box" style="width: 67%">
+					<div ng-include="'templates/components/armorClass.html'"></div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="container-box" style="width: 70%">
+					<div ng-include="'templates/components/skills.html'"></div>
+				</div>
+				<div class="container-box" style="width: 30%">
+					<div ng-include="'templates/components/deathSaves.html'"></div>
+					<div ng-include="'templates/components/hitPoints.html'"></div>
+					<div ng-include="'templates/components/speed.html'"></div>
+					<div ng-include="'templates/components/languages.html'"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="page-break"></div>
 
 	<div class="a4-sheet">
 		<div class="container">
@@ -112,24 +121,24 @@
 
 
 	<!-- app scripts -->
-    <script type="text/javascript" src="scripts/app/app.js"></script>
-    <script type="text/javascript" src="scripts/app/common.js"></script>
+	<script type="text/javascript" src="scripts/app/app.js"></script>
+	<script type="text/javascript" src="scripts/app/common.js"></script>
 
-    <!-- dictionary data -->
-    <script type="text/javascript" src="scripts/app/dictionaries/raceProvider.js"></script>
+	<!-- dictionary data -->
+	<script type="text/javascript" src="scripts/app/dictionaries/raceProvider.js"></script>
 	<script type="text/javascript" src="scripts/app/dictionaries/languagesProvider.js"></script>
 	<script type="text/javascript" src="scripts/app/dictionaries/classProvider.js"></script>
 	<script type="text/javascript" src="scripts/app/dictionaries/backgroundProvider.js"></script>
 	<script type="text/javascript" src="scripts/app/dictionaries/abilityProvider.js"></script>
 
-    <!-- models -->
-    <script type="text/javascript" src="scripts/app/models/statsModel.js"></script>
-    <script type="text/javascript" src="scripts/app/models/playerModel.js"></script>
-    <script type="text/javascript" src="scripts/app/models/inventoryModel.js"></script>
-    <script type="text/javascript" src="scripts/app/models/characterModel.js"></script>
-    <script type="text/javascript" src="scripts/app/models/languagesModel.js"></script>
-    <script type="text/javascript" src="scripts/app/models/armorModel.js"></script>
-    <script type="text/javascript" src="scripts/app/models/weaponModel.js"></script>
+	<!-- models -->
+	<script type="text/javascript" src="scripts/app/models/statsModel.js"></script>
+	<script type="text/javascript" src="scripts/app/models/playerModel.js"></script>
+	<script type="text/javascript" src="scripts/app/models/inventoryModel.js"></script>
+	<script type="text/javascript" src="scripts/app/models/characterModel.js"></script>
+	<script type="text/javascript" src="scripts/app/models/languagesModel.js"></script>
+	<script type="text/javascript" src="scripts/app/models/armorModel.js"></script>
+	<script type="text/javascript" src="scripts/app/models/weaponModel.js"></script>
 	<script type="text/javascript" src="scripts/app/models/skillsModel.js"></script>
 	<script type="text/javascript" src="scripts/app/models/raceModel.js"></script>
 	<script type="text/javascript" src="scripts/app/models/featsModel.js"></script>
@@ -140,18 +149,18 @@
 	<script type="text/javascript" src="scripts/app/models/speedModel.js"></script>
 
 	<!-- common directives -->
-    <script type="text/javascript" src="scripts/app/directives/containerDirective.js"></script>
-    <script type="text/javascript" src="scripts/app/directives/cloakFieldDirective.js"></script>
+	<script type="text/javascript" src="scripts/app/directives/layoutDirective.js"></script>
+	<script type="text/javascript" src="scripts/app/directives/cloakFieldDirective.js"></script>
 
-    <!-- controllers -->
-    <script type="text/javascript" src="scripts/app/controllers/appController.js"></script>
-    <script type="text/javascript" src="scripts/app/controllers/statsController.js"></script>
-    <script type="text/javascript" src="scripts/app/controllers/playerController.js"></script>
-    <script type="text/javascript" src="scripts/app/controllers/inventoryController.js"></script>
-    <script type="text/javascript" src="scripts/app/controllers/characterController.js"></script>
-    <script type="text/javascript" src="scripts/app/controllers/languagesController.js"></script>
-    <script type="text/javascript" src="scripts/app/controllers/armorController.js"></script>
-    <script type="text/javascript" src="scripts/app/controllers/weaponController.js"></script>
+	<!-- controllers -->
+	<script type="text/javascript" src="scripts/app/controllers/appController.js"></script>
+	<script type="text/javascript" src="scripts/app/controllers/statsController.js"></script>
+	<script type="text/javascript" src="scripts/app/controllers/playerController.js"></script>
+	<script type="text/javascript" src="scripts/app/controllers/inventoryController.js"></script>
+	<script type="text/javascript" src="scripts/app/controllers/characterController.js"></script>
+	<script type="text/javascript" src="scripts/app/controllers/languagesController.js"></script>
+	<script type="text/javascript" src="scripts/app/controllers/armorController.js"></script>
+	<script type="text/javascript" src="scripts/app/controllers/weaponController.js"></script>
 	<script type="text/javascript" src="scripts/app/controllers/skillsController.js"></script>
 	<script type="text/javascript" src="scripts/app/controllers/featsController.js"></script>
 	<script type="text/javascript" src="scripts/app/controllers/moneyController.js"></script>
@@ -160,7 +169,7 @@
 	<script type="text/javascript" src="scripts/app/controllers/proficienciesController.js"></script>
 	<script type="text/javascript" src="scripts/app/controllers/speedController.js"></script>
 
-    <!-- components directives -->
-    <script type="text/javascript" src="scripts/app/componentDirectives/portraitDirective.js"></script>
+	<!-- components directives -->
+	<script type="text/javascript" src="scripts/app/componentDirectives/portraitDirective.js"></script>
 </body>
 </html>
