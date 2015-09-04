@@ -45,6 +45,7 @@
     <Content Include="images\short_logo.png" />
     <Content Include="index.html" />
     <Content Include="scripts\app\app.js" />
+    <Content Include="scripts\app\appState.js" />
     <Content Include="scripts\app\common.js" />
     <Content Include="scripts\app\componentDirectives\portraitDirective.js" />
     <Content Include="scripts\app\controllers\appController.js" />

@@ -46,7 +46,7 @@
 </head>
 
 <body ng-app="charactersSheetGenerator" ng-controller="appController as app"
-	  class="app" ng-class="{'edit-mode': app.isEditMode}" ng-click="app.globalClick($event)">
+	  class="app" ng-class="{'edit-mode': app.isEditMode()}" ng-click="app.globalClick($event)">
 
 	<div ng-include="'templates/menu.html'"></div>
 
@@ -143,6 +143,7 @@
 	<!-- app scripts -->
 	<script type="text/javascript" src="scripts/app/app.js"></script>
 	<script type="text/javascript" src="scripts/app/common.js"></script>
+	<script type="text/javascript" src="scripts/app/appState.js"></script>
 
 	<!-- dictionary data -->
 	<script type="text/javascript" src="scripts/app/dictionaries/raceProvider.js"></script>

@@ -4,10 +4,14 @@
     angular.module(appName)
         .controller('appController', [
             '$rootScope',
-            function ($rootScope) {
+			'appState',
+            function ($rootScope, appState) {
                 var self = this;
 
-                self.isEditMode = false;
+				self.isEditMode = function() {
+					return appState.isEditMode;
+				}
+
                 self.availableControls = [
                     {
                         name: 'Logo',
@@ -28,11 +32,11 @@
                 ];
 
                 self.editLayout = function () {
-                    self.isEditMode = true;
+                    appState.isEditMode = true;
                 };
 
                 self.finishEdit = function () {
-                    self.isEditMode = false;
+                	appState.isEditMode = false;
                 };
 
                 self.print = function () {

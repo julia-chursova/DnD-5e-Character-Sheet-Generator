@@ -4,11 +4,11 @@
     </div>
     <div class="section">
         <button ng-click="app.print()">Print</button>
-        <button ng-click="app.editLayout()" ng-if="!app.isEditMode">Edit Layout</button>
-        <button ng-click="app.finishEdit()" ng-if="app.isEditMode">Finish edit</button>
+		<button ng-click="app.editLayout()" ng-if="!app.isEditMode()">Edit Layout</button>
+		<button ng-click="app.finishEdit()" ng-if="app.isEditMode()">Finish edit</button>
     </div>
-    <div ng-if="app.isEditMode" class="section">
-        <div class="header">Layouts</div>
+	<div ng-if="app.isEditMode()" class="section">
+		<div class="header">Layouts</div>
 
 		<div class="layout-block" ng-drag="true" ng-drag-data="{ type: 'block', columns: [ '33%', '67%' ] }">
 			<div class="layout-icon" style="width: 33px">X</div>
@@ -24,12 +24,16 @@
 			<div class="layout-icon" style="width: 50px">X</div>
 			<div class="layout-icon" style="width: 50px">X</div>
 		</div>
-    </div>
+	</div>
 
-    <div ng-if="app.isEditMode" class="section">
-        <div class="header">Controls</div>
-        <div class="layout-control" ng-repeat="control in app.availableControls" ng-drag="true" ng-drag-data="{ template: control.template, type: 'component' }">
-            {{ control.name }}
-        </div>
-    </div>
+	<div ng-if="app.isEditMode()" class="section">
+		<div class="header">Controls</div>
+		<div class="layout-control" ng-repeat="control in app.availableControls" ng-drag="true" ng-drag-data="{ template: control.template, type: 'component' }">
+			{{ control.name }}
+		</div>
+	</div>
+
+	<div ng-if="app.isEditMode()" class="section" ng-drop="true">
+		DELETE COMPONENT
+	</div>
 </div>

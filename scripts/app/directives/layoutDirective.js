@@ -3,7 +3,8 @@
 
 	angular.module(appName)
 		.directive('layout', [
-			function() {
+			'appState',
+			function(appState) {
 				return {
 					restrict: 'EA',
 					templateUrl: 'templates/directives/layout.html',
@@ -11,6 +12,7 @@
 					scope: {},
 					controller: function($scope) {
 						$scope.blocks = [];
+						$scope.appState = appState;
 
 						this.addBlock = function(block) {
 							$scope.blocks.push(block);
