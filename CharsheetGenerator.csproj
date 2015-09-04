@@ -141,11 +141,10 @@
     <Content Include="templates\components\speed.html" />
     <Content Include="templates\components\stats.html" />
     <Content Include="templates\components\weapon.html" />
-    <Content Include="templates\containers\33p66p.html" />
-    <Content Include="templates\containers\50p50p.html" />
-    <Content Include="templates\containers\66p33p.html" />
     <Content Include="templates\directiveDefinition\portraitComponent.html" />
+    <Content Include="templates\directives\blockLayout.html" />
     <Content Include="templates\directives\cloakField.html" />
+    <Content Include="templates\directives\columnLayout.html" />
     <Content Include="templates\directives\layout.html" />
     <Content Include="templates\libs\acute.select.htm" />
     <Content Include="templates\menu.html" />

@@ -3,65 +3,112 @@
 
 	angular.module(appName)
 		.directive('layout', [
-			function () {
+			function() {
 				return {
-					restrict: 'E',
+					restrict: 'EA',
 					templateUrl: 'templates/directives/layout.html',
 					transclude: true,
-					scope: {
-						removable: '=removable'
-					},
-					controller: function ($scope) {
-						$scope.columns = [];
+					scope: {},
+					controller: function($scope) {
+						$scope.blocks = [];
 
-						this.addItem = function (column) {
-							$scope.columns.push(column);
+						this.addBlock = function(block) {
+							$scope.blocks.push(block);
 						}
 
-						$scope.dragCompleted = function (column, $data, $evt) {
-							var template = $data.template;
-							var index = $data.index;
+						$scope.dragCompleted = function (columnItems, $data, index) {
+							var data;
+							if ($data.type === 'block') {
+								var columns = [];
+								for (var i = 0; i < $data.columns.length; i++) {
+									columns.push({
+										width: $data.columns[i],
+										items: []
+									});
+								}
+
+								data = {
+									type: 'block',
+									data: {
+										columns: columns
+									}
+								};
+							} else {
+								data = $data;
+							}
 
 							if (typeof index !== 'undefined') {
-								column.items.splice(index, 0, template);
+								columnItems.splice(index, 0, data);
 							} else {
-								column.items.push(template);
+								columnItems.push(data);
 							}
 						};
 					}
 				};
 			}
 		])
-		.directive('layoutColumn', function () {
+		.directive('layoutBlock', function() {
 			return {
 				restrict: 'E',
 				template: '<div style="display: none" ng-transclude></div>',
-				require: '^layout',
+				require: ['?^^layout', '?^^layoutColumn'],
 				transclude: true,
-				scope: {
-					width: '=width'
-				},
-				link: function (scope, element, attrs, layout) {
-					layout.addItem(scope);
-				},
-				controller: function ($scope) {
-					$scope.items = [];
+				scope: {},
+				link: function(scope, element, attrs, parents) {
+					var layoutParent = parents[0];
+					var columnParent = parents[1];
 
-					this.addItem = function (template) {
-						$scope.items.push(template);
+					if (columnParent) {
+						columnParent.addItem({
+							type: 'block',
+							data: scope
+						});
+					} else {
+						layoutParent.addBlock(scope);
+					}
+				},
+				controller: function($scope) {
+					$scope.columns = [];
+
+					this.addColumn = function(column) {
+						$scope.columns.push(column);
 					}
 				}
 			}
 		})
-		.directive('component', function () {
+		.directive('layoutColumn', function() {
 			return {
 				restrict: 'E',
-				require: '^layoutColumn',
+				template: '<div style="display: none" ng-transclude></div>',
+				require: '^^layoutBlock',
+				transclude: true,
+				scope: {
+					width: '=width'
+				},
+				link: function(scope, element, attrs, layoutBlock) {
+					layoutBlock.addColumn(scope);
+				},
+				controller: function($scope) {
+					$scope.items = [];
+
+					this.addItem = function(item) {
+						$scope.items.push(item);
+					}
+				}
+			}
+		})
+		.directive('component', function() {
+			return {
+				restrict: 'E',
+				require: '^^layoutColumn',
 				scope: {
 					template: '=template'
 				},
-				link: function (scope, element, attrs, layoutColumn) {
-					layoutColumn.addItem(scope.template);
+				link: function(scope, element, attrs, layoutColumn) {
+					layoutColumn.addItem({
+						template: scope.template,
+						type: 'component'
+					});
 				}
 			}
 		});

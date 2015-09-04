@@ -1,0 +1,16 @@
+﻿<div ng-repeat="item in items track by $index">
+	<div ng-drop="true"
+			 ng-drop-success="dragCompleted(items, $data, $index, $event)"
+			 ng-suppress-lowers="true">
+		xxx
+	</div>
+	<div ng-if="item.type === 'component'" ng-include="item.template"></div>
+	<div ng-if="item.type === 'block'"
+	     ng-include="'templates/directives/blockLayout.html'"
+	     ng-init="columns = item.data.columns"></div>
+</div>
+<div ng-drop="true"
+	 ng-drop-success="dragCompleted(items, $data, $index, $event)"
+	 ng-suppress-lowers="true">
+	xxx
+</div>

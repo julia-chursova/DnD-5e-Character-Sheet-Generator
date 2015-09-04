@@ -1,0 +1,6 @@
+<div class="container"
+	 ng-repeat="block in blocks track by $index"
+	 ng-include="'templates/directives/blockLayout.html'"
+	 ng-init="columns = block.columns">
+</div>
+<div style="display: none" ng-transclude></div>

@@ -1,0 +1,6 @@
+﻿<div class="container-box"
+	 ng-repeat="column in columns track by $index"
+	 ng-style="{'width': column.width}"
+	 ng-include="'templates/directives/columnLayout.html'"
+	 ng-init="items = column.items">
+</div>

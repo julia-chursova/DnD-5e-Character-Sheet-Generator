@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>D&amp;D 5e Characters Sheet Generator</title>
+	<title>D&amp;D 5e Characters Sheet Generator</title>
 
-    <!-- library files -->
-    <script type="text/javascript" src="scripts/libs/angular.min.js"></script>
-    <script type="text/javascript" src="scripts/libs/ngDraggable.modified.js"></script>
-    <script type="text/javascript" src="scripts/libs/acute.select.modified.js"></script>
+	<!-- library files -->
+	<script type="text/javascript" src="scripts/libs/angular.min.js"></script>
+	<script type="text/javascript" src="scripts/libs/ngDraggable.modified.js"></script>
+	<script type="text/javascript" src="scripts/libs/acute.select.modified.js"></script>
 
-    <!-- libs styles -->
-    <link rel="stylesheet" href="styles/libs/acute.select.modified.css" />
+	<!-- libs styles -->
+	<link rel="stylesheet" href="styles/libs/acute.select.modified.css" />
 
-    <!-- app styles -->
-    <link rel="stylesheet" href="styles/app/app.css" />
-    <link rel="stylesheet" href="styles/app/menu.css" />
-    <link rel="stylesheet" href="styles/app/common.css" />
+	<!-- app styles -->
+	<link rel="stylesheet" href="styles/app/app.css" />
+	<link rel="stylesheet" href="styles/app/menu.css" />
+	<link rel="stylesheet" href="styles/app/common.css" />
 
-    <!-- components' styles -->
-    <link rel="stylesheet" href="styles/app/components.css" />
-    <link rel="stylesheet" href="styles/app/components/logo.css" />
-    <link rel="stylesheet" href="styles/app/components/player.css" />
-    <link rel="stylesheet" href="styles/app/components/character.css" />
-    <link rel="stylesheet" href="styles/app/components/languages.css" />
-    <link rel="stylesheet" href="styles/app/components/initiative.css" />
-    <link rel="stylesheet" href="styles/app/components/stats.css" />
-    <link rel="stylesheet" href="styles/app/components/armor.css" />
-    <link rel="stylesheet" href="styles/app/components/armorClass.css" />
-    <link rel="stylesheet" href="styles/app/components/shield.css" />
-    <link rel="stylesheet" href="styles/app/components/portrait.css" />
-    <link rel="stylesheet" href="styles/app/components/skills.css" />
-	<link rel="stylesheet" href="styles/app/components/common-inventory.css"/>
-	<link rel="stylesheet" href="styles/app/components/money.css"/>
-    <link rel="stylesheet" href="styles/app/components/inventory.css" />
-    <link rel="stylesheet" href="styles/app/components/questItems.css" />
-    <link rel="stylesheet" href="styles/app/components/potionsAndScrolls.css" />
+	<!-- components' styles -->
+	<link rel="stylesheet" href="styles/app/components.css" />
+	<link rel="stylesheet" href="styles/app/components/logo.css" />
+	<link rel="stylesheet" href="styles/app/components/player.css" />
+	<link rel="stylesheet" href="styles/app/components/character.css" />
+	<link rel="stylesheet" href="styles/app/components/languages.css" />
+	<link rel="stylesheet" href="styles/app/components/initiative.css" />
+	<link rel="stylesheet" href="styles/app/components/stats.css" />
+	<link rel="stylesheet" href="styles/app/components/armor.css" />
+	<link rel="stylesheet" href="styles/app/components/armorClass.css" />
+	<link rel="stylesheet" href="styles/app/components/shield.css" />
+	<link rel="stylesheet" href="styles/app/components/portrait.css" />
+	<link rel="stylesheet" href="styles/app/components/skills.css" />
+	<link rel="stylesheet" href="styles/app/components/common-inventory.css" />
+	<link rel="stylesheet" href="styles/app/components/money.css" />
+	<link rel="stylesheet" href="styles/app/components/inventory.css" />
+	<link rel="stylesheet" href="styles/app/components/questItems.css" />
+	<link rel="stylesheet" href="styles/app/components/potionsAndScrolls.css" />
 
-    <!-- directives' styles -->
-    <link rel="stylesheet" href="styles/app/directives/layout.css" />
-    <link rel="stylesheet" href="styles/app/directives/cloakField.css" />
+	<!-- directives' styles -->
+	<link rel="stylesheet" href="styles/app/directives/layout.css" />
+	<link rel="stylesheet" href="styles/app/directives/cloakField.css" />
 
-    <!-- ad-hoc script -->
-    <script type="text/javascript">
-        var appName = 'charactersSheetGenerator';
-    </script>
+	<!-- ad-hoc script -->
+	<script type="text/javascript">
+		var appName = 'charactersSheetGenerator';
+	</script>
 </head>
 
 <body ng-app="charactersSheetGenerator" ng-controller="appController as app"
@@ -50,74 +50,94 @@
 
 	<div ng-include="'templates/menu.html'"></div>
 
-	<div class="a4-sheet">
-		<layout removable="true">
+	<!--<div class="a4-sheet" layout>
+		<layout-block>
 			<layout-column data-width="'33%'">
-				<component template="'templates/components/stats.html'"/>
+				<component data-template="'templates/components/money.html'"></component>
 			</layout-column>
-			<layout-column data-width="'67%'"></layout-column>
-		</layout>
+			<layout-column data-width="'33%'">
+				<component data-template="'templates/components/money.html'"></component>
+			</layout-column>
+			<layout-column data-width="'33%'">
+				<component data-template="'templates/components/money.html'"></component>
+				<layout-block>
+					<layout-column data-width="'100%'">
+						<component data-template="'templates/components/money.html'"></component>
+					</layout-column>
+				</layout-block>
+			</layout-column>
+		</layout-block>
+
+		<layout-block>
+			<layout-column data-width="'33%'">
+				<component data-template="'templates/components/player.html'" />
+			</layout-column>
+			<layout-column data-width="'67%'">
+				<component data-template="'templates/components/stats.html'" />
+			</layout-column>
+		</layout-block>
+	</div>-->
+
+	<div class="a4-sheet" layout>
+		<layout-block>
+			<layout-column data-width="'33%'">
+				<component data-template="'templates/components/logo.html'"></component>
+				<component data-template="'templates/components/player.html'"></component>
+				<component data-template="'templates/components/stats.html'"></component>
+				<component data-template="'templates/components/saveThrows.html'"></component>
+				<component data-template="'templates/components/feats.html'"></component>
+			</layout-column>
+			<layout-column data-width="'67%'">
+				<component data-template="'templates/components/character.html'"></component>
+				<layout-block>
+					<layout-column data-width="'33%'">
+						<component data-template="'templates/components/initiative.html'"></component>
+					</layout-column>
+					<layout-column data-width="'67%'">
+						<component data-template="'templates/components/armorClass.html'"></component>
+					</layout-column>
+				</layout-block>
+				<layout-block>
+					<layout-column data-width="'70%'">
+						<component data-template="'templates/components/skills.html'"></component>
+					</layout-column>
+					<layout-column data-width="'30%'">
+						<component data-template="'templates/components/deathSaves.html'"></component>
+						<component data-template="'templates/components/hitPoints.html'"></component>
+						<component data-template="'templates/components/speed.html'"></component>
+						<component data-template="'templates/components/languages.html'"></component>
+					</layout-column>
+				</layout-block>
+			</layout-column>
+		</layout-block>
 	</div>
 
 	<div class="page-break"></div>
 
-	<div class="a4-sheet">
-		<div class="container-box" style="width: 33%">
-			<div ng-include="'templates/components/logo.html'"></div>
-			<div ng-include="'templates/components/player.html'"></div>
-			<div ng-include="'templates/components/stats.html'"></div>
-			<div ng-include="'templates/components/saveThrows.html'"></div>
-			<div ng-include="'templates/components/feats.html'"></div>
-		</div>
-		<div class="container-box" style="width: 67%">
-			<div ng-include="'templates/components/character.html'"></div>
-			<div class="container">
-				<div class="container-box" style="width: 33%">
-					<div ng-include="'templates/components/initiative.html'"></div>
-				</div>
-				<div class="container-box" style="width: 67%">
-					<div ng-include="'templates/components/armorClass.html'"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="container-box" style="width: 70%">
-					<div ng-include="'templates/components/skills.html'"></div>
-				</div>
-				<div class="container-box" style="width: 30%">
-					<div ng-include="'templates/components/deathSaves.html'"></div>
-					<div ng-include="'templates/components/hitPoints.html'"></div>
-					<div ng-include="'templates/components/speed.html'"></div>
-					<div ng-include="'templates/components/languages.html'"></div>
-				</div>
-			</div>
-		</div>
+	<div class="a4-sheet" layout>
+		<layout-block>
+			<layout-column data-width="'33%'">
+				<component data-template="'templates/components/inventory.html'"></component>
+				<component data-template="'templates/components/potionsAndScrolls.html'"></component>
+				<component data-template="'templates/components/questItems.html'"></component>
+				<component data-template="'templates/components/money.html'"></component>
+			</layout-column>
+			<layout-column data-width="'67%'">
+				<layout-block>
+					<layout-column data-width="'49%'">
+						<component data-template="'templates/directiveDefinition/portraitComponent.html'"></component>
+					</layout-column>
+					<layout-column data-width="'49%'">
+						<component data-template="'templates/components/armor.html'"></component>
+						<component data-template="'templates/components/shield.html'"></component>
+						<component data-template="'templates/components/proficiencies.html'"></component>
+					</layout-column>
+				</layout-block>
+				<component data-template="'templates/components/weapon.html'"></component>
+			</layout-column>
+		</layout-block>
 	</div>
 
-	<div class="page-break"></div>
-
-	<div class="a4-sheet">
-		<div class="container">
-			<div class="container-box" style="width: 33%">
-				<div ng-include="'templates/components/inventory.html'"></div>
-				<div ng-include="'templates/components/potionsAndScrolls.html'"></div>
-				<div ng-include="'templates/components/questItems.html'"></div>
-				<div ng-include="'templates/components/money.html'"></div>
-			</div>
-			<div class="container-box" style="width: 67%">
-				<div class="container-box" style="width: 100%">
-					<div class="container-box" style="width: 49%">
-						<div portrait-component></div>
-					</div>
-					<div class="container-box" style="width: 49%">
-						<div ng-include="'templates/components/armor.html'"></div>
-						<div ng-include="'templates/components/shield.html'"></div>
-						<div ng-include="'templates/components/proficiencies.html'"></div>
-					</div>
-				</div>
-				<div ng-include="'templates/components/weapon.html'"></div>
-			</div>
-		</div>
-	</div>
 
 
 	<!-- app scripts -->
