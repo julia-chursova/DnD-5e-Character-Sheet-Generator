@@ -1,36 +1,40 @@
 ﻿<div class="component money" ng-controller="moneyController as controller">
-	<div class="header">Money</div>
+    <div class="header">Money</div>
 
-	<div class="money-container">
-		<div>Copper:</div>
-		<div cloak-field data-model="controller.model.copper">
-			<input type="number" min="0" ng-model="controller.model.copper" />
-		</div>
-	</div>
-	<div class="money-container">
-		<div>Silver:</div>
-		<div cloak-field data-model="controller.model.silver">
-			<input type="number" min="0" ng-model="controller.model.silver"/>
-		</div>
-	</div>
-	<div class="money-container">
-		<div>Electrum:</div>
-		<div cloak-field data-model="controller.model.electrum">
-			<input type="number" min="0" ng-model="controller.model.electrum" />
-		</div>
-	</div>
-	<div class="money-container">
-		<div>Gold:</div>
-		<div cloak-field data-model="controller.model.gold">
-			<input type="number" min="0" ng-model="controller.model.gold" />
-		</div>
-	</div>
-	<div class="money-container">
-		<div>Platinum:</div>
-		<div cloak-field data-model="controller.model.platinum">
-			<input type="number" min="0" ng-model="controller.model.platinum" />
-		</div>
-	</div>
+    <div class="money-container inline-block">
+        <div cloak-field data-model="controller.model.platinum">
+            <input type="number" min="0" ng-model="controller.model.platinum" />
+        </div>
+        <div class="money-label">p</div>
 
-	<div>Total: {{ controller.model.total() }}</div>
+    </div>
+    <div class="money-container inline-block">
+        <div cloak-field data-model="controller.model.gold">
+            <input type="number" min="0" ng-model="controller.model.gold" />
+        </div>
+        <div class="money-label">g</div>
+
+    </div>
+    <div class="money-container inline-block">
+        <div cloak-field data-model="controller.model.electrum">
+            <input type="number" min="0" ng-model="controller.model.electrum" />
+        </div>
+        <div class="money-label">e</div>
+
+    </div>
+    <div class="money-container inline-block">
+        <div cloak-field data-model="controller.model.silver">
+            <input type="number" min="0" ng-model="controller.model.silver" />
+        </div>
+        <div class="money-label">s</div>
+
+    </div>
+    <div class="money-container inline-block">
+        <div cloak-field data-model="controller.model.copper">
+            <input type="number" min="0" ng-model="controller.model.copper" />
+        </div>
+        <div class="money-label">c</div>
+    </div>
+
+    <div class="money-label">Total: {{ controller.model.total() }}</div>
 </div>

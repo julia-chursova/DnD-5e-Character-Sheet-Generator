@@ -1,3 +1,10 @@
 ﻿.money.component .money-container div {
-	display: inline-block;
+    display: inline-block;
+}
+
+.money.component input[type=number] {
+    width: 30px;
+}
+money.component .money-label {
+    font-size: 14px;
 }
