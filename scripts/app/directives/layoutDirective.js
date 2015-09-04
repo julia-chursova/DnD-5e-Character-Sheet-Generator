@@ -16,7 +16,7 @@
 							$scope.blocks.push(block);
 						}
 
-						$scope.dragCompleted = function (columnItems, $data, index) {
+						$scope.addDraggableItem = function (columnItems, $data, index) {
 							var data;
 							if ($data.type === 'block') {
 								var columns = [];
@@ -43,6 +43,13 @@
 								columnItems.push(data);
 							}
 						};
+
+						$scope.removeDraggableItem = function(columnItems, item) {
+							var index = columnItems.indexOf(item);
+
+							if (index > -1)
+								columnItems.splice(index, 1);
+						}
 					}
 				};
 			}

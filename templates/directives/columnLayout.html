@@ -1,16 +1,24 @@
 ﻿<div ng-repeat="item in items track by $index">
 	<div ng-drop="true"
-			 ng-drop-success="dragCompleted(items, $data, $index, $event)"
+			 ng-drop-success="addDraggableItem(items, $data, $index, $event)"
 			 ng-suppress-lowers="true">
 		xxx
 	</div>
-	<div ng-if="item.type === 'component'" ng-include="item.template"></div>
+	<div ng-if="item.type === 'component'"
+	     ng-include="item.template"
+	     ng-drag="true"
+	     ng-drag-data="item"
+	     ng-drag-success="removeDraggableItem(items, item)"></div>
+
 	<div ng-if="item.type === 'block'"
-	     ng-include="'templates/directives/blockLayout.html'"
-	     ng-init="columns = item.data.columns"></div>
+		 ng-include="'templates/directives/blockLayout.html'"
+		 ng-init="columns = item.data.columns"
+		 ng-drag="true"
+		 ng-drag-data=""
+		 ng-drag-success="removeDraggableItem(items, item)"></div>
 </div>
 <div ng-drop="true"
-	 ng-drop-success="dragCompleted(items, $data, $index, $event)"
+	 ng-drop-success="addDraggableItem(items, $data, $index, $event)"
 	 ng-suppress-lowers="true">
 	xxx
 </div>
