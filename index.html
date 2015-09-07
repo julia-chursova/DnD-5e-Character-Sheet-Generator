@@ -29,14 +29,14 @@
     <link rel="stylesheet" href="styles/app/components/shield.css" />
     <link rel="stylesheet" href="styles/app/components/portrait.css" />
     <link rel="stylesheet" href="styles/app/components/skills.css" />
-	<link rel="stylesheet" href="styles/app/components/common-inventory.css"/>
-	<link rel="stylesheet" href="styles/app/components/money.css"/>
+    <link rel="stylesheet" href="styles/app/components/common-inventory.css" />
+    <link rel="stylesheet" href="styles/app/components/money.css" />
+    <link rel="stylesheet" href="styles/app/components/deathSaves.css" />
     <!--<link rel="stylesheet" href="styles/app/components/inventory.css" />
     <link rel="stylesheet" href="styles/app/components/questItems.css" />
     <link rel="stylesheet" href="styles/app/components/potionsAndScrolls.css" />-->
-
     <!-- directives' styles -->
-	<link rel="stylesheet" href="styles/app/directives/layout.css" />
+    <link rel="stylesheet" href="styles/app/directives/layout.css" />
     <link rel="stylesheet" href="styles/app/directives/cloakField.css" />
 
     <!-- ad-hoc script -->
@@ -46,111 +46,111 @@
 </head>
 
 <body ng-app="charactersSheetGenerator" ng-controller="appController as app"
-	  class="app" ng-class="{'edit-mode': app.isEditMode()}" ng-click="app.globalClick($event)">
+      class="app" ng-class="{'edit-mode': app.isEditMode()}" ng-click="app.globalClick($event)">
 
     <div ng-include="'templates/menu.html'"></div>
 
-	<!--<div class="a4-sheet" layout>
-		<layout-block>
-			<layout-column data-width="'33%'">
-				<component data-template="'templates/components/money.html'"></component>
-			</layout-column>
-			<layout-column data-width="'33%'">
-				<component data-template="'templates/components/money.html'"></component>
-			</layout-column>
-			<layout-column data-width="'33%'">
-				<component data-template="'templates/components/money.html'"></component>
-				<layout-block>
-					<layout-column data-width="'100%'">
-						<component data-template="'templates/components/money.html'"></component>
-					</layout-column>
-				</layout-block>
-			</layout-column>
-		</layout-block>
+    <!--<div class="a4-sheet" layout>
+        <layout-block>
+            <layout-column data-width="'33%'">
+                <component data-template="'templates/components/money.html'"></component>
+            </layout-column>
+            <layout-column data-width="'33%'">
+                <component data-template="'templates/components/money.html'"></component>
+            </layout-column>
+            <layout-column data-width="'33%'">
+                <component data-template="'templates/components/money.html'"></component>
+                <layout-block>
+                    <layout-column data-width="'100%'">
+                        <component data-template="'templates/components/money.html'"></component>
+                    </layout-column>
+                </layout-block>
+            </layout-column>
+        </layout-block>
 
-		<layout-block>
-			<layout-column data-width="'33%'">
-				<component data-template="'templates/components/player.html'" />
-			</layout-column>
-			<layout-column data-width="'67%'">
-				<component data-template="'templates/components/stats.html'" />
-			</layout-column>
-		</layout-block>
-	</div>-->
+        <layout-block>
+            <layout-column data-width="'33%'">
+                <component data-template="'templates/components/player.html'" />
+            </layout-column>
+            <layout-column data-width="'67%'">
+                <component data-template="'templates/components/stats.html'" />
+            </layout-column>
+        </layout-block>
+    </div>-->
 
-	<div class="a4-sheet" layout>
-		<layout-block>
-			<layout-column data-width="'33%'">
-				<component data-template="'templates/components/logo.html'"></component>
-				<component data-template="'templates/components/player.html'"></component>
-				<component data-template="'templates/components/stats.html'"></component>
-				<component data-template="'templates/components/saveThrows.html'"></component>
-				<component data-template="'templates/components/feats.html'"></component>
-			</layout-column>
-			<layout-column data-width="'67%'">
-				<component data-template="'templates/components/character.html'"></component>
-				<layout-block>
-					<layout-column data-width="'33%'">
-						<component data-template="'templates/components/initiative.html'"></component>
-					</layout-column>
-					<layout-column data-width="'67%'">
-						<component data-template="'templates/components/armorClass.html'"></component>
-					</layout-column>
-				</layout-block>
-				<layout-block>
-					<layout-column data-width="'70%'">
-						<component data-template="'templates/components/skills.html'"></component>
-					</layout-column>
-					<layout-column data-width="'30%'">
-						<component data-template="'templates/components/deathSaves.html'"></component>
-						<component data-template="'templates/components/hitPoints.html'"></component>
-						<component data-template="'templates/components/speed.html'"></component>
-						<component data-template="'templates/components/languages.html'"></component>
-					</layout-column>
-				</layout-block>
-			</layout-column>
-		</layout-block>
+    <div class="a4-sheet" layout>
+        <layout-block>
+            <layout-column data-width="'33%'">
+                <component data-template="'templates/components/logo.html'"></component>
+                <component data-template="'templates/components/player.html'"></component>
+                <component data-template="'templates/components/stats.html'"></component>
+                <component data-template="'templates/components/saveThrows.html'"></component>
+                <component data-template="'templates/components/feats.html'"></component>
+            </layout-column>
+            <layout-column data-width="'67%'">
+                <component data-template="'templates/components/character.html'"></component>
+                <layout-block>
+                    <layout-column data-width="'33%'">
+                        <component data-template="'templates/components/initiative.html'"></component>
+                    </layout-column>
+                    <layout-column data-width="'67%'">
+                        <component data-template="'templates/components/armorClass.html'"></component>
+                    </layout-column>
+                </layout-block>
+                <layout-block>
+                    <layout-column data-width="'70%'">
+                        <component data-template="'templates/components/skills.html'"></component>
+                    </layout-column>
+                    <layout-column data-width="'30%'">
+                        <component data-template="'templates/components/deathSaves.html'"></component>
+                        <component data-template="'templates/components/hitPoints.html'"></component>
+                        <component data-template="'templates/components/speed.html'"></component>
+                        <component data-template="'templates/components/languages.html'"></component>
+                    </layout-column>
+                </layout-block>
+            </layout-column>
+        </layout-block>
     </div>
 
     <div class="page-break"></div>
 
-	<div class="a4-sheet" layout>
-		<layout-block>
-			<layout-column data-width="'33%'">
-				<component data-template="'templates/components/inventory.html'"></component>
-				<component data-template="'templates/components/potionsAndScrolls.html'"></component>
-				<component data-template="'templates/components/questItems.html'"></component>
-				<component data-template="'templates/components/money.html'"></component>
-			</layout-column>
-			<layout-column data-width="'67%'">
-				<layout-block>
-					<layout-column data-width="'49%'">
-						<component data-template="'templates/directiveDefinition/portraitComponent.html'"></component>
-					</layout-column>
-					<layout-column data-width="'49%'">
-						<component data-template="'templates/components/armor.html'"></component>
-						<component data-template="'templates/components/shield.html'"></component>
-						<component data-template="'templates/components/proficiencies.html'"></component>
-					</layout-column>
-				</layout-block>
-				<component data-template="'templates/components/weapon.html'"></component>
-			</layout-column>
-		</layout-block>
-	</div>
+    <div class="a4-sheet" layout>
+        <layout-block>
+            <layout-column data-width="'33%'">
+                <component data-template="'templates/components/inventory.html'"></component>
+                <component data-template="'templates/components/potionsAndScrolls.html'"></component>
+                <component data-template="'templates/components/questItems.html'"></component>
+                <component data-template="'templates/components/money.html'"></component>
+            </layout-column>
+            <layout-column data-width="'67%'">
+                <layout-block>
+                    <layout-column data-width="'49%'">
+                        <component data-template="'templates/directiveDefinition/portraitComponent.html'"></component>
+                    </layout-column>
+                    <layout-column data-width="'49%'">
+                        <component data-template="'templates/components/armor.html'"></component>
+                        <component data-template="'templates/components/shield.html'"></component>
+                        <component data-template="'templates/components/proficiencies.html'"></component>
+                    </layout-column>
+                </layout-block>
+                <component data-template="'templates/components/weapon.html'"></component>
+            </layout-column>
+        </layout-block>
+    </div>
 
 
 
-	<!-- app scripts -->
+    <!-- app scripts -->
     <script type="text/javascript" src="scripts/app/app.js"></script>
     <script type="text/javascript" src="scripts/app/common.js"></script>
-	<script type="text/javascript" src="scripts/app/appState.js"></script>
+    <script type="text/javascript" src="scripts/app/appState.js"></script>
 
     <!-- dictionary data -->
     <script type="text/javascript" src="scripts/app/dictionaries/raceProvider.js"></script>
-	<script type="text/javascript" src="scripts/app/dictionaries/languagesProvider.js"></script>
-	<script type="text/javascript" src="scripts/app/dictionaries/classProvider.js"></script>
-	<script type="text/javascript" src="scripts/app/dictionaries/backgroundProvider.js"></script>
-	<script type="text/javascript" src="scripts/app/dictionaries/abilityProvider.js"></script>
+    <script type="text/javascript" src="scripts/app/dictionaries/languagesProvider.js"></script>
+    <script type="text/javascript" src="scripts/app/dictionaries/classProvider.js"></script>
+    <script type="text/javascript" src="scripts/app/dictionaries/backgroundProvider.js"></script>
+    <script type="text/javascript" src="scripts/app/dictionaries/abilityProvider.js"></script>
 
     <!-- models -->
     <script type="text/javascript" src="scripts/app/models/statsModel.js"></script>
@@ -160,17 +160,17 @@
     <script type="text/javascript" src="scripts/app/models/languagesModel.js"></script>
     <script type="text/javascript" src="scripts/app/models/armorModel.js"></script>
     <script type="text/javascript" src="scripts/app/models/weaponModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/skillsModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/raceModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/featsModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/moneyModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/saveThrowModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/hitPointsModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/proficienciesModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/speedModel.js"></script>
+    <script type="text/javascript" src="scripts/app/models/skillsModel.js"></script>
+    <script type="text/javascript" src="scripts/app/models/raceModel.js"></script>
+    <script type="text/javascript" src="scripts/app/models/featsModel.js"></script>
+    <script type="text/javascript" src="scripts/app/models/moneyModel.js"></script>
+    <script type="text/javascript" src="scripts/app/models/saveThrowModel.js"></script>
+    <script type="text/javascript" src="scripts/app/models/hitPointsModel.js"></script>
+    <script type="text/javascript" src="scripts/app/models/proficienciesModel.js"></script>
+    <script type="text/javascript" src="scripts/app/models/speedModel.js"></script>
 
-	<!-- common directives -->
-	<script type="text/javascript" src="scripts/app/directives/layoutDirective.js"></script>
+    <!-- common directives -->
+    <script type="text/javascript" src="scripts/app/directives/layoutDirective.js"></script>
     <script type="text/javascript" src="scripts/app/directives/cloakFieldDirective.js"></script>
 
     <!-- controllers -->
@@ -182,13 +182,13 @@
     <script type="text/javascript" src="scripts/app/controllers/languagesController.js"></script>
     <script type="text/javascript" src="scripts/app/controllers/armorController.js"></script>
     <script type="text/javascript" src="scripts/app/controllers/weaponController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/skillsController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/featsController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/moneyController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/saveThrowController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/hitPointsController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/proficienciesController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/speedController.js"></script>
+    <script type="text/javascript" src="scripts/app/controllers/skillsController.js"></script>
+    <script type="text/javascript" src="scripts/app/controllers/featsController.js"></script>
+    <script type="text/javascript" src="scripts/app/controllers/moneyController.js"></script>
+    <script type="text/javascript" src="scripts/app/controllers/saveThrowController.js"></script>
+    <script type="text/javascript" src="scripts/app/controllers/hitPointsController.js"></script>
+    <script type="text/javascript" src="scripts/app/controllers/proficienciesController.js"></script>
+    <script type="text/javascript" src="scripts/app/controllers/speedController.js"></script>
 
     <!-- components directives -->
     <script type="text/javascript" src="scripts/app/componentDirectives/portraitDirective.js"></script>

@@ -102,6 +102,7 @@
     <Content Include="styles\app\components.css" />
     <Content Include="styles\app\components\armor.css" />
     <Content Include="styles\app\components\character.css" />
+    <Content Include="styles\app\components\deathSaves.css" />
     <Content Include="styles\app\components\initiative.css" />
     <Content Include="styles\app\components\common-inventory.css" />
     <Content Include="styles\app\components\languages.css" />
