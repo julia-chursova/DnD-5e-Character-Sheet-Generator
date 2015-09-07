@@ -5,6 +5,8 @@
         position: fixed;
         right: 10px;
         top: 10px;
+	    max-height: 90%;
+	    overflow-y: auto;
     }
 }
 

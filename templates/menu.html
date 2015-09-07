@@ -26,14 +26,14 @@
 		</div>
 	</div>
 
-	<div ng-if="app.isEditMode()" class="section">
-		<div class="header">Controls</div>
-		<div class="layout-control" ng-repeat="control in app.availableControls" ng-drag="true" ng-drag-data="{ template: control.template, type: 'component' }">
-			{{ control.name }}
-		</div>
+	<div ng-if="app.isEditMode()" class="section" ng-drop="true">
+		DROP COMPONENT
 	</div>
 
-	<div ng-if="app.isEditMode()" class="section" ng-drop="true">
-		DELETE COMPONENT
+	<div ng-if="app.isEditMode()" class="section">
+		<div class="header">Controls</div>
+		<div class="layout-control" ng-repeat="control in app.getAvailableModules" ng-drag="true" ng-drag-data="{ template: control.template, type: 'component' }">
+			{{ control.name }}
+		</div>
 	</div>
 </div>
