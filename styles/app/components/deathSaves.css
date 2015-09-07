@@ -1,0 +1,11 @@
+﻿.death-saves.component span {
+    float: left;
+}
+
+.death-saves.component .deathSaves-right {
+    float: right;
+}
+
+.death-saves.component .deathSaves-container {
+    height: 18px;
+}
