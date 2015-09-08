@@ -1,7 +1,7 @@
 .character.component .cloakFieldContainer {
     height: 18px;
     border-bottom: 1px solid #aaaaaa;
-    width: 110px;
+    width: 155px;
 }
 
     .character.component .cloakFieldContainer input[type=text] {
@@ -23,6 +23,9 @@
 .character.component .race-data {
     min-height: 20px;
     align-items: stretch;
+}
+
+.character.component .size {
     width: 110px;
 }
 
