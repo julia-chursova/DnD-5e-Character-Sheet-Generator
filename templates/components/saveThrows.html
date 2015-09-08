@@ -1,57 +1,129 @@
 ﻿<div class="component saveThrows" ng-controller="saveThrowController as controller">
-	<div class="header">Save Throws</div>
+    <div class="header">Save Throws</div>
 
-	<div>
-		<div>STR save: {{controller.saveThrows.strSave()}}</div>
-		<div cloak-field data-model="controller.saveThrows.isStrProficient ? '✓' : '-'">
-			<input type="checkbox" ng-model="controller.saveThrows.isStrProficient"/>
-		</div>
-		<div>STR: {{controller.stats.strModifier()}}</div>
-		<div>Proficiency bonus:{{controller.saveThrows.isStrProficient ? controller.character.proficiencyBonus() : ''}}</div>
-	</div>
+    <div class="saveThrows-block">
+        <table class="fillable-formula">
+            <tr>
+                <td class="cell total"> {{controller.saveThrows.strSave()}}</td>
+                <td>=</td>
+                <td class="cell summand min-input"> {{controller.stats.strModifier()}}</td>
+                <td class="cell summand min-input"> {{controller.saveThrows.isStrProficient ? controller.character.proficiencyBonus() : ''}}</td>
+                <td class="checkbox" cloak-field data-model="controller.saveThrows.isStrProficient ? '✓' : '-'">
+                    <input type="checkbox" ng-model="controller.saveThrows.isStrProficient" />
+                </td>
+            </tr>
+            <tr>
+                <td class="major-label">STR save</td>
+                <td></td>
+                <td class="label">STR</td>
+                <td class="label">Prof.</td>
+                <td class="label">Proficient</td>
+            </tr>
+        </table>
+    </div>
 
-	<div>
-		<div>DEX save: {{controller.saveThrows.dexSave()}}</div>
-		<div cloak-field data-model="controller.saveThrows.isDexProficient ? '✓' : '-'">
-			<input type="checkbox" ng-model="controller.saveThrows.isDexProficient"/>
-		</div>
-		<div>DEX: {{controller.stats.dexModifier()}}</div>
-		<div>Proficiency bonus:{{controller.saveThrows.isDexProficient ? controller.character.proficiencyBonus() : ''}}</div>
-	</div>
+    <div class="saveThrows-block">
+        <table class="fillable-formula">
+            <tr>
+                <td class="cell total"> {{controller.saveThrows.dexSave()}}</td>
+                <td>=</td>
+                <td class="cell summand min-input"> {{controller.stats.dexModifier()}}</td>
+                <td class="cell summand min-input"> {{controller.saveThrows.isDexProficient ? controller.character.proficiencyBonus() : ''}}</td>
+                <td class="checkbox" cloak-field data-model="controller.saveThrows.isDexProficient ? '✓' : '-'">
+                    <input type="checkbox" ng-model="controller.saveThrows.isDexProficient" />
+                </td>
+            </tr>
+            <tr>
+                <td class="major-label">DEX save</td>
+                <td></td>
+                <td class="label">DEX</td>
+                <td class="label">Prof.</td>
+                <td class="label">Proficient</td>
+            </tr>
+        </table>
+    </div>
 
-	<div>
-		<div>CON save: {{controller.saveThrows.conSave()}}</div>
-		<div cloak-field data-model="controller.saveThrows.isConProficient ? '✓' : '-'">
-			<input type="checkbox" ng-model="controller.saveThrows.isConProficient"/>
-		</div>
-		<div>CON: {{controller.stats.conModifier()}}</div>
-		<div>Proficiency bonus:{{controller.saveThrows.isConProficient ? controller.character.proficiencyBonus() : ''}}</div>
-	</div>
+    <div class="saveThrows-block">
+        <table class="fillable-formula">
+            <tr>
+                <td class="cell total">{{controller.saveThrows.conSave()}}</td>
+                <td>=</td>
+                <td class="cell summand min-input">{{controller.stats.conModifier()}}</td>
+                <td class="cell summand min-input">{{controller.saveThrows.isConProficient ? controller.character.proficiencyBonus() : ''}}</td>
+                <td class="checkbox" cloak-field data-model="controller.saveThrows.isConProficient ? '✓' : '-'">
+                    <input type="checkbox" ng-model="controller.saveThrows.isConProficient" />
+                </td>
+            </tr>
+            <tr>
+                <td class="major-label">CON save</td>
+                <td></td>
+                <td class="label">CON</td>
+                <td class="label">Prof.</td>
+                <td class="label">Proficient</td>
+            </tr>
+        </table>
+    </div>
 
-	<div>
-		<div>INT save: {{controller.saveThrows.intSave()}}</div>
-		<div cloak-field data-model="controller.saveThrows.isIntProficient ? '✓' : '-'">
-			<input type="checkbox" ng-model="controller.saveThrows.isIntProficient"/>
-		</div>
-		<div>INT: {{controller.stats.intModifier()}}</div>
-		<div>Proficiency bonus:{{controller.saveThrows.isIntProficient ? controller.character.proficiencyBonus() : ''}}</div>
-	</div>
+    <div class="saveThrows-block">
+        <table class="fillable-formula">
+            <tr>
+                <td class="cell total">{{controller.saveThrows.intSave()}}</td>
+                <td>=</td>
+                <td class="cell summand min-input">{{controller.stats.intModifier()}}</td>
+                <td class="cell summand min-input">{{controller.saveThrows.isIntProficient ? controller.character.proficiencyBonus() : ''}}</td>
+                <td class="checkbox" cloak-field data-model="controller.saveThrows.isIntProficient ? '✓' : '-'">
+                    <input type="checkbox" ng-model="controller.saveThrows.isIntProficient" />
+                </td>
+            </tr>
+            <tr>
+                <td class="major-label">INT save</td>
+                <td></td>
+                <td class="label">INT</td>
+                <td class="label">Prof.</td>
+                <td class="label">Proficient</td>
+            </tr>
+        </table>
+    </div>
 
-	<div>
-		<div>WIS save: {{controller.saveThrows.wisSave()}}</div>
-		<div cloak-field data-model="controller.saveThrows.isWisProficient ? '✓' : '-'">
-			<input type="checkbox" ng-model="controller.saveThrows.isWisProficient"/>
-		</div>
-		<div>WIS: {{controller.stats.wisModifier()}}</div>
-		<div>Proficiency bonus:{{controller.saveThrows.isWisProficient ? controller.character.proficiencyBonus() : ''}}</div>
-	</div>
+    <div class="saveThrows-block">
+        <table class="fillable-formula">
+            <tr>
+                <td class="cell total">{{controller.saveThrows.wisSave()}}</td>
+                <td>=</td>
+                <td class="cell summand min-input">{{controller.stats.wisModifier()}}</td>
+                <td class="cell summand min-input">{{controller.saveThrows.isWisProficient ? controller.character.proficiencyBonus() : ''}}</td>
+                <td class="checkbox" cloak-field data-model="controller.saveThrows.isWisProficient ? '✓' : '-'">
+                    <input type="checkbox" ng-model="controller.saveThrows.isWisProficient" />
+                </td>
+            </tr>
+            <tr>
+                <td class="major-label">WIS save</td>
+                <td></td>
+                <td class="label">WIS</td>
+                <td class="label">Prof.</td>
+                <td class="label">Proficient</td>
+            </tr>
+        </table>
+    </div>
 
-	<div>
-		<div>CHA save: {{controller.saveThrows.chaSave()}}</div>
-		<div cloak-field data-model="controller.saveThrows.isChaProficient ? '✓' : '-'">
-			<input type="checkbox" ng-model="controller.saveThrows.isChaProficient" />
-		</div>
-		<div>CHA: {{controller.stats.chaModifier()}}</div>
-		<div>Proficiency bonus:{{controller.saveThrows.isChaProficient ? controller.character.proficiencyBonus() : ''}}</div>
-	</div>
+    <div class="saveThrows-block">
+        <table class="fillable-formula">
+            <tr>
+                <td class="cell total"> {{controller.saveThrows.chaSave()}}</td>
+                <td>=</td>
+                <td class="cell summand min-input">{{controller.stats.chaModifier()}}</td>
+                <td class="cell summand min-input">{{controller.saveThrows.isChaProficient ? controller.character.proficiencyBonus() : ''}}</td>
+                <td class="checkbox" cloak-field data-model="controller.saveThrows.isChaProficient ? '✓' : '-'">
+                    <input type="checkbox" ng-model="controller.saveThrows.isChaProficient" />
+                </td>
+            </tr>
+            <tr>
+                <td class="major-label">CHA save</td>
+                <td></td>
+                <td class="label">CHA</td>
+                <td class="label">Prof.</td>
+                <td class="label">Proficient</td>
+            </tr>
+        </table>
+    </div>
 </div>
