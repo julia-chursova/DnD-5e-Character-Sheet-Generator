@@ -19,6 +19,10 @@
 						name: 'Character',
 						template: 'templates/components/character.html'
 					},
+                    {
+                        name: 'New Character',
+                        template: 'templates/components/character.html'
+                    },
 					{
 						name: 'Death Saves',
 						template: 'templates/components/deathSaves.html'
