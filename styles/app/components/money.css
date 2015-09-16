@@ -2,6 +2,10 @@
     display: inline-block;
 }
 
+.money.component .money-container {
+     border-bottom: 1px dotted black;
+}
+
 .money.component input[type=number] {
     width: 30px;
 }

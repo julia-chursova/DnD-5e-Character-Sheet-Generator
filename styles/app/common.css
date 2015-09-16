@@ -6,6 +6,7 @@
 
 .inline-block {
     display: inline-block;
+    font-size: 12pt;
 }
 
 input[type=radio].custom {
