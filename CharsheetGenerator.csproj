@@ -84,6 +84,7 @@
     <Content Include="scripts\app\models\saveThrowModel.js" />
     <Content Include="scripts\app\models\skillsModel.js" />
     <Content Include="scripts\app\models\speedModel.js" />
+    <Content Include="scripts\app\models\spellcastingModel.js" />
     <Content Include="scripts\app\models\statsModel.js" />
     <Content Include="scripts\app\models\weaponModel.js" />
     <Content Include="scripts\libs\acute.select.modified.js" />
@@ -140,6 +141,7 @@
     <Content Include="templates\components\shield.html" />
     <Content Include="templates\components\skills.html" />
     <Content Include="templates\components\speed.html" />
+    <Content Include="templates\components\spellcasting.html" />
     <Content Include="templates\components\stats.html" />
     <Content Include="templates\components\weapon.html" />
     <Content Include="templates\directiveDefinition\portraitComponent.html" />

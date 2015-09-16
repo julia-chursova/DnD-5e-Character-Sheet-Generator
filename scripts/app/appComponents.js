@@ -1,8 +1,8 @@
-﻿(function() {
+﻿(function () {
 	'use strict';
 
 	angular.module(appName)
-		.factory('appComponents', function() {
+		.factory('appComponents', function () {
 			var allModules = [];
 
 			(function init() {
@@ -88,6 +88,10 @@
 						template: 'templates/components/speed.html'
 					},
 					{
+						name: 'Spellcasting',
+						template: 'templates/components/spellcasting.html'
+					},
+					{
 						name: 'Stats',
 						template: 'templates/components/stats.html'
 					},
@@ -97,7 +101,7 @@
 					}
 				];
 
-				allModules.sort(function(a, b) {
+				allModules.sort(function (a, b) {
 					return a.name === b.name
 						? 0
 						: a.name < b.name
