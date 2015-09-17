@@ -96,7 +96,21 @@
 					return result;
 				}
 
-				return transformResult();
+				// Fields
+				self.skills = transformResult();
+
+				// Methods
+				self.exportData = function() {
+					return {
+						skills: self.skills
+					}
+				}
+
+				self.importData = function(data) {
+					self.skills = data.skills;
+				}
+
+				return self;
 			}
 		]);
 })();

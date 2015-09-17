@@ -11,6 +11,7 @@
 
 				var self = this;
 
+				// Fields
 				self.strength = '';
 				self.dexterity = '';
 				self.constitution = '';
@@ -25,6 +26,7 @@
 				self.wisBonus = '';
 				self.chaBonus = '';
 
+				// Calculable fields
 				self.racialStrBonus = function () {
 					return raceModel.race
 						? (raceModel.race.strBonus || 0)
@@ -84,6 +86,41 @@
 				self.chaModifier = function () {
 					return getModifier(self.charisma) + (parseInt(self.chaBonus) || 0);
 				};
+
+				// Methods
+				self.exportData = function() {
+					return {
+						strength: self.strength,
+						dexterity: self.dexterity,
+						constitution: self.constitution,
+						intelligence: self.intelligence,
+						wisdom: self.wisdom,
+						charisma: self.charisma,
+
+						strBonus: self.strBonus,
+						dexBonus: self.dexBonus,
+						conBonus: self.conBonus,
+						intBonus: self.intBonus,
+						wisBonus: self.wisBonus,
+						chaBonus: self.chaBonus
+					}
+				}
+
+				self.importData = function(data) {
+					self.strength = data.strength;
+					self.dexterity = data.dexterity;
+					self.constitution = data.constitution;
+					self.intelligence = data.intelligence;
+					self.wisdom = data.wisdom;
+					self.charisma = data.charisma;
+
+					self.strBonus = data.strBonus;
+					self.dexBonus = data.dexBonus;
+					self.conBonus = data.conBonus;
+					self.intBonus = data.intBonus;
+					self.wisBonus = data.wisBonus;
+					self.chaBonus = data.chaBonus;
+				}
 
 				return self;
 			}]);

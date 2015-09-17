@@ -3,14 +3,32 @@
 
 	angular.module(appName)
 		.factory('languagesModel', function () {
+			var self = this;
+
+			// Constants
 			var maxLanguages = 15;
 
-			var languages = [];
+			// Fields
+			self.languages = [];
 
-			for (var i = 0; i < maxLanguages; i++) {
-				languages.push('');
+			// Ctor
+			(function init() {
+				for (var i = 0; i < maxLanguages; i++) {
+					self.languages.push('');
+				}
+			})();
+
+			// Methods
+			self.exportData = function() {
+				return {
+					languages: self.languages
+				}
 			}
 
-			return languages;
+			self.importData = function(data) {
+				self.languages = data.languages;
+			}
+
+			return self;
 		});
 })();

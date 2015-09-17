@@ -8,7 +8,7 @@
             function (languagesModel, languagesProvider) {
                 var self = this;
 
-                self.languages = languagesModel;
+                self.languages = languagesModel.languages;
                 self.availableLanguages = languagesProvider;
 
                 self.pendingLanguage = null;

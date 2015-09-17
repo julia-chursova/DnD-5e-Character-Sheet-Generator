@@ -6,6 +6,16 @@
 			function () {
 				var self = this;
 
+				self.exportData = function() {
+					return {
+						
+					}
+				}
+
+				self.importData = function(data) {
+					
+				}
+
 				return self;
 			}
 		]);

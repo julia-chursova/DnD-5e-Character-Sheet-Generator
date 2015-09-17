@@ -3,22 +3,34 @@
 
     angular.module(appName)
         .factory('weaponModel', function () {
-            var weapons = [{
-                name: 'Example',
-                attack: '+3',
-                damage: '1d6',
-                range: 3,
-                ammo: null,
-                weight: 0
-            }];
+		    var self = this;
 
-            var attacks = function () {
-                return weapons;
-            };
+			// Fields
+            self.attacks = [];
 
-            return {
-                weapons: weapons,
-                attacks: attacks
-            }
-        });
+			// Ctor
+		    (function init() {
+			    self.attacks.push({
+				    name: 'Example',
+				    attack: '+3',
+				    damage: '1d6',
+				    range: 3,
+				    ammo: null,
+				    weight: 0
+			    });
+		    })();
+
+			// Methods
+			self.exportData = function() {
+				return {
+					attacks: self.attacks
+				}
+			}
+
+			self.importData = function(data) {
+				self.attacks = data.atatcks;
+			}
+
+		    return self;
+	    });
 })();

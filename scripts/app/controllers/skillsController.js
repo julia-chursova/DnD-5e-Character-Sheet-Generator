@@ -7,7 +7,7 @@
 			function(skillsModel) {
 				var self = this;
 
-				self.model = skillsModel;
+				self.model = skillsModel.skills;
 			}
 		]);
 })();

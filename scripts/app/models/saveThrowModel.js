@@ -8,6 +8,7 @@
 			function (statsModel, characterModel) {
 				var self = this;
 
+				// Fields
 				self.isStrProficient = false;
 				self.isDexProficient = false;
 				self.isConProficient = false;
@@ -15,6 +16,7 @@
 				self.isWisProficient = false;
 				self.isChaProficient = false;
 
+				// Calculable fields
 				function calculateSaveThrow(isProficient, baseModifier) {
 					var result = baseModifier;
 
@@ -46,6 +48,27 @@
 
 				self.chaSave = function () {
 					return calculateSaveThrow(self.isChaProficient, statsModel.chaModifier());
+				}
+
+				// Methods
+				self.exportData = function() {
+					return {
+						isStrProficient: self.isStrProficient,
+						isDexProficient: self.isDexProficient,
+						isConProficient: self.isConProficient,
+						isIntProficient: self.isIntProficient,
+						isWisProficient: self.isWisProficient,
+						isChaProficient: self.isChaProficient
+					}
+				}
+
+				self.importData = function(data) {
+					self.isStrProficient = data.isStrProficient;
+					self.isDexProficient = data.isDexProficient;
+					self.isConProficient = data.isConProficient;
+					self.isIntProficient = data.isIntProficient;
+					self.isWisProficient = data.isWisProficient;
+					self.isChaProficient = data.isChaProficient;
 				}
 
 				return self;

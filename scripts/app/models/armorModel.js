@@ -71,13 +71,15 @@
 				self.exportData = function() {
 					return {
 						armor: self.armor,
-						shield: self.shield
+						shield: self.shield,
+						miscBonus: self.miscBonus
 					}
 				}
 
 				self.importData = function(data) {
 					self.armor = data.armor;
 					self.shield = data.shield;
+					self.miscBonus = data.miscBonus;
 				}
 
                 return self;
