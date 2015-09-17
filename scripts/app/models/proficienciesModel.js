@@ -4,8 +4,9 @@
 	angular.module(appName)
 		.factory('proficienciesModel', [
 			function () {
-				return {
-				}
+				var self = this;
+
+				return self;
 			}
 		]);
 })();
