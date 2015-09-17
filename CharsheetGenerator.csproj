@@ -104,7 +104,6 @@
     <Content Include="styles\app\common.css" />
     <Content Include="styles\app\components.css" />
     <Content Include="styles\app\components\armor.css" />
-    <Content Include="styles\app\components\characterNew.css" />
     <Content Include="styles\app\components\character.css" />
     <Content Include="styles\app\components\deathSaves.css" />
     <Content Include="styles\app\components\initiative.css" />
@@ -125,7 +124,6 @@
     <Content Include="styles\libs\acute.select.modified.css" />
     <Content Include="templates\components\armor.html" />
     <Content Include="templates\components\armorClass.html" />
-    <Content Include="templates\components\characterNew.html" />
     <Content Include="templates\components\character.html" />
     <Content Include="templates\components\deathSaves.html" />
     <Content Include="templates\components\feats.html" />
