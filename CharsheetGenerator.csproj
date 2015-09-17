@@ -87,6 +87,7 @@
     <Content Include="scripts\app\models\spellcastingModel.js" />
     <Content Include="scripts\app\models\statsModel.js" />
     <Content Include="scripts\app\models\weaponModel.js" />
+    <Content Include="scripts\app\serializer.js" />
     <Content Include="scripts\libs\acute.select.modified.js" />
     <Content Include="scripts\libs\angular.min.js" />
     <Content Include="scripts\libs\ngDraggable.modified.js" />

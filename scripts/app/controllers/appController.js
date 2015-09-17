@@ -6,8 +6,11 @@
             '$rootScope',
 			'appState',
 			'appComponents',
-            function ($rootScope, appState, appComponents) {
+			'serializer',
+            function ($rootScope, appState, appComponents, serializer) {
                 var self = this;
+
+	            var linkUpdatingInProgress = false;
 
 				self.isEditMode = function() {
 					return appState.isEditMode;
@@ -26,6 +29,19 @@
                 self.print = function () {
                     print();
                 };
+
+				self.updateLink = function() {
+					linkUpdatingInProgress = true;
+					window.location.hash = serializer.serialize();
+					linkUpdatingInProgress = false;
+				}
+
+	            $rootScope.$on("$locationChangeSuccess", function() {
+		            if (linkUpdatingInProgress)
+			            return;
+
+		            serializer.deserialize();
+	            });
 
                 self.globalClick = function (event) {
                     $rootScope.$broadcast('global-click', event);

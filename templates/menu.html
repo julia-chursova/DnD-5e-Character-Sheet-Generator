@@ -2,11 +2,14 @@
     <div class="logo">
         <img src="images/short_logo.png"/>
     </div>
-    <div class="section">
-        <button ng-click="app.print()">Print</button>
+	<div class="section">
+		<button ng-click="app.print()">Print</button>
 		<button ng-click="app.editLayout()" ng-if="!app.isEditMode()">Edit Layout</button>
 		<button ng-click="app.finishEdit()" ng-if="app.isEditMode()">Finish edit</button>
-    </div>
+	</div>
+	<div class="section">
+		<button ng-click="app.updateLink()">UpdateLink</button>
+	</div>
 	<div ng-if="app.isEditMode()" class="section">
 		<div class="header">Layouts</div>
 

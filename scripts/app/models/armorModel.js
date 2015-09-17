@@ -7,6 +7,7 @@
             function (statsModel) {
                 var self = this;
 
+				// Constants
                 self.baseAC = 10;
 
                 self.armorTypes = [
@@ -15,6 +16,7 @@
                     'Heavy'
                 ];
 
+				// Fields
                 self.armor = {
                     name: '',
                     type: '',
@@ -32,6 +34,7 @@
 
                 self.miscBonus = '';
 
+				// Calculable properties
                 self.shieldWeight = function () {
                     return self.shield ? self.shield.weight || 0 : 0;
                 };
@@ -63,6 +66,19 @@
 
                     return result;
                 };
+
+				// Methods
+				self.exportData = function() {
+					return {
+						armor: self.armor,
+						shield: self.shield
+					}
+				}
+
+				self.importData = function(data) {
+					self.armor = data.armor;
+					self.shield = data.shield;
+				}
 
                 return self;
             }
