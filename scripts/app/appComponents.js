@@ -100,8 +100,8 @@
 						template: 'templates/components/stats.html'
 					},
 					{
-						name: 'Weapon',
-						template: 'templates/components/weapon.html'
+						name: 'Attacks',
+						template: 'templates/components/attacks.html'
 					}
 				];
 

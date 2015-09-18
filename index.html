@@ -14,7 +14,8 @@
     <!-- app styles -->
     <link rel="stylesheet" href="styles/app/app.css" />
     <link rel="stylesheet" href="styles/app/menu.css" />
-    <link rel="stylesheet" href="styles/app/common.css" />
+	<link rel="stylesheet" href="styles/app/common.css"/>
+	<link rel="stylesheet" href="styles/app/constants.less"/>
 
     <!-- components' styles -->
     <link rel="stylesheet" href="styles/app/components.css" />
@@ -32,14 +33,15 @@
     <link rel="stylesheet" href="styles/app/components/common-inventory.css" />
     <link rel="stylesheet" href="styles/app/components/money.css" />
     <link rel="stylesheet" href="styles/app/components/deathSaves.css" />
-    <link rel="stylesheet" href="styles/app/components/saveThrows.css" />
+	<link rel="stylesheet" href="styles/app/components/saveThrows.css"/>
+	<link rel="stylesheet" href="styles/app/components/attacks.less" />
     <!--<link rel="stylesheet" href="styles/app/components/inventory.css" />
     <link rel="stylesheet" href="styles/app/components/questItems.css" />
     <link rel="stylesheet" href="styles/app/components/potionsAndScrolls.css" />-->
     <!-- directives' styles -->
 	<link rel="stylesheet" href="styles/app/directives/layout.css" />
-    <link rel="stylesheet" href="styles/app/directives/cloakField.css" />
-
+	<link rel="stylesheet" href="styles/app/directives/cloakField.css"/>
+	
     <!-- ad-hoc script -->
     <script type="text/javascript">
         var appName = 'charactersSheetGenerator';
@@ -106,7 +108,7 @@
 						<component data-template="'templates/components/proficiencies.html'"></component>
 					</layout-column>
 				</layout-block>
-				<component data-template="'templates/components/weapon.html'"></component>
+				<component data-template="'templates/components/attacks.html'"></component>
 				<component data-template="'templates/components/spellcasting.html'"></component>
 			</layout-column>
 		</layout-block>
@@ -135,7 +137,7 @@
     <script type="text/javascript" src="scripts/app/models/characterModel.js"></script>
     <script type="text/javascript" src="scripts/app/models/languagesModel.js"></script>
     <script type="text/javascript" src="scripts/app/models/armorModel.js"></script>
-    <script type="text/javascript" src="scripts/app/models/weaponModel.js"></script>
+    <script type="text/javascript" src="scripts/app/models/attacksModel.js"></script>
 	<script type="text/javascript" src="scripts/app/models/skillsModel.js"></script>
 	<script type="text/javascript" src="scripts/app/models/raceModel.js"></script>
 	<script type="text/javascript" src="scripts/app/models/featsModel.js"></script>
@@ -158,7 +160,7 @@
     <script type="text/javascript" src="scripts/app/controllers/characterController.js"></script>
     <script type="text/javascript" src="scripts/app/controllers/languagesController.js"></script>
     <script type="text/javascript" src="scripts/app/controllers/armorController.js"></script>
-    <script type="text/javascript" src="scripts/app/controllers/weaponController.js"></script>
+    <script type="text/javascript" src="scripts/app/controllers/attacksController.js"></script>
 	<script type="text/javascript" src="scripts/app/controllers/skillsController.js"></script>
 	<script type="text/javascript" src="scripts/app/controllers/featsController.js"></script>
 	<script type="text/javascript" src="scripts/app/controllers/moneyController.js"></script>

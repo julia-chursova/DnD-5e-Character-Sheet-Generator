@@ -63,7 +63,7 @@
     <Content Include="scripts\app\controllers\skillsController.js" />
     <Content Include="scripts\app\controllers\speedController.js" />
     <Content Include="scripts\app\controllers\statsController.js" />
-    <Content Include="scripts\app\controllers\weaponController.js" />
+    <Content Include="scripts\app\controllers\attacksController.js" />
     <Content Include="scripts\app\dictionaries\abilityProvider.js" />
     <Content Include="scripts\app\dictionaries\backgroundProvider.js" />
     <Content Include="scripts\app\dictionaries\classProvider.js" />
@@ -86,7 +86,7 @@
     <Content Include="scripts\app\models\speedModel.js" />
     <Content Include="scripts\app\models\spellcastingModel.js" />
     <Content Include="scripts\app\models\statsModel.js" />
-    <Content Include="scripts\app\models\weaponModel.js" />
+    <Content Include="scripts\app\models\attacksModel.js" />
     <Content Include="scripts\app\serializer.js" />
     <Content Include="scripts\libs\acute.select.modified.js" />
     <Content Include="scripts\libs\angular.min.js" />
@@ -144,7 +144,7 @@
     <Content Include="templates\components\speed.html" />
     <Content Include="templates\components\spellcasting.html" />
     <Content Include="templates\components\stats.html" />
-    <Content Include="templates\components\weapon.html" />
+    <Content Include="templates\components\attacks.html" />
     <Content Include="templates\directiveDefinition\portraitComponent.html" />
     <Content Include="templates\directives\blockLayout.html" />
     <Content Include="templates\directives\cloakField.html" />
@@ -159,6 +159,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="styles\app\components\attacks.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="styles\app\constants.less" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
