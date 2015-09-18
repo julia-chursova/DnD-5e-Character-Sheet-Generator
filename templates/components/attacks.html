@@ -1,0 +1,73 @@
+﻿<div class="component attacks" ng-controller="attacksController as controller">
+	<div class="header">Attacks</div>
+
+	<div ng-repeat="attack in controller.attacks" class="attack-container">
+		<div class="inline-block">
+			<div>
+				<div class="label">Name</div>
+				<div cloak-field data-model="attack.name">
+					<input type="text" ng-model="attack.name" />
+				</div>
+			</div>
+			<div>
+				<div class="label">Range</div>
+				<div cloak-field data-model="attack.range">
+					<input type="number" min="0" ng-model="attack.range"/>
+				</div>
+			</div>
+			<div>
+				<div class="label">Ranged</div>
+				<div cloak-field data-model="attack.isRanged ? '✓' : '-'">
+					<input type="checkbox" ng-model="attack.isRanged" />
+				</div>
+			</div>
+		</div>
+
+		<div class="inline-block">
+			<table class="fillable-formula">
+				<tbody>
+					<tr>
+						<td class="cell total">{{ attack.attack() }}</td>
+						<td>=</td>
+						<td class="cell summand min-input">
+							<div cloak-field data-model="attack.baseAttack">
+								<input type="number" ng-model="attack.baseAttack"/>
+							</div>
+						</td>
+						<td>+</td>
+						<td class="cell summand min-input">{{attack.isRanged ? controller.stats.dexModifier() : controller.stats.strModifier()}}</td>
+					</tr>
+					<tr>
+						<td class="major-label">Attack</td>
+						<td></td>
+						<td class="label">Weapon</td>
+						<td></td>
+						<td class="label">{{ attack.isRanged ? 'DEX' : 'STR' }}</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="fillable-formula">
+				<tbody>
+					<tr>
+						<td class="cell total">{{ attack.damage() }}</td>
+						<td>=</td>
+						<td class="cell summand min-input">
+							<div cloak-field data-model="attack.baseDamage">
+								<input type="text" ng-model="attack.baseDamage"/>
+							</div>
+						</td>
+						<td>+</td>
+						<td class="cell summand min-input">{{attack.isRanged ? controller.stats.dexModifier() : controller.stats.strModifier()}}</td>
+					</tr>
+					<tr>
+						<td class="major-label">Damage</td>
+						<td></td>
+						<td class="label">Weapon</td>
+						<td></td>
+						<td class="label">{{ attack.isRanged ? 'DEX' : 'STR' }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
