@@ -57,7 +57,7 @@
 						};
 
 						self.damage = function() {
-							return (self.baseDamage || 0) + (self.isRanged
+							return (self.baseDamage || 0) + ' + ' + (self.isRanged
 								? statsModel.dexModifier()
 								: statsModel.strModifier());
 						};
