@@ -3,4 +3,11 @@ bin/
 obj/
 *.suo
 *.config
-
+/scripts/libs.min.js
+/scripts/app.min.js
+/scripts/app.js
+/scripts/libs.js
+/styles/libstyles.min.css
+/styles/appstyles.css
+/styles/appstyles.min.css
+/styles/libstyles.css

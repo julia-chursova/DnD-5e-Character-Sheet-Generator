@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://vswebessentials.com/schemas/v1/bundle.xsd">
+  <settings>
+    <minify>true</minify>
+    <runOnBuild>true</runOnBuild>
+    <!--Specifies a custom subfolder to save files to. By default, compiled output will be placed in the same folder and nested under the original file.-->
+    <outputDirectory />
+  </settings>
+  <files>
+    <file>/scripts/app/app.js</file>
+    <file>/scripts/app/appComponents.js</file>
+    <file>/scripts/app/appState.js</file>
+    <file>/scripts/app/common.js</file>
+    <file>/scripts/app/serializer.js</file>
+    <file>/scripts/app/componentDirectives/portraitDirective.js</file>
+    <file>/scripts/app/controllers/appController.js</file>
+    <file>/scripts/app/controllers/armorController.js</file>
+    <file>/scripts/app/controllers/attacksController.js</file>
+    <file>/scripts/app/controllers/characterController.js</file>
+    <file>/scripts/app/controllers/featsController.js</file>
+    <file>/scripts/app/controllers/hitPointsController.js</file>
+    <file>/scripts/app/controllers/inventoryController.js</file>
+    <file>/scripts/app/controllers/languagesController.js</file>
+    <file>/scripts/app/controllers/moneyController.js</file>
+    <file>/scripts/app/controllers/playerController.js</file>
+    <file>/scripts/app/controllers/proficienciesController.js</file>
+    <file>/scripts/app/controllers/saveThrowController.js</file>
+    <file>/scripts/app/controllers/skillsController.js</file>
+    <file>/scripts/app/controllers/speedController.js</file>
+    <file>/scripts/app/controllers/statsController.js</file>
+    <file>/scripts/app/dictionaries/abilityProvider.js</file>
+    <file>/scripts/app/dictionaries/backgroundProvider.js</file>
+    <file>/scripts/app/dictionaries/classProvider.js</file>
+    <file>/scripts/app/dictionaries/languagesProvider.js</file>
+    <file>/scripts/app/dictionaries/raceProvider.js</file>
+    <file>/scripts/app/directives/cloakFieldDirective.js</file>
+    <file>/scripts/app/directives/layoutDirective.js</file>
+    <file>/scripts/app/models/armorModel.js</file>
+    <file>/scripts/app/models/attacksModel.js</file>
+    <file>/scripts/app/models/characterModel.js</file>
+    <file>/scripts/app/models/featsModel.js</file>
+    <file>/scripts/app/models/hitPointsModel.js</file>
+    <file>/scripts/app/models/inventoryModel.js</file>
+    <file>/scripts/app/models/languagesModel.js</file>
+    <file>/scripts/app/models/moneyModel.js</file>
+    <file>/scripts/app/models/playerModel.js</file>
+    <file>/scripts/app/models/proficienciesModel.js</file>
+    <file>/scripts/app/models/raceModel.js</file>
+    <file>/scripts/app/models/saveThrowModel.js</file>
+    <file>/scripts/app/models/skillsModel.js</file>
+    <file>/scripts/app/models/speedModel.js</file>
+    <file>/scripts/app/models/spellcastingModel.js</file>
+    <file>/scripts/app/models/statsModel.js</file>
+  </files>
+</bundle>

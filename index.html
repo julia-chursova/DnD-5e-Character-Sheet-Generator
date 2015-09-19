@@ -3,44 +3,9 @@
 <head>
     <title>D&amp;D 5e Characters Sheet Generator</title>
 
-    <!-- library files -->
-    <script type="text/javascript" src="scripts/libs/angular.min.js"></script>
-    <script type="text/javascript" src="scripts/libs/ngDraggable.modified.js"></script>
-    <script type="text/javascript" src="scripts/libs/acute.select.modified.js"></script>
-
-    <!-- libs styles -->
-    <link rel="stylesheet" href="styles/libs/acute.select.modified.css" />
-
-    <!-- app styles -->
-    <link rel="stylesheet" href="styles/app/app.css" />
-    <link rel="stylesheet" href="styles/app/menu.css" />
-	<link rel="stylesheet" href="styles/app/common.css"/>
-	<link rel="stylesheet" href="styles/app/constants.less"/>
-
-    <!-- components' styles -->
-    <link rel="stylesheet" href="styles/app/components.css" />
-    <link rel="stylesheet" href="styles/app/components/logo.css" />
-    <link rel="stylesheet" href="styles/app/components/player.css" />
-    <link rel="stylesheet" href="styles/app/components/character.css" />
-    <link rel="stylesheet" href="styles/app/components/languages.css" />
-    <link rel="stylesheet" href="styles/app/components/initiative.css" />
-    <link rel="stylesheet" href="styles/app/components/stats.css" />
-    <link rel="stylesheet" href="styles/app/components/armor.css" />
-    <link rel="stylesheet" href="styles/app/components/armorClass.css" />
-    <link rel="stylesheet" href="styles/app/components/shield.css" />
-    <link rel="stylesheet" href="styles/app/components/portrait.css" />
-    <link rel="stylesheet" href="styles/app/components/skills.css" />
-    <link rel="stylesheet" href="styles/app/components/common-inventory.css" />
-    <link rel="stylesheet" href="styles/app/components/money.css" />
-    <link rel="stylesheet" href="styles/app/components/deathSaves.css" />
-	<link rel="stylesheet" href="styles/app/components/saveThrows.css"/>
-	<link rel="stylesheet" href="styles/app/components/attacks.less" />
-    <!--<link rel="stylesheet" href="styles/app/components/inventory.css" />
-    <link rel="stylesheet" href="styles/app/components/questItems.css" />
-    <link rel="stylesheet" href="styles/app/components/potionsAndScrolls.css" />-->
-    <!-- directives' styles -->
-	<link rel="stylesheet" href="styles/app/directives/layout.css" />
-	<link rel="stylesheet" href="styles/app/directives/cloakField.css"/>
+    <!-- styles -->
+    <link rel="stylesheet" href="styles/appstyles.css" />
+    <link rel="stylesheet" href="styles/libstyles.css" />
 	
     <!-- ad-hoc script -->
     <script type="text/javascript">
@@ -114,62 +79,8 @@
 		</layout-block>
 	</div>
 
-
-
 	<!-- app scripts -->
-    <script type="text/javascript" src="scripts/app/app.js"></script>
-    <script type="text/javascript" src="scripts/app/common.js"></script>
-	<script type="text/javascript" src="scripts/app/appState.js"></script>
-	<script type="text/javascript" src="scripts/app/appComponents.js"></script>
-	<script type="text/javascript" src="scripts/app/serializer.js"></script>
-
-    <!-- dictionary data -->
-    <script type="text/javascript" src="scripts/app/dictionaries/raceProvider.js"></script>
-	<script type="text/javascript" src="scripts/app/dictionaries/languagesProvider.js"></script>
-	<script type="text/javascript" src="scripts/app/dictionaries/classProvider.js"></script>
-	<script type="text/javascript" src="scripts/app/dictionaries/backgroundProvider.js"></script>
-	<script type="text/javascript" src="scripts/app/dictionaries/abilityProvider.js"></script>
-
-    <!-- models -->
-    <script type="text/javascript" src="scripts/app/models/statsModel.js"></script>
-    <script type="text/javascript" src="scripts/app/models/playerModel.js"></script>
-    <script type="text/javascript" src="scripts/app/models/inventoryModel.js"></script>
-    <script type="text/javascript" src="scripts/app/models/characterModel.js"></script>
-    <script type="text/javascript" src="scripts/app/models/languagesModel.js"></script>
-    <script type="text/javascript" src="scripts/app/models/armorModel.js"></script>
-    <script type="text/javascript" src="scripts/app/models/attacksModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/skillsModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/raceModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/featsModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/moneyModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/saveThrowModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/hitPointsModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/proficienciesModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/speedModel.js"></script>
-	<script type="text/javascript" src="scripts/app/models/spellcastingModel.js"></script>
-
-	<!-- common directives -->
-	<script type="text/javascript" src="scripts/app/directives/layoutDirective.js"></script>
-    <script type="text/javascript" src="scripts/app/directives/cloakFieldDirective.js"></script>
-
-    <!-- controllers -->
-    <script type="text/javascript" src="scripts/app/controllers/appController.js"></script>
-    <script type="text/javascript" src="scripts/app/controllers/statsController.js"></script>
-    <script type="text/javascript" src="scripts/app/controllers/playerController.js"></script>
-    <script type="text/javascript" src="scripts/app/controllers/inventoryController.js"></script>
-    <script type="text/javascript" src="scripts/app/controllers/characterController.js"></script>
-    <script type="text/javascript" src="scripts/app/controllers/languagesController.js"></script>
-    <script type="text/javascript" src="scripts/app/controllers/armorController.js"></script>
-    <script type="text/javascript" src="scripts/app/controllers/attacksController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/skillsController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/featsController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/moneyController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/saveThrowController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/hitPointsController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/proficienciesController.js"></script>
-	<script type="text/javascript" src="scripts/app/controllers/speedController.js"></script>
-
-    <!-- components directives -->
-    <script type="text/javascript" src="scripts/app/componentDirectives/portraitDirective.js"></script>
+    <script type="text/javascript" src="scripts/libs.js"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
 </body>
 </html>

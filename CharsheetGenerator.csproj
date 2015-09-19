@@ -44,6 +44,12 @@
     <Content Include="images\dropdown.gif" />
     <Content Include="images\short_logo.png" />
     <Content Include="index.html" />
+    <Content Include="scripts\app.js">
+      <DependentUpon>app.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="scripts\app.min.js">
+      <DependentUpon>app.js</DependentUpon>
+    </Content>
     <Content Include="scripts\app\app.js" />
     <Content Include="scripts\app\appComponents.js" />
     <Content Include="scripts\app\appState.js" />
@@ -88,6 +94,12 @@
     <Content Include="scripts\app\models\statsModel.js" />
     <Content Include="scripts\app\models\attacksModel.js" />
     <Content Include="scripts\app\serializer.js" />
+    <Content Include="scripts\libs.js">
+      <DependentUpon>libs.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="scripts\libs.min.js">
+      <DependentUpon>libs.js</DependentUpon>
+    </Content>
     <Content Include="scripts\libs\acute.select.modified.js" />
     <Content Include="scripts\libs\angular.min.js" />
     <Content Include="scripts\libs\ngDraggable.modified.js" />
@@ -100,27 +112,39 @@
     <Content Include="scripts\tests\lib\jasmine-2.3.4\jasmine_favicon.png" />
     <Content Include="scripts\tests\SpecRunner.html" />
     <Content Include="scripts\tests\spec\statsCalculatorSpecs.js" />
-    <Content Include="styles\app\app.css" />
-    <Content Include="styles\app\common.css" />
-    <Content Include="styles\app\components.css" />
-    <Content Include="styles\app\components\armor.css" />
-    <Content Include="styles\app\components\character.css" />
-    <Content Include="styles\app\components\deathSaves.css" />
-    <Content Include="styles\app\components\initiative.css" />
-    <Content Include="styles\app\components\common-inventory.css" />
-    <Content Include="styles\app\components\languages.css" />
-    <Content Include="styles\app\components\logo.css" />
-    <Content Include="styles\app\components\money.css" />
-    <Content Include="styles\app\components\player.css" />
-    <Content Include="styles\app\components\armorClass.css" />
-    <Content Include="styles\app\components\saveThrows.css" />
-    <Content Include="styles\app\components\stats.css" />
-    <Content Include="styles\app\components\shield.css" />
-    <Content Include="styles\app\components\portrait.css" />
-    <Content Include="styles\app\components\skills.css" />
-    <Content Include="styles\app\directives\cloakField.css" />
-    <Content Include="styles\app\directives\layout.css" />
-    <Content Include="styles\app\menu.css" />
+    <Content Include="styles\appstyles.css">
+      <DependentUpon>appstyles.css.bundle</DependentUpon>
+    </Content>
+    <Content Include="styles\app\app.less" />
+    <Content Include="styles\app\common.less" />
+    <Content Include="styles\app\components.less" />
+    <Content Include="styles\appstyles.css.bundle" />
+    <Content Include="scripts\libs.js.bundle" />
+    <Content Include="scripts\app.js.bundle" />
+    <None Include="styles\app\components\armor.less" />
+    <None Include="styles\app\components\character.less" />
+    <None Include="styles\app\components\deathSaves.less" />
+    <None Include="styles\app\components\initiative.less" />
+    <None Include="styles\app\components\common-inventory.less" />
+    <None Include="styles\app\components\languages.less" />
+    <None Include="styles\app\components\logo.less" />
+    <None Include="styles\app\components\money.less" />
+    <None Include="styles\app\components\player.less" />
+    <None Include="styles\app\components\armorClass.less" />
+    <None Include="styles\app\components\saveThrows.less" />
+    <None Include="styles\app\components\stats.less" />
+    <None Include="styles\app\components\shield.less" />
+    <None Include="styles\app\components\portrait.less" />
+    <None Include="styles\app\components\skills.less" />
+    <None Include="styles\app\directives\cloakField.less" />
+    <None Include="styles\app\directives\layout.less" />
+    <None Include="styles\app\menu.less" />
+    <Content Include="styles\libstyles.css">
+      <DependentUpon>libstyles.css.bundle</DependentUpon>
+    </Content>
+    <Content Include="styles\libstyles.min.css">
+      <DependentUpon>libstyles.css</DependentUpon>
+    </Content>
     <Content Include="styles\libs\acute.select.modified.css" />
     <Content Include="templates\components\armor.html" />
     <Content Include="templates\components\armorClass.html" />
@@ -152,6 +176,7 @@
     <Content Include="templates\directives\layout.html" />
     <Content Include="templates\libs\acute.select.htm" />
     <Content Include="templates\menu.html" />
+    <Content Include="styles\libstyles.css.bundle" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\dalelands_uncial.otf" />
