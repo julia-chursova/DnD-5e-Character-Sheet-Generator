@@ -1,0 +1,484 @@
+/*    Styles for application    */
+@page {
+  size: A4;
+  margin: 0;
+}
+@media screen {
+  .app {
+    padding: 10px;
+  }
+}
+@media print {
+  .app {
+    padding: 0;
+    margin: 0;
+  }
+  .page-break {
+    display: none;
+  }
+  .non-printable {
+    display: none;
+  }
+  .a4-sheet {
+    border: none !important;
+    height: 301mm !important;
+  }
+}
+@font-face {
+  font-family: dungeonFont;
+  src: url('../../fonts/dalelands_uncial.otf');
+}
+.app .a4-sheet {
+  margin: 0 auto;
+  padding: 5mm;
+  border: 1px black solid;
+  width: 210mm;
+  height: 297mm;
+}
+.app .page-break {
+  min-height: 10px;
+  width: 100%;
+}
+
+.rotate270 {
+  -moz-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+}
+.inline-block {
+  display: inline-block;
+  font-size: 12pt;
+}
+input[type=radio].custom {
+  display: none;
+}
+input[type=radio].custom + label span {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid #666666;
+}
+input[type=radio].custom:checked + label span {
+  background-color: red;
+}
+.cloakField.text {
+  min-height: 18px;
+  min-width: 10px;
+}
+.component table.fixed-table {
+  table-layout: fixed;
+}
+.component table.common-table {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+.component table.common-table thead {
+  font-weight: bold;
+  color: #666666;
+  font-size: 12px;
+  padding: 2px 10px;
+  text-align: center;
+}
+.component table.common-table tbody {
+  font-size: 14px;
+  padding: 2px 10px;
+  text-align: center;
+}
+.component .left {
+  float: left;
+  margin-right: 6px;
+}
+.component table.common-table tr td:first-child {
+  text-align: left;
+}
+
+.component {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.component .header {
+  background-color: gray;
+  text-transform: uppercase;
+  color: white;
+  padding: 2px 10px;
+  text-align: center;
+  font-family: dungeonFont, sans-serif;
+}
+.component .label {
+  font-size: 8pt;
+  color: #333333;
+}
+.component .major-label {
+  font-size: 9pt;
+  color: #222222;
+}
+.component .fillable-formula {
+  margin-top: 4px;
+}
+.component .fillable-formula .label,
+.component .fillable-formula .major-label {
+  text-align: center;
+}
+.component .fillable-formula .cell {
+  padding: 2px 6px;
+  width: 22px;
+  text-align: center;
+}
+.component .fillable-formula .cell.total {
+  border: 1px solid #777777;
+}
+.component .fillable-formula .cell.summand {
+  border-bottom: 1px solid #777777;
+}
+.component .fillable-formula .cell.min-input input {
+  width: 30px;
+}
+.component .fillable-formula .cell div {
+  width: 100%;
+  min-height: 20px;
+}
+
+
+/*    Styles for menu    */
+@media screen {
+  .menu {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    max-height: 90%;
+    overflow-y: auto;
+  }
+}
+@media print {
+  .menu {
+    display: none;
+  }
+}
+.menu {
+  background-color: white;
+  min-width: 130px;
+  border: 1px #dddddd solid;
+  border-radius: 4px;
+  padding: 15px 5px;
+}
+.menu .logo {
+  text-align: center;
+}
+.menu .logo img {
+  width: 100px;
+  height: 50px;
+}
+.menu .section {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px #dddddd solid;
+}
+.menu .section .header {
+  font-size: 10pt;
+  color: #666666;
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+}
+.menu .layout-block {
+  margin: 4px 0;
+}
+.menu .layout-block .layout-icon {
+  height: 20px;
+  line-height: 20px;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 8pt;
+  display: inline-block;
+}
+.menu .layout-control {
+  border: 1px solid black;
+  padding: 2px 10px;
+  margin: 4px 0;
+}
+
+.armor.component .armor-container {
+  margin-top: 4px;
+  width: 100%;
+}
+.armor.component .armor-container .inline-block {
+  vertical-align: top;
+}
+.armor.component .numberInput {
+  border-bottom: 1px solid #aaaaaa;
+  height: 21px;
+  width: 35px;
+}
+.armor.component .input {
+  height: 21px;
+}
+.armor.component .input input[type=number] {
+  width: 35px;
+}
+.armor.component .textInput {
+  border-bottom: 1px solid #aaaaaa;
+  text-align: left;
+  width: 100%;
+}
+.armor.component .numberInput,
+.armor.component .checkbox-input {
+  text-align: center;
+}
+
+.armor-class.component .label {
+  width: 39px;
+}
+
+.component.attacks .attack-container:nth-child(even) {
+  background-color: #aaaaaa;
+}
+
+.character.component .cloakFieldContainer {
+  height: 18px;
+  border-bottom: 1px solid #aaaaaa;
+  width: 155px;
+}
+.character.component .cloakFieldContainer input[type=text] {
+  width: 100%;
+}
+.character.component .alignment-hor-label {
+  text-align: center;
+}
+.character.component .left-label {
+  transform-origin: 60% 20%;
+}
+.character.component .right-label {
+  transform-origin: 30% 110%;
+}
+.character.component .race-data {
+  min-height: 20px;
+  align-items: stretch;
+}
+.character.component .size {
+  width: 110px;
+}
+.character.component .effective-level,
+.character.component .proficiency-bonus {
+  font-size: 14px;
+}
+.character.component .common-table tbody td {
+  border-bottom: 1px dotted black;
+}
+.character.component tr {
+  height: 18px;
+}
+.character.component .char-class {
+  width: 140px;
+}
+.character.component .char-hd,
+.character.component .char-lvl {
+  width: 40px;
+}
+.character.component select {
+  width: 100%;
+}
+.character.component input[type=number] {
+  width: 100%;
+}
+
+.common-inventory.component tbody td {
+  border-bottom: 1px dotted black;
+}
+.common-inventory.component tr {
+  height: 18px;
+  max-width: 143px;
+}
+.common-inventory.component input[type=text] {
+  width: 100%;
+}
+.common-inventory.component input[type=number] {
+  width: 50px;
+}
+.common-inventory.component .total-weight {
+  font-size: 14px;
+}
+.common-inventory.component .item-weight,
+.common-inventory.component .item-quantity {
+  width: 55px;
+}
+
+.death-saves.component span {
+  float: left;
+}
+.death-saves.component .deathSaves-right {
+  float: right;
+}
+.death-saves.component .deathSaves-container {
+  height: 18px;
+}
+
+.initiative.component .cell.feat {
+  width: 30px;
+}
+
+.languages.component .add-language {
+  margin-top: 10px;
+}
+.languages.component .add-language .button-container {
+  vertical-align: top;
+}
+.languages.component .language-item {
+  border-bottom: 1px dotted #aaaaaa;
+}
+.languages.component .language-item .remove-language {
+  visibility: hidden;
+}
+.languages.component .language-item:hover .remove-language {
+  visibility: visible;
+}
+
+.logo.component img {
+  width: 50px;
+  height: 25px;
+  vertical-align: top;
+}
+.logo.component span {
+  color: #FF0000;
+  font-family: dungeonFont, sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  vertical-align: bottom;
+}
+
+.money.component .money-container div {
+  display: inline-block;
+}
+.money.component .money-container {
+  border-bottom: 1px dotted black;
+}
+.money.component input[type=number] {
+  width: 30px;
+}
+money.component .money-label {
+  font-size: 14px;
+}
+
+.player.component .label {
+  font-size: 8pt;
+  color: #333333;
+}
+.player.component .itemContainer {
+  margin-top: 4px;
+}
+.player.component .cloakFieldContainer {
+  height: 18px;
+  border-bottom: 1px solid #aaaaaa;
+}
+.player.component .cloakField.input {
+  height: 100%;
+  max-width: 100%;
+}
+.player.component .cloakField input {
+  height: 100%;
+  max-width: 100%;
+}
+
+.portrait.component .canvas {
+  min-width: 240px;
+  min-height: 320px;
+}
+
+.saveThrows.component .checkbox-container {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.shield.component .shield-container {
+  margin-top: 4px;
+  width: 100%;
+}
+.shield.component .shield-container .inline-block {
+  vertical-align: top;
+}
+.shield.component .input {
+  border-bottom: 1px solid #aaaaaa;
+  height: 21px;
+}
+.shield.component .input input[type=number] {
+  width: 33px;
+}
+.shield.component .textInput {
+  text-align: left;
+  width: 100%;
+}
+.shield.component .numberInput {
+  text-align: center;
+}
+
+.skills.component tbody td {
+  border-bottom: 1px dotted black;
+}
+.skills.component .skills-value {
+  border: 1px solid gray;
+}
+.skills.component .right {
+  float: right;
+  padding: 0;
+  text-align: right;
+}
+.skills.component .is-proficient {
+  min-width: 20px;
+  min-height: 20px;
+}
+.skills.component .is-proficient input[type=checkbox] {
+  margin: 0;
+}
+.skills.component .misc-bonus {
+  width: 38px;
+  height: 22px;
+  vertical-align: bottom;
+}
+.skills.component .misc-bonus input {
+  width: 34px;
+}
+
+.stats.component .label {
+  width: 52px;
+}
+
+.cloakFieldContainer {
+  display: flex;
+}
+.cloakFieldContainer .cloakField {
+  align-items: stretch;
+  width: 100%;
+}
+
+@media print {
+  .container-box {
+    border: none;
+  }
+}
+@media screen {
+  .app.edit-mode .container .container-box {
+    border: 1px solid black;
+  }
+}
+.container {
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+}
+.container .container-box {
+  display: inline-block;
+  min-height: 50px;
+  box-sizing: border-box;
+  padding: 5px;
+  vertical-align: top;
+  align-items: stretch;
+}
+.container .container-box:hover .drag-zone {
+  width: 100%;
+  height: 20px;
+}
+[ng-drop].drag-enter {
+  background-color: powderblue;
+}

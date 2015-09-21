@@ -6,14 +6,3 @@ obj/
 
 node_modules/
 
-/scripts/libs.js
-/scripts/libs.min.js
-/scripts/app.js
-/scripts/app.min.js
-
-/styles/libstyles.css
-/styles/libstyles.min.css
-/styles/appstyles.css
-/styles/appstyles.min.css
-
-
