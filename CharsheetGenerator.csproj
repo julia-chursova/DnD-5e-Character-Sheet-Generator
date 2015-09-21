@@ -45,6 +45,7 @@
     <Content Include="images\dropdown.gif" />
     <Content Include="images\short_logo.png" />
     <Content Include="index.html" />
+    <Content Include="scripts\app.js" />
     <Content Include="scripts\app\app.js" />
     <Content Include="scripts\app\appComponents.js" />
     <Content Include="scripts\app\appState.js" />
@@ -89,6 +90,7 @@
     <Content Include="scripts\app\models\statsModel.js" />
     <Content Include="scripts\app\models\attacksModel.js" />
     <Content Include="scripts\app\serializer.js" />
+    <Content Include="scripts\libs.js" />
     <Content Include="scripts\libs\acute.select.modified.js" />
     <Content Include="scripts\libs\angular.min.js" />
     <Content Include="scripts\libs\ngDraggable.modified.js" />
@@ -101,6 +103,7 @@
     <Content Include="scripts\tests\lib\jasmine-2.3.4\jasmine_favicon.png" />
     <Content Include="scripts\tests\SpecRunner.html" />
     <Content Include="scripts\tests\spec\statsCalculatorSpecs.js" />
+    <Content Include="styles\appstyles.css" />
     <Content Include="styles\app\app.less" />
     <Content Include="styles\app\common.less" />
     <Content Include="styles\app\components.less" />
@@ -122,6 +125,7 @@
     <None Include="styles\app\directives\cloakField.less" />
     <None Include="styles\app\directives\layout.less" />
     <None Include="styles\app\menu.less" />
+    <Content Include="styles\libstyles.css" />
     <Content Include="styles\libs\acute.select.modified.css" />
     <Content Include="templates\components\armor.html" />
     <Content Include="templates\components\armorClass.html" />
