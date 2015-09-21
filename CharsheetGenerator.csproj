@@ -41,15 +41,10 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="favicon.ico" />
+    <Content Include="gulpfile.js" />
     <Content Include="images\dropdown.gif" />
     <Content Include="images\short_logo.png" />
     <Content Include="index.html" />
-    <Content Include="scripts\app.js">
-      <DependentUpon>app.js.bundle</DependentUpon>
-    </Content>
-    <Content Include="scripts\app.min.js">
-      <DependentUpon>app.js</DependentUpon>
-    </Content>
     <Content Include="scripts\app\app.js" />
     <Content Include="scripts\app\appComponents.js" />
     <Content Include="scripts\app\appState.js" />
@@ -94,12 +89,6 @@
     <Content Include="scripts\app\models\statsModel.js" />
     <Content Include="scripts\app\models\attacksModel.js" />
     <Content Include="scripts\app\serializer.js" />
-    <Content Include="scripts\libs.js">
-      <DependentUpon>libs.js.bundle</DependentUpon>
-    </Content>
-    <Content Include="scripts\libs.min.js">
-      <DependentUpon>libs.js</DependentUpon>
-    </Content>
     <Content Include="scripts\libs\acute.select.modified.js" />
     <Content Include="scripts\libs\angular.min.js" />
     <Content Include="scripts\libs\ngDraggable.modified.js" />
@@ -112,15 +101,9 @@
     <Content Include="scripts\tests\lib\jasmine-2.3.4\jasmine_favicon.png" />
     <Content Include="scripts\tests\SpecRunner.html" />
     <Content Include="scripts\tests\spec\statsCalculatorSpecs.js" />
-    <Content Include="styles\appstyles.css">
-      <DependentUpon>appstyles.css.bundle</DependentUpon>
-    </Content>
     <Content Include="styles\app\app.less" />
     <Content Include="styles\app\common.less" />
     <Content Include="styles\app\components.less" />
-    <Content Include="styles\appstyles.css.bundle" />
-    <Content Include="scripts\libs.js.bundle" />
-    <Content Include="scripts\app.js.bundle" />
     <None Include="styles\app\components\armor.less" />
     <None Include="styles\app\components\character.less" />
     <None Include="styles\app\components\deathSaves.less" />
@@ -139,12 +122,6 @@
     <None Include="styles\app\directives\cloakField.less" />
     <None Include="styles\app\directives\layout.less" />
     <None Include="styles\app\menu.less" />
-    <Content Include="styles\libstyles.css">
-      <DependentUpon>libstyles.css.bundle</DependentUpon>
-    </Content>
-    <Content Include="styles\libstyles.min.css">
-      <DependentUpon>libstyles.css</DependentUpon>
-    </Content>
     <Content Include="styles\libs\acute.select.modified.css" />
     <Content Include="templates\components\armor.html" />
     <Content Include="templates\components\armorClass.html" />
@@ -176,7 +153,6 @@
     <Content Include="templates\directives\layout.html" />
     <Content Include="templates\libs\acute.select.htm" />
     <Content Include="templates\menu.html" />
-    <Content Include="styles\libstyles.css.bundle" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\dalelands_uncial.otf" />
@@ -216,6 +192,10 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>cd $(SolutionPath)
+gulp</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

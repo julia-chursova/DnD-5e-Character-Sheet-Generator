@@ -4,6 +4,8 @@ obj/
 *.suo
 *.config
 
+node_modules/
+
 /scripts/libs.js
 /scripts/libs.min.js
 /scripts/app.js
@@ -13,7 +15,5 @@ obj/
 /styles/libstyles.min.css
 /styles/appstyles.css
 /styles/appstyles.min.css
-
-/styles/app/*.css
 
 
