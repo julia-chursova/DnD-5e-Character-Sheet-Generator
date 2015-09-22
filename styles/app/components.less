@@ -1,56 +1,55 @@
 ﻿.component {
-    width: 100%;
-    margin-bottom: 10px;
-}
+	width: 100%;
+	margin-bottom: 10px;
 
-.component .header {
-    background-color: gray;
-    text-transform: uppercase;
-    color: white;
-    padding: 2px 10px;
-    text-align: center;
+	.header {
+		background-color: gray;
+		text-transform: uppercase;
+		color: white;
+		padding: 2px 10px;
+		text-align: center;
+		font-family: dungeonFont, sans-serif;
+	}
 
-    font-family: dungeonFont, sans-serif;
-}
+	.label {
+		font-size: 8pt;
+		color: #333333;
+	}
 
-.component .label {
-    font-size: 8pt;
-    color: #333333;
-}
+	.major-label {
+		font-size: 9pt;
+		color: #222222;
+	}
 
-.component .major-label {
-    font-size: 9pt;
-    color: #222222;
-}
+	.fillable-formula {
+		margin-top: 4px;
 
-.component .fillable-formula {
-    margin-top: 4px;
-}
+		.label,
+		.major-label {
+			text-align: center;
+		}
 
-.component .fillable-formula .label,
-.component .fillable-formula .major-label {
-    text-align: center;
-}
+		.cell {
+			padding: 2px 6px;
+			width: 22px;
+			text-align: center;
+		}
 
-.component .fillable-formula .cell {
-    padding: 2px 6px;
-    width: 22px;
-    text-align: center; 
-}
+		.cell.total {
+			border: 1px solid #777777;
+		}
 
-.component .fillable-formula .cell.total { 
-    border: 1px solid #777777;
-}
+		.cell.summand {
+			border-bottom: 1px solid #777777;
+		}
 
-.component .fillable-formula .cell.summand {
-    border-bottom: 1px solid #777777;
-}
+		.cell.min-input input {
+			width: 30px;
+		}
 
-.component .fillable-formula .cell.min-input input {
-    width: 30px;
-}
-
-.component .fillable-formula .cell div {
-    width: 100%;
-    min-height: 20px;
+		.cell div {
+			width: 100%;
+			min-height: 20px;
+		}
+	}
 }
