@@ -1,30 +1,32 @@
 @import 'constants.less';
 
 .rotate270 {
-	-moz-transform: rotate(270deg);
-	-webkit-transform: rotate(270deg);
-	-o-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
 }
 
 .inline-block {
-	display: inline-block;
-	font-size: 12pt;
+    display: inline-block;
+    font-size: 12pt;
 }
 
 input[type=radio].custom {
-	display: none;
-}
+    display: none;
 
-input[type=radio].custom + label span {
-	width: 14px;
-	height: 14px;
-	display: inline-block;
-	margin: -1px 4px 0 0;
-	vertical-align: middle;
-	cursor: pointer;
-	border: 1px solid #666666;
-}
+    & + label span {
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        margin: -1px 4px 0 0;
+        vertical-align: middle;
+        cursor: pointer;
+        border: 1px solid #666666;
+    }
 
-input[type=radio].custom:checked + label span {
-	background-color: @highlightColor;
+    &:checked {
+        & + label span {
+            background-color: @highlightColor;
+        }
+    }
 }
