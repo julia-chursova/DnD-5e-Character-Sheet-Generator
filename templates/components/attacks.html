@@ -2,28 +2,28 @@
 	<div class="header">Attacks</div>
 
 	<div ng-repeat="attack in controller.attacks" class="attack-container">
-		<div class="inline-block">
-			<div>
+		<div class="inline-block params-block">
+			<div class="labeled-input">
 				<div class="label">Name</div>
-				<div cloak-field data-model="attack.name">
-					<input type="text" ng-model="attack.name" />
-				</div>
+                <div cloak-field data-model="attack.name" class="cloakFieldContainer">
+                    <input type="text" ng-model="attack.name" />
+                </div>
 			</div>
-			<div>
-				<div class="label">Range</div>
-				<div cloak-field data-model="attack.range">
-					<input type="number" min="0" ng-model="attack.range"/>
-				</div>
-			</div>
-			<div>
-				<div class="label">Ranged</div>
-				<div cloak-field data-model="attack.isRanged ? '✓' : '-'">
-					<input type="checkbox" ng-model="attack.isRanged" />
-				</div>
-			</div>
+            <div class="labeled-input">
+                <div class="label">Range</div>
+                <div cloak-field data-model="attack.range" class="cloakFieldContainer">
+                    <input type="number" min="0" ng-model="attack.range" />
+                </div>
+            </div>
+            <div class="labeled-input">
+                <div class="label">Ranged</div>
+                <div cloak-field data-model="attack.isRanged ? '✓' : '-'" class="cloakFieldContainer">
+                    <input type="checkbox" ng-model="attack.isRanged" />
+                </div>
+            </div>
 		</div>
 
-		<div class="inline-block">
+		<div class="inline-block stats-block">
 			<table class="fillable-formula">
 				<tbody>
 					<tr>
