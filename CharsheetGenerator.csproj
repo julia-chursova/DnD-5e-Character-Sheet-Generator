@@ -102,7 +102,7 @@
     <Content Include="scripts\tests\SpecRunner.html" />
     <Content Include="scripts\tests\spec\statsCalculatorSpecs.js" />
     <Content Include="styles\app\app.less" />
-    <Content Include="styles\app\controls\common.less" />
+    <Content Include="styles\app\controls\helpers.less" />
     <Content Include="styles\app\components.less" />
     <Content Include="styles\app\controls\labeledInput.less" />
     <Content Include="styles\app\controls\fillableFormula.less" />
