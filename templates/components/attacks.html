@@ -5,20 +5,20 @@
 		<div class="inline-block params-block">
 			<div class="labeled-input">
 				<div class="label">Name</div>
-				<div cloak-field data-model="attack.name" class="cloakFieldContainer">
+				<div cloak-field data-model="attack.name">
 					<input type="text" ng-model="attack.name"/>
 				</div>
 			</div>
 			<div class="range-container">
 				<div class="labeled-input inline-block">
 					<div class="label">Range</div>
-					<div cloak-field data-model="attack.range" class="cloakFieldContainer">
+					<div cloak-field data-model="attack.range">
 						<input type="number" min="0" ng-model="attack.range"/>
 					</div>
 				</div>
 				<div class="labeled-input inline-block">
 					<div class="label">Ranged</div>
-					<div cloak-field data-model="attack.isRanged ? '✓' : '-'" class="cloakFieldContainer">
+					<div cloak-field data-model="attack.isRanged ? '✓' : '-'">
 						<input type="checkbox" ng-model="attack.isRanged"/>
 					</div>
 				</div>

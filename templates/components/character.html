@@ -77,14 +77,14 @@
 			<div>
 				<div class="inline-block">
 					<div class="label">Name</div>
-					<div cloak-field class="cloakFieldContainer name" data-model="character.model.name">
+					<div cloak-field class="name" data-model="character.model.name">
 						<input type="text" ng-model="character.model.name" />
 					</div>
 				</div>
 
 				<div class="inline-block">
 					<div class="label">Background</div>
-					<div cloak-field class="cloakFieldContainer background" data-model="character.model.background">
+					<div cloak-field class="background" data-model="character.model.background">
 						<select ac-select ac-model="character.model.background"
 								ac-options="background for background in character.availableBackgrounds"
 								ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter Background', noItemsText: 'Press <enter> to add a custom background' }"></select>
@@ -94,14 +94,14 @@
 			<div>
 				<div class="inline-block flex">
 					<div class="label">Race</div>
-					<div cloak-field class="cloakFieldContainer race-data" data-model="character.raceModel.race.name">
+					<div cloak-field class="race-data" data-model="character.raceModel.race.name">
 						<select ng-model="character.raceModel.race"
 								ng-options="race as race.name for race in character.availableRaces"></select>
 					</div>
 				</div>
 				<div class="inline-block flex">
 					<div class="label">Size</div>
-					<div class="cloakFieldContainer size" ng-bind="character.raceModel.race.size"></div>
+					<div class="size" ng-bind="character.raceModel.race.size"></div>
 				</div>
 			</div>
 		</div>

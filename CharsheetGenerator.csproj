@@ -121,6 +121,7 @@
     <None Include="styles\app\components\portrait.less" />
     <None Include="styles\app\components\skills.less" />
     <Content Include="styles\app\controls\radioButtons.less" />
+    <Content Include="styles\app\controls\commonTable.less" />
     <None Include="styles\app\directives\cloakField.less" />
     <None Include="styles\app\directives\layout.less" />
     <None Include="styles\app\menu.less" />
