@@ -5,22 +5,24 @@
 		<div class="inline-block params-block">
 			<div class="labeled-input">
 				<div class="label">Name</div>
-                <div cloak-field data-model="attack.name" class="cloakFieldContainer">
-                    <input type="text" ng-model="attack.name" />
-                </div>
+				<div cloak-field data-model="attack.name" class="cloakFieldContainer">
+					<input type="text" ng-model="attack.name"/>
+				</div>
 			</div>
-            <div class="labeled-input">
-                <div class="label">Range</div>
-                <div cloak-field data-model="attack.range" class="cloakFieldContainer">
-                    <input type="number" min="0" ng-model="attack.range" />
-                </div>
-            </div>
-            <div class="labeled-input">
-                <div class="label">Ranged</div>
-                <div cloak-field data-model="attack.isRanged ? '✓' : '-'" class="cloakFieldContainer">
-                    <input type="checkbox" ng-model="attack.isRanged" />
-                </div>
-            </div>
+			<div class="range-container">
+				<div class="labeled-input inline-block">
+					<div class="label">Range</div>
+					<div cloak-field data-model="attack.range" class="cloakFieldContainer">
+						<input type="number" min="0" ng-model="attack.range"/>
+					</div>
+				</div>
+				<div class="labeled-input inline-block">
+					<div class="label">Ranged</div>
+					<div cloak-field data-model="attack.isRanged ? '✓' : '-'" class="cloakFieldContainer">
+						<input type="checkbox" ng-model="attack.isRanged"/>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<div class="inline-block stats-block">
@@ -29,18 +31,14 @@
 					<tr>
 						<td class="cell total">{{ attack.attack() }}</td>
 						<td>=</td>
-						<td class="cell summand min-input">
-							<div cloak-field data-model="attack.baseAttack">
-								<input type="number" ng-model="attack.baseAttack"/>
-							</div>
-						</td>
+						<td class="cell summand min-input">{{ character.proficiencyBonus() }}</td>
 						<td>+</td>
 						<td class="cell summand min-input">{{attack.isRanged ? controller.stats.dexModifier() : controller.stats.strModifier()}}</td>
 					</tr>
 					<tr>
 						<td class="major-label">Attack</td>
 						<td></td>
-						<td class="label">Weapon</td>
+						<td class="label">Proficiency</td>
 						<td></td>
 						<td class="label">{{ attack.isRanged ? 'DEX' : 'STR' }}</td>
 					</tr>

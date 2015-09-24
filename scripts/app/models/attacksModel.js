@@ -4,7 +4,9 @@
 	angular.module(appName)
 		.factory('attacksModel', [
 			'statsModel',
-			function(statsModel) {
+			'characterModel',
+
+			function(statsModel, characterModel) {
 				var self = this;
 
 				// Fields
@@ -20,7 +22,6 @@
 					function copyData(item) {
 						return {
 							name: item.name,
-							baseAttack: item.baseAttack,
 							baseDamage: item.baseDamage,
 							isRanged: item.isRanged,
 							range: item.range,
@@ -44,14 +45,13 @@
 						var self = this;
 
 						self.name = item.name;
-						self.baseAttack = item.baseAttack;
 						self.baseDamage = item.baseDamage;
 						self.isRanged = item.isRanged;
 						self.range = item.range;
 						self.ammo = item.ammo;
 
 						self.attack = function() {
-							return (self.baseAttack || 0) + (self.isRanged
+							return characterModel.proficiencyBonus() + (self.isRanged
 								? statsModel.dexModifier()
 								: statsModel.strModifier());
 						};

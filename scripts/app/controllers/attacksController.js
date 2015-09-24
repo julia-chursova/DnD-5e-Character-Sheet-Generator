@@ -5,11 +5,14 @@
 		.controller('attacksController', [
 			'attacksModel',
 			'statsModel',
-			function(attacksModel, statsModel) {
+			'characterModel', 
+
+			function(attacksModel, statsModel, characterModel) {
 				var self = this;
 
 				self.attacks = attacksModel.attacks;
 				self.stats = statsModel;
+				self.character = characterModel;
 			}
 		]);
 })();
