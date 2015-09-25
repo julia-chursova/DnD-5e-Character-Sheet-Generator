@@ -1,13 +1,15 @@
 <div class="languages component" ng-controller="languagesController as controller">
 	<div class="header">Languages</div>
 
-	<div class="languages-list">
-		<div ng-repeat="language in controller.languages track by $index" class="language-item">
-			<div cloak-field data-model="language">
-				<select ac-select class="stateList" ac-model="controller.languages[$index]"
-						ac-options="availableLanguage for availableLanguage in controller.availableLanguages"
-						ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter Language', noItemsText: 'Press <enter> to add a custom language' }"></select>
-			</div>
-		</div>
-	</div>
+	<table class="common-table">
+        <tbody>
+            <tr ng-repeat="language in controller.languages track by $index">
+                <td cloak-field data-model="language">
+                    <select ac-select class="stateList" ac-model="controller.languages[$index]"
+                            ac-options="availableLanguage for availableLanguage in controller.availableLanguages"
+                            ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter Language', noItemsText: 'Press <enter> to add a custom language' }"></select>
+                </td>
+            </tr>
+        </tbody>
+	</table>
 </div>
