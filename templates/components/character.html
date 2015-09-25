@@ -1,172 +1,170 @@
 <div class="character component" ng-controller="characterController as character">
-	<div class="header">Character</div>
+    <div class="header">Character</div>
+    <div class="character-params-container">
+        <table cellpadding="0" cellspacing="0" class="inline-block alignment">
+            <tr>
+                <td></td>
+                <td class="label alignment-hor-label top-label" colspan="3">Good</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="3">
+                    <div class="rotate270 label left-label">Lawful</div>
+                </td>
+                <td>
+                    <input type="radio" name="alignment" class="custom" value="1" id="lawful-good"
+                           ng-model="character.model.alignment" />
+                    <label for="lawful-good"><span></span></label>
+                </td>
+                <td>
+                    <input type="radio" name="alignment" class="custom" value="2" id="neutral-good"
+                           ng-model="character.model.alignment" />
+                    <label for="neutral-good"><span></span></label>
+                </td>
+                <td>
+                    <input type="radio" name="alignment" class="custom" value="3" id="chaotic-good"
+                           ng-model="character.model.alignment" />
+                    <label for="chaotic-good"><span></span></label>
+                </td>
+                <td rowspan="3">
+                    <div class="rotate270 label right-label">Chaotic</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="alignment" class="custom" value="4" id="lawful-neutral"
+                           ng-model="character.model.alignment" />
+                    <label for="lawful-neutral"><span></span></label>
+                </td>
+                <td>
+                    <input type="radio" name="alignment" class="custom" value="5" id="true-neutral"
+                           ng-model="character.model.alignment" />
+                    <label for="true-neutral"><span></span></label>
+                </td>
+                <td>
+                    <input type="radio" name="alignment" class="custom" value="6" id="chaotic-neutral"
+                           ng-model="character.model.alignment" />
+                    <label for="chaotic-neutral"><span></span></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="alignment" class="custom" value="7" id="lawful-evil"
+                           ng-model="character.model.alignment" />
+                    <label for="lawful-evil"><span></span></label>
+                </td>
+                <td>
+                    <input type="radio" name="alignment" class="custom" value="8" id="neutral-evil"
+                           ng-model="character.model.alignment" />
+                    <label for="neutral-evil"><span></span></label>
+                </td>
+                <td>
+                    <input type="radio" name="alignment" class="custom" value="9" id="chaotic-evil"
+                           ng-model="character.model.alignment" />
+                    <label for="chaotic-evil"><span></span></label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="label alignment-hor-label bottom-label" colspan="3">Evil</td>
+                <td></td>
+            </tr>
+        </table>
+        <div class="inline-block character-params">
+            <div class="character-params-row">
+                <div class="inline-block labeled-input name-data">
+                    <div class="label">Name</div>
+                    <div cloak-field class="name" data-model="character.model.name">
+                        <input type="text" ng-model="character.model.name" />
+                    </div>
+                </div>
+                <div class="inline-block labeled-input background-data">
+                    <div class="label">Background</div>
+                    <div cloak-field class="background" data-model="character.model.background">
+                        <select ac-select ac-model="character.model.background"
+                                ac-options="background for background in character.availableBackgrounds"
+                                ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter Background', noItemsText: 'Press <enter> to add a custom background' }"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="character-params-row">
+                <div class="inline-block race-data labeled-input">
+                    <div class="label">Race</div>
+                    <div cloak-field data-model="character.raceModel.race.name">
+                        <select ng-model="character.raceModel.race"
+                                ng-options="race as race.name for race in character.availableRaces"></select>
+                    </div>
+                </div>
+                <div class="inline-block size-data labeled-input">
+                    <div class="label">Size</div>
+                    <div class="size" ng-bind="character.raceModel.race.size"></div>
+                </div>
+                <div class="inline-block sex-data">
+                    <div class="inline-block label">
+                        <label for="sex-male">M</label>
+                    </div>
+                    <div class="inline-block">
+                        <input type="radio" name="race" value="true" class="custom" id="sex-male" ng-model="character.model.isMale" />
+                        <label for="sex-male"><span></span></label>
+                    </div>
+                    <div class="inline-block label">
+                        <label for="sex-female">F</label>
+                    </div>
+                    <div class="inline-block">
+                        <input type="radio" name="race" value="false" class="custom" id="sex-female" ng-model="character.model.isMale" />
+                        <label for="sex-female"><span></span></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-	<div class="character-params-container">
-		<table cellpadding="0" cellspacing="0" class="inline-block alignment">
-			<tr>
-				<td></td>
-				<td class="label alignment-hor-label top-label" colspan="3">Good</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td rowspan="3">
-					<div class="rotate270 label left-label">Lawful</div>
-				</td>
-				<td>
-					<input type="radio" name="alignment" class="custom" value="1" id="lawful-good"
-							ng-model="character.model.alignment" />
-					<label for="lawful-good"><span></span></label>
-				</td>
-				<td>
-					<input type="radio" name="alignment" class="custom" value="2" id="neutral-good"
-							ng-model="character.model.alignment" />
-					<label for="neutral-good"><span></span></label>
-				</td>
-				<td>
-					<input type="radio" name="alignment" class="custom" value="3" id="chaotic-good"
-							ng-model="character.model.alignment" />
-					<label for="chaotic-good"><span></span></label>
-				</td>
-				<td rowspan="3">
-					<div class="rotate270 label right-label">Chaotic</div>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<input type="radio" name="alignment" class="custom" value="4" id="lawful-neutral"
-							ng-model="character.model.alignment" />
-					<label for="lawful-neutral"><span></span></label>
-				</td>
-				<td>
-					<input type="radio" name="alignment" class="custom" value="5" id="true-neutral"
-							ng-model="character.model.alignment" />
-					<label for="true-neutral"><span></span></label>
-				</td>
-				<td>
-					<input type="radio" name="alignment" class="custom" value="6" id="chaotic-neutral"
-							ng-model="character.model.alignment" />
-					<label for="chaotic-neutral"><span></span></label>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<input type="radio" name="alignment" class="custom" value="7" id="lawful-evil"
-							ng-model="character.model.alignment" />
-					<label for="lawful-evil"><span></span></label>
-				</td>
-				<td>
-					<input type="radio" name="alignment" class="custom" value="8" id="neutral-evil"
-							ng-model="character.model.alignment" />
-					<label for="neutral-evil"><span></span></label>
-				</td>
-				<td>
-					<input type="radio" name="alignment" class="custom" value="9" id="chaotic-evil"
-							ng-model="character.model.alignment" />
-					<label for="chaotic-evil"><span></span></label>
-				</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td class="label alignment-hor-label bottom-label" colspan="3">Evil</td>
-				<td></td>
-			</tr>
-		</table>
-		<div class="inline-block character-params">
-			<div class="character-params-row">
-				<div class="inline-block labeled-input name-data">
-					<div class="label">Name</div>
-					<div cloak-field class="name" data-model="character.model.name">
-						<input type="text" ng-model="character.model.name" />
-					</div>
-				</div>
-
-				<div class="inline-block labeled-input background-data">
-					<div class="label">Background</div>
-					<div cloak-field class="background" data-model="character.model.background">
-						<select ac-select ac-model="character.model.background"
-								ac-options="background for background in character.availableBackgrounds"
-								ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter Background', noItemsText: 'Press <enter> to add a custom background' }"></select>
-					</div>
-				</div>
-			</div>
-			<div class="character-params-row">
-				<div class="inline-block flex labeled-input">
-					<div class="label">Race</div>
-					<div cloak-field class="race-data" data-model="character.raceModel.race.name">
-						<select ng-model="character.raceModel.race"
-								ng-options="race as race.name for race in character.availableRaces"></select>
-					</div>
-				</div>
-				<div class="inline-block flex labeled-input">
-					<div class="label">Size</div>
-					<div class="size" ng-bind="character.raceModel.race.size"></div>
-				</div>
-				<div class="inline-block">
-					<div class="inline-block label">M</div>
-					<div class="inline-block">
-						<input type="radio" name="race" value="true" class="custom" id="sex-male" ng-model="character.model.isMale" />
-						<label for="sex-male"><span></span></label>
-					</div>
-
-					<div class="inline-block label">F</div>
-					<div class="inline-block">
-						<input type="radio" name="race" value="false" class="custom" id="sex-female" ng-model="character.model.isMale" />
-						<label for="sex-female"><span></span></label>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-	<div>
-		<table class="common-table fixed-table">
-			<thead>
-				<tr>
-					<td class="char-class"> <!--colspan="2"-->Classes</td>
-					<td class="char-hd">Hit Die</td>
-					<td class="char-lvl">Level</td>
-					<td class="char-spec">Specialization</td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat="class in character.model.classes track by $index">
-
-					<!--<td>{{$index + 1}}</td>-->
-					<td class="char-class">
-						<div cloak-field data-model="(class.class ? class.class.name : '') + (class.archetype ? '(' + class.archetype + ')' : '')">
-							<select ng-model="class.class"
-									ng-options="availableClass as availableClass.name for availableClass in character.availableClasses"></select>
-						</div>
-					</td>
-					<td class="char-hd">{{class.class.hitDie ? '1d' + class.class.hitDie : ''}}</td>
-					<td class="char-lvl">
-						<div cloak-field data-model="class.level">
-							<input type="number" min="1" max="20" ng-model="class.level" />
-						</div>
-					</td>
-					<td class="char-spec">
-						<div ng-if="class.class && class.level >= 3">
-							<div class="inline-block" ng-bind="(class.class.specializationName + ': ' || 'Specialization: ')"></div>
-							<div class="inline-block" cloak-field data-model="class.class.specialization.name">
-								<select ng-model="class.class.specialization"
-										ng-options="spec as spec.name for spec in class.class.specializations"></select>
-							</div>
-						</div>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div>
-			<div class="inline-block effective-level">
-				<div>Effective level:</div>
-				<div ng-bind="character.effectiveLevel()"></div>
-			</div>
-			<div class="inline-block proficiency-bonus">
-				<div>Proficiency Bonus:</div>
-				<div ng-bind="character.proficiencyBonus()"></div>
-			</div>
-		</div>
-	</div>
+    <div>
+        <table class="common-table fixed-table">
+            <thead>
+                <tr>
+                    <td class="char-class"> <!--colspan="2"-->Classes</td>
+                    <td class="char-hd">Hit Die</td>
+                    <td class="char-lvl">Level</td>
+                    <td class="char-spec">Specialization</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="class in character.model.classes track by $index">
+                    <!--<td>{{$index + 1}}</td>-->
+                    <td class="char-class">
+                        <div cloak-field data-model="(class.class ? class.class.name : '') + (class.archetype ? '(' + class.archetype + ')' : '')">
+                            <select ng-model="class.class"
+                                    ng-options="availableClass as availableClass.name for availableClass in character.availableClasses"></select>
+                        </div>
+                    </td>
+                    <td class="char-hd">{{class.class.hitDie ? '1d' + class.class.hitDie : ''}}</td>
+                    <td class="char-lvl">
+                        <div cloak-field data-model="class.level">
+                            <input type="number" min="1" max="20" ng-model="class.level" />
+                        </div>
+                    </td>
+                    <td class="char-spec">
+                        <div ng-if="class.class && class.level >= 3">
+                            <div class="inline-block" ng-bind="(class.class.specializationName + ': ' || 'Specialization: ')"></div>
+                            <div class="inline-block" cloak-field data-model="class.class.specialization.name">
+                                <select ng-model="class.class.specialization"
+                                        ng-options="spec as spec.name for spec in class.class.specializations"></select>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <div class="inline-block effective-level">
+                <div>Effective level:</div>
+                <div ng-bind="character.effectiveLevel()"></div>
+            </div>
+            <div class="inline-block proficiency-bonus">
+                <div>Proficiency Bonus:</div>
+                <div ng-bind="character.proficiencyBonus()"></div>
+            </div>
+        </div>
+    </div>
 </div>

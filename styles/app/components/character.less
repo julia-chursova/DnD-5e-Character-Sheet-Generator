@@ -21,47 +21,39 @@
 		.character-params {
 			vertical-align: top;
 			align-self: stretch;
-			flex-grow: 1;
+			flex: 1;
 
 			.character-params-row {
 				margin-top: 4px;
+                display: flex;
 
 				.inline-block {
 					vertical-align: top;
 
-					&.name-data {
-						width: 49%;
+                    &.name-data, &.race-data {
+                        margin: 0 4px;
+                        width: 150px;
+                    }
+
+					&.background-data, &.size-data {
+						flex: 1;
+                        margin: 0 4px;
 					}
 
-					&.background-data {
-						width: 49%;
-					}
-				}
+                    &.sex-data {
+                        width: 70px;
 
-				.race-data {
-					min-height: 20px;
-					align-items: stretch;
-				}
-
-				.size {
-					width: 110px;
+                        .inline-block {
+                            vertical-align: bottom;
+                        }
+                    }
 				}
 			}
 		}
 	}
 
-
-
 	.effective-level, .proficiency-bonus {
 		font-size: 14px;
-	}
-
-	.common-table tbody td {
-		border-bottom: 1px dotted black;
-	}
-
-	tr {
-		height: 18px;
 	}
 
 	.char-class {
@@ -70,13 +62,5 @@
 
 	.char-hd, .char-lvl {
 		width: 40px;
-	}
-
-	select {
-		width: 100%;
-	}
-
-	input[type=number] {
-		width: 100%;
 	}
 }
