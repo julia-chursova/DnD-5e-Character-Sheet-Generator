@@ -1,61 +1,82 @@
 .character.component {
 
-    .cloakFieldContainer {
-        height: 18px;
-        border-bottom: 1px solid #aaaaaa;
-        width: 155px;
+	.character-params-container {
+		display: flex;
+		flex-direction: row;
 
-        input[type=text] {
-            width: 100%;
-        }
-    }
+		.alignment {
+			.alignment-hor-label {
+				text-align: center;
+			}
 
-    .alignment-hor-label {
-        text-align: center;
-    }
+			.left-label {
+				transform-origin: 60% 20%;
+			}
 
-    .left-label {
-        transform-origin: 60% 20%;
-    }
+			.right-label {
+				transform-origin: 30% 110%;
+			}
+		}
 
-    .right-label {
-        transform-origin: 30% 110%;
-    }
+		.character-params {
+			vertical-align: top;
+			align-self: stretch;
+			flex-grow: 1;
 
-    .race-data {
-        min-height: 20px;
-        align-items: stretch;
-    }
+			.character-params-row {
+				margin-top: 4px;
 
-    .size {
-        width: 110px;
-    }
+				.inline-block {
+					vertical-align: top;
 
-    .effective-level, .proficiency-bonus {
-        font-size: 14px;
-    }
+					&.name-data {
+						width: 49%;
+					}
 
-    .common-table tbody td {
-        border-bottom: 1px dotted black;
-    }
+					&.background-data {
+						width: 49%;
+					}
+				}
 
-    tr {
-        height: 18px;
-    }
+				.race-data {
+					min-height: 20px;
+					align-items: stretch;
+				}
 
-    .char-class {
-        width: 140px;
-    }
+				.size {
+					width: 110px;
+				}
+			}
+		}
+	}
 
-    .char-hd, .char-lvl {
-        width: 40px;
-    }
 
-    select {
-        width: 100%;
-    }
 
-    input[type=number] {
-        width: 100%;
-    }
+	.effective-level, .proficiency-bonus {
+		font-size: 14px;
+	}
+
+	.common-table tbody td {
+		border-bottom: 1px dotted black;
+	}
+
+	tr {
+		height: 18px;
+	}
+
+	.char-class {
+		width: 140px;
+	}
+
+	.char-hd, .char-lvl {
+		width: 40px;
+	}
+
+	select {
+		width: 100%;
+	}
+
+	input[type=number] {
+		width: 100%;
+	}
 }
