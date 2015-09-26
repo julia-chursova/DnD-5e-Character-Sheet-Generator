@@ -5,14 +5,16 @@
 		.factory('raceModel', [
             'abilitiesModel',
             'spellcastingModel',
+            'languagesModel',
 
-			function (abilitiesModel, spellcastingModel) {
+			function (abilitiesModel, spellcastingModel, languagesModel) {
 			    self.race = null;
 
                 // Events
 			    self.raceChanged = function () {
 			        angular.extend(abilitiesModel.abilities, self.race.abilities);
 			        angular.extend(spellcastingModel.spells, self.race.spells);
+			        angular.extend(languagesModel.languages, self.race.languages);
 			    }
 
                 // Methods
