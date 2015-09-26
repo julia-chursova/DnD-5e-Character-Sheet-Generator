@@ -3,7 +3,8 @@
 
 	angular.module(appName)
 		.factory('hitPointsModel', [
-			function () {
+            'raceModel',
+			function (raceModel) {
 				var self = this;
 
 				self.baseHitPoints = '';
@@ -12,6 +13,8 @@
 				self.maxHitPoints = function () {
 					return (self.hitPointsBonus || 0) + (self.baseHitPoints || 0);
 				}
+
+			    self.currentHitPoints = '';
 
 				// Methods
 				self.exportData = function() {
