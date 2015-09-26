@@ -97,7 +97,9 @@
                 </div>
                 <div class="inline-block size-data labeled-input">
                     <div class="label">Size</div>
-                    <div class="size" ng-bind="character.raceModel.race.size"></div>
+                    <div class="size" cloak-field data-model="character.model.size()">
+                        <select ng-model="character.model.selectedSize" ng-options="size as size for size in character.availableSizes"></select>
+                    </div>
                 </div>
                 <div class="inline-block sex-data">
                     <div class="inline-block label">

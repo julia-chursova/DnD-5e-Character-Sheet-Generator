@@ -8,15 +8,27 @@
             'statsModel',
             'featsModel',
             'raceProvider',
+            'sizeProvider',
 			'classProvider',
 			'backgroundProvider',
-            function (characterModel, raceModel, statsModel, featsModel, raceProvider, classProvider, backgroundProvider) {
+
+            function (
+                characterModel,
+                raceModel,
+                statsModel,
+                featsModel,
+                raceProvider,
+                sizeProvider,
+                classProvider,
+                backgroundProvider
+            ) {
                 var self = this;
 
                 self.model = characterModel;
-	            self.raceModel = raceModel;
+                self.raceModel = raceModel;
                 self.stats = statsModel;
                 self.availableRaces = raceProvider;
+                self.availableSizes = sizeProvider;
                 self.availableClasses = classProvider;
                 self.availableBackgrounds = backgroundProvider;
 
@@ -26,11 +38,11 @@
                     return level > 0 ? level : '-';
                 };
 
-				self.proficiencyBonus = function() {
-					var proficiencyBonus = self.model.proficiencyBonus();
+                self.proficiencyBonus = function () {
+                    var proficiencyBonus = self.model.proficiencyBonus();
 
-					return proficiencyBonus > 0 && self.model.effectiveLevel() > 0 ? proficiencyBonus : '-';
-				}
+                    return proficiencyBonus > 0 && self.model.effectiveLevel() > 0 ? proficiencyBonus : '-';
+                }
 
                 self.initiativeBonus = function () {
                     return self.model.initiativeBonus == 0 ? '' : self.model.initiativeBonus;
