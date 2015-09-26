@@ -63,6 +63,7 @@
     <Content Include="scripts\app\controllers\saveThrowController.js" />
     <Content Include="scripts\app\controllers\skillsController.js" />
     <Content Include="scripts\app\controllers\speedController.js" />
+    <Content Include="scripts\app\controllers\spellcastingController.js" />
     <Content Include="scripts\app\controllers\statsController.js" />
     <Content Include="scripts\app\controllers\attacksController.js" />
     <Content Include="scripts\app\dictionaries\abilityProvider.js" />
