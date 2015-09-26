@@ -1,10 +1,12 @@
 (function() {
-	"use strict";
+    "use strict";
 
-	angular.module(appName)
-		.factory("raceProvider", [
-            "sizeProvider",
-            function (sizeProvider) {
+    angular.module(appName)
+        .factory("raceProvider", [
+            'sizeProvider',
+            'abilityProvider',
+            'languagesProvider',
+            function(sizeProvider, abilityProvider, languagesProvider) {
                 function copyProperties(src, dest) {
                     for (var prop in src) {
                         if (prop !== "name" && prop !== "size" && prop !== "subtypes") {
@@ -46,8 +48,17 @@
                         size: sizeProvider.medium,
                         conBonus: 2,
                         speed: 25,
-                        abilities: ["Darkvision", "Dwarven Resilience", "Stonecunning"],
-                        languages: ["Common", "Dwarvish"],
+
+                        abilities: [
+                            abilityProvider.darkvision,
+                            abilityProvider.dwarvenResilience,
+                            abilityProvider.stonecunning
+                        ],
+
+                        languages: [
+                            languagesProvider.common,
+                            languagesProvider.dwarvish
+                        ],
 
                         weaponProficiency: [
                             "hammer", "axe"
@@ -61,7 +72,7 @@
                             {
                                 name: "Mountain",
                                 strBonus: 2,
-                                hpBonus: function (characterLevel) {
+                                hpBonus: function(characterLevel) {
                                     return 1 + characterLevel;
                                 }
                             },
@@ -78,8 +89,17 @@
                         dexBonus: 2,
                         speed: 30,
 
-                        abilities: ["Darkvision", "Keen Senses", "Fey Ancestry", "Trance"],
-                        languages: ["Common", "Elvish"],
+                        abilities: [
+                            abilityProvider.darkvision,
+                            abilityProvider.keenSenses,
+                            abilityProvider.feyAncestry,
+                            abilityProvider.trance
+                        ],
+
+                        languages: [
+                            languagesProvider.common,
+                            languagesProvider.elvish
+                        ],
 
                         subtypes: [
                             {
@@ -104,12 +124,17 @@
                                     "shortbow"
                                 ],
                                 speed: 35,
-                                abilities: ["Mask of the Wild"]
+                                abilities: [
+                                    abilityProvider.maskOfTheWild
+                                ]
                             },
                             {
                                 name: "Drow",
                                 chaBonus: 1,
-                                abilities: ["Superior Darkvision", "Sunlight Sensitivity"],
+                                abilities: [
+                                    abilityProvider.superiorDarkvision,
+                                    abilityProvider.sunlightSensitivity
+                                ],
                                 // todo: add cantrip
                                 weaponProficiency: [
                                     "rapier",
@@ -124,18 +149,31 @@
                         dexBonus: 2,
                         size: sizeProvider.small,
                         speed: 25,
-                        abilities: ["Lucky", "Brave", "Halfling Nimbleness"],
-                        languages: ["Common", "Halfling"],
+                        abilities: [
+                            abilityProvider.lucky,
+                            abilityProvider.brave,
+                            abilityProvider.halflingNimbleness
+                        ],
+
+                        languages: [
+                            languagesProvider.common,
+                            languagesProvider.halfling
+                        ],
+
                         subtypes: [
                             {
                                 name: "Lightfoot",
                                 chaBonus: 1,
-                                abilities: ["Natural Stealthy"]
+                                abilities: [
+                                    abilityProvider.naturalStealthy
+                                ]
                             },
                             {
                                 name: "Stout",
                                 conBonus: 1,
-                                abilities: ["Stout Resilience"]
+                                abilities: [
+                                    abilityProvider.stoutResilience
+                                ]
                             }
                         ]
                     },
@@ -149,7 +187,7 @@
                         chaBonus: 1,
                         size: sizeProvider.medium,
                         speed: 30,
-                        languages: ["Common"]
+                        languages: [languagesProvider.common]
                     },
                     {
                         name: "Dragonborn",
@@ -159,26 +197,39 @@
                         speed: 30,
                         // todo: draconic ancestry
                         // todo: add gragonborn block
-                        languages: ["Common", "Draconic"]
+                        languages: [
+                            languagesProvider.common,
+                            languagesProvider.draconic
+                        ]
                     },
                     {
                         name: "Gnome",
                         intBonus: 2,
                         size: sizeProvider.small,
                         speed: 25,
-                        abilities: ["Darkvision", "Gnome Cunning"],
-                        languages: ["Common", "Gnomish"],
+                        abilities: [
+                            abilityProvider.darkvision,
+                            abilityProvider.gnomeCunning
+                        ],
+                        languages: [
+                            languagesProvider.common,
+                            languagesProvider.gnomish
+                        ],
                         subtypes: [
                             {
                                 name: "Forest",
                                 dexBonus: 1,
                                 // todo: add cantrip,
-                                abilities: ["Speak with Small Beasts"]
+                                abilities: [
+                                    abilityProvider.speakWithSmallBeasts
+                                ]
                             },
                             {
                                 name: "Rock",
                                 conBonus: 1,
-                                abilities: ["Artificer's lore"],
+                                abilities: [
+                                    abilityProvider.artificersLore
+                                ],
                                 toolProficiency: ["Artisan"]
                             }
                         ]
@@ -189,9 +240,15 @@
                         // todo: add "increase two other abilities of your choise"
                         size: sizeProvider.medium,
                         speed: 30,
-                        abilities: ["Darkvision", "Fey Ancestry"],
+                        abilities: [
+                            abilityProvider.darkvision,
+                            abilityProvider.feyAncestry
+                        ],
                         // todo: proficiency in two skills of your choice
-                        languages: ["Common", "Elvish"]//todo: +1 additional language of your choise
+                        languages: [
+                            languagesProvider.common,
+                            languagesProvider.elvish
+                        ]
                     },
                     {
                         name: "Half-Orc",
@@ -200,8 +257,15 @@
                         size: sizeProvider.medium,
                         speed: 30,
                         // todo: rewrite menacing
-                        abilities: ["Darkvision", "Menacing", "Relentless Endurance"],
-                        languages: ["Common", "Orc"]
+                        abilities: [
+                            abilityProvider.darkvision,
+                            abilityProvider.menacing,
+                            abilityProvider.relentlessEndurance
+                        ],
+                        languages: [
+                            languagesProvider.common,
+                            languagesProvider.orc
+                        ]
                     },
                     {
                         name: "Tiefling",
@@ -209,12 +273,19 @@
                         chaBonus: 2,
                         size: sizeProvider.medium,
                         speed: 30,
-                        abilities: ["Darkvision", "Hellish resistance"],
+                        abilities: [
+                            abilityProvider.darkvision,
+                            abilityProvider.hellishResistance
+                        ],
                         // todo: add cantrips
-                        languages: ["Common", "Infernal"]
+                        languages: [
+                            languagesProvider.common,
+                            languagesProvider.infernal
+                        ]
                     }
                 ];
 
                 return transformData(data);
-            }]);
+            }
+        ]);
 })();
