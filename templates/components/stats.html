@@ -10,7 +10,9 @@
                     <input type="number" min="1" max="20" ng-model="controller.stats.strength" />
                 </td>
                 <td>+</td>
-                <td class="cell summand" ng-bind="controller.racialStrBonus()"></td>
+                <td class="cell summand" cloak-field data-model="controller.racialStrBonus()">
+                    <input type="number" ng-model="controller.stats.customRacialStrBonus" />
+                </td>
                 <td>+</td>
                 <td class="cell summand min-input" cloak-field data-model="controller.stats.strBonus">
                     <input type="number" ng-model="controller.stats.strBonus" />
@@ -36,7 +38,9 @@
                     <input type="number" min="1" max="20" ng-model="controller.stats.dexterity" />
                 </td>
                 <td>+</td>
-                <td class="cell summand" ng-bind="controller.racialDexBonus()"></td>
+                <td class="cell summand" cloak-field data-model="controller.racialDexBonus()">
+                    <input type="number" ng-model="controller.stats.customRacialDexBonus"/>
+                </td>
                 <td>+</td>
                 <td class="cell summand min-input" cloak-field data-model="controller.stats.dexBonus">
                     <input type="number" ng-model="controller.stats.dexBonus" />
@@ -62,7 +66,9 @@
                     <input type="number" min="1" max="20" ng-model="controller.stats.constitution" />
                 </td>
                 <td>+</td>
-                <td class="cell summand" ng-bind="controller.racialConBonus()"></td>
+                <td class="cell summand" cloak-field data-model="controller.racialConBonus()">
+                    <input type="number" ng-model="controller.stats.customRacialConBonus"/>
+                </td>
                 <td>+</td>
                 <td class="cell summand min-input" cloak-field data-model="controller.stats.conBonus">
                     <input type="number" ng-model="controller.stats.conBonus" />
@@ -88,7 +94,9 @@
                     <input type="number" min="1" max="20" ng-model="controller.stats.intelligence" />
                 </td>
                 <td>+</td>
-                <td class="cell summand" ng-bind="controller.racialIntBonus()"></td>
+                <td class="cell summand" cloak-field data-model="controller.racialIntBonus()">
+                    <input type="number" ng-model="controller.stats.customRacialIntBonus"/>
+                </td>
                 <td>+</td>
                 <td class="cell summand min-input" cloak-field data-model="controller.stats.intBonus">
                     <input type="number" ng-model="controller.stats.intBonus" />
@@ -114,7 +122,9 @@
                     <input type="number" min="1" max="20" ng-model="controller.stats.wisdom" />
                 </td>
                 <td>+</td>
-                <td class="cell summand" ng-bind="controller.racialWisBonus()"></td>
+                <td class="cell summand" cloak-field data-model="controller.racialWisBonus()">
+                    <input type="number" ng-model="controller.stats.customRacialWisBonus"/>
+                </td>
                 <td>+</td>
                 <td class="cell summand min-input" cloak-field data-model="controller.stats.wisBonus">
                     <input type="number" ng-model="controller.stats.wisBonus" />
@@ -140,7 +150,9 @@
                     <input type="number" min="1" max="20" ng-model="controller.stats.charisma" />
                 </td>
                 <td>+</td>
-                <td class="cell summand" ng-bind="controller.racialChaBonus()"></td>
+                <td class="cell summand" cloak-field data-model="controller.racialChaBonus()">
+                    <input type="number" ng-model="controller.stats.customRacialChaBonus"/>
+                </td>
                 <td>+</td>
                 <td class="cell summand min-input" cloak-field data-model="controller.stats.chaBonus">
                     <input type="number" ng-model="controller.stats.chaBonus" />
