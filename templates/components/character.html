@@ -132,17 +132,13 @@
             <tbody>
                 <tr ng-repeat="class in character.model.classes track by $index">
                     <!--<td>{{$index + 1}}</td>-->
-                    <td class="char-class">
-                        <div cloak-field data-model="(class.class ? class.class.name : '') + (class.archetype ? '(' + class.archetype + ')' : '')">
-                            <select ng-model="class.class"
-                                    ng-options="availableClass as availableClass.name for availableClass in character.availableClasses"></select>
-                        </div>
+                    <td class="char-class" cloak-field data-model="(class.class ? class.class.name : '') + (class.archetype ? '(' + class.archetype + ')' : '')">
+                        <select ng-model="class.class"
+                                ng-options="availableClass as availableClass.name for availableClass in character.availableClasses"></select>
                     </td>
                     <td class="char-hd">{{class.class.hitDie ? '1d' + class.class.hitDie : ''}}</td>
-                    <td class="char-lvl">
-                        <div cloak-field data-model="class.level">
-                            <input type="number" min="1" max="20" ng-model="class.level" />
-                        </div>
+                    <td class="char-lvl" cloak-field data-model="class.level">
+                        <input type="number" min="1" max="20" ng-model="class.level" />
                     </td>
                     <td class="char-spec">
                         <div ng-if="class.class && class.level >= 3">
