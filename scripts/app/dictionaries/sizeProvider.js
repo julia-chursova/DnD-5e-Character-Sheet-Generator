@@ -4,7 +4,7 @@
     angular.module(appName)
         .factory('sizeProvider', function () {
             return {
-                defaultSize: "Default",
+                defaultSize: "Race Default",
                 small: "Small",
                 medium: "Medium"
             };
