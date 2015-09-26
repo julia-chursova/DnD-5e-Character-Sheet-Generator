@@ -10,7 +10,7 @@
                 </td>
                 <td>Value</td>
                 <td>Stats</td>
-                <td>Proficiency</td>
+                <td>Prof.</td>
                 <td>Misc</td>
             </tr>
         </thead>
@@ -25,10 +25,8 @@
                 <td class="skills-value" ng-bind="item.value()"></td>
                 <td ng-bind="item.statsBonus()"></td>
                 <td ng-bind="item.proficiencyBonus()"></td>
-                <td class="misc-bonus">
-                    <div cloak-field data-model="item.miscBonus == 0 ? '' : item.miscBonus">
-                        <input type="number" ng-model="item.miscBonus" />
-                    </div>
+                <td class="misc-bonus" cloak-field data-model="item.miscBonus == 0 ? '' : item.miscBonus">
+                    <input type="number" ng-model="item.miscBonus" />
                 </td>
             </tr>
         </tbody>
