@@ -50,6 +50,7 @@
     <Content Include="scripts\app\appState.js" />
     <Content Include="scripts\app\common.js" />
     <Content Include="scripts\app\componentDirectives\portraitDirective.js" />
+    <Content Include="scripts\app\controllers\abilitiesController.js" />
     <Content Include="scripts\app\controllers\appController.js" />
     <Content Include="scripts\app\controllers\armorController.js" />
     <Content Include="scripts\app\controllers\characterController.js" />
@@ -74,6 +75,7 @@
     <Content Include="scripts\app\dictionaries\sizeProvider.js" />
     <Content Include="scripts\app\directives\cloakFieldDirective.js" />
     <Content Include="scripts\app\directives\layoutDirective.js" />
+    <Content Include="scripts\app\models\abilitiesModel.js" />
     <Content Include="scripts\app\models\armorModel.js" />
     <Content Include="scripts\app\models\characterModel.js" />
     <Content Include="scripts\app\models\featsModel.js" />
@@ -127,6 +129,7 @@
     <None Include="styles\app\directives\layout.less" />
     <None Include="styles\app\menu.less" />
     <Content Include="styles\libs\acute.select.modified.css" />
+    <Content Include="templates\components\abilities.html" />
     <Content Include="templates\components\armor.html" />
     <Content Include="templates\components\armorClass.html" />
     <Content Include="templates\components\character.html" />

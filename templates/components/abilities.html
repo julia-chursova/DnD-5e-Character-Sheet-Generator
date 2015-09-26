@@ -1,0 +1,11 @@
+﻿<div class="abilities component" ng-controller="abilitiesController as ctrl">
+    <div class="header">Abilities</div>
+
+    <table class="common-table">
+        <tbody>
+            <tr ng-repeat="ability in ctrl.abilities track by $index">
+                <td ng-bind="ability"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
