@@ -5,9 +5,12 @@
         <tbody>
             <tr ng-repeat="language in controller.languages track by $index">
                 <td cloak-field data-model="language">
-                    <select ac-select class="stateList" ac-model="controller.languages[$index]"
+                    <select class="stateList"
+                            ac-select
+                            ac-model="controller.languages[$index]"
                             ac-options="availableLanguage for availableLanguage in controller.availableLanguages"
-                            ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter Language', noItemsText: 'Press <enter> to add a custom language' }"></select>
+                            ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter Language', noItemsText: 'Press <enter> to add a custom language' }">
+                    </select>
                 </td>
             </tr>
         </tbody>
