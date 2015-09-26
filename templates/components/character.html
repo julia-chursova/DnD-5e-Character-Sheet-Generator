@@ -92,7 +92,8 @@
                     <div class="label">Race</div>
                     <div cloak-field data-model="character.raceModel.race.name">
                         <select ng-model="character.raceModel.race"
-                                ng-options="race as race.name for race in character.availableRaces"></select>
+                                ng-options="race as race.name for race in character.availableRaces"
+                                ng-change="character.raceChanged()"></select>
                     </div>
                 </div>
                 <div class="inline-block size-data labeled-input">

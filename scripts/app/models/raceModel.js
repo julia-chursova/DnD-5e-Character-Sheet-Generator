@@ -3,10 +3,19 @@
 
 	angular.module(appName)
 		.factory('raceModel', [
-			function () {
-				// Absolutely useless. We need it to fix circular dependency.
-				self.race = null;
+            'abilitiesModel',
+            'spellcastingModel',
 
+			function (abilitiesModel, spellcastingModel) {
+			    self.race = null;
+
+                // Events
+			    self.raceChanged = function () {
+			        angular.extend(abilitiesModel.abilities, self.race.abilities);
+			        angular.extend(spellcastingModel.spells, self.race.spells);
+			    }
+
+                // Methods
 				self.exportData = function() {
 					return self.race;
 				}

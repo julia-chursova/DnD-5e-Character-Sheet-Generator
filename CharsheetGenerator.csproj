@@ -111,6 +111,7 @@
     <Content Include="styles\app\components.less" />
     <Content Include="styles\app\controls\labeledInput.less" />
     <Content Include="styles\app\controls\fillableFormula.less" />
+    <Content Include="styles\app\components\abilities.less" />
     <None Include="styles\app\components\armor.less" />
     <None Include="styles\app\components\character.less" />
     <None Include="styles\app\components\deathSaves.less" />

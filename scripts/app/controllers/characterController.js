@@ -51,5 +51,9 @@
                 self.traitInitiativeBonus = function () {
                     return featsModel.haveAlertFeat() ? '5' : '';
                 }
+
+                self.raceChanged = function() {
+                    self.raceModel.raceChanged();
+                }
             }]);
 })();

@@ -7,6 +7,7 @@
 			    return {
 			        darkvision: {
 			            name: "Darkvision",
+                        shortDescription: "60ft",
 			            description: "You can see in dim light within 60ft of you as if it were bright light, and in darkness if it were dim light. You can't discern colors, only shades of gray"
 			        },
 			        dwarvenResilience: {
@@ -35,6 +36,7 @@
 			        },
 			        superiorDarkvision: {
 			            name: "Superior Darkvision",
+                        shortDescription: "120ft",
 			            description: "You darkvision has range of 120ft."
 			        },
 			        sunlightSensitivity: {
