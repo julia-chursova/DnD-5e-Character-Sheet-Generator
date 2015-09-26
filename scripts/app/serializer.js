@@ -19,6 +19,7 @@
 			'spellcastingModel',
 			'statsModel',
 			'attacksModel',
+
 			function(
 				armorModel,
 				characterModel,

@@ -4,6 +4,7 @@
     angular.module(appName)
         .controller('armorController', [
             'armorModel',
+
             function (armorModel) {
                 var self = this;
 

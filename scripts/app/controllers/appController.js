@@ -7,6 +7,7 @@
 			'appState',
 			'appComponents',
 			'serializer',
+
             function ($rootScope, appState, appComponents, serializer) {
                 var self = this;
 

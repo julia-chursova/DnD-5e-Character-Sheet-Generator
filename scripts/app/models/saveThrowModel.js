@@ -5,6 +5,7 @@
 		.factory('saveThrowModel', [
 			'statsModel',
 			'characterModel',
+
 			function (statsModel, characterModel) {
 				var self = this;
 

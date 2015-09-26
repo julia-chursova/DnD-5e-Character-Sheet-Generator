@@ -4,6 +4,7 @@
 	angular.module(appName)
 		.factory('speedModel', [
 			'raceModel',
+
 			function (raceModel) {
 				var self = this;
 

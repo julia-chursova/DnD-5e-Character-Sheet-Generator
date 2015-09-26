@@ -4,6 +4,7 @@
 	angular.module(appName)
 		.controller('skillsController', [
 			'skillsModel',
+
 			function(skillsModel) {
 				var self = this;
 

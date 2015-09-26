@@ -4,66 +4,66 @@
         .factory('classProvider', function () {
         	return [
 				{
-					name: ''
+					name: ""
 				},
                 {
-                	name: 'Barbarian',
+                	name: "Barbarian",
 					hitDie: 12,
-                	specializationName: 'Path',
+                	specializationName: "Path",
                 	specializations: [
 		                {
-		                	name: 'Berserker'
+		                	name: "Berserker"
 		                },
 		                {
-		                	name: 'Totem Warrior'
+		                	name: "Totem Warrior"
 		                }
                 	]
                 },
                 {
-                	name: 'Bard',
+                	name: "Bard",
 					hitDie: 8,
-                	specializationName: 'College',
+                	specializationName: "College",
                 	specializations: [
 		                {
-		                	name: 'Lore'
+		                	name: "Lore"
 		                },
 		                {
-		                	name: 'Valor'
+		                	name: "Valor"
 		                }
                 	]
                 },
                 {
-                	name: 'Cleric'
+                	name: "Cleric"
                 },
                 {
-                	name: 'Druid'
+                	name: "Druid"
                 },
                 {
-                	name: 'Fighter'
+                	name: "Fighter"
                 },
                 {
-                	name: 'Monk'
+                	name: "Monk"
                 },
                 {
-                	name: 'Mystic'
+                	name: "Mystic"
                 },
                 {
-                	name: 'Paladin'
+                	name: "Paladin"
                 },
                 {
-                	name: 'Ranger'
+                	name: "Ranger"
                 },
                 {
-                	name: 'Rogue'
+                	name: "Rogue"
                 },
                 {
-                	name: 'Sorcerer'
+                	name: "Sorcerer"
                 },
                 {
-                	name: 'Warlock'
+                	name: "Warlock"
                 },
                 {
-                	name: 'Wizard'
+                	name: "Wizard"
                 }
         	];
         });

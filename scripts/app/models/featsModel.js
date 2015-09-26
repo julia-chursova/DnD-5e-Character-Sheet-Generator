@@ -12,9 +12,9 @@
 				// Ctor
 				(function init() {
 					self.feats.push({
-						name: 'Advanced sitemaker',
-						prereq: 'Create charlist',
-						description: 'This is feat for those who can create interactive charlists'
+						name: "Advanced sitemaker",
+						prereq: "Create charlist",
+						description: "This is feat for those who can create interactive charlists"
 					});
 				})();
 

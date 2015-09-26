@@ -4,6 +4,7 @@
     angular.module(appName)
         .controller('playerController', [
             'playerModel',
+
             function (playerModel) {
                 var self = this;
 

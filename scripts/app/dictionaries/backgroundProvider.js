@@ -5,7 +5,7 @@
 		.factory('backgroundProvider', [
 			function () {
 				return [
-					'Adventurer (like you)'
+					"Adventurer (like you)"
 				];
 			}
 		]);

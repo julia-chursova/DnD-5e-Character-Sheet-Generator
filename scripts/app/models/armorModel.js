@@ -4,6 +4,7 @@
     angular.module(appName)
         .factory('armorModel', [
             'statsModel',
+
             function (statsModel) {
                 var self = this;
 
@@ -11,9 +12,9 @@
                 self.baseAC = 10;
 
                 self.armorTypes = [
-                    'Light',
-                    'Medium',
-                    'Heavy'
+                    "Light",
+                    "Medium",
+                    "Heavy"
                 ];
 
 				// Fields
