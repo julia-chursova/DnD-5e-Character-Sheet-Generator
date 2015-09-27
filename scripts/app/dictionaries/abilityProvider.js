@@ -151,7 +151,8 @@
                         description: "Your charisma score increased by 2, and two other ability scores of your choice increase by 1"
                     },
                     skillVersatility: {
-                        name: "You gain proficiency in two skills of your choice"
+                        name: "Skills Versatility",
+                        description: "You gain proficiency in two skills of your choice"
                     },
                     infernalLegacy: {
                         name: "Infernal Legacy",
