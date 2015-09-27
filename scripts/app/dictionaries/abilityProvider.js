@@ -29,7 +29,13 @@
 			        },
 			        keenSenses: {
 			            name: "Keen Senses",
-			            description: "Proficiency in Perception skill"
+			            description: "Proficiency in Perception skill",
+			            activate: function() {
+			                skillsModel.skills.perception.haveProficiency = true;
+			            },
+			            deactivate: function() {
+			                skillsModel.skills.perception.haveProficiency = false;
+			            }
 			        },
 			        feyAncestry: {
 			            name: "Fey Ancestry",
