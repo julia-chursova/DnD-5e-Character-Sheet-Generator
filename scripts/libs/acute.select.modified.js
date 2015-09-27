@@ -149,67 +149,64 @@ angular.module("acute.select", [])
 
             // Create dropdown items based on the source data items
             $scope.loadItems = function(dataItems, selectedDataItem) {
-                var itemCount, itemIndex, item, key = $scope.keyField;
+                var itemIndex, item, key = $scope.keyField;
 
-                if (angular.isArray(dataItems)) {
+                var foundSelected = false;
+                var itemCount = $scope.items.length;
 
-                    var foundSelected = false;
-                    itemCount = $scope.items.length;
-
-                    angular.forEach(dataItems, function(dataItem, index) {
-                        itemIndex = itemCount + index;
-                        item = $scope.getItemFromDataItem(dataItem, itemIndex);
-                        if (item) {
-                            $scope.items.push(item);
-                            // If not currently filtering
-                            if (!$scope.searchText) {
-                                // Look for a matching item
-                                if (dataItem === selectedDataItem || (key && selectedDataItem && dataItem[key] == selectedDataItem[key])) {
-                                    confirmSelection(item);
-                                    foundSelected = true;
-                                }
-                            }
-                            else if ($scope.searchText.toLowerCase() === item.text.toLowerCase()) {
-                                // Search text matches item
+                angular.forEach(dataItems, function(dataItem, index) {
+                    itemIndex = itemCount + index;
+                    item = $scope.getItemFromDataItem(dataItem, itemIndex);
+                    if (item) {
+                        $scope.items.push(item);
+                        // If not currently filtering
+                        if (!$scope.searchText) {
+                            // Look for a matching item
+                            if (dataItem === selectedDataItem || (key && selectedDataItem && dataItem[key] == selectedDataItem[key])) {
                                 confirmSelection(item);
-                            }
-
-                            if (item.text.length > $scope.longestText.length) {
-                                if ($scope.maxCharacters && item.text.length > $scope.maxCharacters) {
-                                    $scope.longestText = item.text.substr(0, $scope.maxCharacters);
-                                }
-                                else {
-                                    $scope.longestText = item.text;
-                                }
+                                foundSelected = true;
                             }
                         }
-                    });
-
-                    // If not currently filtering and there's no selected item, but we have an initial selection
-                    if (!$scope.searchText && $scope.initialSelection && !foundSelected) {
-                        // Create a new item
-                        item = $scope.getItemFromDataItem($scope.initialSelection, 0);
-                        if (item) {
-                            // Add it to the start of the items array
-                            $scope.items.unshift(item);
-                            // Update indexes
-                            angular.forEach($scope.items, function(item, index) {
-                                item.index = index;
-                            });
-
+                        else if ($scope.searchText.toLowerCase() === item.text.toLowerCase()) {
+                            // Search text matches item
                             confirmSelection(item);
                         }
+
+                        if (item.text.length > $scope.longestText.length) {
+                            if ($scope.maxCharacters && item.text.length > $scope.maxCharacters) {
+                                $scope.longestText = item.text.substr(0, $scope.maxCharacters);
+                            }
+                            else {
+                                $scope.longestText = item.text;
+                            }
+                        }
                     }
+                });
 
-                    // If data is not filtered
-                    if (!$scope.searchText) {
-                        angular.copy($scope.items, $scope.allItems);
+                // If not currently filtering and there's no selected item, but we have an initial selection
+                if (!$scope.searchText && $scope.initialSelection && !foundSelected) {
+                    // Create a new item
+                    item = $scope.getItemFromDataItem($scope.initialSelection, 0);
+                    if (item) {
+                        // Add it to the start of the items array
+                        $scope.items.unshift(item);
+                        // Update indexes
+                        angular.forEach($scope.items, function(item, index) {
+                            item.index = index;
+                        });
+
+                        confirmSelection(item);
                     }
-
-                    $scope.setListHeight();
-
-                    checkItemCount($scope.items);
                 }
+
+                // If data is not filtered
+                if (!$scope.searchText) {
+                    angular.copy($scope.items, $scope.allItems);
+                }
+
+                $scope.setListHeight();
+
+                checkItemCount($scope.items);
             };
 
             function processSettings() {
@@ -586,8 +583,12 @@ angular.module("acute.select", [])
                     customText = $scope.searchText;
                     if (customText.length > 0) {
                         // Create new data item
-                        dataItem = {};
-                        dataItem[$scope.textField] = customText;
+                        if ($scope.textField) {
+                            dataItem = {};
+                            dataItem[$scope.textField] = customText;
+                        } else {
+                            dataItem = customText;
+                        }
 
                         // add the key field if it is defined.
                         if ($scope.keyField) {
