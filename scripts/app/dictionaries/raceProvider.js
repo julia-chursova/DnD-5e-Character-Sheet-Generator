@@ -21,12 +21,21 @@
 
                 function copyProperties(src, dest) {
                     for (var prop in src) {
-                        if (prop !== "name" && prop !== "size" && prop !== "subtypes") {
-                            if (!dest.hasOwnProperty(prop))
-                                dest[prop] = src[prop];
-                            else
-                                dest[prop] += src[prop];
+                        if (prop === 'name' || prop === 'size' || prop === 'subtypes') {
+                            continue;
                         }
+
+                        if (!dest.hasOwnProperty()) {
+                            dest[prop] = src[prop];
+                            continue;
+                        }
+
+                        if (prop === "abilities") {
+                            dest[prop].concat(src[prop]);
+                            continue;
+                        }
+
+                        dest[prop] += src[prop];
                     }
                 }
 
@@ -131,9 +140,10 @@
                                     weaponTypeProvider.longsword,
                                     weaponTypeProvider.shortbow,
                                     weaponTypeProvider.longbow
+                                ],
+                                abilities: [
+                                    abilityProvider.highElfCantrip
                                 ]
-                                // todo: add cantrips
-                                // todo: extra language
                             },
                             {
                                 name: "Wood",
