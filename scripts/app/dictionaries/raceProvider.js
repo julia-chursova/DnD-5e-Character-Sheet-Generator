@@ -89,17 +89,18 @@
                             {
                                 name: "Mountain",
                                 strBonus: 2,
-                                hpBonus: function(characterLevel) {
-                                    return 1 + characterLevel;
-                                }
-                            },
-                            {
-                                name: "Hill",
-                                wisBonus: 1,
                                 armorProficiency: [
                                     armorTypeProvider.light,
                                     armorTypeProvider.medium
                                 ]
+
+                            },
+                            {
+                                name: "Hill",
+                                wisBonus: 1,
+                                hpBonus: function(characterLevel) {
+                                    return 1 + characterLevel;
+                                }
                             }
                         ]
                     },
