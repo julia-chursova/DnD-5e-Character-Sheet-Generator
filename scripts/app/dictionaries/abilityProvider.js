@@ -122,6 +122,7 @@
                     drowMagic: {
                         name: "Drow Magic",
                         description: "You know the dancing lights cantrip. When you reach 3rd level, you can cast faerie fire spell once per day. When you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcastring ability for these spells."
+                        // todo: add cantrips to the spellbook
                     },
                     naturalIllusionist: {
                         name: "Natural Illusionist",
@@ -151,6 +152,11 @@
                     },
                     skillVersatility: {
                         name: "You gain proficiency in two skills of your choice"
+                    },
+                    infernalLegacy: {
+                        name: "Infernal Legacy",
+                        description: "You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the hellish rebuke spell once per day as a 2nd level spell. Once you reach 5th level you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells."
+                        // Todo: add cantrips
                     }
                 };
             }

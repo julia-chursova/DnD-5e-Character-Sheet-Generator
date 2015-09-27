@@ -309,9 +309,9 @@
                         speed: 30,
                         abilities: [
                             abilityProvider.darkvision,
-                            abilityProvider.hellishResistance
+                            abilityProvider.hellishResistance,
+                            abilityProvider.infernalLegacy
                         ],
-                        // todo: add cantrips
                         languages: [
                             languagesProvider.common,
                             languagesProvider.infernal
