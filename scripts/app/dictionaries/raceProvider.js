@@ -120,7 +120,7 @@
                         speed: 30,
 
                         abilities: [
-                              abilityProvider.darkvision,
+                            abilityProvider.darkvision,
                             abilityProvider.keenSenses,
                             abilityProvider.feyAncestry,
                             abilityProvider.trance
