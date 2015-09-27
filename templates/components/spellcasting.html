@@ -2,10 +2,10 @@
 	<div class="header">Spellcasting</div>
 
     <table class="common-table">
-        <tr ng-repeat="spells in controller.spells track by $index">
-            <td ng-bind="$index"></td>
+        <tr ng-repeat="spellGroup in controller.spells track by $index">
+            <td>#{{$index}} (Known: {{spellGroup.knownCount}}; Per Day: {{spellGroup.remaining}} / {{spellGroup.maxPerDay}})</td>
             <td>
-                <div ng-repeat="spell in spells">Spell</div>
+                <div ng-repeat="spell in spellGroup.spells">Spell</div>
             </td>
         </tr>
     </table>

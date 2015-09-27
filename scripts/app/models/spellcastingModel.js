@@ -12,7 +12,12 @@
 			(function init() {
 				var maxSpellLevel = 9;
 				for (var i = 0; i <= maxSpellLevel; i++) {
-					self.spells.push([]);
+					self.spells.push({
+					    remaining: 0,
+					    maxPerDay: 0,
+                        knownCount: 0,
+                        spells: []
+					});
 				}
 			})();
 
