@@ -9,8 +9,8 @@
                 <input type="number" min="1" step="1" ng-model="controller.model.baseHitPoints" />
             </td>
             <td>+</td>
-            <td class="cell summand" cloak-field data-model="controller.model.hitPointsBonus">
-                <input type="number" ng-model="controller.model.hitPointsBonus" />
+            <td class="cell summand" cloak-field data-model="controller.model.bonusDefined() ? controller.model.hitPointsBonus() : ''">
+                <input type="number" ng-model="controller.model.userDefinedBonus" />
             </td>
         </tr>
         <tr>

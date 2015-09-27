@@ -9,6 +9,7 @@
             'armorTypeProvider',
             'toolTypeProvider',
             'weaponTypeProvider',
+
             function(
                 sizeProvider,
                 abilityProvider,
