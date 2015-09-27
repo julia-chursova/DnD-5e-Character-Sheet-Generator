@@ -6,10 +6,8 @@
 			'skillsProvider',
             'abilityProvider',
             'abilitiesModel',
-            'statsModel',
-            'characterModel',
 
-			function (skillsProvider, abilitiesProvider, abilitiesModel, statsModel, characterModel) {
+			function (skillsProvider, abilitiesProvider, abilitiesModel) {
 			    var self = this;
 
 			    var baseSkills = skillsProvider.getSkills();
