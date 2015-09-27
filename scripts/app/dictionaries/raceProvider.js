@@ -72,8 +72,10 @@
                         ],
 
                         weaponProficiency: [
-                            weaponTypeProvider.hammer,
-                            weaponTypeProvider.axe
+                            weaponTypeProvider.battleAxe,
+                            weaponTypeProvider.handAxe,
+                            weaponTypeProvider.warhammer,
+                            weaponTypeProvider.throwingHammer
                         ],
 
                         toolsProficiency: [
