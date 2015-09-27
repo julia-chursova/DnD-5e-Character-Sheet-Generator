@@ -272,14 +272,14 @@
                     {
                         name: "Half-Elf",
                         chaBonus: 2,
-                        // todo: add "increase two other abilities of your choise"
                         size: sizeProvider.medium,
                         speed: 30,
                         abilities: [
                             abilityProvider.darkvision,
-                            abilityProvider.feyAncestry
+                            abilityProvider.feyAncestry,
+                            abilityProvider.halfElfScore,
+                            abilityProvider.skillVersatility
                         ],
-                        // todo: proficiency in two skills of your choice
                         languages: [
                             languagesProvider.common,
                             languagesProvider.elvish
@@ -291,7 +291,6 @@
                         conBonus: 1,
                         size: sizeProvider.medium,
                         speed: 30,
-                        // todo: rewrite menacing
                         abilities: [
                             abilityProvider.darkvision,
                             abilityProvider.menacing,
