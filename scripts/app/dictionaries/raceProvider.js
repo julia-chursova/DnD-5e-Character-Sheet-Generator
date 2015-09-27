@@ -6,7 +6,9 @@
             'sizeProvider',
             'abilityProvider',
             'languagesProvider',
-            function(sizeProvider, abilityProvider, languagesProvider) {
+            'proficiencyProvider',
+
+            function(sizeProvider, abilityProvider, languagesProvider, proficienciesProvider) {
                 function copyProperties(src, dest) {
                     for (var prop in src) {
                         if (prop !== "name" && prop !== "size" && prop !== "subtypes") {
@@ -60,12 +62,13 @@
                             languagesProvider.dwarvish
                         ],
 
-                        weaponProficiency: [
-                            "hammer", "axe"
-                        ],
+                        proficiencies: [
+                            proficienciesProvider.weapons.hammer,
+                            proficienciesProvider.weapons.axe,
 
-                        toolProficiency: [
-                            "smith", "brewer", "mason"
+                            proficienciesProvider.tools.smith,
+                            proficienciesProvider.tools.brewer,
+                            proficienciesProvider.tools.mason
                         ],
 
                         subtypes: [
@@ -79,7 +82,10 @@
                             {
                                 name: "Hill",
                                 wisBonus: 1,
-                                armorProficiency: ["light", "medium"]
+                                armorProficiency: [
+                                    proficienciesProvider.armor.light,
+                                    proficienciesProvider.armor.medium
+                                ]
                             }
                         ]
                     },
@@ -106,10 +112,10 @@
                                 name: "High",
                                 intBonus: 1,
                                 weaponProficiency: [
-                                    "longsword",
-                                    "shortsword",
-                                    "longbow",
-                                    "shortbow"
+                                    proficienciesProvider.weapons.shortsword,
+                                    proficienciesProvider.weapons.longsword,
+                                    proficienciesProvider.weapons.shortbow,
+                                    proficienciesProvider.weapons.longbow
                                 ]
                                 // todo: add cantrips
                                 // todo: extra language
@@ -118,10 +124,10 @@
                                 name: "Wood",
                                 wisBonus: 1,
                                 weaponProficiency: [
-                                    "longsword",
-                                    "shortsword",
-                                    "longbow",
-                                    "shortbow"
+                                    proficienciesProvider.weapons.shortsword,
+                                    proficienciesProvider.weapons.longsword,
+                                    proficienciesProvider.weapons.shortbow,
+                                    proficienciesProvider.weapons.longbow
                                 ],
                                 speed: 35,
                                 abilities: [
@@ -137,9 +143,9 @@
                                 ],
                                 // todo: add cantrip
                                 weaponProficiency: [
-                                    "rapier",
-                                    "shortsword",
-                                    "hand crossbow"
+                                    proficienciesProvider.weapons.rapier,
+                                    proficienciesProvider.weapons.shortsword,
+                                    proficienciesProvider.weapons.handCrossbow
                                 ]
                             }
                         ]
@@ -187,7 +193,9 @@
                         chaBonus: 1,
                         size: sizeProvider.medium,
                         speed: 30,
-                        languages: [languagesProvider.common]
+                        languages: [
+                            languagesProvider.common
+                        ]
                     },
                     {
                         name: "Dragonborn",
@@ -230,7 +238,9 @@
                                 abilities: [
                                     abilityProvider.artificersLore
                                 ],
-                                toolProficiency: ["Artisan"]
+                                toolProficiency: [
+                                    proficienciesProvider.tools.artisan
+                                ]
                             }
                         ]
                     },

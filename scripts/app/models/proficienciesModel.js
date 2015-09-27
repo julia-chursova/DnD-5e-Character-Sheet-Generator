@@ -4,8 +4,9 @@
 	angular.module(appName)
 		.factory('proficienciesModel', [
 			function () {
-				var self = this;
+			    var self = this;
 
+                // Methods
 				self.exportData = function() {
 					return {
 						

@@ -71,6 +71,7 @@
     <Content Include="scripts\app\dictionaries\backgroundProvider.js" />
     <Content Include="scripts\app\dictionaries\classProvider.js" />
     <Content Include="scripts\app\dictionaries\languagesProvider.js" />
+    <Content Include="scripts\app\dictionaries\proficienciesProvider.js" />
     <Content Include="scripts\app\dictionaries\raceProvider.js" />
     <Content Include="scripts\app\dictionaries\sizeProvider.js" />
     <Content Include="scripts\app\directives\cloakFieldDirective.js" />
