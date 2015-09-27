@@ -96,7 +96,29 @@
                     return result;
                 }
 
-                return transformResult();
+                var originsOfStone = {
+                    name: "Origins of Stone",
+                    modName: "INT",
+                    haveProficiency: true,
+                    miscBonus: 0,
+                    statsBonus: statsModel.intModifier,
+                    proficiencyBonus: function() {
+                        return characterModel.proficiencyBonus() * 2;
+                    },
+                    value: function() {
+                        var skillScore = this.miscBonus + this.statsBonus();
+
+                        if (this.haveProficiency)
+                            skillScore += (this.proficiencyBonus() || 0);
+
+                        return skillScore;
+                    }
+                };
+
+                return {
+                    getSkills: transformResult,
+                    originsOfStone: originsOfStone
+                }
             }
         ]);
 })();

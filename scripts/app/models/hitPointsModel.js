@@ -19,7 +19,7 @@
 				self.hitPointsBonus = function () {
 				    return helpers.isInteger(self.userDefinedBonus)
                         ? self.userDefinedBonus
-                        : (raceModel.race ? raceModel.race.hpBonus(characterModel.effectiveLevel()) : 0);
+                        : (raceModel.race && raceModel.race.hpBonus ? raceModel.race.hpBonus(characterModel.effectiveLevel()) : 0);
                 }
 
 				self.maxHitPoints = function () {

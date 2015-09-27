@@ -3,7 +3,7 @@
 
     <table class="common-table">
         <tbody>
-            <tr ng-repeat="ability in ctrl.abilities track by $index">
+            <tr ng-repeat="ability in ctrl.abilitiesModel.abilities track by $index">
                 <td class="ability" ng-attr-title="{{ ability.description }}">
                     <span class="name">{{ ability.name }}</span>
                     <span class="short-description">{{ ability.shortDescription ? '(' + ability.shortDescription + ')' : '' }}</span>

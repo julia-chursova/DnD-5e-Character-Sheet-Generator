@@ -8,7 +8,7 @@
             function (abilitiesModel) {
                 var self = this;
 
-                self.abilities = abilitiesModel.abilities;
+                self.abilitiesModel = abilitiesModel;
             }
         ]);
 })();
