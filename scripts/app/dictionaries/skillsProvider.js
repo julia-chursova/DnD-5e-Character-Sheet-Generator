@@ -98,6 +98,7 @@
 
                 var originsOfStone = {
                     name: "Origins of Stone",
+                    isCustom: true,
                     modName: "INT",
                     haveProficiency: true,
                     miscBonus: 0,
@@ -117,6 +118,7 @@
                 
                 var historyOfMagic = {
                     name: "History of Magic",
+                    isCustom: true,
                     modName: "INT",
                     haveProficiency: true,
                     miscBonus: 0,
