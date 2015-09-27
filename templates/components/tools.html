@@ -1,0 +1,9 @@
+﻿<div class="tools component" ng-controller="toolsController as ctrl">
+    <div class="header">Tools</div>
+
+    <table class="common-table">
+        <tr ng-repeat="tool in ctrl.proficiencies.tools track by $index">
+            <td ng-bind="tool"></td>
+        </tr>
+    </table>
+</div>

@@ -60,7 +60,7 @@
     <Content Include="scripts\app\controllers\languagesController.js" />
     <Content Include="scripts\app\controllers\moneyController.js" />
     <Content Include="scripts\app\controllers\playerController.js" />
-    <Content Include="scripts\app\controllers\proficienciesController.js" />
+    <Content Include="scripts\app\controllers\toolsController.js" />
     <Content Include="scripts\app\controllers\saveThrowController.js" />
     <Content Include="scripts\app\controllers\skillsController.js" />
     <Content Include="scripts\app\controllers\speedController.js" />
@@ -68,12 +68,14 @@
     <Content Include="scripts\app\controllers\statsController.js" />
     <Content Include="scripts\app\controllers\attacksController.js" />
     <Content Include="scripts\app\dictionaries\abilityProvider.js" />
+    <Content Include="scripts\app\dictionaries\armorTypeProvider.js" />
     <Content Include="scripts\app\dictionaries\backgroundProvider.js" />
     <Content Include="scripts\app\dictionaries\classProvider.js" />
     <Content Include="scripts\app\dictionaries\languagesProvider.js" />
-    <Content Include="scripts\app\dictionaries\proficienciesProvider.js" />
     <Content Include="scripts\app\dictionaries\raceProvider.js" />
     <Content Include="scripts\app\dictionaries\sizeProvider.js" />
+    <Content Include="scripts\app\dictionaries\toolTypeProvider.js" />
+    <Content Include="scripts\app\dictionaries\weaponTypeProvider.js" />
     <Content Include="scripts\app\directives\cloakFieldDirective.js" />
     <Content Include="scripts\app\directives\layoutDirective.js" />
     <Content Include="scripts\app\helpers.js" />
@@ -147,7 +149,7 @@
     <Content Include="templates\components\player.html" />
     <Content Include="templates\components\portrait.html" />
     <Content Include="templates\components\potionsAndScrolls.html" />
-    <Content Include="templates\components\proficiencies.html" />
+    <Content Include="templates\components\tools.html" />
     <Content Include="templates\components\questItems.html" />
     <Content Include="templates\components\saveThrows.html" />
     <Content Include="templates\components\shield.html" />

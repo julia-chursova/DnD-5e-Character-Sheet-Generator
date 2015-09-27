@@ -4,27 +4,23 @@
     angular.module(appName)
         .factory('armorModel', [
             'statsModel',
+            'proficienciesModel',
 
-            function (statsModel) {
+            function (statsModel, proficienciesModel) {
                 var self = this;
 
 				// Constants
                 self.baseAC = 10;
 
-                self.armorTypes = [
-                    "Light",
-                    "Medium",
-                    "Heavy"
-                ];
-
 				// Fields
                 self.armor = {
                     name: '',
-                    type: '',
+                    type: null,
                     armorClass: 4,
                     weight: 5,
                     stealsDisadvantage: false,
-                    maxDexBonus: 2
+                    maxDexBonus: 2,
+                    isProficient: false
                 };
 
                 self.shield = {
@@ -67,6 +63,10 @@
 
                     return result;
                 };
+
+                self.proficientWithArmor = function() {
+                    return proficienciesModel.armor.hasOwnProperty(self.armor.type) && proficienciesModel.armor[self.armor.type];
+                }
 
 				// Methods
 				self.exportData = function() {

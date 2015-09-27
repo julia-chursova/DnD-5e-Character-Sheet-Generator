@@ -8,12 +8,23 @@
         </div>
     </div>
 
-    <div class="labeled-input">
-        <div class="label">Type</div>
-        <div cloak-field class="input" data-model="controller.armor.type">
-            <input type="text" ng-model="controller.armor.type" />
+    <div class="armor-container">
+        <div class="labeled-input inline-block type-data">
+            <div class="label">Type</div>
+            <div cloak-field class="input" data-model="controller.armor.type">
+                <select ng-model="controller.armor.type"
+                        ng-options="type as type for type in controller.armorTypes"></select>
+            </div>
+        </div>
+
+        <div class="labeled-input inline-block">
+            <div class="label">Proficient</div>
+            <div cloak-field class="input" data-model="controller.model.proficientWithArmor() ? '✓' : '-'">
+                <input type="checkbox" ng-model="controller.proficiencyModel.armor[controller.armor.type]" />
+            </div>
         </div>
     </div>
+
     <div class="armor-container">
         <div class="inline-block labeled-input">
             <div class="label">AC Bonus</div>

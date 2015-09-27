@@ -1,25 +1,32 @@
-<div class="shield component" ng-controller="armorController as controller">
+﻿<div class="shield component" ng-controller="armorController as controller">
     <div class="header">Shield</div>
 
     <div class="shield-container">
         <div class="label">Name</div>
-        <div cloak-field class="textInput input" data-model="controller.shield.name">
-            <input type="text" ng-model="controller.shield.name"/>
+        <div cloak-field class="textInput labeled-input input" data-model="controller.shield.name">
+            <input type="text" ng-model="controller.shield.name" />
         </div>
     </div>
 
     <div class="shield-container">
-        <div class="inline-block shield-stat">
+        <div class="inline-block labeled-input shield-stat">
             <div class="label">AC Bonus</div>
             <div cloak-field class="numberInput input" data-model="controller.shield.armorClass">
                 <input type="number" ng-model="controller.shield.armorClass" placeholder="2" />
             </div>
         </div>
 
-        <div class="inline-block shield-stat">
+        <div class="inline-block labeled-input shield-stat">
             <div class="label">Weight</div>
             <div cloak-field class="numberInput input" data-model="controller.shield.weight">
-                <input type="number" min="0" ng-model="controller.shield.weight" placeholder="6" />
+                <input type="number" min="0" ng-model="controller.shield.weight" placeholder="6"/>
+            </div>
+        </div>
+
+        <div class="inline-block shield-proficiency">
+            <div class="label">Proficiency</div>
+            <div cloak-field class="input" data-model="controller.proficiencyModel.shieldProficiency ? '✓' : '-'">
+                <input type="checkbox" ng-model="controller.proficiencyModel.shieldProficiency" />
             </div>
         </div>
     </div>

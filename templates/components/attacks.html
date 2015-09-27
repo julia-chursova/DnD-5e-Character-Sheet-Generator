@@ -10,12 +10,19 @@
 				</div>
 			</div>
 			<div class="range-container">
-				<div class="labeled-input inline-block">
-					<div class="label">Range</div>
-					<div cloak-field data-model="attack.range">
-						<input type="number" min="0" ng-model="attack.range"/>
-					</div>
-				</div>
+			    <div class="labeled-input inline-block">
+			        <div class="label">Type</div>
+			        <div cloak-field data-model="attack.type">
+			            <select ng-model="attack.type"
+			                    ng-options="type as type for type in controller.weaponTypes"></select>
+			        </div>
+			    </div>
+                <div class="labeled-input inline-block">
+                    <div class="label">Range</div>
+                    <div cloak-field data-model="attack.range + ' ft.'">
+                        <input type="number" ng-model="attack.range"/>
+                    </div>
+                </div>
 				<div class="labeled-input inline-block">
 					<div class="label">Ranged</div>
 					<div cloak-field data-model="attack.isRanged ? '✓' : '-'">
@@ -31,16 +38,20 @@
 					<tr>
 						<td class="cell total">{{ attack.attack() }}</td>
 						<td>=</td>
-						<td class="cell summand min-input">{{ character.proficiencyBonus() }}</td>
-						<td>+</td>
-						<td class="cell summand min-input">{{attack.isRanged ? controller.stats.dexModifier() : controller.stats.strModifier()}}</td>
+                        <td class="cell summand min-input">{{attack.isRanged ? controller.stats.dexModifier() : controller.stats.strModifier()}}</td>
+					    <td>+</td>
+                        <td class="cell summand min-input">{{ controller.proficienciesModel.weapons[attack.type] ? controller.character.proficiencyBonus() : '' }}</td>
+                        <td class="cell" cloak-field data-model="controller.proficienciesModel.weapons[attack.type] ? '✓' : '-'">
+                            <input type="checkbox" ng-model="controller.proficienciesModel.weapons[attack.type]" />
+                        </td>
 					</tr>
 					<tr>
 						<td class="major-label">Attack</td>
 						<td></td>
-						<td class="label">Proficiency</td>
+                        <td class="label">{{ attack.isRanged ? 'DEX' : 'STR' }}</td>
 						<td></td>
-						<td class="label">{{ attack.isRanged ? 'DEX' : 'STR' }}</td>
+                        <td class="label">Proficiency</td>
+					    <td class="label">Proficient</td>
 					</tr>
 				</tbody>
 			</table>

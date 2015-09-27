@@ -6,9 +6,18 @@
             'sizeProvider',
             'abilityProvider',
             'languagesProvider',
-            'proficiencyProvider',
+            'armorTypeProvider',
+            'toolTypeProvider',
+            'weaponTypeProvider',
+            function(
+                sizeProvider,
+                abilityProvider,
+                languagesProvider,
+                armorTypeProvider,
+                toolTypeProvider,
+                weaponTypeProvider
+            ) {
 
-            function(sizeProvider, abilityProvider, languagesProvider, proficienciesProvider) {
                 function copyProperties(src, dest) {
                     for (var prop in src) {
                         if (prop !== "name" && prop !== "size" && prop !== "subtypes") {
@@ -62,13 +71,15 @@
                             languagesProvider.dwarvish
                         ],
 
-                        proficiencies: [
-                            proficienciesProvider.weapons.hammer,
-                            proficienciesProvider.weapons.axe,
+                        weaponProficiency: [
+                            weaponTypeProvider.hammer,
+                            weaponTypeProvider.axe
+                        ],
 
-                            proficienciesProvider.tools.smith,
-                            proficienciesProvider.tools.brewer,
-                            proficienciesProvider.tools.mason
+                        toolsProficiency: [
+                            toolTypeProvider.smith,
+                            toolTypeProvider.brewer,
+                            toolTypeProvider.mason
                         ],
 
                         subtypes: [
@@ -83,8 +94,8 @@
                                 name: "Hill",
                                 wisBonus: 1,
                                 armorProficiency: [
-                                    proficienciesProvider.armor.light,
-                                    proficienciesProvider.armor.medium
+                                    armorTypeProvider.light,
+                                    armorTypeProvider.medium
                                 ]
                             }
                         ]
@@ -96,7 +107,7 @@
                         speed: 30,
 
                         abilities: [
-                            abilityProvider.darkvision,
+                              abilityProvider.darkvision,
                             abilityProvider.keenSenses,
                             abilityProvider.feyAncestry,
                             abilityProvider.trance
@@ -112,10 +123,10 @@
                                 name: "High",
                                 intBonus: 1,
                                 weaponProficiency: [
-                                    proficienciesProvider.weapons.shortsword,
-                                    proficienciesProvider.weapons.longsword,
-                                    proficienciesProvider.weapons.shortbow,
-                                    proficienciesProvider.weapons.longbow
+                                    weaponTypeProvider.shortsword,
+                                    weaponTypeProvider.longsword,
+                                    weaponTypeProvider.shortbow,
+                                    weaponTypeProvider.longbow
                                 ]
                                 // todo: add cantrips
                                 // todo: extra language
@@ -124,10 +135,10 @@
                                 name: "Wood",
                                 wisBonus: 1,
                                 weaponProficiency: [
-                                    proficienciesProvider.weapons.shortsword,
-                                    proficienciesProvider.weapons.longsword,
-                                    proficienciesProvider.weapons.shortbow,
-                                    proficienciesProvider.weapons.longbow
+                                    weaponTypeProvider.shortsword,
+                                    weaponTypeProvider.longsword,
+                                    weaponTypeProvider.shortbow,
+                                    weaponTypeProvider.longbow
                                 ],
                                 speed: 35,
                                 abilities: [
@@ -143,9 +154,9 @@
                                 ],
                                 // todo: add cantrip
                                 weaponProficiency: [
-                                    proficienciesProvider.weapons.rapier,
-                                    proficienciesProvider.weapons.shortsword,
-                                    proficienciesProvider.weapons.handCrossbow
+                                    weaponTypeProvider.rapier,
+                                    weaponTypeProvider.shortsword,
+                                    weaponTypeProvider.handCrossbow
                                 ]
                             }
                         ]
@@ -239,7 +250,7 @@
                                     abilityProvider.artificersLore
                                 ],
                                 toolProficiency: [
-                                    proficienciesProvider.tools.artisan
+                                    toolTypeProvider.artisan
                                 ]
                             }
                         ]

@@ -5,8 +5,9 @@
 		.factory('attacksModel', [
 			'statsModel',
 			'characterModel',
+            'proficienciesModel',
 
-			function(statsModel, characterModel) {
+			function(statsModel, characterModel, proficienciesModel) {
 				var self = this;
 
 				// Fields
@@ -45,13 +46,18 @@
 						var self = this;
 
 						self.name = item.name;
+					    self.type = item.type;
 						self.baseDamage = item.baseDamage;
 						self.isRanged = item.isRanged;
 						self.range = item.range;
 						self.ammo = item.ammo;
 
-						self.attack = function() {
-							return characterModel.proficiencyBonus() + (self.isRanged
+						self.attack = function () {
+						    var proficiencyBonus = proficienciesModel.weapons[self.type]
+                                ? characterModel.proficiencyBonus()
+                                : 0;
+
+						    return proficiencyBonus + (self.isRanged
 								? statsModel.dexModifier()
 								: statsModel.strModifier());
 						};
@@ -90,9 +96,9 @@
 					for (var i = 0; i < attacksCount; i++) {
 						attacks.push({
 							name: '',
-							baseAttack: '',
 							baseDamage: '',
 							range: '',
+                            type: null,
 							ammo: null
 						});
 					}

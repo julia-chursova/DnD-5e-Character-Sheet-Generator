@@ -2,11 +2,13 @@
 	'use strict';
 
 	angular.module(appName)
-		.controller('proficienciesController', [
+		.controller('toolsController', [
 			'proficienciesModel',
 
 			function (proficienciesModel) {
+			    var self = this;
 
+			    self.proficiencies = proficienciesModel;
 			}
 		]);
 })();

@@ -6,6 +6,21 @@
 			function () {
 			    var self = this;
 
+                // Fields
+			    self.weapons = {
+
+			    };
+
+			    self.armor = {
+
+			    };
+
+			    self.tools = [];
+
+			    self.shieldProficiency = false;
+
+                // Computed properties
+
                 // Methods
 				self.exportData = function() {
 					return {
