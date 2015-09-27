@@ -17,7 +17,17 @@
 			            return;
 
 			        if (self.race.abilities) {
+			            abilitiesModel.abilities.forEach(function(item) {
+                            if (item && item.deactivate)
+			                    item.deactivate();
+			            });
+
 			            abilitiesModel.abilities = angular.extend([], self.race.abilities);
+
+			            self.race.abilities.forEach(function (item) {
+                            if (item && item.activate)
+			                    item.activate();
+			            });
 			        }
 
 			        if (self.race.languages) {

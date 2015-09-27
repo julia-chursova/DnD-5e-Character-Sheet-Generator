@@ -4,24 +4,12 @@
 	angular.module(appName)
 		.factory('skillsModel', [
 			'skillsProvider',
-            'abilityProvider',
-            'abilitiesModel',
 
-			function (skillsProvider, abilitiesProvider, abilitiesModel) {
+			function (skillsProvider) {
 			    var self = this;
 
-			    var baseSkills = skillsProvider.getSkills();
-
 				// Fields
-			    self.skills = function () {
-			        var skills = baseSkills.slice();
-
-				    if (abilitiesModel.abilities.indexOf(abilitiesProvider.stonecunning) >= 0) {
-				        skills.push(skillsProvider.originsOfStone);
-                    }
-
-				    return skills;
-				}
+                self.skills = skillsProvider.getSkills();
 
 				// Methods
 				self.exportData = function() {

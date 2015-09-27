@@ -15,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="item in controller.model.skills() track by $index">
+            <tr ng-repeat="item in controller.model.skills track by $index">
                 <td>
                     <span class="inline-block left">{{item.name}} ({{item.modName}})</span>
                     <span class="inline-block right is-proficient" cloak-field data-model="item.haveProficiency ? '✓' : '-'">

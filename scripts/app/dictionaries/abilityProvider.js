@@ -3,12 +3,15 @@
 
 	angular.module(appName)
 		.factory('abilityProvider', [
-			function() {
+            'skillsModel',
+            'skillsProvider',
+
+			function(skillsModel, skillsProvider) {
 			    return {
 			        darkvision: {
 			            name: "Darkvision",
                         shortDescription: "60ft",
-			            description: "You can see in dim light within 60ft of you as if it were bright light, and in darkness if it were dim light. You can't discern colors, only shades of gray"
+                        description: "You can see in dim light within 60ft of you as if it were bright light, and in darkness if it were dim light. You can't discern colors, only shades of gray"
 			        },
 			        dwarvenResilience: {
 			            name: "Dwarven Resilience",
@@ -16,7 +19,15 @@
 			        },
 			        stonecunning: {
 			            name: "Stonecunning",
-			            description: "Whenever you make an Intelligence (History) check related to the origin of stonework, you add doubled proficiency bonus to the check."
+			            description: "Whenever you make an Intelligence (History) check related to the origin of stonework, you add doubled proficiency bonus to the check.",
+                        activate: function() {
+                            skillsModel.skills.push(skillsProvider.originsOfStone);
+                        },
+                        deactivate: function() {
+                            var ind = skillsModel.skills.indexOf(skillsProvider.originsOfStone);
+                            if (ind >= 0)
+                                skillsModel.skills = skillsModel.skills.splice(ind, 1);
+                        }
 			        },
 			        keenSenses: {
 			            name: "Keen Senses",
