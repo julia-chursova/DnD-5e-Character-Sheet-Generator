@@ -35,6 +35,11 @@
                             continue;
                         }
 
+                        if (prop === "spells") {
+                            dest[prop].concat(src[prop]);
+                            continue;
+                        }
+
                         dest[prop] += src[prop];
                     }
                 }
@@ -164,9 +169,9 @@
                                 chaBonus: 1,
                                 abilities: [
                                     abilityProvider.superiorDarkvision,
-                                    abilityProvider.sunlightSensitivity
+                                    abilityProvider.sunlightSensitivity,
+                                    abilityProvider.drowMagic
                                 ],
-                                // todo: add cantrip
                                 weaponProficiency: [
                                     weaponTypeProvider.rapier,
                                     weaponTypeProvider.shortsword,
@@ -252,9 +257,9 @@
                             {
                                 name: "Forest",
                                 dexBonus: 1,
-                                // todo: add cantrip,
                                 abilities: [
-                                    abilityProvider.speakWithSmallBeasts
+                                    abilityProvider.speakWithSmallBeasts,
+                                    abilityProvider.naturalIllusionist
                                 ]
                             },
                             {

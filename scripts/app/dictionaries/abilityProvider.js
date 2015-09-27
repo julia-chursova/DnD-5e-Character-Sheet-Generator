@@ -7,7 +7,6 @@
             'skillsProvider',
             'spellcastingModel',
             'spellsProvider',
-
             function(skillsModel, skillsProvider, spellcastingModel, spellsProvider) {
                 return {
                     darkvision: {
@@ -116,6 +115,22 @@
                         },
                         deactivate: function() {
                             spellcastingModel.spells[0].knownCount = Math.max(0, spellcastingModel.spells[0].knownCount - 1);
+                        }
+                    },
+                    drowMagic: {
+                        name: "Drow Magic",
+                        description: "You know the dancing lights cantrip. When you reach 3rd level, you can cast faerie fire spell once per day. When you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcastring ability for these spells."
+                    },
+                    naturalIllusionist: {
+                        name: "Natural Illusionist",
+                        description: "You know the minor illusion cantrip. Intelligence is your spellcasting ability for it",
+                        activate: function() {
+                            spellcastingModel.spells[0].knownCount++;
+                            spellcastingModel.spells[0].spells.push(spellsProvider.minorIllusion);
+                        },
+                        deactivate: function() {
+                            spellcastingModel.spells[0].knownCount = Math.max(0, spellcastingModel.spells[0].knownCount - 1);
+                            spellcastingModel.spells[0].spells.remove(spellsProvider.minorIllusion);
                         }
                     }
                 };

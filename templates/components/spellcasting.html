@@ -5,7 +5,7 @@
         <tr ng-repeat="spellGroup in controller.spells track by $index">
             <td>#{{$index}} (Known: {{spellGroup.knownCount}}; Per Day: {{spellGroup.remaining}} / {{spellGroup.maxPerDay}})</td>
             <td>
-                <div ng-repeat="spell in spellGroup.spells">Spell</div>
+                <div ng-repeat="spell in spellGroup.spells" ng-bind="spell.name"></div>
             </td>
         </tr>
     </table>
