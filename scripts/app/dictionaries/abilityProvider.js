@@ -87,10 +87,6 @@
                         name: "Speak with Small Beasts",
                         description: "Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts."
                     },
-                    artificersLore: {
-                        name: "Artificer's Lore",
-                        description: "Whenever you make an Intelligence (History) check related to magic items, alchemical objects or technological devices, you can add twice your proficiency bonus."
-                    },
                     menacing: {
                         name: "Menacing",
                         description: "You gain proficiency in Intimidation skill"
@@ -131,6 +127,16 @@
                         deactivate: function() {
                             spellcastingModel.spells[0].knownCount = Math.max(0, spellcastingModel.spells[0].knownCount - 1);
                             spellcastingModel.spells[0].spells.remove(spellsProvider.minorIllusion);
+                        }
+                    },
+                    artificersLore: {
+                        name: "Artificer's Lore",
+                        description: "Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply.",
+                        activate: function() {
+                            skillsModel.skills.historyOfMagic = skillsProvider.historyOfMagic;
+                        },
+                        deactivate: function() {
+                            delete skillsModel.skills.historyOfMagic;
                         }
                     }
                 };

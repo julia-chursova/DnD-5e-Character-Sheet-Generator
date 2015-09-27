@@ -114,10 +114,30 @@
                         return skillScore;
                     }
                 };
+                
+                var historyOfMagic = {
+                    name: "History of Magic",
+                    modName: "INT",
+                    haveProficiency: true,
+                    miscBonus: 0,
+                    statsBonus: statsModel.intModifier,
+                    proficiencyBonus: function() {
+                        return characterModel.proficiencyBonus() * 2;
+                    },
+                    value: function() {
+                        var skillScore = this.miscBonus + this.statsBonus();
+
+                        if (this.haveProficiency)
+                            skillScore += (this.proficiencyBonus() || 0);
+
+                        return skillScore;
+                    }
+                }
 
                 return {
                     skillList: transformResult,
-                    originsOfStone: originsOfStone
+                    originsOfStone: originsOfStone,
+                    historyOfMagic: historyOfMagic
                 }
             }
         ]);
