@@ -30,12 +30,7 @@
                             continue;
                         }
 
-                        if (prop === "abilities") {
-                            dest[prop].concat(src[prop]);
-                            continue;
-                        }
-
-                        if (prop === "spells") {
+                        if (prop === "abilities" || prop === "spells" || prop === "toolsProficiency") {
                             dest[prop].concat(src[prop]);
                             continue;
                         }
@@ -268,7 +263,7 @@
                                 abilities: [
                                     abilityProvider.artificersLore
                                 ],
-                                toolProficiency: [
+                                toolsProficiency: [
                                     toolTypeProvider.artisan
                                 ]
                             }
