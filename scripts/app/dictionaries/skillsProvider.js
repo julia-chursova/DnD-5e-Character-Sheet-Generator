@@ -6,63 +6,66 @@
             'characterModel',
 
             function (statsModel, characterModel) {
-                var skills = [
+                var packedSkills = [
                     {
                         modName: 'STR',
                         addFunc: statsModel.strModifier,
-                        skills: [
-                            'Athletics'
-                        ]
+                        skills: {
+                            athletics: 'Athletics'
+                        }
                     },
                     {
                         modName: 'DEX',
                         addFunc: statsModel.dexModifier,
-                        skills: [
-                            'Acrobatics',
-                            'Sleight of Hand',
-                            'Stealth'
-                        ]
+                        skills: {
+                            acrobatics: 'Acrobatics',
+                            sleightOfHand: 'Sleight of Hand',
+                            stealth: 'Stealth'
+                        }
                     },
                     {
                         modName: 'INT',
                         addFunc: statsModel.intModifier,
-                        skills: [
-                            'Arcana',
-                            'History',
-                            'Investigation',
-                            'Knowledge Nature',
-                            'Knowledge Religion'
-                        ]
+                        skills: {
+                            arcana: 'Arcana',
+                            history: 'History',
+                            investigation: 'Investigation',
+                            knowledgeNature: 'Knowledge Nature',
+                            knowledgeReligion: 'Knowledge Religion'
+                        }
                     },
                     {
                         modName: 'WIS',
                         addFunc: statsModel.wisModifier,
-                        skills: [
-                            'Animal Handling',
-                            'Insight',
-                            'Medicine',
-                            'Perception',
-                            'Survival'
-                        ]
+                        skills: {
+                            animalHandling: 'Animal Handling',
+                            insight: 'Insight',
+                            medicine: 'Medicine',
+                            perception: 'Perception',
+                            survival: 'Survival'
+                        }
                     },
                     {
                         modName: 'CHA',
                         addFunc: statsModel.chaModifier,
-                        skills: [
-                            'Deception',
-                            'Intimidation',
-                            'Performance',
-                            'Persuation'
-                        ]
+                        skills: {
+                            deception: 'Deception',
+                            intimidation: 'Intimidation',
+                            performance: 'Performance',
+                            persuation: 'Persuation'
+                        }
                     }
                 ];
 
                 function transformGroup(group) {
-                    var result = [];
+                    var result = {};
 
-                    for (var i = 0; i < group.skills.length; i++) {
-                        result.push({
-                            name: group.skills[i],
+                    for (var skill in group.skills) {
+                        if (!group.skills.hasOwnProperty(skill))
+                            continue;
+
+                        result[skill] = {
+                            name: group.skills[skill],
                             modName: group.modName,
                             haveProficiency: false,
                             miscBonus: 0,
@@ -78,20 +81,17 @@
 
                                 return skillScore;
                             }
-                        });
+                        };
                     }
 
                     return result;
                 }
 
                 function transformResult() {
-                    var result = [];
+                    var result = {};
 
-                    for (var i = 0; i < skills.length; i++) {
-                        result = result.concat(transformGroup(skills[i]));
-                    }
-
-                    result.sort(function(a, b) { return a.name.toLowerCase() > b.name.toLowerCase(); });
+                    for (var i = 0; i < packedSkills.length; i++)
+                        result = angular.extend(result, transformGroup(packedSkills[i]));
 
                     return result;
                 }
@@ -116,7 +116,7 @@
                 };
 
                 return {
-                    getSkills: transformResult,
+                    skillList: transformResult,
                     originsOfStone: originsOfStone
                 }
             }

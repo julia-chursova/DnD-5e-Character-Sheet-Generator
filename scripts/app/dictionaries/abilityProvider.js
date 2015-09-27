@@ -21,12 +21,10 @@
 			            name: "Stonecunning",
 			            description: "Whenever you make an Intelligence (History) check related to the origin of stonework, you add doubled proficiency bonus to the check.",
                         activate: function() {
-                            skillsModel.skills.push(skillsProvider.originsOfStone);
+                            skillsModel.skills.originsOfStone = skillsProvider.originsOfStone;
                         },
                         deactivate: function() {
-                            var ind = skillsModel.skills.indexOf(skillsProvider.originsOfStone);
-                            if (ind >= 0)
-                                skillsModel.skills = skillsModel.skills.splice(ind, 1);
+                            delete skillsModel.skills.originsOfStone;
                         }
 			        },
 			        keenSenses: {

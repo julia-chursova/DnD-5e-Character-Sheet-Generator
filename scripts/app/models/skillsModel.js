@@ -9,7 +9,7 @@
 			    var self = this;
 
 				// Fields
-                self.skills = skillsProvider.getSkills();
+                self.skills = skillsProvider.skillList();
 
 				// Methods
 				self.exportData = function() {
