@@ -1,12 +1,12 @@
 ﻿<div class="spellcasting component" ng-controller="spellcastingController as controller">
 	<div class="header">Spellcasting</div>
 
-    <table class="common-table">
-        <tr ng-repeat="spellGroup in controller.spells track by $index">
-            <td>#{{$index}} (Known: {{spellGroup.knownCount}}; Per Day: {{spellGroup.remaining}} / {{spellGroup.maxPerDay}})</td>
-            <td>
-                <div ng-repeat="spell in spellGroup.spells" ng-bind="spell.name"></div>
-            </td>
-        </tr>
-    </table>
+	<table class="common-table">
+		<tr>
+			<td ng-repeat="spellGroup in controller.simpleSpells() track by $index">
+				<div>#{{$index}} (Known: {{spellGroup.knownCount}}; Per Day: {{spellGroup.remaining}} / {{spellGroup.maxPerDay}})</div>
+				<div ng-repeat="spell in spellGroup.spells" ng-bind="spell.name"></div>
+			</td>
+		</tr>
+	</table>
 </div>
