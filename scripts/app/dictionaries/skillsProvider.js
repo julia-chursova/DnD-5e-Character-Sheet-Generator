@@ -5,7 +5,7 @@
             'statsModel',
             'characterModel',
 
-            function (statsModel, characterModel) {
+            function(statsModel, characterModel) {
                 var packedSkills = [
                     {
                         modName: 'STR',
@@ -115,7 +115,7 @@
                         return skillScore;
                     }
                 };
-                
+
                 var historyOfMagic = {
                     name: "History of Magic",
                     isCustom: true,
@@ -136,11 +136,12 @@
                     }
                 }
 
-                return {
-                    skillList: transformResult,
+                return angular.extend({}, transformResult(), {
                     originsOfStone: originsOfStone,
                     historyOfMagic: historyOfMagic
-                }
+                }, {
+                    skillList: transformResult
+                });
             }
         ]);
 })();
