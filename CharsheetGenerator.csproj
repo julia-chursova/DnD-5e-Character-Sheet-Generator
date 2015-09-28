@@ -121,6 +121,7 @@
     <None Include="styles\app\components\armor.less" />
     <None Include="styles\app\components\character.less" />
     <None Include="styles\app\components\deathSaves.less" />
+    <Content Include="styles\app\components\hitPoints.less" />
     <None Include="styles\app\components\initiative.less" />
     <None Include="styles\app\components\commonInventory.less" />
     <None Include="styles\app\components\logo.less" />
