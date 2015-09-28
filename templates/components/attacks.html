@@ -10,20 +10,20 @@
 				</div>
 			</div>
 			<div class="range-container">
-			    <div class="labeled-input inline-block">
+			    <div class="labeled-input inline-block type-data">
 			        <div class="label">Type</div>
 			        <div cloak-field data-model="attack.type">
 			            <select ng-model="attack.type"
 			                    ng-options="type as type for type in controller.weaponTypes"></select>
 			        </div>
 			    </div>
-                <div class="labeled-input inline-block">
+                <div class="labeled-input inline-block range-data">
                     <div class="label">Range</div>
                     <div cloak-field data-model="attack.range + ' ft.'">
                         <input type="number" ng-model="attack.range"/>
                     </div>
                 </div>
-				<div class="labeled-input inline-block">
+				<div class="labeled-input inline-block is-ranged-data">
 					<div class="label">Ranged</div>
 					<div cloak-field data-model="attack.isRanged ? '✓' : '-'">
 						<input type="checkbox" ng-model="attack.isRanged"/>
