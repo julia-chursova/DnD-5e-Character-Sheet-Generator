@@ -134,7 +134,6 @@
     <None Include="styles\app\components\skills.less" />
     <Content Include="styles\app\controls\radioButtons.less" />
     <Content Include="styles\app\controls\commonTable.less" />
-    <Content Include="styles\app\controls\bottomLabeledInput.less" />
     <None Include="styles\app\directives\cloakField.less" />
     <None Include="styles\app\directives\layout.less" />
     <None Include="styles\app\menu.less" />
