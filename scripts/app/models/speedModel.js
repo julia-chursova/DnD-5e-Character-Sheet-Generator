@@ -4,23 +4,27 @@
 	angular.module(appName)
 		.factory('speedModel', [
 			'raceModel',
+            'armorModel',
 
-			function (raceModel) {
+			function (raceModel, armorModel) {
 				var self = this;
 
 				// Fields
 				self.userDefinedSpeed = '';
-
 
 				// Calculable field
 				self.speed = function () {
 					if (self.userDefinedSpeed)
 						return self.userDefinedSpeed;
 
-					if (raceModel.race)
-						return raceModel.race.speed || 0;
+				    var baseSpeed = 0;
+				    if (raceModel.race)
+				        baseSpeed = (raceModel.race.speed || 0);
 
-					return 0;
+				    if (armorModel.reduceSpeed())
+				        baseSpeed = Math.max(baseSpeed - 10, 0);
+
+					return baseSpeed;
 				}
 
 				// Methods

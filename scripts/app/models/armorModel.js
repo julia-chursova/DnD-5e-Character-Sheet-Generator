@@ -5,8 +5,9 @@
         .factory('armorModel', [
             'statsModel',
             'proficienciesModel',
+            'helpers',
 
-            function (statsModel, proficienciesModel) {
+            function (statsModel, proficienciesModel, helpers) {
                 var self = this;
 
 				// Constants
@@ -20,7 +21,8 @@
                     weight: 5,
                     stealsDisadvantage: false,
                     maxDexBonus: 2,
-                    isProficient: false
+                    isProficient: false,
+                    minStrength: ''
                 };
 
                 self.shield = {
@@ -66,6 +68,10 @@
 
                 self.proficientWithArmor = function() {
                     return proficienciesModel.armor.hasOwnProperty(self.armor.type) && proficienciesModel.armor[self.armor.type];
+                }
+
+                self.reduceSpeed = function() {
+                    return helpers.isInteger(self.armor.minStrength) && (statsModel.strength || 0) < (self.armor.minStrength || 0);
                 }
 
 				// Methods
