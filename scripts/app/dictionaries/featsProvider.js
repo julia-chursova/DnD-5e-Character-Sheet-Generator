@@ -4,7 +4,10 @@
     angular.module(appName)
         .factory('featsProvider', [
             'statsModel',
-            function(statsModel) {
+			'proficienciesModel',
+			'armorTypeProvider',
+
+            function(statsModel, proficienciesModel, armorTypes) {
                 return {
                     alert: {
                         name: "Alert",
@@ -128,7 +131,39 @@
                             "When you use a healer's kit to stabilize a dying creature, that creature also regains 1 hit point.",
                             "As an action, you can spend one use of a healer's kit to tend to a creature and restore 1d6 + 4 hit points to it, plus additional hit points equal to the creature's maximum number of Hit Dice. The creature can't regain hit points from this feat again until it finishes a short or long rest."
                         ]
-                    }
+                    },
+
+					heavilyArmored: {
+						name: "Heavily Armored",
+						prerequisite: "Proficiency with medium armor",
+						applicable: function() {
+							return proficienciesModel.proficientWithArmor(armorTypes.medium);
+						},
+						features: [
+							"Increase your strength score by 1 to a maximum of 20.",
+							"You gain proficiency with heavy armor"
+						]
+					},
+
+					heavyArmorMaster: {
+						name: "Heavy Armor Master",
+						prerequisite: "Proficiency with heavy armor",
+						applicable: function() {
+							return proficienciesModel.proficientWithArmor(armorTypes.heavy);
+						},
+						features: [
+							"Increase your strength score by 1, to a maximum number of 20",
+							"While you are wearing heavy armor, bludgeoning, piercing, and slashing damage that you take from nonmagical weapons is reduced by 3."
+						]
+					},
+
+					inspiringLeader: {
+						name: "Inspiring leader",
+						prerequisite: "Charisma 13 or higher",
+						applicable: function() {
+							return (statsModel.charisma || 0) >= 13;
+						}
+					}
                 }
             }
         ]);
