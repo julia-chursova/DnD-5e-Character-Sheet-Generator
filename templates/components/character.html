@@ -80,9 +80,9 @@
                 </div>
                 <div class="inline-block labeled-input background-data">
                     <div class="label">Background</div>
-                    <div cloak-field class="background" data-model="character.model.background">
+                    <div cloak-field class="background" data-model="character.model.background.name">
                         <select ac-select ac-model="character.model.background"
-                                ac-options="background for background in character.availableBackgrounds"
+                                ac-options="background.name for background in character.availableBackgrounds"
                                 ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter Background', noItemsText: 'Press <enter> to add a custom background' }"></select>
                     </div>
                 </div>
