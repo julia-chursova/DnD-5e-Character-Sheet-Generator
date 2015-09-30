@@ -4,11 +4,11 @@
     <table class="common-table">
         <tr ng-repeat="feat in controller.feats track by $index">
             <td cloak-field data-model="feat.name" ng-attr-title="{{ feat.features.join('&#013;') }}">
-                <select class="stateList"
+                <select class="autosuggest-dropdown"
                         ac-select
                         ac-model="controller.feats[$index]"
                         ac-options="availableFeat.name for availableFeat in controller.availableFeats"
-                        ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter feat name', noItemsText: 'No feats found' }"></select>
+                        ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter feat name', noItemsText: 'No feats found'  }"></select>
             </td>
         </tr>
     </table>

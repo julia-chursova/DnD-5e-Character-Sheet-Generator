@@ -5,7 +5,7 @@
         <tbody>
             <tr ng-repeat="ability in controller.abilitiesModel.abilities track by $index">
                 <td class="ability" ng-attr-title="{{ ability.description }}" cloak-field data-model="ability.name">
-                    <select class="stateList"
+                    <select class="autosuggest-dropdown"
                             ac-select
                             ac-model="controller.abilitiesModel.abilities[$index]"
                             ac-options="availableAbility.name for availableAbility in controller.availableAbilities"
