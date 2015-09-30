@@ -147,9 +147,12 @@
                 <td class="char-spec">
                     <div ng-if="class.class && class.level >= 3">
                         <div class="inline-block" ng-bind="(class.class.specializationName + ': ' || 'Specialization: ')"></div>
-                        <div class="inline-block" cloak-field data-model="class.class.specialization.name">
-                            <select ng-model="class.class.specialization"
-                                    ng-options="spec as spec.name for spec in class.class.specializations"></select>
+                        <div class="inline-block path" cloak-field data-model="character.model.classes[$index].specialization.name">
+                            <select class="autosuggest-dropdown"
+                                    ac-select
+                                    ac-model="character.model.classes[$index].specialization"
+                                    ac-options="spec.name for spec in character.model.classes[$index].class.specializations"
+                                    ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter Specialization', noItemsText: 'Press <enter> to add custom specialization' }"></select>
                         </div>
                     </div>
                 </td>
