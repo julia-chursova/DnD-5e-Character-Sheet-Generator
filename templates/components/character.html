@@ -91,9 +91,11 @@
                 <div class="inline-block race-data labeled-input">
                     <div class="label">Race</div>
                     <div cloak-field data-model="character.raceModel.race.name">
-                        <select ng-model="character.raceModel.race"
-                                ng-options="race as race.name for race in character.availableRaces"
-                                ng-change="character.raceChanged()"></select>
+                        <select ac-select
+                                ac-model="character.raceModel.race"
+                                ac-options="race.name for race in character.availableRaces"
+                                ac-change="character.raceChanged()"
+                                ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter Class', noItemsText: 'Press <enter> to add a custom class' }"></select>
                     </div>
                 </div>
                 <div class="inline-block size-data labeled-input">
