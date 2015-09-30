@@ -6,295 +6,292 @@
             'weaponTypeProvider',
             'saveThrowModel',
             function(armorType, weaponType, saveThrowModel) {
-                return [
-                    {
-                        name: ""
+                return {
+                    barbarian: {
+                        name: "Barbarian",
+                        hitDie: 12,
+
+                        armorProficiency: [
+                            armorType.light,
+                            armorType.medium
+                        ],
+
+                        proficientWithShield: true,
+
+                        weaponProficiency: angular.extend([], weaponType.simple(), weaponType.martial()),
+
+                        saveThrowProficiency: {
+                            str: true,
+                            con: true
+                        },
+
+                        specializationName: "Path",
+                        specializations: [
+                            {
+                                name: "Berserker"
+                            },
+                            {
+                                name: "Totem Warrior"
+                            }
+                        ]
                     },
-                    //{
-                    //    name: "Barbarian",
-                    //    hitDie: 12,
+                    bard: {
+                        name: "Bard",
+                        hitDie: 8,
 
-                    //    armorProficiency: [
-                    //        armorType.light,
-                    //        armorType.medium
-                    //    ],
+                        armorProficiency: [
+                            armorType.light
+                        ],
 
-                    //    proficientWithShield: true,
+                        proficientWithShield: false,
 
-                    //    weaponProficiency: angular.extend([], weaponType.simple(), weaponType.martial()),
+                        weaponProficiency: angular.extend([
+                            weaponType.handCrossbow,
+                            weaponType.longsword,
+                            weaponType.rapier,
+                            weaponType.shortSword
+                        ], weaponType.simple()),
 
-                    //    saveThrowProficiency: {
-                    //        str: true,
-                    //        con: true
-                    //    },
+                        saveThrowProficiency: {
+                            dex: true,
+                            cha: true
+                        },
 
-                    //    specializationName: "Path",
-                    //    specializations: [
-                    //        {
-                    //            name: "Berserker"
-                    //        },
-                    //        {
-                    //            name: "Totem Warrior"
-                    //        }
-                    //    ]
-                    //},
-                    //{
-                    //    name: "Bard",
-                    //    hitDie: 8,
+                        specializationName: "College",
+                        specializations: [
+                            {
+                                name: "Lore"
+                            },
+                            {
+                                name: "Valor"
+                            }
+                        ]
+                    },
+                    cleric: {
+                        name: "Cleric",
+                        hitDie: 8,
 
-                    //    armorProficiency: [
-                    //        armorType.light
-                    //    ],
+                        armorProficiency: [
+                            armorType.light,
+                            armorType.medium
+                        ],
 
-                    //    proficientWithShield: false,
+                        proficientWithShield: true,
 
-                    //    weaponProficiency: angular.extend([
-                    //        weaponType.handCrossbow,
-                    //        weaponType.longsword,
-                    //        weaponType.rapier,
-                    //        weaponType.shortSword
-                    //    ], weaponType.simple()),
+                        weaponProficiency: weaponType.simple(),
 
-                    //    saveThrowProficiency: {
-                    //        dex: true,
-                    //        cha: true
-                    //    },
+                        saveThrowProficiency: {
+                            wis: true,
+                            cha: true
+                        },
 
-                    //    specializationName: "College",
-                    //    specializations: [
-                    //        {
-                    //            name: "Lore"
-                    //        },
-                    //        {
-                    //            name: "Valor"
-                    //        }
-                    //    ]
-                    //},
-                    //{
-                    //    name: "Cleric",
-                    //    hitDie: 8,
+                        specializationName: "",
+                        specializations: [
+                        ]
+                    },
+                    druid: {
+                        name: "Druid",
+                        hitDie: 8,
 
-                    //    armorProficiency: [
-                    //        armorType.light,
-                    //        armorType.medium
-                    //    ],
+                        armorProficiency: [
+                            armorType.light,
+                            armorType.medium
+                        ],
 
-                    //    proficientWithShield: true,
+                        proficientWithShield: true,
 
-                    //    weaponProficiency: weaponType.simple(),
+                        weaponProficiency: [
+                            weaponType.club,
+                            weaponType.dagger,
+                            weaponType.dart,
+                            weaponType.javelin,
+                            weaponType.mace,
+                            weaponType.querterstaff,
+                            weaponType.scimitar,
+                            weaponType.sickle,
+                            weaponType.sling,
+                            weaponType.spear
+                        ],
 
-                    //    saveThrowProficiency: {
-                    //        wis: true,
-                    //        cha: true
-                    //    },
+                        saveThrowProficiency: {
+                            int: true,
+                            wis: true
+                        },
 
-                    //    specializationName: "",
-                    //    specializations: [
-                    //    ]
-                    //},
-                    //{
-                    //    name: "Druid",
-                    //    hitDie: 8,
+                        specializationName: "",
+                        specializations: [
+                        ]
+                    },
+                    fighter: {
+                        name: "Fighter",
+                        hitDie: 10,
 
-                    //    armorProficiency: [
-                    //        armorType.light,
-                    //        armorType.medium
-                    //    ],
+                        armorProficiency: [
+                            armorType.light,
+                            armorType.medium,
+                            armorType.heavy
+                        ],
 
-                    //    proficientWithShield: true,
+                        proficientWithShield: true,
 
-                    //    weaponProficiency: [
-                    //        weaponType.club,
-                    //        weaponType.dagger,
-                    //        weaponType.dart,
-                    //        weaponType.javelin,
-                    //        weaponType.mace,
-                    //        weaponType.querterstaff,
-                    //        weaponType.scimitar,
-                    //        weaponType.sickle,
-                    //        weaponType.sling,
-                    //        weaponType.spear
-                    //    ],
+                        weaponProficieny: angular.extend([], weaponType.simple(), weaponType.martial()),
 
-                    //    saveThrowProficiency: {
-                    //        int: true,
-                    //        wis: true
-                    //    },
+                        saveThrowProficiency: {
+                            str: true,
+                            con: true
+                        },
 
-                    //    specializationName: "",
-                    //    specializations: [
-                    //    ]
-                    //},
-                    //{
-                    //    name: "Fighter",
-                    //    hitDie: 10,
+                        specializationName: "",
+                        specializations: [
+                        ]
+                    },
+                    monk: {
+                        name: "Monk",
+                        hieDie: 8,
 
-                    //    armorProficiency: [
-                    //        armorType.light,
-                    //        armorType.medium,
-                    //        armorType.heavy
-                    //    ],
+                        armorProficiency: [],
+                        proficientWithShield: false,
+                        weaponProficiency: angular.extend([
+                            weaponType.shortsword
+                        ], weaponType.simple()),
 
-                    //    proficientWithShield: true,
+                        saveThrowProficiency: {
+                            str: true,
+                            dex: true
+                        },
 
-                    //    weaponProficieny: angular.extend([], weaponType.simple(), weaponType.martial()),
+                        specializationName: "",
+                        specializations: [
+                        ]
+                    },
+                    paladin: {
+                        name: "Paladin",
+                        hieDie: 10,
 
-                    //    saveThrowProficiency: {
-                    //        str: true,
-                    //        con: true
-                    //    },
+                        armorProficiency: [
+                            armorType.light,
+                            armorType.medium,
+                            armorType.heavy
+                        ],
+                        proficientWithShield: true,
+                        weaponProficiency: angular.extend([], weaponType.simple(), weaponType.martial()),
 
-                    //    specializationName: "",
-                    //    specializations: [
-                    //    ]
-                    //},
-                    //{
-                    //    name: "Monk",
-                    //    hieDie: 8,
+                        saveThrowProficiency: {
+                            wis: true,
+                            cha: true
+                        },
 
-                    //    armorProficiency: [],
-                    //    proficientWithShield: false,
-                    //    weaponProficiency: angular.extend([
-                    //        weaponType.shortsword
-                    //    ], weaponType.simple()),
+                        specializationName: "",
+                        specializations: [
+                        ]
+                    },
+                    ranger: {
+                        name: "Ranger",
+                        hitDie: 10,
 
-                    //    saveThrowProficiency: {
-                    //        str: true,
-                    //        dex: true
-                    //    },
+                        armorProficiency: [
+                            armorType.light,
+                            armorType.medium
+                        ],
+                        proficientWithShield: true,
+                        weaponProficiency: angular.extend([], weaponType.simple(), weaponType.martial()),
 
-                    //    specializationName: "",
-                    //    specializations: [
-                    //    ]
-                    //},
-                    //{
-                    //    name: "Paladin",
-                    //    hieDie: 10,
+                        saveThrowProficiency: {
+                            str: true,
+                            dex: true
+                        },
 
-                    //    armorProficiency: [
-                    //        armorType.light,
-                    //        armorType.medium,
-                    //        armorType.heavy
-                    //    ],
-                    //    proficientWithShield: true,
-                    //    weaponProficiency: angular.extend([], weaponType.simple(), weaponType.martial()),
+                        specializationName: "",
+                        specializations: [
+                        ]
+                    },
+                    rogue: {
+                        name: "Rogue",
+                        hitDie: 8,
 
-                    //    saveThrowProficiency: {
-                    //        wis: true,
-                    //        cha: true
-                    //    },
+                        armorProficiency: [
+                            armorType.light,
+                        ],
+                        proficientWithShield: false,
+                        weaponProficiency: angular.extend([
+                            weaponType.handCrossbow,
+                            weaponType.longsword,
+                            weaponType.rapier,
+                            weaponType.shortsword
+                        ], weaponType.simple()),
 
-                    //    specializationName: "",
-                    //    specializations: [
-                    //    ]
-                    //},
-                    //{
-                    //    name: "Ranger",
-                    //    hitDie: 10,
+                        saveThrowProficiency: {
+                            dex: true,
+                            int: true
+                        },
 
-                    //    armorProficiency: [
-                    //        armorType.light,
-                    //        armorType.medium
-                    //    ],
-                    //    proficientWithShield: true,
-                    //    weaponProficiency: angular.extend([], weaponType.simple(), weaponType.martial()),
+                        specializationName: "",
+                        specializations: [
+                        ]
+                    },
+                    sorcerer: {
+                        name: "Sorcerer",
+                        hitDie: 6,
 
-                    //    saveThrowProficiency: {
-                    //        str: true,
-                    //        dex: true
-                    //    },
+                        proficientWithShield: false,
+                        weaponProficiency: [
+                            weaponType.dagger,
+                            weaponType.sling,
+                            weaponType.quarterstaff,
+                            weaponType.lightCrossbow
+                        ],
 
-                    //    specializationName: "",
-                    //    specializations: [
-                    //    ]
-                    //},
-                    //{
-                    //    name: "Rogue",
-                    //    hitDie: 8,
+                        saveThrowProficiency: {
+                            con: true,
+                            cha: true
+                        },
 
-                    //    armorProficiency: [
-                    //        armorType.light,
-                    //    ],
-                    //    proficientWithShield: false,
-                    //    weaponProficiency: angular.extend([
-                    //        weaponType.handCrossbow,
-                    //        weaponType.longsword,
-                    //        weaponType.rapier,
-                    //        weaponType.shortsword
-                    //    ], weaponType.simple()),
+                        specializationName: "",
+                        specializations: [
+                        ]
+                    },
+                    warlock: {
+                        name: "Warlock",
+                        hitDie: 8,
 
-                    //    saveThrowProficiency: {
-                    //        dex: true,
-                    //        int: true
-                    //    },
+                        armorProficiency: [
+                            armorType.light
+                        ],
+                        proficientWithShield: false,
+                        weaponProficiency: weaponType.simple(),
 
-                    //    specializationName: "",
-                    //    specializations: [
-                    //    ]
-                    //},
-                    //{
-                    //    name: "Sorcerer",
-                    //    hitDie: 6,
+                        saveThrowProficiency: {
+                            wis: true,
+                            cha: true
+                        },
 
-                    //    proficientWithShield: false,
-                    //    weaponProficiency: [
-                    //        weaponType.dagger,
-                    //        weaponType.sling,
-                    //        weaponType.quarterstaff,
-                    //        weaponType.lightCrossbow
-                    //    ],
+                        specializationName: "",
+                        specializations: [
+                        ]
+                    },
+                    wizard: {
+                        name: "Wizard",
+                        hitDie: 6,
 
-                    //    saveThrowProficiency: {
-                    //        con: true,
-                    //        cha: true
-                    //    },
+                        proficientWithShield: false,
+                        weaponProficiency: [
+                            weaponType.dagger,
+                            weaponType.dart,
+                            weaponType.sling,
+                            weaponType.quarterstaff,
+                            weaponType.lightCrossbow
+                        ],
 
-                    //    specializationName: "",
-                    //    specializations: [
-                    //    ]
-                    //},
-                    //{
-                    //    name: "Warlock",
-                    //    hitDie: 8,
+                        saveThrowProficiency: {
+                            int: true,
+                            wis: true
+                        },
 
-                    //    armorProficiency: [
-                    //        armorType.light
-                    //    ],
-                    //    proficientWithShield: false,
-                    //    weaponProficiency: weaponType.simple(),
-
-                    //    saveThrowProficiency: {
-                    //        wis: true,
-                    //        cha: true
-                    //    },
-
-                    //    specializationName: "",
-                    //    specializations: [
-                    //    ]
-                    //},
-                    //{
-                    //    name: "Wizard",
-                    //    hitDie: 6,
-
-                    //    proficientWithShield: false,
-                    //    weaponProficiency: [
-                    //        weaponType.dagger,
-                    //        weaponType.dart,
-                    //        weaponType.sling,
-                    //        weaponType.quarterstaff,
-                    //        weaponType.lightCrossbow
-                    //    ],
-
-                    //    saveThrowProficiency: {
-                    //        int: true,
-                    //        wis: true
-                    //    },
-
-                    //    specializationName: "",
-                    //    specializations: [
-                    //    ]
-                    //}
-                ];
+                        specializationName: "",
+                        specializations: [
+                        ]
+                    }
+                };
             }
         ]);
 })();

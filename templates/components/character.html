@@ -133,10 +133,12 @@
         </thead>
         <tbody>
             <tr ng-repeat="class in character.model.classes track by $index">
-                <!--<td>{{$index + 1}}</td>-->
                 <td class="char-class" cloak-field data-model="(class.class ? class.class.name : '') + (class.archetype ? '(' + class.archetype + ')' : '')">
-                    <select ng-model="class.class"
-                            ng-options="availableClass as availableClass.name for availableClass in character.availableClasses"></select>
+                    <select class="autosuggest-dropdown"
+                            ac-select
+                            ac-model="character.model.classes[$index].class"
+                            ac-options="availableClass.name for availableClass in character.availableClasses"
+                            ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter Class', noItemsText: 'Press <enter> to add a custom class' }"></select>
                 </td>
                 <td class="char-hd">{{class.class.hitDie ? '1d' + class.class.hitDie : ''}}</td>
                 <td class="char-lvl" cloak-field data-model="class.level">
