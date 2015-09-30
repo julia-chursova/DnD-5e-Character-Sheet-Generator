@@ -335,16 +335,16 @@
                         features: [
                             "Attacking at long range doesn't impose disadvantage on your ranged weapon attack rolls.",
                             "Your ranged weapon attacks ignore half cover and three-quarters cover.",
-"Before you make an attack with a ranged weapon that you are proficient with, you can choose lo take a -5 penally to the attack roll. If the attack hits, you add +10 to the attack's damage."
+                            "Before you make an attack with a ranged weapon that you are proficient with, you can choose lo take a -5 penally to the attack roll. If the attack hits, you add +10 to the attack's damage."
                         ]
                     },
 
                     shieldMaster: {
                         name: "Shield Master",
                         features: [
-                            "If you take the Attack action on your turn, you can use a bonus action to try to shove a creature within 5 feet of you with your shield.", 
+                            "If you take the Attack action on your turn, you can use a bonus action to try to shove a creature within 5 feet of you with your shield.",
                             "If you aren't incapacilated, you can add your shield's AC bonus to any Dexterity saving throw you make against a spell or other harmful effect that targets only you.",
-"If you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you can use your reaclion to take no damage if you succeed on the saving throw, interposing your shield between yourself and the source of the effect."
+                            "If you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you can use your reaclion to take no damage if you succeed on the saving throw, interposing your shield between yourself and the source of the effect."
                         ]
                     },
 
@@ -359,8 +359,8 @@
                         name: "Spell Sniper",
                         prerequisite: "The ability to cast at least one spell",
                         features: [
-                            "When you cast a spell that requires you to make an attack roll, the spell's range is doubled.", 
-                            "Your ranged spell attacks ignore half cover and three-quarters cover.", 
+                            "When you cast a spell that requires you to make an attack roll, the spell's range is doubled.",
+                            "Your ranged spell attacks ignore half cover and three-quarters cover.",
                             "You learn one cantrip that requires an attack roll. Choose the cantrip from the bard, cleric, druid, sorcerer, warlock, or wizard spell list."
                         ]
                     },
@@ -370,7 +370,7 @@
                         features: [
                             "Increase your Strength or Constitution score by 1, to a maximum of 20.",
                             "You are proficient with improvised weapons and unarmed strikes",
-                            "Your unarmed strike uses a d4 for damage.", 
+                            "Your unarmed strike uses a d4 for damage.",
                             "When you hit a creature with an unarmed strike or an improvised weapon on your turn, you can use a bonus action to attempt to grapple the target."
                         ]
                     },
@@ -385,12 +385,12 @@
                     warCaster: {
                         name: "War Caster",
                         prerequisite: "The ability to cast at least one spell",
-                        applicable: function () {
+                        applicable: function() {
                             // todo: implement
                         },
                         features: [
-                            "You have advantage on Constitution saving throws that you make to maintain your concentration on a spell when you lake damage.", 
-                            "You can perform the components of spells even when you have weapons or a shield in one or both hands.", 
+                            "You have advantage on Constitution saving throws that you make to maintain your concentration on a spell when you lake damage.",
+                            "You can perform the components of spells even when you have weapons or a shield in one or both hands.",
                             "When a hoslile creature's movement provokes an opportunily attack from you, you can use your reaction to cast a spell at the creature, rather than making an opportunity attack. The spell must have a casling time of 1 action and must target only that creature."
                         ]
                     },
@@ -398,7 +398,7 @@
                     weaponMaster: {
                         name: "Weapon Master",
                         features: [
-                            "Increase your Strength or Dexterity score by 1, to a maxilllum of 20.", 
+                            "Increase your Strength or Dexterity score by 1, to a maximum of 20.",
                             "You gain proficiency with four weapons of your choice."
                         ]
                     }
