@@ -1,4 +1,6 @@
-﻿.fillable-formula {
+﻿@import '../constants.less';
+
+.fillable-formula {
     margin-top: 4px;
 
     .label,
@@ -12,11 +14,11 @@
         text-align: center;
 
         &.total {
-            border: 1px solid #777777;
+            border: 1px solid @borderColor;
         }
 
         &.summand {
-            border-bottom: 1px solid #777777;
+            border-bottom: 1px solid @borderColor;
         }
 
         &.min-input input {
@@ -25,7 +27,7 @@
 
         div {
             width: 100%;
-            min-height: 21px;
+            min-height: @rowHeight;
         }
     }
 }
