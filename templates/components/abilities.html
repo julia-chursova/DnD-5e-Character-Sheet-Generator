@@ -1,11 +1,15 @@
-﻿<div class="abilities component" ng-controller="abilitiesController as ctrl">
+﻿<div class="abilities component" ng-controller="abilitiesController as controller">
     <div class="header">Abilities</div>
 
     <table class="common-table">
         <tbody>
-            <tr ng-repeat="ability in ctrl.abilitiesModel.abilities track by $index">
-                <td class="ability" ng-attr-title="{{ ability.description }}">
-                    <span class="name">{{ ability.name }}</span>
+            <tr ng-repeat="ability in controller.abilitiesModel.abilities track by $index">
+                <td class="ability" ng-attr-title="{{ ability.description }}" cloak-field data-model="ability.name">
+                    <select class="stateList"
+                            ac-select
+                            ac-model="controller.abilitiesModel.abilities[$index]"
+                            ac-options="availableAbility.name for availableAbility in controller.availableAbilities"
+                            ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter Ability Name', noItemsText: 'Press <enter> to add a custom ability' }"></select>
                 </td>
             </tr>
         </tbody>
