@@ -67,7 +67,7 @@
     <Content Include="scripts\app\controllers\spellcastingController.js" />
     <Content Include="scripts\app\controllers\statsController.js" />
     <Content Include="scripts\app\controllers\attacksController.js" />
-    <Content Include="scripts\app\dictionaries\abilityProvider.js" />
+    <Content Include="scripts\app\dictionaries\abilitiesProvider.js" />
     <Content Include="scripts\app\dictionaries\armorTypeProvider.js" />
     <Content Include="scripts\app\dictionaries\backgroundProvider.js" />
     <Content Include="scripts\app\dictionaries\classProvider.js" />
