@@ -7,20 +7,24 @@
 			'raceModel',
             'statsModel',
             'featsModel',
+
             'raceProvider',
             'sizeProvider',
 			'classProvider',
 			'backgroundProvider',
+            'featsProvider',
 
             function (
                 characterModel,
                 raceModel,
                 statsModel,
                 featsModel,
+
                 raceProvider,
                 sizeProvider,
                 classProvider,
-                backgroundProvider
+                backgroundProvider,
+                featsProvider
             ) {
                 var self = this;
 
@@ -49,7 +53,7 @@
                 };
 
                 self.traitInitiativeBonus = function () {
-                    return featsModel.haveAlertFeat() ? '5' : '';
+                    return featsModel.haveFeat(featsProvider.alert) ? featsProvider.alert.bonus : '';
                 }
 
                 self.raceChanged = function() {

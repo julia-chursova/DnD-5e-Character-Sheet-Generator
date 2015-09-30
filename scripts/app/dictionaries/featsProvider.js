@@ -14,7 +14,8 @@
                             "+5 bonus to initiative.",
                             "You can't be surprised while you are conscious",
                             "Other creatures don't gain advantage on attack rolls against you as a result of beign hidden from you"
-                        ]
+                        ],
+                        bonus: 5
                     },
 
                     athlete: {

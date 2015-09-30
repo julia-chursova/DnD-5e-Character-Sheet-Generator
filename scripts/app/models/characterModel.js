@@ -6,9 +6,11 @@
             'statsModel',
             'featsModel',
             'raceModel',
-            'sizeProvider',
 
-            function(statsModel, featsModel, raceModel, sizeProvider) {
+            'sizeProvider',
+            'featsProvider',
+
+            function(statsModel, featsModel, raceModel, sizeProvider, featsProvider) {
                 var self = this;
 
                 var maxClasses = 5;
@@ -49,8 +51,8 @@
                 self.initiative = function() {
                     var result = statsModel.dexModifier() + self.initiativeBonus;
 
-                    if (featsModel.haveAlertFeat())
-                        result += 5;
+                    if (featsModel.haveFeat(featsProvider.alert))
+                        result += featsProvider.alert.bonus;
 
                     return result;
                 };
