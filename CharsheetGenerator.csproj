@@ -48,7 +48,7 @@
     <Content Include="scripts\app\app.js" />
     <Content Include="scripts\app\appComponents.js" />
     <Content Include="scripts\app\appState.js" />
-    <Content Include="scripts\app\common.js" />
+    <Content Include="scripts\app\extensions.js" />
     <Content Include="scripts\app\componentDirectives\portraitDirective.js" />
     <Content Include="scripts\app\controllers\abilitiesController.js" />
     <Content Include="scripts\app\controllers\appController.js" />
