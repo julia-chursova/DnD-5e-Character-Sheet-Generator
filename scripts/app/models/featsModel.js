@@ -11,6 +11,9 @@
 
 			    // Ctor
 			    (function init() {
+			        var featsCount = 9;
+			        for (var i = 0; i < featsCount; i++)
+			            self.feats.push({});
 			    })();
 
 			    // Methods
