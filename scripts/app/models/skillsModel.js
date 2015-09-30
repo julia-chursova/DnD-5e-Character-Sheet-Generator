@@ -9,7 +9,12 @@
 			    var self = this;
 
 				// Fields
-                self.skills = skillsProvider.skillList();
+			    self.skills = skillsProvider.skillList();
+
+			    // Calculable Properties
+                self.count = function() {
+                    return Object.keys(self.skills).length;
+                }
 
 				// Methods
 				self.exportData = function() {
