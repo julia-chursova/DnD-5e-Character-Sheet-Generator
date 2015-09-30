@@ -108,7 +108,7 @@ angular.module("acute.select", [])
                 // Create dropdown items
                 $scope.loadItems(dataItems, $scope.model);
                 // Save selected item
-                $scope.confirmedItem = angular.copy($scope.selectedItem);
+                $scope.confirmedItem = $scope.selectedItem;
                 $scope.allDataLoaded = $scope.items.length > 0;
             }
 
@@ -140,7 +140,7 @@ angular.module("acute.select", [])
 
             $scope.setInitialSelection = function() {
                 if ($scope.model) {
-                    $scope.initialSelection = angular.copy($scope.model);
+                    $scope.initialSelection = $scope.model;
                     $scope.initialItem = $scope.getItemFromDataItem($scope.model, 0);
                     $scope.confirmedItem = $scope.selectedItem = $scope.initialItem;
                     $scope.comboText = $scope.confirmedItem ? $scope.confirmedItem.text : "";
@@ -201,7 +201,7 @@ angular.module("acute.select", [])
 
                 // If data is not filtered
                 if (!$scope.searchText) {
-                    angular.copy($scope.items, $scope.allItems);
+                    $scope.allItems = $scope.items;
                 }
 
                 $scope.setListHeight();
@@ -535,7 +535,7 @@ angular.module("acute.select", [])
                 var oldConfirmedItem = $scope.confirmedItem;
                 var close = false;
                 if ($scope.selectedItem) {
-                    $scope.confirmedItem = angular.copy($scope.selectedItem);
+                    $scope.confirmedItem = $scope.selectedItem;
                     $scope.modelUpdating = true;
                     $scope.model = $scope.selectedItem.value;
                     $scope.comboText = $scope.selectedItem.text;
