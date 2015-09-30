@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module(appName)
-        .factory('abilityProvider', [
+        .factory('abilitiesProvider', [
             'skillsModel',
             'skillsProvider',
             'spellcastingModel',

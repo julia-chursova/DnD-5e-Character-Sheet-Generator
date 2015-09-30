@@ -4,7 +4,7 @@
     angular.module(appName)
         .factory("raceProvider", [
             'sizeProvider',
-            'abilityProvider',
+            'abilitiesProvider',
             'languagesProvider',
             'armorTypeProvider',
             'toolTypeProvider',
@@ -12,7 +12,7 @@
 
             function(
                 sizeProvider,
-                abilityProvider,
+                abilitiesProvider,
                 languagesProvider,
                 armorTypeProvider,
                 toolTypeProvider,
@@ -71,9 +71,9 @@
                         speed: 25,
 
                         abilities: [
-                            abilityProvider.darkvision,
-                            abilityProvider.dwarvenResilience,
-                            abilityProvider.stonecunning
+                            abilitiesProvider.darkvision,
+                            abilitiesProvider.dwarvenResilience,
+                            abilitiesProvider.stonecunning
                         ],
 
                         languages: [
@@ -120,10 +120,10 @@
                         speed: 30,
 
                         abilities: [
-                            abilityProvider.darkvision,
-                            abilityProvider.keenSenses,
-                            abilityProvider.feyAncestry,
-                            abilityProvider.trance
+                            abilitiesProvider.darkvision,
+                            abilitiesProvider.keenSenses,
+                            abilitiesProvider.feyAncestry,
+                            abilitiesProvider.trance
                         ],
 
                         languages: [
@@ -142,7 +142,7 @@
                                     weaponTypeProvider.longbow
                                 ],
                                 abilities: [
-                                    abilityProvider.highElfCantrip
+                                    abilitiesProvider.highElfCantrip
                                 ]
                             },
                             {
@@ -156,16 +156,16 @@
                                 ],
                                 speed: 35,
                                 abilities: [
-                                    abilityProvider.maskOfTheWild
+                                    abilitiesProvider.maskOfTheWild
                                 ]
                             },
                             {
                                 name: "Drow",
                                 chaBonus: 1,
                                 abilities: [
-                                    abilityProvider.superiorDarkvision,
-                                    abilityProvider.sunlightSensitivity,
-                                    abilityProvider.drowMagic
+                                    abilitiesProvider.superiorDarkvision,
+                                    abilitiesProvider.sunlightSensitivity,
+                                    abilitiesProvider.drowMagic
                                 ],
                                 weaponProficiency: [
                                     weaponTypeProvider.rapier,
@@ -181,9 +181,9 @@
                         size: sizeProvider.small,
                         speed: 25,
                         abilities: [
-                            abilityProvider.lucky,
-                            abilityProvider.brave,
-                            abilityProvider.halflingNimbleness
+                            abilitiesProvider.lucky,
+                            abilitiesProvider.brave,
+                            abilitiesProvider.halflingNimbleness
                         ],
 
                         languages: [
@@ -196,14 +196,14 @@
                                 name: "Lightfoot",
                                 chaBonus: 1,
                                 abilities: [
-                                    abilityProvider.naturalStealthy
+                                    abilitiesProvider.naturalStealthy
                                 ]
                             },
                             {
                                 name: "Stout",
                                 conBonus: 1,
                                 abilities: [
-                                    abilityProvider.stoutResilience
+                                    abilitiesProvider.stoutResilience
                                 ]
                             }
                         ]
@@ -241,8 +241,8 @@
                         size: sizeProvider.small,
                         speed: 25,
                         abilities: [
-                            abilityProvider.darkvision,
-                            abilityProvider.gnomeCunning
+                            abilitiesProvider.darkvision,
+                            abilitiesProvider.gnomeCunning
                         ],
                         languages: [
                             languagesProvider.common,
@@ -253,15 +253,15 @@
                                 name: "Forest",
                                 dexBonus: 1,
                                 abilities: [
-                                    abilityProvider.speakWithSmallBeasts,
-                                    abilityProvider.naturalIllusionist
+                                    abilitiesProvider.speakWithSmallBeasts,
+                                    abilitiesProvider.naturalIllusionist
                                 ]
                             },
                             {
                                 name: "Rock",
                                 conBonus: 1,
                                 abilities: [
-                                    abilityProvider.artificersLore
+                                    abilitiesProvider.artificersLore
                                 ],
                                 toolsProficiency: [
                                     toolTypeProvider.artisan
@@ -275,10 +275,10 @@
                         size: sizeProvider.medium,
                         speed: 30,
                         abilities: [
-                            abilityProvider.darkvision,
-                            abilityProvider.feyAncestry,
-                            abilityProvider.halfElfScore,
-                            abilityProvider.skillVersatility
+                            abilitiesProvider.darkvision,
+                            abilitiesProvider.feyAncestry,
+                            abilitiesProvider.halfElfScore,
+                            abilitiesProvider.skillVersatility
                         ],
                         languages: [
                             languagesProvider.common,
@@ -292,9 +292,9 @@
                         size: sizeProvider.medium,
                         speed: 30,
                         abilities: [
-                            abilityProvider.darkvision,
-                            abilityProvider.menacing,
-                            abilityProvider.relentlessEndurance
+                            abilitiesProvider.darkvision,
+                            abilitiesProvider.menacing,
+                            abilitiesProvider.relentlessEndurance
                         ],
                         languages: [
                             languagesProvider.common,
@@ -308,9 +308,9 @@
                         size: sizeProvider.medium,
                         speed: 30,
                         abilities: [
-                            abilityProvider.darkvision,
-                            abilityProvider.hellishResistance,
-                            abilityProvider.infernalLegacy
+                            abilitiesProvider.darkvision,
+                            abilitiesProvider.hellishResistance,
+                            abilitiesProvider.infernalLegacy
                         ],
                         languages: [
                             languagesProvider.common,
