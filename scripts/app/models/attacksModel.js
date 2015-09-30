@@ -53,7 +53,7 @@
 						self.ammo = item.ammo;
 
 						self.attack = function () {
-						    var proficiencyBonus = proficienciesModel.weapons[self.type]
+						    var proficiencyBonus = self.type && proficienciesModel.weapons[self.type]
                                 ? characterModel.proficiencyBonus()
                                 : 0;
 

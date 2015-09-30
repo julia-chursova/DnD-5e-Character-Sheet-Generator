@@ -29,7 +29,7 @@
 
 				// Computed properties
 				self.proficientWithArmor = function (armorType) {
-					return self.armor[armorType];
+					return armorType && self.armor.hasOwnProperty(armorType) && self.armor[armorType];
 				}
 
 				// Methods

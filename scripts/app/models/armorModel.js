@@ -67,7 +67,7 @@
                 };
 
                 self.proficientWithArmor = function() {
-                    return proficienciesModel.armor.hasOwnProperty(self.armor.type) && proficienciesModel.armor[self.armor.type];
+                    return proficienciesModel.proficientWithArmor(self.armor.type);
                 }
 
                 self.reduceSpeed = function() {
