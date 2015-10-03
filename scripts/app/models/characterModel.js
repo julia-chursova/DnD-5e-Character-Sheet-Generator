@@ -83,7 +83,8 @@
                         isMale: self.isMale,
                         background: self.background,
                         classes: self.classes,
-                        initiativeBonus: self.initiativeBonus
+                        initiativeBonus: self.initiativeBonus,
+						selectedSize: self.selectedSize
                     }
                 }
 
@@ -94,6 +95,7 @@
                     self.background = data.background;
                     self.classes = data.classes;
                     self.initiativeBonus = data.initiativeBonus;
+	                self.selectedSize = data.selectedSize;
                 }
 
                 return self;

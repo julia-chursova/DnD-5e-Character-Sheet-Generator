@@ -19,6 +19,7 @@
 			'spellcastingModel',
 			'statsModel',
 			'attacksModel',
+			'abilitiesModel',
 
 			function(
 				armorModel,
@@ -36,7 +37,8 @@
 				speedModel,
 				spellcastingModel,
 				statsModel,
-				attacksModel
+				attacksModel,
+				abilitiesModel
 			) {
 				function importData(model, data) {
 					if (!data)
@@ -62,7 +64,8 @@
 						speed: speedModel.exportData(),
 						spellcasting: spellcastingModel.exportData(),
 						stats: statsModel.exportData(),
-						attacks: attacksModel.exportData()
+						attacks: attacksModel.exportData(),
+						abilities: abilitiesModel.exportData()
 					}
 
 					return btoa(JSON.stringify(object));
@@ -91,6 +94,7 @@
 					importData(spellcastingModel, data.spellcasting);
 					importData(statsModel, data.stats);
 					importData(attacksModel, data.attacks);
+					importData(abilitiesModel, data.abilities);
 				}
 
 				return {

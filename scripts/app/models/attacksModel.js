@@ -26,7 +26,8 @@
 							baseDamage: item.baseDamage,
 							isRanged: item.isRanged,
 							range: item.range,
-							ammo: item.ammo
+							ammo: item.ammo,
+							type: item.type
 						};
 					}
 
@@ -97,6 +98,7 @@
 						attacks.push({
 							name: '',
 							baseDamage: '',
+							isRanged: false,
 							range: '',
                             type: null,
 							ammo: null

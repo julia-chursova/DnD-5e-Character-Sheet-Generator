@@ -8,11 +8,9 @@
 
 				// Fields
 				self.weapons = {
-
 				};
 
 				self.armor = {
-
 				};
 
 				self.tools = [];
@@ -42,9 +40,9 @@
 				}
 
 				self.importData = function (data) {
-				    self.weapons = data.weapons;
-				    self.armor = data.armor;
-				    self.tools = data.tools;
+				    self.weapons = data.weapons || {};
+				    self.armor = data.armor || {};
+				    self.tools = data.tools || [];
 				}
 
 				return self;

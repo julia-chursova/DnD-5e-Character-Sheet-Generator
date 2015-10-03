@@ -67,7 +67,7 @@
 				}
 
 				self.importData = function(data) {
-					self.race = data.race;
+					self.race = data;
 				}
 
 				return self;
