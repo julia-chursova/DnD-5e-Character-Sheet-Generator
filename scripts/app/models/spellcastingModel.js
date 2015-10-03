@@ -12,11 +12,16 @@
 			(function init() {
 				var maxSpellLevel = 9;
 				for (var i = 0; i <= maxSpellLevel; i++) {
+					var spells = [];
+					for (var spellInd = 0; spellInd < 7; spellInd++) {
+						spells.push({});
+					}
+
 					self.spells.push({
 					    remaining: 0,
 					    maxPerDay: 0,
                         knownCount: 0,
-                        spells: []
+                        spells: spells
 					});
 				}
 			})();
