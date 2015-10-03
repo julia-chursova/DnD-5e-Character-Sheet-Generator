@@ -11,9 +11,11 @@
 			// Ctor
 			(function init() {
 				var maxSpellLevel = 9;
+				var maxSpellsInGroup = 6;
+
 				for (var i = 0; i <= maxSpellLevel; i++) {
 					var spells = [];
-					for (var spellInd = 0; spellInd < 7; spellInd++) {
+					for (var spellInd = 0; spellInd < maxSpellsInGroup; spellInd++) {
 						spells.push({});
 					}
 
