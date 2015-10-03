@@ -15,8 +15,8 @@
 
         var result = [];
         for (var i = 0; i < self.length; i++)
-            if (condition(self.length[i]))
-                result.push(self.length[i]);
+            if (condition(self[i]))
+                result.push(self[i]);
 
         return result;
     }
