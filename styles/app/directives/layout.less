@@ -31,6 +31,18 @@
     }
 }
 
+.always-drop {
+	height: 30px;
+}
+
+.drop-zone {
+	display: none;
+}
+
 [ng-drop].drag-enter {
-    background-color: powderblue;
+	> .drop-zone {
+		background-color: powderblue;
+		height: 30px;
+		display: block;
+	}
 }

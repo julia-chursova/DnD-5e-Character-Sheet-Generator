@@ -1,23 +1,26 @@
 ﻿<div ng-repeat="item in items track by $index">
-	<div ng-if="appState.isEditMode"
-		 ng-drop="true"
-		 ng-drop-success="addDraggableItem(items, $data, $index, $event)"
-		 ng-suppress-lowers="true">
-		-- Drop Area --
-	</div>
-	<div ng-if="item.type === 'component'"
-	     ng-include="item.template"
-	     ng-drag="appState.isEditMode"
-	     ng-drag-data="item"
-	     ng-drag-success="removeDraggableItem(items, item)"></div>
+	<div
+		ng-drop="true"
+		ng-drop-success="addDraggableItem(items, $data, $index, $event)"
+		ng-suppress-lowers="true">
+		<div class="drop-zone"></div>
+		<div ng-if="item.type === 'component'"
+			ng-include="item.template"
+			ng-drag="appState.isEditMode"
+			ng-drag-data="item"
+			ng-drag-success="removeDraggableItem(items, item)">
+		</div>
 
-	<div ng-if="item.type === 'block'"
-		 ng-include="'templates/directives/blockLayout.html'"
-		 ng-init="columns = item.data.columns"></div>
+		<div ng-if="item.type === 'block'"
+			ng-include="'templates/directives/blockLayout.html'"
+			ng-init="columns = item.data.columns">
+		</div>
+	</div>
 </div>
 <div ng-if="appState.isEditMode"
-	 ng-drop="true"
-	 ng-drop-success="addDraggableItem(items, $data, $index, $event)"
-	 ng-suppress-lowers="true">
-	-- Drop Area --
+	ng-drop="true"
+	ng-drop-success="addDraggableItem(items, $data, $index, $event)"
+	ng-suppress-lowers="true"
+	class="always-drop">
+	<div class="drop-zone"></div>
 </div>
