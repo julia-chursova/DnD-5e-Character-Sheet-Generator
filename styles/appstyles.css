@@ -40,70 +40,14 @@
   width: 100%;
 }
 
-.rotate270 {
-  -moz-transform: rotate(270deg);
-  -webkit-transform: rotate(270deg);
-  -o-transform: rotate(270deg);
-}
-.inline-block {
-  display: inline-block;
-  font-size: 12pt;
-}
-input[type=radio].custom {
-  display: none;
-}
-input[type=radio].custom + label span {
-  width: 14px;
-  height: 14px;
-  display: inline-block;
-  margin: -1px 4px 0 0;
-  vertical-align: middle;
-  cursor: pointer;
-  border: 1px solid #666666;
-}
-input[type=radio].custom:checked + label span {
-  background-color: red;
-}
-.cloakField.text {
-  min-height: 18px;
-  min-width: 10px;
-}
-.component table.fixed-table {
-  table-layout: fixed;
-}
-.component table.common-table {
-  overflow: hidden;
-  white-space: nowrap;
-  width: 100%;
-}
-.component table.common-table thead {
-  font-weight: bold;
-  color: #666666;
-  font-size: 12px;
-  padding: 2px 10px;
-  text-align: center;
-}
-.component table.common-table tbody {
-  font-size: 14px;
-  padding: 2px 10px;
-  text-align: center;
-}
-.component .left {
-  float: left;
-  margin-right: 6px;
-}
-.component table.common-table tr td:first-child {
-  text-align: left;
-}
-
 .component {
   width: 100%;
   margin-bottom: 10px;
 }
 .component .header {
-  background-color: gray;
+  background-color: #808080;
   text-transform: uppercase;
-  color: white;
+  color: #FFFFFF;
   padding: 2px 10px;
   text-align: center;
   font-family: dungeonFont, sans-serif;
@@ -116,30 +60,12 @@ input[type=radio].custom:checked + label span {
   font-size: 9pt;
   color: #222222;
 }
-.component .fillable-formula {
-  margin-top: 4px;
+.component table.fixed-table {
+  table-layout: fixed;
 }
-.component .fillable-formula .label,
-.component .fillable-formula .major-label {
-  text-align: center;
-}
-.component .fillable-formula .cell {
-  padding: 2px 6px;
-  width: 22px;
-  text-align: center;
-}
-.component .fillable-formula .cell.total {
-  border: 1px solid #777777;
-}
-.component .fillable-formula .cell.summand {
-  border-bottom: 1px solid #777777;
-}
-.component .fillable-formula .cell.min-input input {
-  width: 30px;
-}
-.component .fillable-formula .cell div {
-  width: 100%;
-  min-height: 20px;
+.component .left {
+  float: left;
+  margin-right: 6px;
 }
 
 
@@ -200,28 +126,25 @@ input[type=radio].custom:checked + label span {
   margin: 4px 0;
 }
 
+.abilities.component .ability .name {
+  font-size: 12px;
+}
+.abilities.component .ability .short-description {
+  font-size: 8pt;
+}
+
 .armor.component .armor-container {
   margin-top: 4px;
-  width: 100%;
 }
-.armor.component .armor-container .inline-block {
+.armor.component .armor-container .labeled-input {
+  margin-top: 0;
   vertical-align: top;
 }
+.armor.component .armor-container .type-data {
+  min-width: 100px;
+}
 .armor.component .numberInput {
-  border-bottom: 1px solid #aaaaaa;
-  height: 21px;
   width: 35px;
-}
-.armor.component .input {
-  height: 21px;
-}
-.armor.component .input input[type=number] {
-  width: 35px;
-}
-.armor.component .textInput {
-  border-bottom: 1px solid #aaaaaa;
-  text-align: left;
-  width: 100%;
 }
 .armor.component .numberInput,
 .armor.component .checkbox-input {
@@ -232,43 +155,86 @@ input[type=radio].custom:checked + label span {
   width: 39px;
 }
 
+.component.attacks .attack-container .params-block {
+  width: 49%;
+  vertical-align: top;
+}
+.component.attacks .attack-container .params-block .range-container {
+  margin-top: 4px;
+}
+.component.attacks .attack-container .params-block .range-container .type-data {
+  width: 49%;
+}
+.component.attacks .attack-container .params-block .range-container .range-data {
+  width: 24%;
+}
+.component.attacks .attack-container .params-block .range-container .is-ranged-data {
+  width: 20%;
+}
+.component.attacks .attack-container .params-block .range-container .labeled-input {
+  margin-top: 0;
+  vertical-align: top;
+}
+.component.attacks .attack-container .stats-block {
+  width: 49%;
+}
+.component.attacks .attack-container .stats-block .cell.total {
+  width: 96px;
+}
+.component.attacks .attack-container .stats-block .weapon-damage {
+  width: 96px;
+}
+.component.attacks .attack-container .stats-block .fillable-formula {
+  margin-top: 0;
+}
 .component.attacks .attack-container:nth-child(even) {
-  background-color: #aaaaaa;
+  background-color: #E0E0E0;
 }
 
-.character.component .cloakFieldContainer {
-  height: 18px;
-  border-bottom: 1px solid #aaaaaa;
-  width: 155px;
+.character.component .character-params-container {
+  display: flex;
+  flex-direction: row;
 }
-.character.component .cloakFieldContainer input[type=text] {
-  width: 100%;
-}
-.character.component .alignment-hor-label {
+.character.component .character-params-container .alignment .alignment-hor-label {
   text-align: center;
 }
-.character.component .left-label {
+.character.component .character-params-container .alignment .left-label {
   transform-origin: 60% 20%;
 }
-.character.component .right-label {
+.character.component .character-params-container .alignment .right-label {
   transform-origin: 30% 110%;
 }
-.character.component .race-data {
-  min-height: 20px;
-  align-items: stretch;
+.character.component .character-params-container .character-params {
+  vertical-align: top;
+  align-self: stretch;
+  flex: 1;
 }
-.character.component .size {
-  width: 110px;
+.character.component .character-params-container .character-params .character-params-row {
+  margin-top: 4px;
+  display: flex;
+}
+.character.component .character-params-container .character-params .character-params-row .inline-block {
+  vertical-align: top;
+}
+.character.component .character-params-container .character-params .character-params-row .inline-block.name-data,
+.character.component .character-params-container .character-params .character-params-row .inline-block.race-data {
+  margin: 0 4px;
+  width: 150px;
+}
+.character.component .character-params-container .character-params .character-params-row .inline-block.background-data,
+.character.component .character-params-container .character-params .character-params-row .inline-block.size-data {
+  flex: 1;
+  margin: 0 4px;
+}
+.character.component .character-params-container .character-params .character-params-row .inline-block.sex-data {
+  width: 70px;
+}
+.character.component .character-params-container .character-params .character-params-row .inline-block.sex-data .inline-block {
+  vertical-align: bottom;
 }
 .character.component .effective-level,
 .character.component .proficiency-bonus {
   font-size: 14px;
-}
-.character.component .common-table tbody td {
-  border-bottom: 1px dotted black;
-}
-.character.component tr {
-  height: 18px;
 }
 .character.component .char-class {
   width: 140px;
@@ -277,18 +243,12 @@ input[type=radio].custom:checked + label span {
 .character.component .char-lvl {
   width: 40px;
 }
-.character.component select {
-  width: 100%;
-}
-.character.component input[type=number] {
-  width: 100%;
+.character.component .path {
+  height: 21px;
+  width: 150px;
 }
 
-.common-inventory.component tbody td {
-  border-bottom: 1px dotted black;
-}
 .common-inventory.component tr {
-  height: 18px;
   max-width: 143px;
 }
 .common-inventory.component input[type=text] {
@@ -315,24 +275,23 @@ input[type=radio].custom:checked + label span {
   height: 18px;
 }
 
-.initiative.component .cell.feat {
+.hit-points.component table {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+.hit-points.component .total {
   width: 30px;
 }
+.hit-points.component .input {
+  height: 18px;
+}
+.hit-points.component .current-hitpoints .text {
+  padding-left: 7px;
+}
 
-.languages.component .add-language {
-  margin-top: 10px;
-}
-.languages.component .add-language .button-container {
-  vertical-align: top;
-}
-.languages.component .language-item {
-  border-bottom: 1px dotted #aaaaaa;
-}
-.languages.component .language-item .remove-language {
-  visibility: hidden;
-}
-.languages.component .language-item:hover .remove-language {
-  visibility: visible;
+.initiative.component .cell.feat {
+  width: 30px;
 }
 
 .logo.component img {
@@ -348,37 +307,12 @@ input[type=radio].custom:checked + label span {
   vertical-align: bottom;
 }
 
-.money.component .money-container div {
-  display: inline-block;
-}
 .money.component .money-container {
-  border-bottom: 1px dotted black;
+  width: 47px;
+  vertical-align: top;
 }
-.money.component input[type=number] {
-  width: 30px;
-}
-money.component .money-label {
-  font-size: 14px;
-}
-
-.player.component .label {
-  font-size: 8pt;
-  color: #333333;
-}
-.player.component .itemContainer {
+.money.component .total-block {
   margin-top: 4px;
-}
-.player.component .cloakFieldContainer {
-  height: 18px;
-  border-bottom: 1px solid #aaaaaa;
-}
-.player.component .cloakField.input {
-  height: 100%;
-  max-width: 100%;
-}
-.player.component .cloakField input {
-  height: 100%;
-  max-width: 100%;
 }
 
 .portrait.component .canvas {
@@ -386,6 +320,10 @@ money.component .money-label {
   min-height: 320px;
 }
 
+.saveThrows.component .major-label,
+.saveThrows.component .label {
+  width: 52px;
+}
 .saveThrows.component .checkbox-container {
   text-align: center;
   vertical-align: middle;
@@ -397,9 +335,9 @@ money.component .money-label {
 }
 .shield.component .shield-container .inline-block {
   vertical-align: top;
+  margin-top: 0;
 }
 .shield.component .input {
-  border-bottom: 1px solid #aaaaaa;
   height: 21px;
 }
 .shield.component .input input[type=number] {
@@ -413,12 +351,6 @@ money.component .money-label {
   text-align: center;
 }
 
-.skills.component tbody td {
-  border-bottom: 1px dotted black;
-}
-.skills.component .skills-value {
-  border: 1px solid gray;
-}
 .skills.component .right {
   float: right;
   padding: 0;
@@ -426,30 +358,152 @@ money.component .money-label {
 }
 .skills.component .is-proficient {
   min-width: 20px;
-  min-height: 20px;
-}
-.skills.component .is-proficient input[type=checkbox] {
-  margin: 0;
+  min-height: 22px;
 }
 .skills.component .misc-bonus {
   width: 38px;
-  height: 22px;
-  vertical-align: bottom;
+  min-height: 22px;
 }
-.skills.component .misc-bonus input {
-  width: 34px;
+.skills.component .custom {
+  margin-left: 20px;
 }
 
+.spells-table {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.spells-table thead {
+  font-weight: bold;
+  color: #666666;
+  font-size: 12px;
+  padding: 2px 10px;
+  text-align: center;
+}
+.spells-table tbody {
+  padding: 2px 10px;
+}
+.spells-table tbody .spell-cell {
+  width: 100%;
+  height: 20px;
+  border-bottom: 1px dotted #888888;
+}
+
+.stats.component .major-label,
 .stats.component .label {
   width: 52px;
 }
 
+table.common-table {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+table.common-table thead {
+  font-weight: bold;
+  color: #666666;
+  font-size: 12px;
+  padding: 2px 10px;
+  text-align: center;
+}
+table.common-table tbody {
+  font-size: 14px;
+  padding: 2px 10px;
+  text-align: center;
+}
+table.common-table tbody tr td {
+  border-bottom: 1px dotted #333333;
+  height: 20px;
+}
+table.common-table tbody tr td.total {
+  border: 1px solid #333333;
+}
+table.common-table tr td:first-child {
+  text-align: left;
+}
+
+.fillable-formula {
+  margin-top: 4px;
+}
+.fillable-formula .label,
+.fillable-formula .major-label {
+  text-align: center;
+}
+.fillable-formula .cell {
+  padding: 2px 0;
+  width: 22px;
+  text-align: center;
+}
+.fillable-formula .cell.total {
+  border: 1px solid #333333;
+}
+.fillable-formula .cell.summand {
+  border-bottom: 1px solid #888888;
+}
+.fillable-formula .cell.min-input input {
+  width: 30px;
+}
+.fillable-formula .cell div {
+  width: 100%;
+  min-height: 20px;
+}
+
+.rotate270 {
+  -moz-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+}
+.inline-block {
+  display: inline-block;
+}
+
+.labeled-input {
+  margin-top: 4px;
+}
+.labeled-input .label {
+  font-size: 8pt;
+  color: #333333;
+}
+.labeled-input .cloakFieldContainer {
+  height: 18px;
+  border-bottom: 1px solid #888888;
+}
+.labeled-input.bottom-label .label {
+  text-align: center;
+  margin-top: 4px;
+}
+
+input[type=radio].custom {
+  display: none;
+}
+input[type=radio].custom + label span {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid #333333;
+}
+input[type=radio].custom:checked + label span {
+  background-color: #FF0000;
+}
+
 .cloakFieldContainer {
   display: flex;
+  height: 100%;
+  width: 100%;
 }
 .cloakFieldContainer .cloakField {
   align-items: stretch;
   width: 100%;
+  height: 100%;
+}
+.cloakFieldContainer .cloakField input:not([type="checkbox"]),
+.cloakFieldContainer .cloakField select,
+.cloakFieldContainer .cloakField .autosuggest-dropdown {
+  width: 100%;
+  height: 100%;
 }
 
 @media print {
@@ -475,10 +529,18 @@ money.component .money-label {
   vertical-align: top;
   align-items: stretch;
 }
-.container .container-box:hover .drag-zone {
+.container .container-box :hover .drag-zone {
   width: 100%;
   height: 20px;
 }
-[ng-drop].drag-enter {
+.always-drop {
+  height: 30px;
+}
+.drop-zone {
+  display: none;
+}
+[ng-drop].drag-enter > .drop-zone {
   background-color: powderblue;
+  height: 30px;
+  display: block;
 }
