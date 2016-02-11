@@ -26,7 +26,7 @@
 }
 @font-face {
   font-family: dungeonFont;
-  src: url('fonts/dalelands_uncial.otf');
+  src: url('../fonts/dalelands_uncial.otf');
 }
 .app .a4-sheet {
   margin: 0 auto;
