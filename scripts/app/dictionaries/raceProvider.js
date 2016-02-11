@@ -1,218 +1,325 @@
 (function() {
-	"use strict";
+    "use strict";
 
-	angular.module(appName)
-		.factory("raceProvider", function() {
-			function copyProperties(src, dest) {
-				for (var prop in src) {
-					if (prop !== "name" && prop !== "size" && prop !== "subtypes") {
-						if (!dest.hasOwnProperty(prop))
-							dest[prop] = src[prop];
-						else
-							dest[prop] += src[prop];
-					}
-				}
-			}
+    angular.module(appName)
+        .factory("raceProvider", [
+            'sizeProvider',
+            'abilitiesProvider',
+            'languagesProvider',
+            'armorTypeProvider',
+            'toolTypeProvider',
+            'weaponTypeProvider',
 
-			function transformData(races) {
-				var result = [];
+            function(
+                sizeProvider,
+                abilitiesProvider,
+                languagesProvider,
+                armorTypeProvider,
+                toolTypeProvider,
+                weaponTypeProvider
+            ) {
 
-				for (var i = 0; i < races.length; i++) {
-					if (races[i].subtypes) {
-						for (var j = 0; j < races[i].subtypes.length; j++) {
-							var subRace = {
-								name: races[i].name + " (" + races[i].subtypes[j].name + ")",
-								size: races[i].subtypes[j].size || races[i].size
-							};
+                function copyProperties(src, dest) {
+                    for (var prop in src) {
+                        if (prop === 'name' || prop === 'size' || prop === 'subtypes') {
+                            continue;
+                        }
 
-							copyProperties(races[i], subRace);
-							copyProperties(races[i].subtypes[j], subRace);
+                        if (!dest.hasOwnProperty()) {
+                            dest[prop] = src[prop];
+                            continue;
+                        }
 
-							result.push(subRace);
-						}
-					} else {
-						result.push(races[i]);
-					}
-				}
+                        if (prop === "abilities" || prop === "spells" || prop === "toolsProficiency") {
+                            dest[prop].concat(src[prop]);
+                            continue;
+                        }
 
-				return result;
-			}
+                        dest[prop] += src[prop];
+                    }
+                }
 
-			var data = [
-				{
-					name: "Dwarf",
-					size: "Medium",
-					conBonus: 2,
-					speed: 25,
-					abilities: ["Darkvision", "Dwarven Resilience", "Stonecunning"],
-					languages: ["Common", "Dwarvish"],
+                function transformData(races) {
+                    var result = [];
 
-					weaponProficiency: [
-						"hammer", "axe"
-					],
+                    for (var i = 0; i < races.length; i++) {
+                        if (races[i].subtypes) {
+                            for (var j = 0; j < races[i].subtypes.length; j++) {
+                                var subRace = {
+                                    name: races[i].name + " (" + races[i].subtypes[j].name + ")",
+                                    size: races[i].subtypes[j].size || races[i].size
+                                };
 
-					toolProficiency: [
-						"smith", "brewer", "mason"
-					],
+                                copyProperties(races[i], subRace);
+                                copyProperties(races[i].subtypes[j], subRace);
 
-					subtypes: [
-						{
-							name: "Mountain",
-							strBonus: 2,
-							hpBonus: function(characterLevel) {
-								return 1 + characterLevel;
-							}
-						},
-						{
-							name: "Hill",
-							wisBonus: 1,
-							armorProficiency: ["light", "medium"]
-						}
-					]
-				},
-				{
-					name: "Elf",
-					size: "Medium",
-					dexBonus: 2,
-					speed: 30,
+                                result.push(subRace);
+                            }
+                        } else {
+                            result.push(races[i]);
+                        }
+                    }
 
-					abilities: ["Darkvision", "Keen Senses", "Fey Ancestry", "Trance"],
-					languages: ["Common", "Elvish"],
+                    return result;
+                }
 
-					subtypes: [
-						{
-							name: "High",
-							intBonus: 1,
-							weaponProficiency: [
-								"longsword", 
-								"shortsword", 
-								"longbow",
-								"shortbow"
-							]
-							// todo: add cantrips
-							// todo: extra language
-						},
-						{
-							name: "Wood",
-							wisBonus: 1,
-							weaponProficiency: [
-								"longsword", 
-								"shortsword", 
-								"longbow",
-								"shortbow"
-							],
-							speed: 35,
-							abilities: ["Mask of the Wild"]
-						},
-						{
-							name: "Drow",
-							chaBonus: 1,
-							abilities: ["Superior Darkvision", "Sunlight Sensitivity"],
-							// todo: add cantrip
-							weaponProficiency: [
-								"rapier",
-								"shortsword",
-								"hand crossbow"
-							]
-						}
-					]
-				},
-				{
-					name: "Halfling",
-					dexBonus: 2,
-					size: "Small",
-					speed: 25,
-					abilities: ["Lucky", "Brave", "Halfling Nimbleness"],
-					languages: ["Common", "Halfling"],
-					subtypes: [
-						{
-							name: "Lightfoot",
-							chaBonus: 1,
-							abilities: ["Natural Stealthy"]
-						},
-						{
-							name: "Stout",
-							conBonus: 1,
-							abilities: ["Stout Resilience"]
-						}
-					]
-				},
-				{
-					name: "Human",
-					strBonus: 1,
-					dexBonus: 1,
-					conBonus: 1,
-					intBonus: 1,
-					wisBonus: 1,
-					chaBonus: 1,
-					size: "Medium",
-					speed: 30,
-					languages: ["Common"]
-				},
-				{
-					name: "Dragonborn",
-					strBonus: 2,
-					chaBonus: 1,
-					size: "Medium",
-					speed: 30,
-					// todo: draconic ancestry
-					// todo: add gragonborn block
-					languages: ["Common", "Draconic"]
-				}, 
-				{
-					name: "Gnome",
-					intBonus: 2,
-					size: "Small",
-					speed: 25,
-					abilities: ["Darkvision", "Gnome Cunning"],
-					languages: ["Common", "Gnomish"],
-					subtypes: [
-						{
-							name: "Forest",
-							dexBonus: 1,
-							// todo: add cantrip,
-							abilities: ["Speak with Small Beasts"]
-						},
-						{
-							name: "Rock",
-							conBonus: 1,
-							abilities: ["Artificer's lore"],
-							toolProficiency: ["Artisan"]
-						}
-					]
-				},
-				{
-					name: "Half-Elf",
-					chaBonus: 2,
-					// todo: add "increase two other abilities of your choise"
-					size: "Medium",
-					speed: 30,
-					abilities: ["Darkvision", "Fey Ancestry"],
-					// todo: proficiency in two skills of your choice
-					languages: ["Common", "Elvish"]//todo: +1 additional language of your choise
-				},
-				{
-					name: "Half-Orc",
-					strBonus: 2,
-					conBonus: 1,
-					size: "Medium",
-					speed: 30,
-					// todo: rewrite menacing
-					abilities: ["Darkvision", "Menacing", "Relentless Endurance"],
-					languages: ["Common", "Orc"]
-				},
-				{
-					name: "Tiefling",
-					intBonus: 1,
-					chaBonus: 2,
-					size: "Medium",
-					speed: 30,
-					abilities: ["Darkvision", "Hellish resistance"],
-					// todo: add cantrips
-					languages: ["Common", "Infernal"]
-				}
-			];
+                var data = [
+                    {
+                        name: "Dwarf",
+                        size: sizeProvider.medium,
+                        conBonus: 2,
+                        speed: 25,
 
-			return transformData(data);
-		});
+                        abilities: [
+                            abilitiesProvider.darkvision,
+                            abilitiesProvider.dwarvenResilience,
+                            abilitiesProvider.stonecunning
+                        ],
+
+                        languages: [
+                            languagesProvider.common,
+                            languagesProvider.dwarvish
+                        ],
+
+                        weaponProficiency: [
+                            weaponTypeProvider.battleAxe,
+                            weaponTypeProvider.handAxe,
+                            weaponTypeProvider.warhammer,
+                            weaponTypeProvider.throwingHammer
+                        ],
+
+                        toolsProficiency: [
+                            toolTypeProvider.smith,
+                            toolTypeProvider.brewer,
+                            toolTypeProvider.mason
+                        ],
+
+                        subtypes: [
+                            {
+                                name: "Mountain",
+                                strBonus: 2,
+                                armorProficiency: [
+                                    armorTypeProvider.light,
+                                    armorTypeProvider.medium
+                                ]
+
+                            },
+                            {
+                                name: "Hill",
+                                wisBonus: 1,
+                                hpBonus: function(characterLevel) {
+                                    return 1 + characterLevel;
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        name: "Elf",
+                        size: sizeProvider.medium,
+                        dexBonus: 2,
+                        speed: 30,
+
+                        abilities: [
+                            abilitiesProvider.darkvision,
+                            abilitiesProvider.keenSenses,
+                            abilitiesProvider.feyAncestry,
+                            abilitiesProvider.trance
+                        ],
+
+                        languages: [
+                            languagesProvider.common,
+                            languagesProvider.elvish
+                        ],
+
+                        subtypes: [
+                            {
+                                name: "High",
+                                intBonus: 1,
+                                weaponProficiency: [
+                                    weaponTypeProvider.shortsword,
+                                    weaponTypeProvider.longsword,
+                                    weaponTypeProvider.shortbow,
+                                    weaponTypeProvider.longbow
+                                ],
+                                abilities: [
+                                    abilitiesProvider.highElfCantrip
+                                ]
+                            },
+                            {
+                                name: "Wood",
+                                wisBonus: 1,
+                                weaponProficiency: [
+                                    weaponTypeProvider.shortsword,
+                                    weaponTypeProvider.longsword,
+                                    weaponTypeProvider.shortbow,
+                                    weaponTypeProvider.longbow
+                                ],
+                                speed: 35,
+                                abilities: [
+                                    abilitiesProvider.maskOfTheWild
+                                ]
+                            },
+                            {
+                                name: "Drow",
+                                chaBonus: 1,
+                                abilities: [
+                                    abilitiesProvider.superiorDarkvision,
+                                    abilitiesProvider.sunlightSensitivity,
+                                    abilitiesProvider.drowMagic
+                                ],
+                                weaponProficiency: [
+                                    weaponTypeProvider.rapier,
+                                    weaponTypeProvider.shortsword,
+                                    weaponTypeProvider.handCrossbow
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: "Halfling",
+                        dexBonus: 2,
+                        size: sizeProvider.small,
+                        speed: 25,
+                        abilities: [
+                            abilitiesProvider.lucky,
+                            abilitiesProvider.brave,
+                            abilitiesProvider.halflingNimbleness
+                        ],
+
+                        languages: [
+                            languagesProvider.common,
+                            languagesProvider.halfling
+                        ],
+
+                        subtypes: [
+                            {
+                                name: "Lightfoot",
+                                chaBonus: 1,
+                                abilities: [
+                                    abilitiesProvider.naturalStealthy
+                                ]
+                            },
+                            {
+                                name: "Stout",
+                                conBonus: 1,
+                                abilities: [
+                                    abilitiesProvider.stoutResilience
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: "Human",
+                        strBonus: 1,
+                        dexBonus: 1,
+                        conBonus: 1,
+                        intBonus: 1,
+                        wisBonus: 1,
+                        chaBonus: 1,
+                        size: sizeProvider.medium,
+                        speed: 30,
+                        languages: [
+                            languagesProvider.common
+                        ]
+                    },
+                    {
+                        name: "Dragonborn",
+                        strBonus: 2,
+                        chaBonus: 1,
+                        size: sizeProvider.medium,
+                        speed: 30,
+                        // todo: draconic ancestry
+                        // todo: add gragonborn block
+                        languages: [
+                            languagesProvider.common,
+                            languagesProvider.draconic
+                        ]
+                    },
+                    {
+                        name: "Gnome",
+                        intBonus: 2,
+                        size: sizeProvider.small,
+                        speed: 25,
+                        abilities: [
+                            abilitiesProvider.darkvision,
+                            abilitiesProvider.gnomeCunning
+                        ],
+                        languages: [
+                            languagesProvider.common,
+                            languagesProvider.gnomish
+                        ],
+                        subtypes: [
+                            {
+                                name: "Forest",
+                                dexBonus: 1,
+                                abilities: [
+                                    abilitiesProvider.speakWithSmallBeasts,
+                                    abilitiesProvider.naturalIllusionist
+                                ]
+                            },
+                            {
+                                name: "Rock",
+                                conBonus: 1,
+                                abilities: [
+                                    abilitiesProvider.artificersLore
+                                ],
+                                toolsProficiency: [
+                                    toolTypeProvider.artisan
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: "Half-Elf",
+                        chaBonus: 2,
+                        size: sizeProvider.medium,
+                        speed: 30,
+                        abilities: [
+                            abilitiesProvider.darkvision,
+                            abilitiesProvider.feyAncestry,
+                            abilitiesProvider.halfElfScore,
+                            abilitiesProvider.skillVersatility
+                        ],
+                        languages: [
+                            languagesProvider.common,
+                            languagesProvider.elvish
+                        ]
+                    },
+                    {
+                        name: "Half-Orc",
+                        strBonus: 2,
+                        conBonus: 1,
+                        size: sizeProvider.medium,
+                        speed: 30,
+                        abilities: [
+                            abilitiesProvider.darkvision,
+                            abilitiesProvider.menacing,
+                            abilitiesProvider.relentlessEndurance
+                        ],
+                        languages: [
+                            languagesProvider.common,
+                            languagesProvider.orc
+                        ]
+                    },
+                    {
+                        name: "Tiefling",
+                        intBonus: 1,
+                        chaBonus: 2,
+                        size: sizeProvider.medium,
+                        speed: 30,
+                        abilities: [
+                            abilitiesProvider.darkvision,
+                            abilitiesProvider.hellishResistance,
+                            abilitiesProvider.infernalLegacy
+                        ],
+                        languages: [
+                            languagesProvider.common,
+                            languagesProvider.infernal
+                        ]
+                    }
+                ];
+
+                return transformData(data);
+            }
+        ]);
 })();

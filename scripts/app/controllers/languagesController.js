@@ -5,6 +5,7 @@
         .controller('languagesController', [
             'languagesModel',
             'languagesProvider',
+
             function (languagesModel, languagesProvider) {
                 var self = this;
 

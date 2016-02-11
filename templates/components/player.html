@@ -1,20 +1,20 @@
 <div class="player component" ng-controller="playerController as player">
-    <div class="itemContainer">
+    <div class="labeled-input">
         <div class="label">Player name</div>
-        <div cloak-field class="cloakFieldContainer name" data-model="player.model.name">
+        <div cloak-field data-model="player.model.name">
             <input type="text" ng-model="player.model.name" />
         </div>
     </div>
-    <div class="itemContainer">
+    <div class="labeled-input">
         <div class="label">Campaign</div>
-        <div cloak-field class="cloakFieldContainer campaign" data-model="player.model.campaign">
-            <input type="text" ng-model="player.model.campaign"/>
+        <div cloak-field data-model="player.model.campaign">
+            <input type="text" ng-model="player.model.campaign" />
         </div>
     </div>
-    <div class="itemContainer">
+    <div class="labeled-input">
         <div class="label">XP</div>
-        <div cloak-field class="cloakFieldContainer xp" data-model="player.model.XP">
-            <input type="number" ng-model="player.model.XP" min="0"/>
+        <div cloak-field data-model="player.model.XP">
+            <input type="number" ng-model="player.model.XP" min="0" />
         </div>
     </div>
 </div>

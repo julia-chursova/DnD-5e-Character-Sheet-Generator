@@ -1,13 +1,18 @@
-.logo.component img {
-    width: 50px;
-    height: 25px;
-	vertical-align: top;
-}
+@import '../constants.less';
 
-.logo.component span {
-	color: #FF0000;
-	font-family: dungeonFont, sans-serif;
-	text-transform: uppercase;
-	font-weight: 800;
-	vertical-align: bottom;
+.logo.component {
+
+	img {
+		width: 50px;
+		height: 25px;
+		vertical-align: top;
+	}
+
+	span {
+		color: @highlightColor;
+		font-family: @dungeonFont;
+		text-transform: uppercase;
+		font-weight: 800;
+		vertical-align: bottom;
+	}
 }

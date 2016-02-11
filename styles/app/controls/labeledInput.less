@@ -1,0 +1,23 @@
+﻿@import '../constants.less';
+
+.labeled-input {
+    margin-top: 4px;
+
+
+    .label {
+        font-size: @labelSize;
+        color: @labelColor;
+    }
+
+    .cloakFieldContainer {
+        height: 18px;
+        border-bottom: 1px solid @obscuredBorderColor;
+    }
+
+    &.bottom-label {
+        .label {
+            text-align: center;
+            margin-top: 4px;
+        }
+    }
+}

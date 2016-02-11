@@ -11,8 +11,20 @@
 			// Ctor
 			(function init() {
 				var maxSpellLevel = 9;
+				var maxSpellsInGroup = 6;
+
 				for (var i = 0; i <= maxSpellLevel; i++) {
-					self.spells.push([]);
+					var spells = [];
+					for (var spellInd = 0; spellInd < maxSpellsInGroup; spellInd++) {
+						spells.push({});
+					}
+
+					self.spells.push({
+					    remaining: 0,
+					    maxPerDay: 0,
+                        knownCount: 0,
+                        spells: spells
+					});
 				}
 			})();
 

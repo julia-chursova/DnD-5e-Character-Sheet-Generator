@@ -1,0 +1,25 @@
+﻿@import '../constants.less';
+
+.spells-table {
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+
+	thead {
+		font-weight: bold;
+		color: #666666;
+		font-size: 12px;
+		padding: 2px 10px;
+		text-align: center;
+	}
+
+	tbody {
+		padding: 2px 10px;
+
+		.spell-cell {
+			width: 100%;
+			height: @rowHeight;
+			border-bottom: 1px dotted @tableRowBorderColor;
+		}
+	}
+}

@@ -6,7 +6,7 @@
 			var self = this;
 
 			// Constants
-			var maxLanguages = 15;
+			var maxLanguages = 7;
 
 			// Fields
 			self.languages = [];

@@ -1,40 +1,37 @@
 ﻿(function () {
-	'use strict';
+    'use strict';
 
-	angular.module(appName)
+    angular.module(appName)
 		.factory('featsModel', [
 			function () {
-				var self = this;
+			    var self = this;
 
-				// Fields
-				self.feats = [];
+			    // Fields
+			    self.feats = [];
 
-				// Ctor
-				(function init() {
-					self.feats.push({
-						name: 'Advanced sitemaker',
-						prereq: 'Create charlist',
-						description: 'This is feat for those who can create interactive charlists'
-					});
-				})();
+			    // Ctor
+			    (function init() {
+			        var featsCount = 9;
+			        for (var i = 0; i < featsCount; i++)
+			            self.feats.push({});
+			    })();
 
-				// Calculable properties
-				self.haveAlertFeat = function() {
-					return true;
-				}
+			    // Methods
+                self.haveFeat = function(feat) {
+                    return self.feats.indexOf(feat) >= 0;
+                }
 
-				// Methods
-				self.exportData = function() {
-					return {
-						feats: self.feats
-					}
-				}
+			    self.exportData = function () {
+			        return {
+			            feats: self.feats
+			        }
+			    }
 
-				self.importData = function(data) {
-					self.feats = data.feats;
-				}
+			    self.importData = function (data) {
+			        self.feats = data.feats;
+			    }
 
-				return self;
+			    return self;
 			}
 		]);
 })();

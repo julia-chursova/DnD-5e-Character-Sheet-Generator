@@ -1,3 +1,26 @@
-﻿<div class="spellcasting component">
+﻿<div class="spellcasting component" ng-controller="spellcastingController as controller">
 	<div class="header">Spellcasting</div>
+
+	<table class="spells-table">
+		<thead>
+			<tr>
+				<td ng-repeat="spellGroup in controller.simpleSpells() track by $index">
+					<div>#{{$index}} (Known: {{spellGroup.knownCount}}; Per Day: {{spellGroup.remaining}} / {{spellGroup.maxPerDay}})</div>
+				</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td ng-repeat="spellGroup in controller.simpleSpells() track by $index">
+					<div class="spell-cell" ng-repeat="spell in spellGroup.spells track by $index"
+					     cloak-field data-model="spell.name">
+						<select ac-select
+						        ac-model="spellGroup.spells[$index]"
+						        ac-options="spell.name for spell in controller.availableSpells[$parent.$parent.$parent.$index]"
+						        ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter Spell', noItemsText: 'Press <enter> to add a custom spell' }"></select>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </div>

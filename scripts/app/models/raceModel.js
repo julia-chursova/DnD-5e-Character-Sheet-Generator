@@ -3,16 +3,71 @@
 
 	angular.module(appName)
 		.factory('raceModel', [
-			function () {
-				// Absolutely useless. We need it to fix circular dependency.
-				self.race = null;
+            'abilitiesModel',
+            'spellcastingModel',
+            'languagesModel',
+            'proficienciesModel',
 
+			function (abilitiesModel, spellcastingModel, languagesModel, proficienciesModel) {
+			    self.race = null;
+
+                // Events
+			    self.raceChanged = function() {
+			        if (!self.race)
+			            return;
+
+			        if (self.race.abilities) {
+			            abilitiesModel.abilities.forEach(function(item) {
+                            if (item && item.deactivate)
+			                    item.deactivate();
+			            });
+
+			            abilitiesModel.abilities = angular.extend([], self.race.abilities);
+
+			            self.race.abilities.forEach(function (item) {
+                            if (item && item.activate)
+			                    item.activate();
+			            });
+			        }
+
+			        if (self.race.languages) {
+			            languagesModel.languages = angular.extend([], self.race.languages);
+			        }
+
+			        if (self.race.armorProficiency) {
+			            proficienciesModel.armor = { };
+
+			            for (var i = 0; i < self.race.armorProficiency.length; i++) {
+			                proficienciesModel.armor[race.armorProficiency[i]] = true;
+			            }
+			        }
+
+			        if (race.weaponProficiency) {
+			            proficienciesModel.weapons = {};
+
+			            for (var i = 0; i < race.weaponProficiency.length; i++) {
+			                proficienciesModel.weapons[race.weaponProficiency[i]] = true;
+			            }
+			        }
+
+			        if (race.toolsProficiency) {
+			            proficienciesModel.tools = angular.extend([], race.toolsProficiency);
+			        }
+
+			        proficienciesModel.shieldProficiency = race.shieldProficiency || false;
+			    }
+
+			    self.backgroundChanged = function() {
+                    
+                }
+
+                // Methods
 				self.exportData = function() {
 					return self.race;
 				}
 
 				self.importData = function(data) {
-					self.race = data.race;
+					self.race = data;
 				}
 
 				return self;

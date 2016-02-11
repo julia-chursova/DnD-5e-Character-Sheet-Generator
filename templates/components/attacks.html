@@ -2,47 +2,56 @@
 	<div class="header">Attacks</div>
 
 	<div ng-repeat="attack in controller.attacks" class="attack-container">
-		<div class="inline-block">
-			<div>
+		<div class="inline-block params-block">
+			<div class="labeled-input">
 				<div class="label">Name</div>
 				<div cloak-field data-model="attack.name">
-					<input type="text" ng-model="attack.name" />
+					<input type="text" ng-model="attack.name"/>
 				</div>
 			</div>
-			<div>
-				<div class="label">Range</div>
-				<div cloak-field data-model="attack.range">
-					<input type="number" min="0" ng-model="attack.range"/>
-				</div>
-			</div>
-			<div>
-				<div class="label">Ranged</div>
-				<div cloak-field data-model="attack.isRanged ? '✓' : '-'">
-					<input type="checkbox" ng-model="attack.isRanged" />
+			<div class="range-container">
+			    <div class="labeled-input inline-block type-data">
+			        <div class="label">Type</div>
+			        <div cloak-field data-model="attack.type">
+			            <select ng-model="attack.type"
+			                    ng-options="type as type for type in controller.weaponTypes"></select>
+			        </div>
+			    </div>
+                <div class="labeled-input inline-block range-data">
+                    <div class="label">Range</div>
+                    <div cloak-field data-model="attack.range + ' ft.'">
+                        <input type="number" ng-model="attack.range"/>
+                    </div>
+                </div>
+				<div class="labeled-input inline-block is-ranged-data">
+					<div class="label">Ranged</div>
+					<div cloak-field data-model="attack.isRanged ? '✓' : '-'">
+						<input type="checkbox" ng-model="attack.isRanged"/>
+					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="inline-block">
+		<div class="inline-block stats-block">
 			<table class="fillable-formula">
 				<tbody>
 					<tr>
 						<td class="cell total">{{ attack.attack() }}</td>
 						<td>=</td>
-						<td class="cell summand min-input">
-							<div cloak-field data-model="attack.baseAttack">
-								<input type="number" ng-model="attack.baseAttack"/>
-							</div>
-						</td>
-						<td>+</td>
-						<td class="cell summand min-input">{{attack.isRanged ? controller.stats.dexModifier() : controller.stats.strModifier()}}</td>
+                        <td class="cell summand min-input">{{attack.isRanged ? controller.stats.dexModifier() : controller.stats.strModifier()}}</td>
+					    <td>+</td>
+                        <td class="cell summand min-input">{{ controller.proficienciesModel.weapons[attack.type] ? controller.character.proficiencyBonus() : '' }}</td>
+                        <td class="cell" cloak-field data-model="controller.proficienciesModel.weapons[attack.type] ? '✓' : '-'">
+                            <input type="checkbox" ng-model="controller.proficienciesModel.weapons[attack.type]" />
+                        </td>
 					</tr>
 					<tr>
 						<td class="major-label">Attack</td>
 						<td></td>
-						<td class="label">Weapon</td>
+                        <td class="label">{{ attack.isRanged ? 'DEX' : 'STR' }}</td>
 						<td></td>
-						<td class="label">{{ attack.isRanged ? 'DEX' : 'STR' }}</td>
+                        <td class="label">Proficiency</td>
+					    <td class="label">Proficient</td>
 					</tr>
 				</tbody>
 			</table>
@@ -51,7 +60,7 @@
 					<tr>
 						<td class="cell total">{{ attack.damage() }}</td>
 						<td>=</td>
-						<td class="cell summand min-input">
+						<td class="cell summand min-input weapon-damage">
 							<div cloak-field data-model="attack.baseDamage">
 								<input type="text" ng-model="attack.baseDamage"/>
 							</div>

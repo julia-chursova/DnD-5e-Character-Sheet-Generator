@@ -4,7 +4,10 @@
 	angular.module(appName)
 		.factory('attacksModel', [
 			'statsModel',
-			function(statsModel) {
+			'characterModel',
+            'proficienciesModel',
+
+			function(statsModel, characterModel, proficienciesModel) {
 				var self = this;
 
 				// Fields
@@ -20,11 +23,11 @@
 					function copyData(item) {
 						return {
 							name: item.name,
-							baseAttack: item.baseAttack,
 							baseDamage: item.baseDamage,
 							isRanged: item.isRanged,
 							range: item.range,
-							ammo: item.ammo
+							ammo: item.ammo,
+							type: item.type
 						};
 					}
 
@@ -44,14 +47,18 @@
 						var self = this;
 
 						self.name = item.name;
-						self.baseAttack = item.baseAttack;
+					    self.type = item.type;
 						self.baseDamage = item.baseDamage;
 						self.isRanged = item.isRanged;
 						self.range = item.range;
 						self.ammo = item.ammo;
 
-						self.attack = function() {
-							return (self.baseAttack || 0) + (self.isRanged
+						self.attack = function () {
+						    var proficiencyBonus = self.type && proficienciesModel.weapons[self.type]
+                                ? characterModel.proficiencyBonus()
+                                : 0;
+
+						    return proficiencyBonus + (self.isRanged
 								? statsModel.dexModifier()
 								: statsModel.strModifier());
 						};
@@ -90,9 +97,10 @@
 					for (var i = 0; i < attacksCount; i++) {
 						attacks.push({
 							name: '',
-							baseAttack: '',
 							baseDamage: '',
+							isRanged: false,
 							range: '',
+                            type: null,
 							ammo: null
 						});
 					}

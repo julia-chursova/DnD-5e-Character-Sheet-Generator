@@ -1,0 +1,33 @@
+﻿@import '../constants.less';
+
+.fillable-formula {
+    margin-top: 4px;
+
+    .label,
+    .major-label {
+        text-align: center;
+    }
+
+    .cell {
+        padding: 2px 0;
+        width: 22px;
+        text-align: center;
+
+        &.total {
+            border: 1px solid @emphasizedBorderColor;
+        }
+
+        &.summand {
+            border-bottom: 1px solid @obscuredBorderColor;
+        }
+
+        &.min-input input {
+            width: 30px;
+        }
+
+        div {
+            width: 100%;
+            min-height: @rowHeight;
+        }
+    }
+}

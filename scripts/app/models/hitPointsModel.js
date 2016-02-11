@@ -3,27 +3,46 @@
 
 	angular.module(appName)
 		.factory('hitPointsModel', [
-			function () {
+            'characterModel',
+            'raceModel',
+            'helpers',
+
+			function (characterModel, raceModel, helpers) {
 				var self = this;
 
+                // Fields
 				self.baseHitPoints = '';
-				self.hitPointsBonus = '';
+				self.userDefinedBonus = '';
+				self.currentHitPoints = '';
+
+			    // Calculable Properties
+				self.hitPointsBonus = function () {
+				    return helpers.isInteger(self.userDefinedBonus)
+                        ? self.userDefinedBonus
+                        : (raceModel.race && raceModel.race.hpBonus ? raceModel.race.hpBonus(characterModel.effectiveLevel()) : 0);
+                }
 
 				self.maxHitPoints = function () {
-					return (self.hitPointsBonus || 0) + (self.baseHitPoints || 0);
+				    return (self.baseHitPoints || 0) + (self.hitPointsBonus() || 0);
 				}
+
+                self.bonusDefined = function() {
+                    return (raceModel.race && raceModel.race.hpBonus) || helpers.isInteger(self.userDefinedBonus);
+                }
 
 				// Methods
 				self.exportData = function() {
 					return {
 						baseHitPoints: self.baseHitPoints,
-						hitPointsBonus: self.hitPointsBonus
+						userDefinedBonus: self.userDefinedBonus,
+					    currentHitPoints: self.currentHitPoints
 					}
 				}
 
 				self.importData = function(data) {
 					self.baseHitPoints = data.baseHitPoints;
-					self.hitPointsBonus = data.hitPointsBonus;
+					self.userDefinedBonus = data.userDefinedBonus;
+				    self.currentHitPoints = data.currentHitPoints;
 				}
 
 				return self;

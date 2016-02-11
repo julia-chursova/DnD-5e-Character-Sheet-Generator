@@ -1,0 +1,21 @@
+﻿@import '../constants.less';
+
+input[type=radio].custom {
+    display: none;
+
+    & + label span {
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        margin: -1px 4px 0 0;
+        vertical-align: middle;
+        cursor: pointer;
+        border: 1px solid @emphasizedBorderColor;
+    }
+
+    &:checked {
+        & + label span {
+            background-color: @highlightColor;
+        }
+    }
+}

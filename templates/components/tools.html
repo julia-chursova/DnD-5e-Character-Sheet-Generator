@@ -1,0 +1,15 @@
+﻿<div class="tools component" ng-controller="toolsController as controller">
+    <div class="header">Tools</div>
+
+    <table class="common-table">
+        <tr ng-repeat="tool in controller.proficiencies track by $index">
+            <td cloak-field data-model="tool">
+                <select class="autosuggest-dropdown"
+                        ac-select
+                        ac-model="controller.proficiencies[$index]"
+                        ac-options="availableTool for availableTool in controller.availableTools"
+                        ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter Name', noItemsText: 'Press <enter> to add a custom tool' }"></select>
+            </td>
+        </tr>
+    </table>
+</div>

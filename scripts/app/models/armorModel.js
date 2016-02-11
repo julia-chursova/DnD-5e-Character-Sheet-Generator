@@ -4,26 +4,25 @@
     angular.module(appName)
         .factory('armorModel', [
             'statsModel',
-            function (statsModel) {
+            'proficienciesModel',
+            'helpers',
+
+            function (statsModel, proficienciesModel, helpers) {
                 var self = this;
 
 				// Constants
                 self.baseAC = 10;
 
-                self.armorTypes = [
-                    'Light',
-                    'Medium',
-                    'Heavy'
-                ];
-
 				// Fields
                 self.armor = {
                     name: '',
-                    type: '',
+                    type: null,
                     armorClass: 4,
                     weight: 5,
                     stealsDisadvantage: false,
-                    maxDexBonus: 2
+                    maxDexBonus: 2,
+                    isProficient: false,
+                    minStrength: ''
                 };
 
                 self.shield = {
@@ -66,6 +65,14 @@
 
                     return result;
                 };
+
+                self.proficientWithArmor = function() {
+                    return proficienciesModel.proficientWithArmor(self.armor.type);
+                }
+
+                self.reduceSpeed = function() {
+                    return helpers.isInteger(self.armor.minStrength) && (statsModel.strength || 0) < (self.armor.minStrength || 0);
+                }
 
 				// Methods
 				self.exportData = function() {

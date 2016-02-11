@@ -13,21 +13,15 @@
 			</thead>
 			<tbody>
 				<tr ng-repeat="item in inventory.model.potionsAndScrolls">
-					<td class="item-name">
-						<div cloak-field data-model="item.name">
-							<input type="text" ng-model="item.name" />
-						</div>
-					</td>
-					<td class="item-weight">
-						<div cloak-field data-model="item.weight">
-							<input type="number" min="0" step="0.1" ng-model="item.weight" />
-						</div>
-					</td>
-					<td class="item-quantity">
-						<div cloak-field data-model="item.quantity">
-							<input type="number" min="0" ng-model="item.quantity" />
-						</div>
-					</td>
+                    <td class="item-name" cloak-field data-model="item.name">
+                        <input type="text" ng-model="item.name" />
+                    </td>
+                    <td class="item-weight" cloak-field data-model="item.weight">
+                        <input type="number" min="0" step="0.1" ng-model="item.weight" />
+                    </td>
+                    <td class="item-quantity" cloak-field data-model="item.quantity">
+                        <input type="number" min="0" ng-model="item.quantity" />
+                    </td>
 				</tr>
 			</tbody>
 		</table>

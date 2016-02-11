@@ -1,4 +1,6 @@
-<div class="cloakField input" ng-show="inEditMode">
-    <ng-transclude ng-click="stopEvent($event)" ng-keyup="disableEditMode($event)"></ng-transclude>
+<div class="cloakFieldContainer">
+	<div class="cloakField input" ng-show="inEditMode">
+		<ng-transclude ng-click="stopEvent($event)" ng-keyup="disableEditMode($event)"></ng-transclude>
+	</div>
+	<div class="cloakField text" ng-show="!inEditMode" ng-bind="model" ng-click="enableEditMode($event)"></div>
 </div>
-<div class="cloakField text" ng-show="!inEditMode" ng-bind="model" ng-click="enableEditMode($event)"></div>

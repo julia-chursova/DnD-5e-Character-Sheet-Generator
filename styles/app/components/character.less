@@ -1,58 +1,71 @@
-.character.component .cloakFieldContainer {
-    height: 18px;
-    border-bottom: 1px solid #aaaaaa;
-    width: 155px;
-}
+.character.component {
 
-    .character.component .cloakFieldContainer input[type=text] {
-        width: 100%;
+	.character-params-container {
+		display: flex;
+		flex-direction: row;
+
+		.alignment {
+			.alignment-hor-label {
+				text-align: center;
+			}
+
+			.left-label {
+				transform-origin: 60% 20%;
+			}
+
+			.right-label {
+				transform-origin: 30% 110%;
+			}
+		}
+
+		.character-params {
+			vertical-align: top;
+			align-self: stretch;
+			flex: 1;
+
+			.character-params-row {
+				margin-top: 4px;
+                display: flex;
+
+				.inline-block {
+					vertical-align: top;
+
+                    &.name-data, &.race-data {
+                        margin: 0 4px;
+                        width: 150px;
+                    }
+
+					&.background-data, &.size-data {
+						flex: 1;
+                        margin: 0 4px;
+					}
+
+                    &.sex-data {
+                        width: 70px;
+
+                        .inline-block {
+                            vertical-align: bottom;
+                        }
+                    }
+				}
+			}
+		}
+	}
+
+	.effective-level, .proficiency-bonus {
+		font-size: 14px;
+	}
+
+	.char-class {
+		width: 140px;
+	}
+
+	.char-hd, .char-lvl {
+		width: 40px;
+	}
+
+    .path {
+        height: 21px;
+        width: 150px;
     }
-
-.character.component .alignment-hor-label {
-    text-align: center;
-}
-
-.character.component .left-label {
-    transform-origin: 60% 20%;
-}
-
-.character.component .right-label {
-    transform-origin: 30% 110%;
-}
-
-.character.component .race-data {
-    min-height: 20px;
-    align-items: stretch;
-}
-
-.character.component .size {
-    width: 110px;
-}
-
-.character.component .effective-level, .character.component .proficiency-bonus {
-    font-size: 14px;
-}
-
-.character.component .common-table tbody td {
-    border-bottom: 1px dotted black;
-}
-
-.character.component tr {
-    height: 18px;
-}
-
-.character.component .char-class {
-    width: 140px;
-}
-
-.character.component .char-hd, .character.component .char-lvl {
-    width: 40px;
-}
-
-.character.component select {
-    width: 100%;
-}
-
-.character.component input[type=number] {
-    width: 100%;
 }

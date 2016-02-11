@@ -4,6 +4,7 @@
     angular.module(appName)
         .controller('statsController', [
             'statsModel',
+
             function (statsModel) {
                 function getPrintableBonus(bonus) {
                     return bonus == 0 ? '' : bonus;

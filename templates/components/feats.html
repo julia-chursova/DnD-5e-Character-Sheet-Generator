@@ -1,11 +1,15 @@
 ﻿<div class="feats component" ng-controller="featsController as controller">
 	<div class="header">Feats</div>
 
-	<div>
-		<div ng-repeat="feat in controller.model.feats track by $index">
-			<div ng-bind="feat.name"></div>
-			<div ng-bind="feat.prereq"></div>
-			<div ng-bind="feat.description"></div>
-		</div>
-	</div>
+    <table class="common-table">
+        <tr ng-repeat="feat in controller.feats track by $index">
+            <td cloak-field data-model="feat.name" ng-attr-title="{{ feat.features.join('&#013;') }}">
+                <select class="autosuggest-dropdown"
+                        ac-select
+                        ac-model="controller.feats[$index]"
+                        ac-options="availableFeat.name for availableFeat in controller.availableFeats"
+                        ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter feat name', noItemsText: 'No feats found'  }"></select>
+            </td>
+        </tr>
+    </table>
 </div>

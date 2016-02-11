@@ -1,21 +1,31 @@
 ﻿<div class="component hit-points" ng-controller="hitPointsController as controller">
-	<div class="header">HP</div>
+    <div class="header">HP</div>
 
-	Base HP:
-	<div cloak-field data-model="controller.model.baseHitPoints">
-		<input type="number" min="1" step="1" ng-model="controller.model.baseHitPoints" />
-	</div>
+    <table class="fillable-formula">
+        <tr>
+            <td class="cell total" ng-bind="controller.maxHitPoints()"></td>
+            <td>=</td>
+            <td class="cell summand" cloak-field data-model="controller.model.baseHitPoints">
+                <input type="number" min="1" step="1" ng-model="controller.model.baseHitPoints" />
+            </td>
+            <td>+</td>
+            <td class="cell summand" cloak-field data-model="controller.model.bonusDefined() ? controller.model.hitPointsBonus() : ''">
+                <input type="number" ng-model="controller.model.userDefinedBonus" />
+            </td>
+        </tr>
+        <tr>
+            <td class="major-label">Max</td>
+            <td></td>
+            <td class="label">Base</td>
+            <td></td>
+            <td class="label">Bonus</td>
+        </tr>
+    </table>
 
-	HP Bonus:
-	<div cloak-field data-model="controller.model.hitPointsBonus">
-		<input type="number" ng-model="controller.model.hitPointsBonus" />
-	</div>
-
-	Max HP:
-	<div ng-bind="controller.maxHitPoints()"></div>
-
-	Current HP:
-	<div>
-
-	</div>
+    <div class="labeled-input bottom-label current-hitpoints">
+        <div cloak-field data-model="controller.model.currentHitPoints">
+            <input type="number" ng-model="controller.model.currentHitPoints" />
+        </div>
+        <div class="label">Current</div>
+    </div>
 </div>

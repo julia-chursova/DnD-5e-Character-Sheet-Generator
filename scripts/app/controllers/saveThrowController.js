@@ -6,6 +6,7 @@
 			'saveThrowModel',
 			'characterModel',
 			'statsModel',
+
 			function(saveThrowModel, characterModel, statsModel) {
 				var self = this;
 
