@@ -26,8 +26,9 @@
 					}
 				}
 
-				self.importData = function(data) {
-					self.skills = data.skills;
+				self.importData = function (data) {
+				    self.skills = skillsProvider.skillList();
+				    //self.skills = data.skills;
 				}
 
 				return self;
