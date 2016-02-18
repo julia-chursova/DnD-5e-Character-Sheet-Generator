@@ -53,8 +53,10 @@
 		            serializer.deserialize();
 	            });
 
-	            serializer.loadModel();
+                if (!window.location.hash) {
+                    serializer.loadModel();
+                }
 
-	            $interval(serializer.saveModel, 10000);
+                $interval(serializer.saveModel, 10000);
             }]);
 })();
