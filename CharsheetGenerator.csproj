@@ -104,6 +104,7 @@
     <Content Include="scripts\libs.js" />
     <Content Include="scripts\libs\acute.select.modified.js" />
     <Content Include="scripts\libs\angular.min.js" />
+    <Content Include="scripts\libs\dexie.js" />
     <Content Include="scripts\libs\ngDraggable.modified.js" />
     <Content Include="scripts\tests\lib\angular-mocks.js" />
     <Content Include="scripts\tests\lib\jasmine-2.3.4\boot.js" />
