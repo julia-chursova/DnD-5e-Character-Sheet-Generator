@@ -12,13 +12,12 @@
             	var maxPotionsAndScrolls = 10;
 	            var maxQuestItems = 10;
 
-				// Fields
-	            self.items = [];
-	            self.potionsAndScrolls = [];
-	            self.questItems = [];
-
 				// Ctor
-	            (function init() {
+                self.init = function () {
+                    self.items = [];
+                    self.potionsAndScrolls = [];
+                    self.questItems = [];
+
 		            var i;
 		            for (i = 0; i < maxCommonItems; i++) {
 			            self.items.push({});
@@ -31,7 +30,9 @@
 		            for (i = 0; i < maxQuestItems; i++) {
 			            self.questItems.push({});
 		            }
-	            })();
+                }
+
+                self.init();
 
 				// Calculable properties
                 self.inventoryWeight = function () {

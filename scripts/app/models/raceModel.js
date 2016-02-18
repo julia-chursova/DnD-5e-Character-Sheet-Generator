@@ -9,9 +9,13 @@
             'proficienciesModel',
 
 			function (abilitiesModel, spellcastingModel, languagesModel, proficienciesModel) {
-			    self.race = null;
+                self.init = function() {
+			        self.race = null;
+                }
 
-                // Events
+			    self.init();
+
+			    // Events
 			    self.raceChanged = function() {
 			        if (!self.race)
 			            return;

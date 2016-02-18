@@ -6,24 +6,24 @@
 			function () {
 				var self = this;
 
-				// Fields
-				self.weapons = {
-				};
+			    self.init = function () {
+			        self.weapons = {
+			        };
 
-				self.armor = {
-				};
+			        self.armor = {
+			        };
 
-				self.tools = [];
+			        self.tools = [];
 
-				self.shieldProficiency = false;
+			        self.shieldProficiency = false;
 
-			    // Ctor
-			    (function () {
 			        var toolCount = 5;
 
 			        for (var i = 0; i < toolCount; i++)
 			            self.tools.push('');
-			    })();
+			    }
+
+			    self.init();
 
 				// Computed properties
 				self.proficientWithArmor = function (armorType) {

@@ -6,15 +6,15 @@
 			function () {
 			    var self = this;
 
-			    // Fields
-			    self.feats = [];
+			    self.init = function () {
+			        self.feats = [];
 
-			    // Ctor
-			    (function init() {
 			        var featsCount = 9;
 			        for (var i = 0; i < featsCount; i++)
 			            self.feats.push({});
-			    })();
+			    }
+
+			    self.init();
 
 			    // Methods
                 self.haveFeat = function(feat) {

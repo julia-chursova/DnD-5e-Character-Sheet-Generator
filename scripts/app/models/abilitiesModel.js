@@ -6,16 +6,17 @@
             function () {
                 var self = this;
 
-                // Fields
-                self.abilities = [];
+                // Init contains BOTH definition of fields and initialization for them
+                self.init = function() {
+                    self.abilities = [];
 
-                // Ctor
-                (function () {
                     var maxAbilities = 10;
 
                     for (var i = 0; i < maxAbilities; i++)
                         self.abilities.push(null);
-                })();
+                }
+
+                self.init();
 
                 // Methods
                 self.exportData = function () {

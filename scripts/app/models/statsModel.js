@@ -13,27 +13,30 @@
 
 			    var self = this;
 
-			    // Fields
-			    self.strength = '';
-			    self.dexterity = '';
-			    self.constitution = '';
-			    self.intelligence = '';
-			    self.wisdom = '';
-			    self.charisma = '';
+			    self.init = function() {
+			        self.strength = '';
+			        self.dexterity = '';
+			        self.constitution = '';
+			        self.intelligence = '';
+			        self.wisdom = '';
+			        self.charisma = '';
 
-			    self.customRacialStrBonus = '';
-			    self.customRacialDexBonus = '';
-			    self.customRacialConBonus = '';
-			    self.customRacialIntBonus = '';
-			    self.customRacialWisBonus = '';
-			    self.customRacialChaBonus = '';
+			        self.customRacialStrBonus = '';
+			        self.customRacialDexBonus = '';
+			        self.customRacialConBonus = '';
+			        self.customRacialIntBonus = '';
+			        self.customRacialWisBonus = '';
+			        self.customRacialChaBonus = '';
 
-			    self.strBonus = '';
-			    self.dexBonus = '';
-			    self.conBonus = '';
-			    self.intBonus = '';
-			    self.wisBonus = '';
-			    self.chaBonus = '';
+			        self.strBonus = '';
+			        self.dexBonus = '';
+			        self.conBonus = '';
+			        self.intBonus = '';
+			        self.wisBonus = '';
+			        self.chaBonus = '';
+			    }
+
+			    self.init();
 
 			    // Calculable fields
 			    self.racialStrBonus = function () {

@@ -10,30 +10,34 @@
             function (statsModel, proficienciesModel, helpers) {
                 var self = this;
 
-				// Constants
+                // Constants
                 self.baseAC = 10;
 
-				// Fields
-                self.armor = {
-                    name: '',
-                    type: null,
-                    armorClass: 4,
-                    weight: 5,
-                    stealsDisadvantage: false,
-                    maxDexBonus: 2,
-                    isProficient: false,
-                    minStrength: ''
-                };
+                // Fields
+                self.init = function () {
+                    self.armor = {
+                        name: '',
+                        type: null,
+                        armorClass: '',
+                        weight: '',
+                        stealsDisadvantage: false,
+                        maxDexBonus: '',
+                        isProficient: false,
+                        minStrength: ''
+                    };
 
-                self.shield = {
-                    name: '',
-                    armorClass: 2,
-                    weight: 6
-                };
+                    self.shield = {
+                        name: '',
+                        armorClass: '',
+                        weight: ''
+                    };
 
-                self.miscBonus = '';
+                    self.miscBonus = '';
+                }
 
-				// Calculable properties
+                self.init();
+
+                // Calculable properties
                 self.shieldWeight = function () {
                     return self.shield ? self.shield.weight || 0 : 0;
                 };
@@ -42,12 +46,12 @@
                     return self.armor ? self.armor.weight || 0 : 0;
                 };
 
-	            self.dexBonus = function() {
-					return self.armor &&(self.armor.armorClass || 0) > 0 &&
+                self.dexBonus = function () {
+                    return self.armor && (self.armor.armorClass || 0) > 0 &&
 					(self.armor.maxDexBonus === 0 || self.armor.maxDexBonus)
                         ? Math.min(self.armor.maxDexBonus, statsModel.dexModifier())
                         : statsModel.dexModifier();
-	            };
+                };
 
                 self.armorClass = function () {
                     var result = self.baseAC;
@@ -61,33 +65,33 @@
                     if (self.miscBonus)
                         result += (self.miscBonus || 0);
 
-	                result += self.dexBonus();
+                    result += self.dexBonus();
 
                     return result;
                 };
 
-                self.proficientWithArmor = function() {
+                self.proficientWithArmor = function () {
                     return proficienciesModel.proficientWithArmor(self.armor.type);
                 }
 
-                self.reduceSpeed = function() {
+                self.reduceSpeed = function () {
                     return helpers.isInteger(self.armor.minStrength) && (statsModel.strength || 0) < (self.armor.minStrength || 0);
                 }
 
-				// Methods
-				self.exportData = function() {
-					return {
-						armor: self.armor,
-						shield: self.shield,
-						miscBonus: self.miscBonus
-					}
-				}
+                // Methods
+                self.exportData = function () {
+                    return {
+                        armor: self.armor,
+                        shield: self.shield,
+                        miscBonus: self.miscBonus
+                    }
+                }
 
-				self.importData = function(data) {
-					self.armor = data.armor;
-					self.shield = data.shield;
-					self.miscBonus = data.miscBonus;
-				}
+                self.importData = function (data) {
+                    self.armor = data.armor;
+                    self.shield = data.shield;
+                    self.miscBonus = data.miscBonus;
+                }
 
                 return self;
             }

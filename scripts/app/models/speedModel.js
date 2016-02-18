@@ -9,8 +9,11 @@
 			function (raceModel, armorModel) {
 				var self = this;
 
-				// Fields
-				self.userDefinedSpeed = '';
+			    self.init = function () {
+			        self.userDefinedSpeed = '';
+			    }
+
+			    self.init();
 
 				// Calculable field
 				self.speed = function () {

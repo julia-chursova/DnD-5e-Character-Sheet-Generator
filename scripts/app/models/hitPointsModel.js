@@ -10,10 +10,13 @@
 			function (characterModel, raceModel, helpers) {
 				var self = this;
 
-                // Fields
-				self.baseHitPoints = '';
-				self.userDefinedBonus = '';
-				self.currentHitPoints = '';
+			    self.init = function () {
+			        self.baseHitPoints = '';
+			        self.userDefinedBonus = '';
+			        self.currentHitPoints = '';
+			    }
+
+			    self.init();
 
 			    // Calculable Properties
 				self.hitPointsBonus = function () {

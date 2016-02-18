@@ -4,11 +4,12 @@
     angular.module(appName)
         .controller('appController', [
             '$rootScope',
+            '$interval',
 			'appState',
 			'appComponents',
 			'serializer',
 
-            function ($rootScope, appState, appComponents, serializer) {
+            function ($rootScope, $interval, appState, appComponents, serializer) {
                 var self = this;
 
 	            var linkUpdatingInProgress = false;
@@ -37,6 +38,14 @@
 					linkUpdatingInProgress = false;
 				}
 
+				self.newDocument = function () {
+				    serializer.newModel();
+				}
+
+				self.globalClick = function (event) {
+				    $rootScope.$broadcast('global-click', event);
+				}
+
 	            $rootScope.$on("$locationChangeSuccess", function() {
 		            if (linkUpdatingInProgress)
 			            return;
@@ -44,8 +53,8 @@
 		            serializer.deserialize();
 	            });
 
-                self.globalClick = function (event) {
-                    $rootScope.$broadcast('global-click', event);
-                }
+	            serializer.loadModel();
+
+	            $interval(serializer.saveModel, 10000);
             }]);
 })();

@@ -9,15 +9,18 @@
 			function (statsModel, characterModel) {
 				var self = this;
 
-				// Fields
-				self.isStrProficient = false;
-				self.isDexProficient = false;
-				self.isConProficient = false;
-				self.isIntProficient = false;
-				self.isWisProficient = false;
-				self.isChaProficient = false;
+			    self.init = function () {
+			        self.isStrProficient = false;
+			        self.isDexProficient = false;
+			        self.isConProficient = false;
+			        self.isIntProficient = false;
+			        self.isWisProficient = false;
+			        self.isChaProficient = false;
+			    }
 
-				// Calculable fields
+			    self.init();
+
+			    // Calculable fields
 				function calculateSaveThrow(isProficient, baseModifier) {
 					var result = baseModifier;
 

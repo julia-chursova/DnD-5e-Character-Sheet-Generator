@@ -8,8 +8,11 @@
 			function (skillsProvider) {
 			    var self = this;
 
-				// Fields
-			    self.skills = skillsProvider.skillList();
+				self.init = function() {
+			        self.skills = skillsProvider.skillList();
+				}
+
+			    self.init();
 
 			    // Calculable Properties
                 self.count = function() {
