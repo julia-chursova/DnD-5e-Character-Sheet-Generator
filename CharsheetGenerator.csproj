@@ -178,7 +178,7 @@
     <Content Include="templates\menu.html" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\dalelands_uncial.otf" />
+    <Content Include="styles\dalelands_uncial.otf" />
     <Content Include="LICENSE" />
   </ItemGroup>
   <ItemGroup>
