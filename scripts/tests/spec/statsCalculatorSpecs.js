@@ -34,8 +34,22 @@ describe("Stats Model", function () {
     function generateFunction (score, expectedModifier) {
         return function() {
             model.strength = score;
-
             expect(model.strModifier()).toBe(expectedModifier);
+
+            model.dexterity = score;
+            expect(model.dexModifier()).toBe(expectedModifier);
+
+            model.intelligence = score;
+            expect(model.intModifier()).toBe(expectedModifier);
+
+            model.wisdom = score;
+            expect(model.wisModifier()).toBe(expectedModifier);
+
+            model.charisma = score;
+            expect(model.chaModifier()).toBe(expectedModifier);
+
+            model.constitution = score;
+            expect(model.conModifier()).toBe(expectedModifier);
         }
     }
 
