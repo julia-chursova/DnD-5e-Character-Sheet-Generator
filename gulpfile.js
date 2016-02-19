@@ -1,5 +1,5 @@
 ﻿var gulp = require('gulp');
-var less = require('gulp-less')
+var less = require('gulp-less');
 var minifyCSS = require('gulp-minify-css');
 var minimifyJS = require('gulp-uglify');
 var bundle = require('gulp-concat');
