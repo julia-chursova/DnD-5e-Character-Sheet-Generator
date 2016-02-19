@@ -12,19 +12,25 @@
             function ($rootScope, $interval, appState, appComponents, serializer) {
                 var self = this;
 
-	            var linkUpdatingInProgress = false;
+                var linkUpdatingInProgress = false;
 
 				self.isEditMode = function() {
 					return appState.isEditMode;
 				}
 
-                self.editLayout = function () {
-                    appState.isEditMode = true;
+                self.isLoadOpened = function() {
+                    return appState.isLoadOpened;
+                }
+
+                self.save = serializer.saveModel;
+
+                self.toggleEditing = function () {
+                    appState.isEditMode = !appState.isEditMode;
                 };
 
-                self.finishEdit = function () {
-                	appState.isEditMode = false;
-                };
+                self.toggleLoad = function() {
+                    appState.isLoadOpened = !appState.isLoadOpened;
+                }
 
 	            self.getAvailableModules = appComponents.getAvailableModules;
 
@@ -57,6 +63,6 @@
                     serializer.loadModel();
                 }
 
-                $interval(serializer.saveModel, 10000);
+                $interval(self.save, 10000);
             }]);
 })();
