@@ -113,6 +113,7 @@
     <Content Include="scripts\tests\lib\jasmine-2.4.1\jasmine.css" />
     <Content Include="scripts\tests\lib\jasmine-2.4.1\jasmine.js" />
     <Content Include="scripts\tests\lib\jasmine-2.4.1\jasmine_favicon.png" />
+    <Content Include="scripts\tests\spec\saveThrowCalcSpecs.js" />
     <Content Include="status.html" />
     <Content Include="scripts\tests\spec\statsCalculatorSpecs.js" />
     <Content Include="styles\appstyles.css" />
