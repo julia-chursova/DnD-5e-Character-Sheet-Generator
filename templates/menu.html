@@ -9,6 +9,10 @@
         <button ng-click="app.updateLink()">Link</button>
     </div>
     <div class="section" ng-if="app.isLoadOpened()">
+        <div ng-repeat="savedCharlist in app.savedCharlists">
+            <button ng-click="app.load(savedCharlist)">{{ savedCharlist }}</button>
+            <button ng-click="app.delete(savedCharlist)">Delete</button>
+        </div>
         
     </div>
 	<div class="section">

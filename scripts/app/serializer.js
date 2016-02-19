@@ -48,8 +48,11 @@
 
 			        saveModel: saveModel,
 			        loadModel: loadModel,
+                    deleteModel: deleteModel,
 
-                    newModel: newModel
+			        newModel: newModel,
+
+			        getSavedCharlists: getSavedCharlists
 			    };
 
 				function importData(model, data) {
@@ -153,32 +156,28 @@
 				    var db = initDatabase();
 
 				    var model = packModel();
-				    var name = model.characterModel ? model.characterModel.name : '';
+				    var name = model.character ? model.character.name : '';
 
-				    model.name = /* todo: temp; replace by namename || */'UnnamedHero';
+				    model.name = name || 'Unnamed Hero';
 				    model.lastModifiedDate = Date.now();
 
 				    db.open();
-				    db.charsheets.clear()
-				        .then(function() {
-				            db.charsheets.put(model, name) 
-				                .then(def.resolve)
-                                .catch(onLocalDBError)
-				                .finally(db.close);
-				        })
-				        .catch(onLocalDBError);
+				    db.charsheets
+                        .put(model)
+				        .then(def.resolve)
+                        .catch(onLocalDBError)
+				        .finally(db.close);
 
 				    return def.promise;
 				}
 
-				function loadModel() {
+				function loadModel(name) {
 				    var def = $q.defer();
 				    var db = initDatabase();
 
 				    db.open();
 				    db.charsheets
-                        .toCollection()
-                        .first()
+                        .get(name)
                         .then(function (data) {
 				            if (data) {
 				                unpackModel(data);
@@ -191,6 +190,42 @@
 
 				    return def.promise;
 				}
+
+                function deleteModel(name) {
+                    var def = $q.defer();
+                    var db = initDatabase();
+
+                    db.open();
+                    db.charsheets
+                        .delete(name)
+                        .then(def.resolve)
+                        .catch(onLocalDBError)
+                        .finally(db.close);
+
+                    return def.promise;
+                }
+
+                function getSavedCharlists() {
+                    var def = $q.defer();
+                    var db = initDatabase();
+
+                    db.open();
+                    db.charsheets
+                        .toArray()
+                        .then(function (data) {
+                            var list = [];
+
+                            for (var i = 0; i < data.length; i++) {
+                                list.push(data[i].name);
+                            }
+
+                            def.resolve(list);
+                        })
+                        .catch(onLocalDBError)
+                        .finally(db.close);
+
+                    return def.promise;
+                }
 
 				function onLocalDBError(reason) {
 				    alert('LocalDB failure: ' + reason);
