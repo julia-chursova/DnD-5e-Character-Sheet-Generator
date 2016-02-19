@@ -1,5 +1,12 @@
-describe("statsModel", function () {
+describe("Stats Model", function () {
+    var model;
+
     beforeEach(module(appName));
+
+    // ReSharper disable once InconsistentNaming
+    beforeEach(inject(function (_statsModel_) {
+        model = _statsModel_;
+    }));
 
     var statModifierMapping = {
         1: -5,
@@ -24,13 +31,20 @@ describe("statsModel", function () {
         20: 5
     };
 
+    function generateFunction (score, expectedModifier) {
+        return function() {
+            model.strength = score;
+
+            expect(model.strModifier()).toBe(expectedModifier);
+        }
+    }
+
     for (var score in statModifierMapping) {
+        if (!statModifierMapping.hasOwnProperty(score))
+            return;
+
         var expectedModifier = statModifierMapping[score];
 
-        it('For stat score ' + score + ' modifier should be ' + expectedModifier, inject(function (statsModel) {
-            statsModel.strength = score;
-
-            expect(statsModel.strModifier()).toBe(expectedModifier);
-        }));
+        it('Correctly calculates modifier for score ' + score, generateFunction(score, expectedModifier));
     }
 });
