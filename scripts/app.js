@@ -137,7 +137,8 @@
 	angular.module(appName)
 		.factory('appState', function() {
 			return {
-				isEditMode: false
+			    isEditMode: false,
+                isLoadOpened: false
 			}
 		});
 })();
@@ -200,6 +201,7 @@
 
 	angular.module(appName)
 		.factory('serializer', [
+            '$q',
 			'armorModel',
 			'characterModel',
 			'featsModel',
@@ -218,7 +220,8 @@
 			'attacksModel',
 			'abilitiesModel',
 
-			function(
+			function (
+                $q,
 				armorModel,
 				characterModel,
 				featsModel,
@@ -237,33 +240,91 @@
 				attacksModel,
 				abilitiesModel
 			) {
+			    return {
+			        serialize: serialize,
+			        deserialize: deserialize,
+
+			        saveModel: saveModel,
+			        loadModel: loadModel,
+                    deleteModel: deleteModel,
+
+			        newModel: newModel,
+
+			        getSavedCharlists: getSavedCharlists
+			    };
+
 				function importData(model, data) {
-					if (!data)
-						return;
+				    if (!data) {
+				        return;
+				    }
 
 					model.importData(data);
 				}
 
+				function packModel() {
+				    return {
+				        armor: armorModel.exportData(),
+				        character: characterModel.exportData(),
+				        feats: featsModel.exportData(),
+				        hitPoints: hitPointsModel.exportData(),
+				        inventory: inventoryModel.exportData(),
+				        languages: languagesModel.exportData(),
+				        money: moneyModel.exportData(),
+				        player: playerModel.exportData(),
+				        proficiencies: proficienciesModel.exportData(),
+				        race: raceModel.exportData(),
+				        saveThrows: saveThrowModel.exportData(),
+				        //skills: skillsModel.exportData(),
+				        speed: speedModel.exportData(),
+				        spellcasting: spellcastingModel.exportData(),
+				        stats: statsModel.exportData(),
+				        attacks: attacksModel.exportData(),
+				        abilities: abilitiesModel.exportData()
+				    }
+				}
+
+				function unpackModel(data) {
+				    importData(armorModel, data.armor);
+				    importData(characterModel, data.character);
+				    importData(featsModel, data.feats);
+				    importData(hitPointsModel, data.hitPoints);
+				    importData(inventoryModel, data.inventory);
+				    importData(languagesModel, data.languages);
+				    importData(moneyModel, data.money);
+				    importData(playerModel, data.player);
+				    importData(proficienciesModel, data.proficiencies);
+				    importData(raceModel, data.race);
+				    importData(saveThrowModel, data.saveThrows);
+				    importData(skillsModel, data.skills);
+				    importData(speedModel, data.speed);
+				    importData(spellcastingModel, data.spellcasting);
+				    importData(statsModel, data.stats);
+				    importData(attacksModel, data.attacks);
+				    importData(abilitiesModel, data.abilities);
+				}
+
+                function newModel() {
+                    armorModel.init();
+                    characterModel.init();
+                    featsModel.init();
+                    hitPointsModel.init();
+                    inventoryModel.init();
+                    languagesModel.init();
+                    moneyModel.init();
+                    playerModel.init();
+                    proficienciesModel.init();
+                    raceModel.init();
+                    saveThrowModel.init();
+                    skillsModel.init();
+                    speedModel.init();
+                    spellcastingModel.init();
+                    statsModel.init();
+                    attacksModel.init();
+                    abilitiesModel.init();
+                }
+
 				function serialize() {
-					var object = {
-						armor: armorModel.exportData(),
-						character: characterModel.exportData(),
-						feats: featsModel.exportData(),
-						hitPoints: hitPointsModel.exportData(),
-						inventory: inventoryModel.exportData(),
-						languages: languagesModel.exportData(),
-						money: moneyModel.exportData(),
-						player: playerModel.exportData(),
-						proficiencies: proficienciesModel.exportData(),
-						race: raceModel.exportData(),
-						saveThrows: saveThrowModel.exportData(),
-						skills: skillsModel.exportData(),
-						speed: speedModel.exportData(),
-						spellcasting: spellcastingModel.exportData(),
-						stats: statsModel.exportData(),
-						attacks: attacksModel.exportData(),
-						abilities: abilitiesModel.exportData()
-					}
+				    var object = packModel();
 
 					return btoa(JSON.stringify(object));
 				}
@@ -275,31 +336,159 @@
 					var str = window.location.hash.substring(2);
 					var data = JSON.parse(atob(str));
 
-					importData(armorModel, data.armor);
-					importData(characterModel, data.character);
-					importData(featsModel, data.feats);
-					importData(hitPointsModel, data.hitPoints);
-					importData(inventoryModel, data.inventory);
-					importData(languagesModel, data.languages);
-					importData(moneyModel, data.money);
-					importData(playerModel, data.player);
-					importData(proficienciesModel, data.proficiencies);
-					importData(raceModel, data.race);
-					importData(saveThrowModel, data.saveThrows);
-					importData(skillsModel, data.skills);
-					importData(speedModel, data.speed);
-					importData(spellcastingModel, data.spellcasting);
-					importData(statsModel, data.stats);
-					importData(attacksModel, data.attacks);
-					importData(abilitiesModel, data.abilities);
+					unpackModel(data);
 				}
 
-				return {
-					serialize: serialize,
-					deserialize: deserialize
+				function initDatabase() {
+				    var db = new Dexie("DnD_5e_Charsheets");
+
+				    db.version(1).stores({
+				        charsheets: "name"
+				    });
+
+				    return db;
+				}
+
+				function saveModel() {
+				    var def = $q.defer();
+				    var db = initDatabase();
+
+				    var model = packModel();
+				    var name = model.character ? model.character.name : '';
+
+				    model.name = name || 'Unnamed Hero';
+				    model.lastModifiedDate = Date.now();
+
+				    db.open();
+				    db.charsheets
+                        .put(model)
+				        .then(def.resolve)
+                        .catch(onLocalDBError)
+				        .finally(db.close);
+
+				    return def.promise;
+				}
+
+				function loadModel(name) {
+				    var def = $q.defer();
+				    var db = initDatabase();
+
+				    db.open();
+				    db.charsheets
+                        .get(name)
+                        .then(function (data) {
+				            if (data) {
+				                unpackModel(data);
+				            }
+
+				            def.resolve(data);
+                        })
+                        .catch(onLocalDBError)
+                        .finally(db.close);
+
+				    return def.promise;
+				}
+
+                function deleteModel(name) {
+                    var def = $q.defer();
+                    var db = initDatabase();
+
+                    db.open();
+                    db.charsheets
+                        .delete(name)
+                        .then(def.resolve)
+                        .catch(onLocalDBError)
+                        .finally(db.close);
+
+                    return def.promise;
+                }
+
+                function getSavedCharlists() {
+                    var def = $q.defer();
+                    var db = initDatabase();
+
+                    db.open();
+                    db.charsheets
+                        .toArray()
+                        .then(function (data) {
+                            var list = [];
+
+                            for (var i = 0; i < data.length; i++) {
+                                list.push(data[i].name);
+                            }
+
+                            def.resolve(list);
+                        })
+                        .catch(onLocalDBError)
+                        .finally(db.close);
+
+                    return def.promise;
+                }
+
+				function onLocalDBError(reason) {
+				    alert('LocalDB failure: ' + reason);
 				}
 			}
 		]);
+})();
+(function () {
+    'use strict';
+
+    angular.module(appName)
+        .directive('portraitComponent', function () {
+            return {
+                restrict: 'AE',
+                templateUrl: 'templates/components/portrait.html',
+                link: function (scope, element, attrs) {
+                	var canvas = element.find("canvas")[0];
+                	var canvasContainer = canvas.parentElement;
+
+                	canvas.width = canvas.style.width = canvasContainer.clientWidth;
+                	canvas.height = canvas.style.height = canvasContainer.clientHeight;
+
+                    scope.initUpload = function(){
+                        element.find("input")[0].click();
+                    };
+
+                    scope.upload = function (event) {
+                        scope.clear();
+
+                        var reader = new FileReader();
+                        var image;
+
+                        reader.onload = function (e) {
+                            image = new Image();
+                            image.src = e.target.result;
+
+                            image.onload = function () {
+                            	var widthRatio = canvas.width / image.width;
+                            	var heightRatio = canvas.height / image.height;
+
+	                            var actualWidth, actualHeight;
+								if (widthRatio < heightRatio) {
+									actualWidth = image.width * widthRatio;
+									actualHeight = image.height * widthRatio;
+								} else {
+									actualWidth = image.width * heightRatio;
+									actualHeight = image.height * heightRatio;
+								}
+
+								var startX = (canvas.width - actualWidth) / 2;
+	                            var startY = (canvas.height - actualHeight) / 2;
+
+                                canvas.getContext("2d").drawImage(image, startX, startY, actualWidth, actualHeight);
+                            };
+                        };
+
+                        reader.readAsDataURL(event.currentTarget.files[0]);
+                    };
+
+                    scope.clear = function () {
+                        canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
+                    };
+                }
+            }
+        });
 })();
 (function() {
     'use strict';
@@ -317,56 +506,84 @@
             }
         ]);
 })();
-(function () {
+(function() {
     'use strict';
 
     angular.module(appName)
         .controller('appController', [
             '$rootScope',
-			'appState',
-			'appComponents',
-			'serializer',
-
-            function ($rootScope, appState, appComponents, serializer) {
+            '$interval',
+            'appState',
+            'appComponents',
+            'serializer',
+            function($rootScope, $interval, appState, appComponents, serializer) {
                 var self = this;
 
-	            var linkUpdatingInProgress = false;
+                var linkUpdatingInProgress = false;
 
-				self.isEditMode = function() {
-					return appState.isEditMode;
-				}
+                self.isEditMode = function() {
+                    return appState.isEditMode;
+                }
 
-                self.editLayout = function () {
-                    appState.isEditMode = true;
+                self.isLoadOpened = function() {
+                    return appState.isLoadOpened;
+                }
+
+                self.save = serializer.saveModel;
+                self.load = serializer.loadModel;
+                self.delete = function(name) {
+                    serializer.deleteModel(name);
+                    refreshSavedCharlists();
+                }
+
+                self.toggleEditing = function() {
+                    appState.isEditMode = !appState.isEditMode;
                 };
 
-                self.finishEdit = function () {
-                	appState.isEditMode = false;
-                };
+                self.toggleLoad = function() {
+                    appState.isLoadOpened = !appState.isLoadOpened;
+                    if (appState.isLoadOpened) {
+                        refreshSavedCharlists();
+                    }
+                }
 
-	            self.getAvailableModules = appComponents.getAvailableModules;
+                self.getAvailableModules = appComponents.getAvailableModules;
 
-                self.print = function () {
+                self.print = function() {
                     print();
                 };
 
-				self.updateLink = function() {
-					linkUpdatingInProgress = true;
-					window.location.hash = serializer.serialize();
-					linkUpdatingInProgress = false;
-				}
+                self.updateLink = function() {
+                    linkUpdatingInProgress = true;
+                    window.location.hash = serializer.serialize();
+                    linkUpdatingInProgress = false;
+                }
 
-	            $rootScope.$on("$locationChangeSuccess", function() {
-		            if (linkUpdatingInProgress)
-			            return;
+                self.newDocument = function() {
+                    serializer.newModel();
+                }
 
-		            serializer.deserialize();
-	            });
-
-                self.globalClick = function (event) {
+                self.globalClick = function(event) {
                     $rootScope.$broadcast('global-click', event);
                 }
-            }]);
+
+                $rootScope.$on("$locationChangeSuccess", function() {
+                    if (linkUpdatingInProgress)
+                        return;
+
+                    serializer.deserialize();
+                });
+
+                function refreshSavedCharlists() {
+                    serializer.getSavedCharlists()
+                        .then(function(data) {
+                            self.savedCharlists = data;
+                        });
+                }
+
+                $interval(self.save, 10000);
+            }
+        ]);
 })();
 (function () {
     'use strict';
@@ -730,65 +947,6 @@
 			    self.availableTools = toolTypeProvider;
 			}
 		]);
-})();
-(function () {
-    'use strict';
-
-    angular.module(appName)
-        .directive('portraitComponent', function () {
-            return {
-                restrict: 'AE',
-                templateUrl: 'templates/components/portrait.html',
-                link: function (scope, element, attrs) {
-                	var canvas = element.find("canvas")[0];
-                	var canvasContainer = canvas.parentElement;
-
-                	canvas.width = canvas.style.width = canvasContainer.clientWidth;
-                	canvas.height = canvas.style.height = canvasContainer.clientHeight;
-
-                    scope.initUpload = function(){
-                        element.find("input")[0].click();
-                    };
-
-                    scope.upload = function (event) {
-                        scope.clear();
-
-                        var reader = new FileReader();
-                        var image;
-
-                        reader.onload = function (e) {
-                            image = new Image();
-                            image.src = e.target.result;
-
-                            image.onload = function () {
-                            	var widthRatio = canvas.width / image.width;
-                            	var heightRatio = canvas.height / image.height;
-
-	                            var actualWidth, actualHeight;
-								if (widthRatio < heightRatio) {
-									actualWidth = image.width * widthRatio;
-									actualHeight = image.height * widthRatio;
-								} else {
-									actualWidth = image.width * heightRatio;
-									actualHeight = image.height * heightRatio;
-								}
-
-								var startX = (canvas.width - actualWidth) / 2;
-	                            var startY = (canvas.height - actualHeight) / 2;
-
-                                canvas.getContext("2d").drawImage(image, startX, startY, actualWidth, actualHeight);
-                            };
-                        };
-
-                        reader.readAsDataURL(event.currentTarget.files[0]);
-                    };
-
-                    scope.clear = function () {
-                        canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
-                    };
-                }
-            }
-        });
 })();
 (function() {
     'use strict';
@@ -2652,16 +2810,17 @@
             function () {
                 var self = this;
 
-                // Fields
-                self.abilities = [];
+                // Init contains BOTH definition of fields and initialization for them
+                self.init = function() {
+                    self.abilities = [];
 
-                // Ctor
-                (function () {
                     var maxAbilities = 10;
 
                     for (var i = 0; i < maxAbilities; i++)
                         self.abilities.push(null);
-                })();
+                }
+
+                self.init();
 
                 // Methods
                 self.exportData = function () {
@@ -2690,30 +2849,34 @@
             function (statsModel, proficienciesModel, helpers) {
                 var self = this;
 
-				// Constants
+                // Constants
                 self.baseAC = 10;
 
-				// Fields
-                self.armor = {
-                    name: '',
-                    type: null,
-                    armorClass: 4,
-                    weight: 5,
-                    stealsDisadvantage: false,
-                    maxDexBonus: 2,
-                    isProficient: false,
-                    minStrength: ''
-                };
+                // Fields
+                self.init = function () {
+                    self.armor = {
+                        name: '',
+                        type: null,
+                        armorClass: '',
+                        weight: '',
+                        stealsDisadvantage: false,
+                        maxDexBonus: '',
+                        isProficient: false,
+                        minStrength: ''
+                    };
 
-                self.shield = {
-                    name: '',
-                    armorClass: 2,
-                    weight: 6
-                };
+                    self.shield = {
+                        name: '',
+                        armorClass: '',
+                        weight: ''
+                    };
 
-                self.miscBonus = '';
+                    self.miscBonus = '';
+                }
 
-				// Calculable properties
+                self.init();
+
+                // Calculable properties
                 self.shieldWeight = function () {
                     return self.shield ? self.shield.weight || 0 : 0;
                 };
@@ -2722,12 +2885,12 @@
                     return self.armor ? self.armor.weight || 0 : 0;
                 };
 
-	            self.dexBonus = function() {
-					return self.armor &&(self.armor.armorClass || 0) > 0 &&
+                self.dexBonus = function () {
+                    return self.armor && (self.armor.armorClass || 0) > 0 &&
 					(self.armor.maxDexBonus === 0 || self.armor.maxDexBonus)
                         ? Math.min(self.armor.maxDexBonus, statsModel.dexModifier())
                         : statsModel.dexModifier();
-	            };
+                };
 
                 self.armorClass = function () {
                     var result = self.baseAC;
@@ -2741,33 +2904,33 @@
                     if (self.miscBonus)
                         result += (self.miscBonus || 0);
 
-	                result += self.dexBonus();
+                    result += self.dexBonus();
 
                     return result;
                 };
 
-                self.proficientWithArmor = function() {
+                self.proficientWithArmor = function () {
                     return proficienciesModel.proficientWithArmor(self.armor.type);
                 }
 
-                self.reduceSpeed = function() {
+                self.reduceSpeed = function () {
                     return helpers.isInteger(self.armor.minStrength) && (statsModel.strength || 0) < (self.armor.minStrength || 0);
                 }
 
-				// Methods
-				self.exportData = function() {
-					return {
-						armor: self.armor,
-						shield: self.shield,
-						miscBonus: self.miscBonus
-					}
-				}
+                // Methods
+                self.exportData = function () {
+                    return {
+                        armor: self.armor,
+                        shield: self.shield,
+                        miscBonus: self.miscBonus
+                    }
+                }
 
-				self.importData = function(data) {
-					self.armor = data.armor;
-					self.shield = data.shield;
-					self.miscBonus = data.miscBonus;
-				}
+                self.importData = function (data) {
+                    self.armor = data.armor;
+                    self.shield = data.shield;
+                    self.miscBonus = data.miscBonus;
+                }
 
                 return self;
             }
@@ -2865,25 +3028,27 @@
 				};
 
 				// Ctor
-				(function () {
-					var attacksCount = 5;
+			    self.init = function () {
+			        var attacksCount = 5;
 
-					var attacks = [];
-					for (var i = 0; i < attacksCount; i++) {
-						attacks.push({
-							name: '',
-							baseDamage: '',
-							isRanged: false,
-							range: '',
-                            type: null,
-							ammo: null
-						});
-					}
+			        var attacks = [];
+			        for (var i = 0; i < attacksCount; i++) {
+			            attacks.push({
+			                name: '',
+			                baseDamage: '',
+			                isRanged: false,
+			                range: '',
+			                type: null,
+			                ammo: null
+			            });
+			        }
 
-					self.attacks = addCalculableFunctions(attacks);
-				})();
+			        self.attacks = addCalculableFunctions(attacks);
+			    }
 
-				return self;
+			    self.init();
+
+			    return self;
 			}
 		]);
 })();
@@ -2904,7 +3069,6 @@
 
                 var maxClasses = 5;
 
-                // Fields
                 self.raceModel = raceModel;
                 self.name = '';
                 self.alignment = 5;
@@ -2917,7 +3081,9 @@
                 self.initiativeBonus = 0;
 
                 // Constructor
-                (function init() {
+                self.init = function () {
+                    self.classes = [];
+
                     for (var i = 0; i < maxClasses; i++) {
                         self.classes.push({
                             "class": null,
@@ -2925,7 +3091,9 @@
                             level: ''
                         });
                     }
-                })();
+                }
+
+                self.init();
 
                 // Calculable properties
                 self.effectiveLevel = function() {
@@ -2999,15 +3167,15 @@
 			function () {
 			    var self = this;
 
-			    // Fields
-			    self.feats = [];
+			    self.init = function () {
+			        self.feats = [];
 
-			    // Ctor
-			    (function init() {
 			        var featsCount = 9;
 			        for (var i = 0; i < featsCount; i++)
 			            self.feats.push({});
-			    })();
+			    }
+
+			    self.init();
 
 			    // Methods
                 self.haveFeat = function(feat) {
@@ -3040,10 +3208,13 @@
 			function (characterModel, raceModel, helpers) {
 				var self = this;
 
-                // Fields
-				self.baseHitPoints = '';
-				self.userDefinedBonus = '';
-				self.currentHitPoints = '';
+			    self.init = function () {
+			        self.baseHitPoints = '';
+			        self.userDefinedBonus = '';
+			        self.currentHitPoints = '';
+			    }
+
+			    self.init();
 
 			    // Calculable Properties
 				self.hitPointsBonus = function () {
@@ -3093,13 +3264,12 @@
             	var maxPotionsAndScrolls = 10;
 	            var maxQuestItems = 10;
 
-				// Fields
-	            self.items = [];
-	            self.potionsAndScrolls = [];
-	            self.questItems = [];
-
 				// Ctor
-	            (function init() {
+                self.init = function () {
+                    self.items = [];
+                    self.potionsAndScrolls = [];
+                    self.questItems = [];
+
 		            var i;
 		            for (i = 0; i < maxCommonItems; i++) {
 			            self.items.push({});
@@ -3112,7 +3282,9 @@
 		            for (i = 0; i < maxQuestItems; i++) {
 			            self.questItems.push({});
 		            }
-	            })();
+                }
+
+                self.init();
 
 				// Calculable properties
                 self.inventoryWeight = function () {
@@ -3163,17 +3335,17 @@
 			// Constants
 			var maxLanguages = 7;
 
-			// Fields
-			self.languages = [];
+	        self.init = function () {
+	            self.languages = [];
 
-			// Ctor
-			(function init() {
-				for (var i = 0; i < maxLanguages; i++) {
-					self.languages.push('');
-				}
-			})();
+	            for (var i = 0; i < maxLanguages; i++) {
+	                self.languages.push('');
+	            }
+	        }
 
-			// Methods
+	        self.init();
+
+	        // Methods
 			self.exportData = function() {
 				return {
 					languages: self.languages
@@ -3195,14 +3367,17 @@
 			function () {
 				var self = this;
 
-				// Fields
-				self.copper = '';
-				self.silver = '';
-				self.electrum = '';
-				self.gold = '';
-				self.platinum = '';
+			    self.init = function () {
+			        self.copper = '';
+			        self.silver = '';
+			        self.electrum = '';
+			        self.gold = '';
+			        self.platinum = '';
+			    }
 
-				// Calculable fields
+			    self.init();
+
+			    // Calculable fields
 				self.total = function () {
 					return (self.copper || 0) +
 						(self.silver || 0) * 10 +
@@ -3241,12 +3416,15 @@
         .factory('playerModel', function () {
             var self = this;
 
-			// Fields
-            self.name = '';
-            self.campaign = '';
-            self.XP = '';
+            self.init = function () {
+                self.name = '';
+                self.campaign = '';
+                self.XP = '';
+            }
 
-			// Methods
+            self.init();
+
+            // Methods
 			self.exportData = function() {
 				return {
 					name: self.name,
@@ -3272,24 +3450,24 @@
 			function () {
 				var self = this;
 
-				// Fields
-				self.weapons = {
-				};
+			    self.init = function () {
+			        self.weapons = {
+			        };
 
-				self.armor = {
-				};
+			        self.armor = {
+			        };
 
-				self.tools = [];
+			        self.tools = [];
 
-				self.shieldProficiency = false;
+			        self.shieldProficiency = false;
 
-			    // Ctor
-			    (function () {
 			        var toolCount = 5;
 
 			        for (var i = 0; i < toolCount; i++)
 			            self.tools.push('');
-			    })();
+			    }
+
+			    self.init();
 
 				// Computed properties
 				self.proficientWithArmor = function (armorType) {
@@ -3326,9 +3504,13 @@
             'proficienciesModel',
 
 			function (abilitiesModel, spellcastingModel, languagesModel, proficienciesModel) {
-			    self.race = null;
+                self.init = function() {
+			        self.race = null;
+                }
 
-                // Events
+			    self.init();
+
+			    // Events
 			    self.raceChanged = function() {
 			        if (!self.race)
 			            return;
@@ -3402,15 +3584,18 @@
 			function (statsModel, characterModel) {
 				var self = this;
 
-				// Fields
-				self.isStrProficient = false;
-				self.isDexProficient = false;
-				self.isConProficient = false;
-				self.isIntProficient = false;
-				self.isWisProficient = false;
-				self.isChaProficient = false;
+			    self.init = function () {
+			        self.isStrProficient = false;
+			        self.isDexProficient = false;
+			        self.isConProficient = false;
+			        self.isIntProficient = false;
+			        self.isWisProficient = false;
+			        self.isChaProficient = false;
+			    }
 
-				// Calculable fields
+			    self.init();
+
+			    // Calculable fields
 				function calculateSaveThrow(isProficient, baseModifier) {
 					var result = baseModifier;
 
@@ -3480,8 +3665,11 @@
 			function (skillsProvider) {
 			    var self = this;
 
-				// Fields
-			    self.skills = skillsProvider.skillList();
+				self.init = function() {
+			        self.skills = skillsProvider.skillList();
+				}
+
+			    self.init();
 
 			    // Calculable Properties
                 self.count = function() {
@@ -3495,8 +3683,9 @@
 					}
 				}
 
-				self.importData = function(data) {
-					self.skills = data.skills;
+				self.importData = function (data) {
+				    self.skills = skillsProvider.skillList();
+				    //self.skills = data.skills;
 				}
 
 				return self;
@@ -3514,8 +3703,11 @@
 			function (raceModel, armorModel) {
 				var self = this;
 
-				// Fields
-				self.userDefinedSpeed = '';
+			    self.init = function () {
+			        self.userDefinedSpeed = '';
+			    }
+
+			    self.init();
 
 				// Calculable field
 				self.speed = function () {
@@ -3554,30 +3746,30 @@
 		.factory('spellcastingModel', function() {
 			var self = this;
 
-			// Fields
-			self.spells = [];
+			self.init = function () {
+			    self.spells = [];
 
-			// Ctor
-			(function init() {
-				var maxSpellLevel = 9;
-				var maxSpellsInGroup = 6;
+	            var maxSpellLevel = 9;
+	            var maxSpellsInGroup = 6;
 
-				for (var i = 0; i <= maxSpellLevel; i++) {
-					var spells = [];
-					for (var spellInd = 0; spellInd < maxSpellsInGroup; spellInd++) {
-						spells.push({});
-					}
+	            for (var i = 0; i <= maxSpellLevel; i++) {
+	                var spells = [];
+	                for (var spellInd = 0; spellInd < maxSpellsInGroup; spellInd++) {
+	                    spells.push({});
+	                }
 
-					self.spells.push({
-					    remaining: 0,
-					    maxPerDay: 0,
-                        knownCount: 0,
-                        spells: spells
-					});
-				}
-			})();
+	                self.spells.push({
+	                    remaining: 0,
+	                    maxPerDay: 0,
+	                    knownCount: 0,
+	                    spells: spells
+	                });
+	            }
+			}
 
-			// Methods
+	        self.init();
+
+	        // Methods
 			self.exportData = function() {
 				return {
 					spells: self.spells
@@ -3600,33 +3792,36 @@
             'helpers',
 
 			function (raceModel, helpers) {
-			    function getModifier(statValue) {
-			        return Math.floor(((statValue || 0) - 10) / 2);
+			    function getModifier(rawStatValue, racialBonus) {
+			        return Math.floor(((parseInt(rawStatValue) || 0) + racialBonus - 10) / 2);
 			    }
 
 			    var self = this;
 
-			    // Fields
-			    self.strength = '';
-			    self.dexterity = '';
-			    self.constitution = '';
-			    self.intelligence = '';
-			    self.wisdom = '';
-			    self.charisma = '';
+			    self.init = function () {
+			        self.strength = '';
+			        self.dexterity = '';
+			        self.constitution = '';
+			        self.intelligence = '';
+			        self.wisdom = '';
+			        self.charisma = '';
 
-			    self.customRacialStrBonus = '';
-			    self.customRacialDexBonus = '';
-			    self.customRacialConBonus = '';
-			    self.customRacialIntBonus = '';
-			    self.customRacialWisBonus = '';
-			    self.customRacialChaBonus = '';
+			        self.customRacialStrBonus = '';
+			        self.customRacialDexBonus = '';
+			        self.customRacialConBonus = '';
+			        self.customRacialIntBonus = '';
+			        self.customRacialWisBonus = '';
+			        self.customRacialChaBonus = '';
 
-			    self.strBonus = '';
-			    self.dexBonus = '';
-			    self.conBonus = '';
-			    self.intBonus = '';
-			    self.wisBonus = '';
-			    self.chaBonus = '';
+			        self.strBonus = '';
+			        self.dexBonus = '';
+			        self.conBonus = '';
+			        self.intBonus = '';
+			        self.wisBonus = '';
+			        self.chaBonus = '';
+			    }
+
+			    self.init();
 
 			    // Calculable fields
 			    self.racialStrBonus = function () {
@@ -3684,27 +3879,27 @@
 			    };
 
 			    self.strModifier = function () {
-			        return getModifier(self.strength) + self.racialStrBonus() + (parseInt(self.strBonus) || 0);
+			        return getModifier(self.strength, self.racialStrBonus()) + (parseInt(self.strBonus) || 0);
 			    };
 
 			    self.dexModifier = function () {
-			        return getModifier(self.dexterity) + self.racialDexBonus() + (parseInt(self.dexBonus) || 0);
+			        return getModifier(self.dexterity, self.racialDexBonus()) + (parseInt(self.dexBonus) || 0);
 			    };
 
 			    self.conModifier = function () {
-			        return getModifier(self.constitution) + self.racialConBonus() + (parseInt(self.conBonus) || 0);
+			        return getModifier(self.constitution, self.racialConBonus()) + (parseInt(self.conBonus) || 0);
 			    };
 
 			    self.intModifier = function () {
-			        return getModifier(self.intelligence) + self.racialIntBonus() + (parseInt(self.intBonus) || 0);
+			        return getModifier(self.intelligence, self.racialIntBonus()) + (parseInt(self.intBonus) || 0);
 			    };
 
 			    self.wisModifier = function () {
-			        return getModifier(self.wisdom) + self.racialWisBonus() + (parseInt(self.wisBonus) || 0);
+			        return getModifier(self.wisdom, self.racialWisBonus()) + (parseInt(self.wisBonus) || 0);
 			    };
 
 			    self.chaModifier = function () {
-			        return getModifier(self.charisma) + self.racialChaBonus() + (parseInt(self.chaBonus) || 0);
+			        return getModifier(self.charisma, self.racialChaBonus()) + (parseInt(self.chaBonus) || 0);
 			    };
 
 			    // Methods

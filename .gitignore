@@ -7,3 +7,7 @@ obj/
 node_modules/
 
 *.DotSettings
+/styles/appstyles.css
+/styles/libstyles.css
+/scripts/libs.js
+/scripts/app.js
