@@ -11,8 +11,10 @@
                 var self = this;
 
                 self.model = armorModel;
-                self.armor = armorModel.armor;
-                self.shield = armorModel.shield;
+
+                self.armor = function () { return armorModel.armor; }
+                self.shield = function () { return armorModel.shield; }
+
                 self.armorClass = armorModel.armorClass;
                 self.proficiencyModel = proficienciesModel;
                 self.armorTypes = armorTypeProvider;
