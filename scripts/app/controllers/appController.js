@@ -21,8 +21,20 @@
                     return appState.isLoadOpened;
                 }
 
+                self.isLoading = function() {
+                    return appState.isLoading;
+                }
+
                 self.save = serializer.saveModel;
-                self.load = serializer.loadModel;
+
+                self.load = function (name) {
+                    appState.isLoading = true;
+                    serializer.loadModel(name)
+                        .finally(function() {
+                            appState.isLoading = false;
+                        });
+                }
+
                 self.delete = function(name) {
                     serializer.deleteModel(name);
                     refreshSavedCharlists();

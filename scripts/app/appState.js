@@ -5,7 +5,8 @@
 		.factory('appState', function() {
 			return {
 			    isEditMode: false,
-                isLoadOpened: false
+			    isLoadOpened: false,
+                isLoading: false
 			}
 		});
 })();
