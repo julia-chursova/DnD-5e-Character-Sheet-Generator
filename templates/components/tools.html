@@ -1,13 +1,13 @@
-﻿<div class="tools component" ng-controller="toolsController as controller">
+﻿<div class="tools component" ng-controller="toolsController as toolsVm">
     <div class="header">Tools</div>
 
     <table class="common-table">
-        <tr ng-repeat="tool in controller.proficiencies track by $index">
+        <tr ng-repeat="tool in toolsVm.tools() track by $index">
             <td cloak-field data-model="tool">
                 <select class="autosuggest-dropdown"
                         ac-select
-                        ac-model="controller.proficiencies[$index]"
-                        ac-options="availableTool for availableTool in controller.availableTools"
+                        ac-model="toolsVm.tools()[$index]"
+                        ac-options="availableTool for availableTool in toolsVm.availableTools"
                         ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter Name', noItemsText: 'Press <enter> to add a custom tool' }"></select>
             </td>
         </tr>

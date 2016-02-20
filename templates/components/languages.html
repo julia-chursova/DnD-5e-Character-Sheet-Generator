@@ -1,14 +1,14 @@
-<div class="languages component" ng-controller="languagesController as controller">
+<div class="languages component" ng-controller="languagesController as langVm">
 	<div class="header">Languages</div>
 
 	<table class="common-table">
         <tbody>
-            <tr ng-repeat="language in controller.languages track by $index">
+            <tr ng-repeat="language in langVm.languages() track by $index">
                 <td cloak-field data-model="language">
                     <select class="autosuggest-dropdown"
                             ac-select
-                            ac-model="controller.languages[$index]"
-                            ac-options="availableLanguage for availableLanguage in controller.availableLanguages"
+                            ac-model="langVm.languages()[$index]"
+                            ac-options="availableLanguage for availableLanguage in langVm.availableLanguages"
                             ac-settings="{ comboMode: true, loadOnOpen: true, allowCustomText: true, placeholderText: 'Enter Language', noItemsText: 'Press <enter> to add a custom language' }"></select>
                 </td>
             </tr>

@@ -19,8 +19,9 @@
 
 			        var toolCount = 5;
 
-			        for (var i = 0; i < toolCount; i++)
+			        for (var i = 0; i < toolCount; i++) {
 			            self.tools.push('');
+			        }
 			    }
 
 			    self.init();
