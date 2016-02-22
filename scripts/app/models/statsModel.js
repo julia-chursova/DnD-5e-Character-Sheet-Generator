@@ -127,6 +127,13 @@
 			            wisdom: self.wisdom,
 			            charisma: self.charisma,
 
+			            customRacialStrBonus: self.customRacialStrBonus,
+			            customRacialDexBonus: self.customRacialDexBonus,
+			            customRacialConBonus: self.customRacialConBonus,
+			            customRacialIntBonus: self.customRacialIntBonus,
+			            customRacialWisBonus: self.customRacialWisBonus,
+			            customRacialChaBonus: self.customRacialChaBonus,
+
 			            strBonus: self.strBonus,
 			            dexBonus: self.dexBonus,
 			            conBonus: self.conBonus,
@@ -143,6 +150,13 @@
 			        self.intelligence = data.intelligence;
 			        self.wisdom = data.wisdom;
 			        self.charisma = data.charisma;
+
+			        self.customRacialStrBonus = data.customRacialStrBonus;
+			        self.customRacialDexBonus = data.customRacialDexBonus;
+			        self.customRacialConBonus = data.customRacialConBonus;
+			        self.customRacialIntBonus = data.customRacialIntBonus;
+			        self.customRacialWisBonus = data.customRacialWisBonus;
+			        self.customRacialChaBonus = data.customRacialChaBonus;
 
 			        self.strBonus = data.strBonus;
 			        self.dexBonus = data.dexBonus;
