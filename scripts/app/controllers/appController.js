@@ -32,6 +32,7 @@
                     serializer.loadModel(name)
                         .finally(function() {
                             appState.isLoading = false;
+                            appState.isLoadOpened = false;
                         });
                 }
 
