@@ -90,25 +90,27 @@
 				};
 
 				// Ctor
-				(function () {
-					var attacksCount = 5;
+			    self.init = function () {
+			        var attacksCount = 5;
 
-					var attacks = [];
-					for (var i = 0; i < attacksCount; i++) {
-						attacks.push({
-							name: '',
-							baseDamage: '',
-							isRanged: false,
-							range: '',
-                            type: null,
-							ammo: null
-						});
-					}
+			        var attacks = [];
+			        for (var i = 0; i < attacksCount; i++) {
+			            attacks.push({
+			                name: '',
+			                baseDamage: '',
+			                isRanged: false,
+			                range: '',
+			                type: null,
+			                ammo: null
+			            });
+			        }
 
-					self.attacks = addCalculableFunctions(attacks);
-				})();
+			        self.attacks = addCalculableFunctions(attacks);
+			    }
 
-				return self;
+			    self.init();
+
+			    return self;
 			}
 		]);
 })();

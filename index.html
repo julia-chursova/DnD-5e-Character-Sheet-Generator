@@ -3,6 +3,8 @@
 <head>
     <title>D&amp;D 5e Characters Sheet Generator</title>
 
+    <base href="" />
+
     <!-- styles -->
     <link rel="stylesheet" href="styles/appstyles.css" />
     <link rel="stylesheet" href="styles/libstyles.css" />
@@ -13,74 +15,76 @@
     </script>
 </head>
 
-<body ng-app="charactersSheetGenerator" ng-controller="appController as app"
-	  class="app" ng-class="{'edit-mode': app.isEditMode()}" ng-click="app.globalClick($event)">
+<body class="app"
+      ng-app="charactersSheetGenerator" 
+      ng-controller="appController as app"
+      ng-class="{'edit-mode': app.isEditMode(), 'is-loading': app.isLoading()}" 
+      ng-click="app.globalClick($event)">
+
+    <div class="blocker"></div>
 
     <div ng-include="'templates/menu.html'"></div>
 
-	<div class="a4-sheet" layout>
-		<layout-block>
-			<layout-column data-width="'33%'">
-				<component data-template="'templates/components/logo.html'"></component>
-				<component data-template="'templates/components/player.html'"></component>
-				<component data-template="'templates/components/stats.html'"></component>
-				<component data-template="'templates/components/saveThrows.html'"></component>
-				<component data-template="'templates/components/feats.html'"></component>
-			</layout-column>
-			<layout-column data-width="'67%'">
-				<component data-template="'templates/components/character.html'"></component>
-				<layout-block>
-					<layout-column data-width="'33%'">
-						<component data-template="'templates/components/initiative.html'"></component>
-					</layout-column>
-					<layout-column data-width="'67%'">
-						<component data-template="'templates/components/armorClass.html'"></component>
-					</layout-column>
-				</layout-block>
-				<layout-block>
-					<layout-column data-width="'70%'">
-						<component data-template="'templates/components/skills.html'"></component>
-					</layout-column>
-					<layout-column data-width="'30%'">
-						<component data-template="'templates/components/deathSaves.html'"></component>
-						<component data-template="'templates/components/hitPoints.html'"></component>
-						<component data-template="'templates/components/speed.html'"></component>
-					    <component data-template="'templates/components/languages.html'"></component>
+    <div class="a4-sheet" layout>
+        <layout-block>
+            <layout-column data-width="'33%'">
+                <component data-template="'templates/components/logo.html'"></component>
+                <component data-template="'templates/components/player.html'"></component>
+                <component data-template="'templates/components/stats.html'"></component>
+                <component data-template="'templates/components/saveThrows.html'"></component>
+                <component data-template="'templates/components/feats.html'"></component>
+            </layout-column>
+            <layout-column data-width="'67%'">
+                <component data-template="'templates/components/character.html'"></component>
+                <layout-block>
+                    <layout-column data-width="'33%'">
+                        <component data-template="'templates/components/initiative.html'"></component>
+                    </layout-column>
+                    <layout-column data-width="'67%'">
+                        <component data-template="'templates/components/armorClass.html'"></component>
+                    </layout-column>
+                </layout-block>
+                <layout-block>
+                    <layout-column data-width="'70%'">
+                        <component data-template="'templates/components/skills.html'"></component>
+                    </layout-column>
+                    <layout-column data-width="'30%'">
+                        <component data-template="'templates/components/deathSaves.html'"></component>
+                        <component data-template="'templates/components/hitPoints.html'"></component>
+                        <component data-template="'templates/components/speed.html'"></component>
+                        <component data-template="'templates/components/languages.html'"></component>
                         <component data-template="'templates/components/abilities.html'"></component>
-					</layout-column>
-				</layout-block>
-			</layout-column>
-		</layout-block>
+                    </layout-column>
+                </layout-block>
+            </layout-column>
+        </layout-block>
     </div>
-
     <div class="page-break"></div>
-
-	<div class="a4-sheet" layout>
-		<layout-block>
-			<layout-column data-width="'33%'">
-				<component data-template="'templates/components/inventory.html'"></component>
-				<component data-template="'templates/components/potionsAndScrolls.html'"></component>
-				<component data-template="'templates/components/questItems.html'"></component>
-			    <component data-template="'templates/components/money.html'"></component>
-			</layout-column>
-			<layout-column data-width="'67%'">
-				<layout-block>
-					<layout-column data-width="'49%'">
-						<component data-template="'templates/directiveDefinition/portraitComponent.html'"></component>
-					</layout-column>
-					<layout-column data-width="'49%'">
-						<component data-template="'templates/components/armor.html'"></component>
-						<component data-template="'templates/components/shield.html'"></component>
-						<component data-template="'templates/components/tools.html'"></component>
-					</layout-column>
-				</layout-block>
-				<component data-template="'templates/components/attacks.html'"></component>
-				<component data-template="'templates/components/spellcasting.html'"></component>
-			</layout-column>
-		</layout-block>
-	</div>
-
-	<!-- app scripts -->
+    <div class="a4-sheet" layout>
+        <layout-block>
+            <layout-column data-width="'33%'">
+                <component data-template="'templates/components/inventory.html'"></component>
+                <component data-template="'templates/components/potionsAndScrolls.html'"></component>
+                <component data-template="'templates/components/questItems.html'"></component>
+                <component data-template="'templates/components/money.html'"></component>
+            </layout-column>
+            <layout-column data-width="'67%'">
+                <layout-block>
+                    <layout-column data-width="'49%'">
+                        <component data-template="'templates/directiveDefinition/portraitComponent.html'"></component>
+                    </layout-column>
+                    <layout-column data-width="'49%'">
+                        <component data-template="'templates/components/armor.html'"></component>
+                        <component data-template="'templates/components/shield.html'"></component>
+                        <component data-template="'templates/components/tools.html'"></component>
+                    </layout-column>
+                </layout-block>
+                <component data-template="'templates/components/attacks.html'"></component>
+                <component data-template="'templates/components/spellcasting.html'"></component>
+            </layout-column>
+        </layout-block>
+    </div>
+    <!-- app scripts -->
     <script type="text/javascript" src="scripts/libs.js"></script>
     <script type="text/javascript" src="scripts/app.js"></script>
 </body>

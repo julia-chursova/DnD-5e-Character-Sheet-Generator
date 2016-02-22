@@ -2,13 +2,21 @@
     <div class="logo">
         <img src="images/short_logo.png"/>
     </div>
+    <div class="section">
+        <button ng-click="app.newDocument()">New</button>
+        <button ng-click="app.save()" ng-disabled="app.autoSaving()">Save</button>
+        <button ng-click="app.toggleLoad()">Load</button>
+        <button ng-click="app.updateLink()">Link</button>
+    </div>
+    <div class="section charlists" ng-if="app.isLoadOpened()">
+        <div class="charlist-item" ng-repeat="savedCharlist in app.savedCharlists">
+            <span class="charlist-name" ng-click="app.load(savedCharlist)">{{ savedCharlist }}</span>
+            <button class="delete-charlist" ng-click="app.delete(savedCharlist)">Delete</button>
+        </div>
+    </div>
 	<div class="section">
 		<button ng-click="app.print()">Print</button>
-		<button ng-click="app.editLayout()" ng-if="!app.isEditMode()">Edit Layout</button>
-		<button ng-click="app.finishEdit()" ng-if="app.isEditMode()">Finish edit</button>
-	</div>
-	<div class="section">
-		<button ng-click="app.updateLink()">UpdateLink</button>
+		<button ng-click="app.toggleEditing()">{{ app.isEditMode() ? 'Finish edit' : 'Edit Layout' }}</button>
 	</div>
 	<div ng-if="app.isEditMode()" class="section">
 		<div class="header">Layouts</div>

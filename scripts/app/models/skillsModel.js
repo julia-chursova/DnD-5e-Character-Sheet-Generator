@@ -8,8 +8,11 @@
 			function (skillsProvider) {
 			    var self = this;
 
-				// Fields
-			    self.skills = skillsProvider.skillList();
+				self.init = function() {
+			        self.skills = skillsProvider.skillList();
+				}
+
+			    self.init();
 
 			    // Calculable Properties
                 self.count = function() {
@@ -17,14 +20,35 @@
                 }
 
 				// Methods
-				self.exportData = function() {
+                self.exportData = function () {
+                    var result = [];
+
+                    for (var skillName in self.skills) {
+                        if (self.skills.hasOwnProperty(skillName)) {
+                            var skill = self.skills[skillName];
+                            result.push({
+                                id: skillName,
+                                haveProficiency: skill.haveProficiency,
+                                miscBonus: skill.miscBonus
+                            });
+                        }
+                    }
+
 					return {
-						skills: self.skills
+						skills: result
 					}
 				}
 
-				self.importData = function(data) {
-					self.skills = data.skills;
+                self.importData = function (data) {
+                    for (var i = 0; i < data.skills.length; i++) {
+                        var info = data.skills[i];
+                        var skill = self.skills[info.id];
+
+                        if (skill) {
+                            skill.haveProficiency = info.haveProficiency;
+                            skill.miscBonus = info.miscBonus;
+                        }
+                    }
 				}
 
 				return self;

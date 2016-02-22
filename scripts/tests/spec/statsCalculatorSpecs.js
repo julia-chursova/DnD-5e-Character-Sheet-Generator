@@ -1,5 +1,24 @@
-describe("statsModel", function () {
+describe("Stats Model", function() {
+    var model;
+
+    // INJECTS
     beforeEach(module(appName));
+    beforeEach(inject(function(_statsModel_) {
+        model = _statsModel_;
+    }));
+
+    // TEST DATA
+    var maxBonus = 3;
+    var maxCustomBonus = 2;
+
+    var fields = [
+        { stat: 'strength', mod: 'strModifier', racialBonus: 'customRacialStrBonus', bonus: 'strBonus' },
+        { stat: 'dexterity', mod: 'dexModifier', racialBonus: 'customRacialDexBonus', bonus: 'dexBonus' },
+        { stat: 'constitution', mod: 'conModifier', racialBonus: 'customRacialConBonus', bonus: 'conBonus' },
+        { stat: 'intelligence', mod: 'intModifier', racialBonus: 'customRacialIntBonus', bonus: 'intBonus' },
+        { stat: 'wisdom', mod: 'wisModifier', racialBonus: 'customRacialWisBonus', bonus: 'wisBonus' },
+        { stat: 'charisma', mod: 'chaModifier', racialBonus: 'customRacialChaBonus', bonus: 'chaBonus' }
+    ];
 
     var statModifierMapping = {
         1: -5,
@@ -24,13 +43,82 @@ describe("statsModel", function () {
         20: 5
     };
 
-    for (var score in statModifierMapping) {
-        var expectedModifier = statModifierMapping[score];
+    function generateCheckSimple(score, expectedModifier) {
+        return function() {
+            for (var i = 0; i < fields.length; i++) {
+                var statFields = fields[i];
 
-        it('For stat score ' + score + ' modifier should be ' + expectedModifier, inject(function (statsModel) {
-            statsModel.strength = score;
-
-            expect(statsModel.strModifier()).toBe(expectedModifier);
-        }));
+                model[statFields.stat] = score;
+                expect(model[statFields.mod]()).toBe(expectedModifier);
+            }
+        }
     }
+
+    function generateCheckWithBonus(score, bonus) {
+        return function() {
+            for (var i = 0; i < fields.length; i++) {
+                var statFields = fields[i];
+
+                model[statFields.stat] = score + bonus;
+                var expectedModifier = model[statFields.mod]();
+
+                model[statFields.stat] = score;
+                model[statFields.racialBonus] = bonus;
+                var actualModifier = model[statFields.mod]();
+
+                expect(actualModifier).toBe(expectedModifier);
+            }
+        }
+    }
+
+    function generateCheckWithRacialAndCustomBonus(score, racialBonus, customBonus) {
+        return function() {
+            for (var i = 0; i < fields.length; i++) {
+                var statFields = fields[i];
+
+                model[statFields.stat] = score;
+                model[statFields.racialBonus]= racialBonus;
+                var expectedModifier = model[statFields.mod]() + customBonus;
+
+                model[statFields.bonus] = customBonus;
+                var actualModifier = model[statFields.mod]();
+
+                expect(actualModifier).toBe(expectedModifier);
+            }
+        }
+    }
+
+    // Modifier calculation when user defined only stat
+    (function() {
+        for (var score in statModifierMapping) {
+            if (!statModifierMapping.hasOwnProperty(score))
+                return;
+
+            var expectedModifier = statModifierMapping[score];
+
+            var scenarioName = 'Correctly calculates modifier for score ' + score;
+            it(scenarioName, generateCheckSimple(score, expectedModifier));
+        }
+    })();
+
+    // Modifier calculation when user defined both stat and racial bonus
+    (function() {
+        for (var score = 1; score <= 20; score++) {
+            for (var bonus = 0; bonus <= maxBonus && score + bonus <= 20; bonus++) {
+                var scenarioName = 'Correctly calculates modifier for score ' + score + ' and racial bonus ' + bonus;
+                it(scenarioName, generateCheckWithBonus(score, bonus));
+            }
+        }
+    })();
+
+    (function() {
+        for (var score = 1; score <= 20; score++) {
+            for (var racialBonus = 0; racialBonus <= maxBonus && score + racialBonus <= 20; racialBonus++) {
+                for (var customBonus = 0; customBonus <= maxCustomBonus; customBonus++) {
+                    var scenarioName = 'Correctly calculates modifier for score ' + score + ', racial bonus ' + racialBonus + ' and custom bonus ' + customBonus;
+                    it(scenarioName, generateCheckWithRacialAndCustomBonus(score, racialBonus, customBonus));
+                }
+            }
+        }
+    })();
 });

@@ -15,7 +15,6 @@
 
                 var maxClasses = 5;
 
-                // Fields
                 self.raceModel = raceModel;
                 self.name = '';
                 self.alignment = 5;
@@ -28,7 +27,9 @@
                 self.initiativeBonus = 0;
 
                 // Constructor
-                (function init() {
+                self.init = function () {
+                    self.classes = [];
+
                     for (var i = 0; i < maxClasses; i++) {
                         self.classes.push({
                             "class": null,
@@ -36,7 +37,9 @@
                             level: ''
                         });
                     }
-                })();
+                }
+
+                self.init();
 
                 // Calculable properties
                 self.effectiveLevel = function() {

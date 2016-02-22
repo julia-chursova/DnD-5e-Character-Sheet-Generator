@@ -8,17 +8,17 @@
 			// Constants
 			var maxLanguages = 7;
 
-			// Fields
-			self.languages = [];
+	        self.init = function () {
+	            self.languages = [];
 
-			// Ctor
-			(function init() {
-				for (var i = 0; i < maxLanguages; i++) {
-					self.languages.push('');
-				}
-			})();
+	            for (var i = 0; i < maxLanguages; i++) {
+	                self.languages.push('');
+	            }
+	        }
 
-			// Methods
+	        self.init();
+
+	        // Methods
 			self.exportData = function() {
 				return {
 					languages: self.languages

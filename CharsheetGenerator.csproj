@@ -102,15 +102,17 @@
     <Content Include="scripts\app\serializer.js" />
     <Content Include="scripts\libs\acute.select.modified.js" />
     <Content Include="scripts\libs\angular.min.js" />
+    <Content Include="scripts\libs\dexie.js" />
     <Content Include="scripts\libs\ngDraggable.modified.js" />
     <Content Include="scripts\tests\lib\angular-mocks.js" />
-    <Content Include="scripts\tests\lib\jasmine-2.3.4\boot.js" />
-    <Content Include="scripts\tests\lib\jasmine-2.3.4\console.js" />
-    <Content Include="scripts\tests\lib\jasmine-2.3.4\jasmine-html.js" />
-    <Content Include="scripts\tests\lib\jasmine-2.3.4\jasmine.css" />
-    <Content Include="scripts\tests\lib\jasmine-2.3.4\jasmine.js" />
-    <Content Include="scripts\tests\lib\jasmine-2.3.4\jasmine_favicon.png" />
-    <Content Include="scripts\tests\SpecRunner.html" />
+    <Content Include="scripts\tests\lib\jasmine-2.4.1\boot.js" />
+    <Content Include="scripts\tests\lib\jasmine-2.4.1\console.js" />
+    <Content Include="scripts\tests\lib\jasmine-2.4.1\jasmine-html.js" />
+    <Content Include="scripts\tests\lib\jasmine-2.4.1\jasmine.css" />
+    <Content Include="scripts\tests\lib\jasmine-2.4.1\jasmine.js" />
+    <Content Include="scripts\tests\lib\jasmine-2.4.1\jasmine_favicon.png" />
+    <Content Include="scripts\tests\spec\saveThrowCalcSpecs.js" />
+    <Content Include="status.html" />
     <Content Include="scripts\tests\spec\statsCalculatorSpecs.js" />
     <Content Include="styles\app\app.less" />
     <Content Include="styles\app\controls\helpers.less" />
@@ -118,6 +120,7 @@
     <Content Include="styles\app\controls\labeledInput.less" />
     <Content Include="styles\app\controls\fillableFormula.less" />
     <Content Include="styles\app\components\abilities.less" />
+    <Content Include="package.json" />
     <None Include="styles\app\components\armor.less" />
     <None Include="styles\app\components\character.less" />
     <None Include="styles\app\components\deathSaves.less" />
@@ -172,7 +175,7 @@
     <Content Include="templates\menu.html" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\dalelands_uncial.otf" />
+    <Content Include="styles\dalelands_uncial.otf" />
     <Content Include="LICENSE" />
   </ItemGroup>
   <ItemGroup>

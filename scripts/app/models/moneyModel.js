@@ -6,14 +6,17 @@
 			function () {
 				var self = this;
 
-				// Fields
-				self.copper = '';
-				self.silver = '';
-				self.electrum = '';
-				self.gold = '';
-				self.platinum = '';
+			    self.init = function () {
+			        self.copper = '';
+			        self.silver = '';
+			        self.electrum = '';
+			        self.gold = '';
+			        self.platinum = '';
+			    }
 
-				// Calculable fields
+			    self.init();
+
+			    // Calculable fields
 				self.total = function () {
 					return (self.copper || 0) +
 						(self.silver || 0) * 10 +

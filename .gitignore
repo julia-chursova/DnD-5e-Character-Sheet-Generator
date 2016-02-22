@@ -6,14 +6,8 @@ obj/
 
 node_modules/
 
-/scripts/libs.js
-/scripts/libs.min.js
-/scripts/app.js
-/scripts/app.min.js
-
+*.DotSettings
 /styles/libstyles.css
-/styles/libstyles.min.css
 /styles/appstyles.css
-/styles/appstyles.min.css
-
-
+/scripts/libs.js
+/scripts/app.js

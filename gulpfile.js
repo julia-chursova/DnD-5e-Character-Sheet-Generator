@@ -1,5 +1,5 @@
 ﻿var gulp = require('gulp');
-var less = require('gulp-less')
+var less = require('gulp-less');
 var minifyCSS = require('gulp-minify-css');
 var minimifyJS = require('gulp-uglify');
 var bundle = require('gulp-concat');
@@ -13,7 +13,7 @@ gulp.task('process-app-scripts-debug', function () {
 });
 
 gulp.task('process-libs-scripts-debug', function () {
-    return gulp.src(['./scripts/libs/angular.min.js', './scripts/libs/ngDraggable.modified.js', './scripts/libs/acute.select.modified.js'])
+    return gulp.src(['./scripts/libs/angular.min.js', './scripts/libs/ngDraggable.modified.js', './scripts/libs/acute.select.modified.js', './scripts/libs/dexie.js'])
         .pipe(bundle('libs.js'))
         .pipe(gulp.dest('./scripts'));
 });
@@ -40,7 +40,7 @@ gulp.task('process-app-scripts-release', function () {
 });
 
 gulp.task('process-libs-scripts-release', function () {
-    return gulp.src(['./scripts/libs/angular.min.js', './scripts/libs/ngDraggable.modified.js', './scripts/libs/acute.select.modified.js'])
+    return gulp.src(['./scripts/libs/angular.min.js', './scripts/libs/ngDraggable.modified.js', './scripts/libs/acute.select.modified.js', './scripts/libs/dexie.js'])
         .pipe(minimifyJS())
         .pipe(bundle('libs.js'))
         .pipe(gulp.dest('./scripts'));

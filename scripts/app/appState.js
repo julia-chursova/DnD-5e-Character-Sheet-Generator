@@ -4,7 +4,9 @@
 	angular.module(appName)
 		.factory('appState', function() {
 			return {
-				isEditMode: false
+			    isEditMode: false,
+			    isLoadOpened: false,
+                isLoading: false
 			}
 		});
 })();

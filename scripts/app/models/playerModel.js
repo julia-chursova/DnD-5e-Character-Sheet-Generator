@@ -5,12 +5,15 @@
         .factory('playerModel', function () {
             var self = this;
 
-			// Fields
-            self.name = '';
-            self.campaign = '';
-            self.XP = '';
+            self.init = function () {
+                self.name = '';
+                self.campaign = '';
+                self.XP = '';
+            }
 
-			// Methods
+            self.init();
+
+            // Methods
 			self.exportData = function() {
 				return {
 					name: self.name,

@@ -7,33 +7,36 @@
             'helpers',
 
 			function (raceModel, helpers) {
-			    function getModifier(statValue) {
-			        return Math.floor(((statValue || 0) - 10) / 2);
+			    function getModifier(rawStatValue, racialBonus) {
+			        return Math.floor(((parseInt(rawStatValue) || 0) + racialBonus - 10) / 2);
 			    }
 
 			    var self = this;
 
-			    // Fields
-			    self.strength = '';
-			    self.dexterity = '';
-			    self.constitution = '';
-			    self.intelligence = '';
-			    self.wisdom = '';
-			    self.charisma = '';
+			    self.init = function () {
+			        self.strength = '';
+			        self.dexterity = '';
+			        self.constitution = '';
+			        self.intelligence = '';
+			        self.wisdom = '';
+			        self.charisma = '';
 
-			    self.customRacialStrBonus = '';
-			    self.customRacialDexBonus = '';
-			    self.customRacialConBonus = '';
-			    self.customRacialIntBonus = '';
-			    self.customRacialWisBonus = '';
-			    self.customRacialChaBonus = '';
+			        self.customRacialStrBonus = '';
+			        self.customRacialDexBonus = '';
+			        self.customRacialConBonus = '';
+			        self.customRacialIntBonus = '';
+			        self.customRacialWisBonus = '';
+			        self.customRacialChaBonus = '';
 
-			    self.strBonus = '';
-			    self.dexBonus = '';
-			    self.conBonus = '';
-			    self.intBonus = '';
-			    self.wisBonus = '';
-			    self.chaBonus = '';
+			        self.strBonus = '';
+			        self.dexBonus = '';
+			        self.conBonus = '';
+			        self.intBonus = '';
+			        self.wisBonus = '';
+			        self.chaBonus = '';
+			    }
+
+			    self.init();
 
 			    // Calculable fields
 			    self.racialStrBonus = function () {
@@ -91,27 +94,27 @@
 			    };
 
 			    self.strModifier = function () {
-			        return getModifier(self.strength) + self.racialStrBonus() + (parseInt(self.strBonus) || 0);
+			        return getModifier(self.strength, self.racialStrBonus()) + (parseInt(self.strBonus) || 0);
 			    };
 
 			    self.dexModifier = function () {
-			        return getModifier(self.dexterity) + self.racialDexBonus() + (parseInt(self.dexBonus) || 0);
+			        return getModifier(self.dexterity, self.racialDexBonus()) + (parseInt(self.dexBonus) || 0);
 			    };
 
 			    self.conModifier = function () {
-			        return getModifier(self.constitution) + self.racialConBonus() + (parseInt(self.conBonus) || 0);
+			        return getModifier(self.constitution, self.racialConBonus()) + (parseInt(self.conBonus) || 0);
 			    };
 
 			    self.intModifier = function () {
-			        return getModifier(self.intelligence) + self.racialIntBonus() + (parseInt(self.intBonus) || 0);
+			        return getModifier(self.intelligence, self.racialIntBonus()) + (parseInt(self.intBonus) || 0);
 			    };
 
 			    self.wisModifier = function () {
-			        return getModifier(self.wisdom) + self.racialWisBonus() + (parseInt(self.wisBonus) || 0);
+			        return getModifier(self.wisdom, self.racialWisBonus()) + (parseInt(self.wisBonus) || 0);
 			    };
 
 			    self.chaModifier = function () {
-			        return getModifier(self.charisma) + self.racialChaBonus() + (parseInt(self.chaBonus) || 0);
+			        return getModifier(self.charisma, self.racialChaBonus()) + (parseInt(self.chaBonus) || 0);
 			    };
 
 			    // Methods
@@ -123,6 +126,13 @@
 			            intelligence: self.intelligence,
 			            wisdom: self.wisdom,
 			            charisma: self.charisma,
+
+			            customRacialStrBonus: self.customRacialStrBonus,
+			            customRacialDexBonus: self.customRacialDexBonus,
+			            customRacialConBonus: self.customRacialConBonus,
+			            customRacialIntBonus: self.customRacialIntBonus,
+			            customRacialWisBonus: self.customRacialWisBonus,
+			            customRacialChaBonus: self.customRacialChaBonus,
 
 			            strBonus: self.strBonus,
 			            dexBonus: self.dexBonus,
@@ -140,6 +150,13 @@
 			        self.intelligence = data.intelligence;
 			        self.wisdom = data.wisdom;
 			        self.charisma = data.charisma;
+
+			        self.customRacialStrBonus = data.customRacialStrBonus;
+			        self.customRacialDexBonus = data.customRacialDexBonus;
+			        self.customRacialConBonus = data.customRacialConBonus;
+			        self.customRacialIntBonus = data.customRacialIntBonus;
+			        self.customRacialWisBonus = data.customRacialWisBonus;
+			        self.customRacialChaBonus = data.customRacialChaBonus;
 
 			        self.strBonus = data.strBonus;
 			        self.dexBonus = data.dexBonus;

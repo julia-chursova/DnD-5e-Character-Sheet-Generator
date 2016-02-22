@@ -9,7 +9,10 @@
 			function (proficienciesModel, toolTypeProvider) {
 			    var self = this;
 
-			    self.proficiencies = proficienciesModel.tools;
+			    self.tools = function() {
+			        return proficienciesModel.tools;
+			    }
+
 			    self.availableTools = toolTypeProvider;
 			}
 		]);
