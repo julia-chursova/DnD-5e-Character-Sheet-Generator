@@ -76,7 +76,7 @@
 				        proficiencies: proficienciesModel.exportData(),
 				        race: raceModel.exportData(),
 				        saveThrows: saveThrowModel.exportData(),
-				        //skills: skillsModel.exportData(),
+				        skills: skillsModel.exportData(),
 				        speed: speedModel.exportData(),
 				        spellcasting: spellcastingModel.exportData(),
 				        stats: statsModel.exportData(),
